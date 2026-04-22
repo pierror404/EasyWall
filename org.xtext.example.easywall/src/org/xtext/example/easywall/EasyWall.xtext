@@ -2,79 +2,146 @@ grammar org.xtext.example.easywall.EasyWall with org.eclipse.xtext.common.Termin
 
 generate easyWall "http://www.xtext.org/example/easywall/EasyWall"
 
+// ============================================
+// ROOT - Ora supporta file separati
+// ============================================
 EFProgram:
-	EFHeader (rule=EFRule | firewall=EFfirewall)
+    EFHeader 
+    ((rules+=EFRule)* | firewall=EFFirewall) // Supporta multipli rules E firewall in file diversi
 ;
+
 EFHeader:
-	{EFHeader} ('pack' name=QualifiedName ';')?
-	imports+=EFImports*
+    {EFHeader} ('pack' name=QualifiedName ';')?
+    imports+=EFImports*
 ;
-/*
- * FIREWALL
- */
-EFfirewall:
-	firewall=EFFireClass
-;
+
 EFImports:
-	'import' importedNamespace=QualifiedNameWithWildcard ';'
+    'import' importedNamespace=QualifiedNameWithWildcard ';'
 ;
 
 QualifiedName:
-	ID ('.' ID)*
+    ID ('.' ID)*
 ;
+
 QualifiedNameWithWildcard:
-	QualifiedName '.*'
+    QualifiedName ('.*')?
 ;
-EFFireClass:
-	'firewall' name=ID '{'
-	members+=EFMember*
-	'}'
+
+// ============================================
+// FIREWALL - Con default policy
+// ============================================
+EFFirewall:
+    'firewall' name=ID '{'
+        defaultPolicy=EFDefaultPolicy        // NUOVO: policy di default
+        members+=EFMember*
+        (ruleRefs+=EFRuleReference)*         // NUOVO: riferimenti a regole in altri file
+    '}'
 ;
+
+// NUOVO: Default policy
+EFDefaultPolicy:
+    'default' action=EFDefaultAction ';'
+;
+
+enum EFDefaultAction:
+    ALLOW='allow' | DENY='deny'
+;
+
+// NUOVO: Riferimento a regole definite altrove
+EFRuleReference:
+    'apply' rule=[EFRuleClass|QualifiedName] ';'
+;
+
+// ============================================
+// MEMBERS (Fields & Methods)
+// ============================================
 EFMember:
-	EFField | EFMethod
+    EFField | EFMethod
 ;
+
 EFField:
-	('set' | 'var') EFTypedDeclaration ('=' expression=EFExpression)? ';' //set for constants and var for variables
+    ('set' | 'var') EFTypedDeclaration ('=' expression=EFExpression)? ';'
 ;
+
 fragment EFTypedDeclaration *:
-	name=ID ':' (ruletype=[EFRuleClass|QualifiedName] | nativetype=EFNetworkNativeType)
+    name=ID ':' (
+        ruletype=[EFRuleClass|QualifiedName] | 
+        nativetype=EFNetworkNativeType |
+        primitivetype=EFPrimitiveType
+    )
 ;
+
 enum EFNetworkNativeType:
-	NETWORK='network' | IPv4='netip' | IPv6='netipv6' | PORT='netport' | PROTOCOL='protocol' | DIRECTION='direction' | NETMASK='netmask'
+    NETWORK='network' | 
+    IPv4='netip' | 
+    IPv6='netipv6' | 
+    PORT='netport' | 
+    PROTOCOL='protocol' | 
+    DIRECTION='direction' | 
+    NETMASK='netmask'
 ;
+
+enum EFPrimitiveType:
+    INT='int' | 
+    STRING='string' | 
+    BOOL='bool'
+;
+
 enum EFDirectionNativeType:
-	IN='in' | OUT='out'
+    IN='in' | 
+    OUT='out' | 
+    FORWARD='forward'  // NUOVO: aggiunto forward
 ;
+
 EFVariableDeclaration:
-	('set' | 'var') EFTypedDeclaration '=' expression=EFExpression ';'
+    ('set' | 'var') EFTypedDeclaration '=' expression=EFExpression ';'
 ;
+
 EFMethod:
-	'fun' EFTypedDeclaration
-	'(' (params+=EFParameter (',' params+=EFParameter)*)? ')'
-	body=EFBlock;
-EFParameter: EFTypedDeclaration;
+    'fun' name=ID
+    '(' (params+=EFParameter (',' params+=EFParameter)*)? ')'
+    ':' (nativetype=EFNetworkNativeType | primitivetype=EFPrimitiveType | ruletype=[EFRuleClass|QualifiedName] | void='void')
+    body=EFBlock
+;
+
+EFParameter: 
+    EFTypedDeclaration
+;
+
 EFBlock:
-	{EFBlock} '{' statements+=EFStatement* '}'
+    {EFBlock} '{' statements+=EFStatement* '}'
 ;
+
+// ============================================
+// STATEMENTS
+// ============================================
 EFStatement:
-	EFField |
-	EFReturn |
-	EFExpression ';' |
-	EFIfStatement
+    EFField |
+    EFReturn |
+    EFExpression ';' |
+    EFIfStatement
 ;
+
 EFReturn:
-	'return' expression=EFExpression ';'
+    'return' expression=EFExpression ';'
 ;
+
 EFIfStatement:
-	'if' '(' expression=EFExpression ')' thenBlock=EFIfBlock
-	(=>'else' elseBlock=EFIfBlock)?
+    'if' '(' expression=EFExpression ')' thenBlock=EFIfBlock
+    (=>'else' elseBlock=EFIfBlock)?
 ;
+
 EFIfBlock returns EFBlock:
-	 statements+=EFStatement | EFBlock
+    statements+=EFStatement | EFBlock
 ;
+
+// ============================================
+// EXPRESSIONS
+// ============================================
 EFExpression:
     EFAssignment
 ;
+
 EFAssignment returns EFExpression:
     EFOrExpression ({EFAssignment.left=current} '=' right=EFAssignment)?
 ;
@@ -82,113 +149,174 @@ EFAssignment returns EFExpression:
 EFOrExpression returns EFExpression:
     EFAndExpression ({EFOrExpression.left=current} EFOr right=EFAndExpression)*
 ;
+
 EFAndExpression returns EFExpression:
     EFEqualExpression ({EFAndExpression.left=current} EFAnd right=EFEqualExpression)*
 ;
+
 EFEqualExpression returns EFExpression:
     EFRelExpression ({EFEqualExpression.left=current} EFEqualOperators right=EFRelExpression)*
 ;
+
 EFRelExpression returns EFExpression:
-    EFUnaryExpression ({EFRelExpression.left=current} EFRelOperators right=EFUnaryExpression)*
+    EFAddExpression ({EFRelExpression.left=current} EFRelOperators right=EFAddExpression)*
+;
+
+EFAddExpression returns EFExpression:
+    EFMultExpression ({EFAddExpression.left=current} EFAddOperators right=EFMultExpression)*
+;
+
+EFMultExpression returns EFExpression:
+    EFUnaryExpression ({EFMultExpression.left=current} EFMultOperators right=EFUnaryExpression)*
 ;
 
 EFUnaryExpression returns EFExpression:
-    {EFNotExpression} EFNot expression=EFUnaryExpression | EFPrimaryExpression
+    {EFNotExpression} EFNot expression=EFUnaryExpression | 
+    EFMemberSelection
 ;
-EFPrimaryExpression returns EFExpression:
-    {EFStringConstant} value=STRING
-  | {EFIntConstant} value=INT
-  | {EFBoolConstant} value=('true'|'false')
-  | {EFPrimitiveType} type=EFNetworkNativeType //FORSE INUTILE TOGLILO
-  | {EFDirectionConstant} direction=EFDirectionNativeType
-  | {EFNetworkProtocolConstant} protocol=NETWORKLAYERPROTOCOL
-  | {EFTransportProtocolConstant} protocol=TRANSPORTLAYERPROTOCOL
-  |	{EFApplicationProtocolConstant} protocol=APPLICATIONLAYERPROTOCOL
-  | {EFIPv6Constant} ipv6=EFIPV6SYNTAX
-  | {EFIPv4Constant} ipv4=EFIPv4SYNTAX
-  | {EFNetworkConstant} network=EFNetworkSYNTAX
-  | {EFNetportConstant} port=EFNetportSYNTAX
-  | {EFNetmaskConstant} netmask=EFNetmaskSYNTAX
-  | {EFThis} 'this'
-  | {EFSuper} 'super'
-  | {EFNew} 'new' type=[EFRuleClass|QualifiedName] '(' ')'
-  | {EFBRacketsExpression} '(' expression=EFExpression ')'
-  | {EFFunctionCall} functionName=QualifiedName '(' (args+=EFExpression (',' args+=EFExpression)*)? ')'
-  | {EFSymbolRef} symbol=QualifiedName
-;
-EFSelectionExpression returns EFExpression:
+
+EFMemberSelection returns EFExpression:
     EFPrimaryExpression
     (
         {EFMemberSelection.receiver=current} '->'
-        member=[EFMember]
+        member=[EFMember|ID]
         ( '(' (args+=EFExpression (',' args+=EFExpression)*)? ')' )?
     )*
 ;
-/*
- * RULES
- */
+
+EFPrimaryExpression returns EFExpression:
+    {EFStringConstant} '"'value=STRING'"'
+  | {EFIntConstant} value=INT
+  | {EFBoolConstant} value=('true'|'false')
+  | {EFDirectionConstant} direction=EFDirectionNativeType
+  | {EFNetworkProtocolConstant} protocol=NETWORKLAYERPROTOCOL
+  | {EFTransportProtocolConstant} protocol=TRANSPORTLAYERPROTOCOL
+  | {EFApplicationProtocolConstant} protocol=APPLICATIONLAYERPROTOCOL
+  | {EFIPv6Constant} ipv6=EFIPV6SYNTAX
+  | {EFIPv4Constant} ipv4=EFIPV4SYNTAX | any='any' | localhost='localhost' 
+  | {EFNetworkConstant} network=EFNetworkSYNTAX
+  | port=EFNetportSYNTAX
+//  | {EFNetmaskConstant} netmask=EFNetmaskSYNTAX
+  | {EFThis} 'this'
+  | {EFSuper} 'super'
+  | {EFNew} 'new' type=[EFRuleClass|QualifiedName] '(' ')'
+  | {EFBracketsExpression} '(' expression=EFExpression ')'
+  | EFBuiltinFunction                                               // NUOVO: built-in functions
+  | {EFFunctionCall} functionName=QualifiedName '(' (args+=EFExpression (',' args+=EFExpression)*)? ')'
+  | {EFSymbolRef} symbol=QualifiedName
+;
+
+// ============================================
+// BUILT-IN FUNCTIONS
+// ============================================
+EFBuiltinFunction:
+    {EFAllow} 'allow' '(' ')'
+  | {EFBlock} 'block' '(' ')'
+  | {EFDrop} 'drop' '(' ')'
+  | {EFReject} 'reject' '(' ')'
+  | {EFWriteLog} 'writelog' '(' message=EFExpression ')'
+  | {EFWriteLogLevel} 'writelog' '(' level=EFLogLevel ',' message=EFExpression ')'
+  | {EFGetTime} 'getTime' '(' ')'
+  | {EFGetPacketField} 'getPacketField' '(' field=STRING ')'
+;
+
+enum EFLogLevel:
+    DEBUG='debug' | 
+    INFO='info' | 
+    WARNING='warning' | 
+    ERROR='error' | 
+    CRITICAL='critical'
+;
+
+// ============================================
+// RULES
+// ============================================
 EFRule:
-	rules=EFRuleClass
+    rules=EFRuleClass
 ;
+
 EFRuleClass:
-	'rule' name=ID 'at' type=EFRulesTypes '{'
-	members+=EFMember*
-	'}'
+    'rule' name=ID 'at' type=EFRulesTypes '{'
+        members+=EFMember*
+    '}'
 ;
+
 enum EFRulesTypes:
-	IPLEVEL='NetworkLayer' | TRANSPLEVEL='TransportLayer' | APPLEVEL='ApplicationLayer'
+    IPLEVEL='NetworkLayer' | 
+    TRANSPLEVEL='TransportLayer' | 
+    APPLEVEL='ApplicationLayer'
 ;
+
+// ============================================
+// OPERATORS
+// ============================================
 EFOr: '||' | 'or';
 EFAnd: '&&' | 'and';
 EFNot: '!' | 'not';
 EFEqualOperators: '==' | '!=' | 'isequalto';
-EFRelOperators: '>=' | '<=' | '>' | '<' ;
+EFRelOperators: '>=' | '<=' | '>' | '<';
+EFAddOperators: '+' | '-';
+EFMultOperators: '*' | 'div' | '%';
 
+// ============================================
+// PROTOCOLS
+// ============================================
 enum NETWORKLAYERPROTOCOL:
-	IPv4='IPv4'		|
-	IPv6="IPv6"		|
-	ARP='ARP' 		|
-	ICMP='ICMP'		|
-	NAT='NAT'		|
-	RIP='RIP' 		| 	//Routing Information Protocol
-	OSPF='OSPF'	  	| 	//Open Shortest Path Protocol
-	IPSEC='IPSEC' 	|	//Internet Protocol Security
-	IGMP='IGMP'
+    IPv4='IPv4' |
+    IPv6='IPv6' |
+    ARP='ARP' |
+    ICMP='ICMP' |
+    NAT='NAT' |
+    RIP='RIP' |
+    OSPF='OSPF' |
+    IPSEC='IPSEC' |
+    IGMP='IGMP'
 ;
 
 enum TRANSPORTLAYERPROTOCOL:
-	UDP='UDP' 	|
-	TCP='TCP' 	|
-	QUIC='QUIC' 	|
-	SCTP	='SCTP'	//Stream Control Transmission Protocol
+    UDP='UDP' |
+    TCP='TCP' |
+    QUIC='QUIC' |
+    SCTP='SCTP'
 ;
 
 enum APPLICATIONLAYERPROTOCOL:
-	HTTP='HTTP' 		|
-	HTTPS='HTTPS'	|
-	SMTP='SMTP'		|
-	POP3='POP3'		|
-	IMAP='IMAP'		|
-	FTP='FTP'		|
-	TFTP='TFTP'		|
-	SNMP='SNMP'		|
-	TELNET='TELNET'	|
-	SSH='SSH'		|
-	DNS='DNS'		|
-	DHCP='DHCP'
+    HTTP='HTTP' |
+    HTTPS='HTTPS' |
+    SMTP='SMTP' |
+    POP3='POP3' |
+    IMAP='IMAP' |
+    FTP='FTP' |
+    TFTP='TFTP' |
+    SNMP='SNMP' |
+    TELNET='TELNET' |
+    SSH='SSH' |
+    DNS='DNS' |
+    DHCP='DHCP'
 ;
 
-EFIPv4SYNTAX returns EFExpression: (first=INT '.' second=INT '.' third=INT '.' fourth=INT) | any='any' | localhost='localhost';
-terminal EFIPV6SYNTAX:
-	 ('0'..'9'|'a'..'f'|'A'..'F')+ (':' ('0'..'9'|'a'..'f'|'A'..'F')+)+
-	//{EFIPv6}(D0|D1|D2|D3|D4|D5|D6|D7|D8|D9|A|B|C|D|E|F|':')+
+// ============================================
+// NETWORK SYNTAX
+// ============================================
+terminal EFIPV4SYNTAX: 
+    INT '.' INT '.' INT '.' INT
 ;
-/*EFNetworkSYNTAX returns EFExpression: EFRAWNETSYNTAX | EFVARNETSYNTAX | EFRAWIPVARNETSYNTAX | EFVARIPRAWNETSYNTAX;*/
-EFNetworkSYNTAX returns EFExpression: 
+
+terminal EFIPV6SYNTAX:
+    ('0'..'9'|'a'..'f'|'A'..'F')+ (':' ('0'..'9'|'a'..'f'|'A'..'F')+)+
+;
+
+EFNetworkSYNTAX returns EFNetworkConstant: 
     varip=ID '/' varnetmask=ID
-  | rawip=EFIPv4SYNTAX '/' rawnetmask=INT
-  | rawip=EFIPv4SYNTAX '/' varnetmask=ID
+  | rawip=EFIPV4SYNTAX '/' rawnetmask=INT
+  | rawip=EFIPV4SYNTAX '/' varnetmask=ID
   | varip=ID '/' rawnetmask=INT
 ;
-EFNetmaskSYNTAX returns EFExpression: '/' subnet=INT;
-EFNetportSYNTAX returns EFExpression: ':'netport=INT;
+
+EFNetmaskSYNTAX returns EFNetmaskConstant: 
+    '/' subnet=INT
+;
+
+EFNetportSYNTAX returns EFNetportConstant: 
+    {EFNetportConstant} ':' netport=INT
+;

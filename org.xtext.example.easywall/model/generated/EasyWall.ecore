@@ -4,30 +4,41 @@
     nsPrefix="easyWall">
   <eClassifiers xsi:type="ecore:EClass" name="EFProgram"/>
   <eClassifiers xsi:type="ecore:EClass" name="EFHeader" eSuperTypes="#//EFProgram">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rule" eType="#//EFRule"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="firewall" eType="#//EFfirewall"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rules" upperBound="-1"
+        eType="#//EFRule" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="firewall" eType="#//EFFirewall"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
         eType="#//EFImports" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EFfirewall">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="firewall" eType="#//EFFireClass"
-        containment="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EFImports">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="importedNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EFFireClass">
+  <eClassifiers xsi:type="ecore:EClass" name="EFFirewall">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="defaultPolicy" eType="#//EFDefaultPolicy"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="members" upperBound="-1"
         eType="#//EFMember" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ruleRefs" upperBound="-1"
+        eType="#//EFRuleReference" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EFDefaultPolicy">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="action" eType="#//EFDefaultAction"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EFDefaultAction">
+    <eLiterals name="ALLOW" literal="allow"/>
+    <eLiterals name="DENY" value="1" literal="deny"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EFRuleReference">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rule" eType="#//EFRuleClass"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EFMember">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ruletype" eType="#//EFRuleClass"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nativetype" eType="#//EFNetworkNativeType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="primitivetype" eType="#//EFPrimitiveType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EFField" eSuperTypes="#//EFMember #//EFStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//EFExpression"
@@ -42,20 +53,28 @@
     <eLiterals name="DIRECTION" value="5" literal="direction"/>
     <eLiterals name="NETMASK" value="6" literal="netmask"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EFPrimitiveType">
+    <eLiterals name="INT" literal="int"/>
+    <eLiterals name="STRING" value="1" literal="string"/>
+    <eLiterals name="BOOL" value="2" literal="bool"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="EFDirectionNativeType">
     <eLiterals name="IN" literal="in"/>
     <eLiterals name="OUT" value="1" literal="out"/>
+    <eLiterals name="FORWARD" value="2" literal="forward"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EFVariableDeclaration">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ruletype" eType="#//EFRuleClass"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nativetype" eType="#//EFNetworkNativeType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="primitivetype" eType="#//EFPrimitiveType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//EFExpression"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EFMethod" eSuperTypes="#//EFMember">
     <eStructuralFeatures xsi:type="ecore:EReference" name="params" upperBound="-1"
         eType="#//EFParameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="void" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="#//EFBlock"
         containment="true"/>
   </eClassifiers>
@@ -63,8 +82,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ruletype" eType="#//EFRuleClass"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nativetype" eType="#//EFNetworkNativeType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="primitivetype" eType="#//EFPrimitiveType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EFBlock">
+  <eClassifiers xsi:type="ecore:EClass" name="EFBlock" eSuperTypes="#//EFBuiltinFunction">
     <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
         eType="#//EFStatement" containment="true"/>
   </eClassifiers>
@@ -82,19 +102,18 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EFExpression" eSuperTypes="#//EFStatement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="first" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="second" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="third" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fourth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="any" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="localhost" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="varip" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="varnetmask" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rawip" eType="#//EFExpression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="#//EFNetportConstant"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rawnetmask" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="subnet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="netport" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EFBuiltinFunction" eSuperTypes="#//EFExpression"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="EFLogLevel">
+    <eLiterals name="DEBUG" literal="debug"/>
+    <eLiterals name="INFO" value="1" literal="info"/>
+    <eLiterals name="WARNING" value="2" literal="warning"/>
+    <eLiterals name="ERROR" value="3" literal="error"/>
+    <eLiterals name="CRITICAL" value="4" literal="critical"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EFRule">
     <eStructuralFeatures xsi:type="ecore:EReference" name="rules" eType="#//EFRuleClass"
@@ -142,6 +161,20 @@
     <eLiterals name="DNS" value="10" literal="DNS"/>
     <eLiterals name="DHCP" value="11" literal="DHCP"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EFNetworkConstant" eSuperTypes="#//EFExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="network" eType="#//EFNetworkConstant"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="varip" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="varnetmask" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rawip" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rawnetmask" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EFNetmaskConstant">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="subnet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EFNetportConstant">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="netport" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EFAssignment" eSuperTypes="#//EFExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//EFExpression"
         containment="true"/>
@@ -172,8 +205,27 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//EFExpression"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EFAddExpression" eSuperTypes="#//EFExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//EFExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//EFExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EFMultExpression" eSuperTypes="#//EFExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//EFExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//EFExpression"
+        containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EFNotExpression" eSuperTypes="#//EFExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//EFExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EFMemberSelection" eSuperTypes="#//EFExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="receiver" eType="#//EFExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="member" eType="#//EFMember"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="args" upperBound="-1" eType="#//EFExpression"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EFStringConstant" eSuperTypes="#//EFExpression">
@@ -184,9 +236,6 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EFBoolConstant" eSuperTypes="#//EFExpression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EFPrimitiveType" eSuperTypes="#//EFExpression">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//EFNetworkNativeType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EFDirectionConstant" eSuperTypes="#//EFExpression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="#//EFDirectionNativeType"/>
@@ -204,27 +253,14 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ipv6" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EFIPv4Constant" eSuperTypes="#//EFExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ipv4" eType="#//EFExpression"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EFNetworkConstant" eSuperTypes="#//EFExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="network" eType="#//EFExpression"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EFNetportConstant" eSuperTypes="#//EFExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="#//EFExpression"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EFNetmaskConstant" eSuperTypes="#//EFExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="netmask" eType="#//EFExpression"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ipv4" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EFThis" eSuperTypes="#//EFExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="EFSuper" eSuperTypes="#//EFExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="EFNew" eSuperTypes="#//EFExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//EFRuleClass"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EFBRacketsExpression" eSuperTypes="#//EFExpression">
+  <eClassifiers xsi:type="ecore:EClass" name="EFBracketsExpression" eSuperTypes="#//EFExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//EFExpression"
         containment="true"/>
   </eClassifiers>
@@ -236,11 +272,20 @@
   <eClassifiers xsi:type="ecore:EClass" name="EFSymbolRef" eSuperTypes="#//EFExpression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EFMemberSelection" eSuperTypes="#//EFExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="receiver" eType="#//EFExpression"
+  <eClassifiers xsi:type="ecore:EClass" name="EFAllow" eSuperTypes="#//EFBuiltinFunction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EFDrop" eSuperTypes="#//EFBuiltinFunction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EFReject" eSuperTypes="#//EFBuiltinFunction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EFWriteLog" eSuperTypes="#//EFBuiltinFunction">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="message" eType="#//EFExpression"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="member" eType="#//EFMember"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="args" upperBound="-1" eType="#//EFExpression"
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EFWriteLogLevel" eSuperTypes="#//EFBuiltinFunction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" eType="#//EFLogLevel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="message" eType="#//EFExpression"
         containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EFGetTime" eSuperTypes="#//EFBuiltinFunction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EFGetPacketField" eSuperTypes="#//EFBuiltinFunction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="field" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>
