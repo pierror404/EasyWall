@@ -1323,7 +1323,6 @@ public class EasyWallGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//  | {EFIPv4Constant} ipv4=EFIPV4SYNTAX | any='any' | localhost='localhost'
 		//  | {EFNetworkConstant} network=EFNetworkSYNTAX
 		//  | port=EFNetportSYNTAX
-		////  | {EFNetmaskConstant} netmask=EFNetmaskSYNTAX
 		//  | {EFThis} 'this'
 		//  | {EFSuper} 'super'
 		//  | {EFNew} 'new' type=[EFRuleClass|QualifiedName] '(' ')'
@@ -1334,25 +1333,24 @@ public class EasyWallGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//    {EFStringConstant} '"'value=STRING'"'
-		//  | {EFIntConstant} value=INT
-		//  | {EFBoolConstant} value=('true'|'false')
-		//  | {EFDirectionConstant} direction=EFDirectionNativeType
-		//  | {EFNetworkProtocolConstant} protocol=NETWORKLAYERPROTOCOL
-		//  | {EFTransportProtocolConstant} protocol=TRANSPORTLAYERPROTOCOL
-		//  | {EFApplicationProtocolConstant} protocol=APPLICATIONLAYERPROTOCOL
-		//  | {EFIPv6Constant} ipv6=EFIPV6SYNTAX
-		//  | {EFIPv4Constant} ipv4=EFIPV4SYNTAX | any='any' | localhost='localhost'
-		//  | {EFNetworkConstant} network=EFNetworkSYNTAX
-		//  | port=EFNetportSYNTAX
-		////  | {EFNetmaskConstant} netmask=EFNetmaskSYNTAX
-		//  | {EFThis} 'this'
-		//  | {EFSuper} 'super'
-		//  | {EFNew} 'new' type=[EFRuleClass|QualifiedName] '(' ')'
-		//  | {EFBracketsExpression} '(' expression=EFExpression ')'
-		//  | EFBuiltinFunction                                               // NUOVO: built-in functions
-		//  | {EFFunctionCall} functionName=QualifiedName '(' (args+=EFExpression (',' args+=EFExpression)*)? ')'
-		//  | {EFSymbolRef} symbol=QualifiedName
+		//  {EFStringConstant} '"'value=STRING'"'
+		//| {EFIntConstant} value=INT
+		//| {EFBoolConstant} value=('true'|'false')
+		//| {EFDirectionConstant} direction=EFDirectionNativeType
+		//| {EFNetworkProtocolConstant} protocol=NETWORKLAYERPROTOCOL
+		//| {EFTransportProtocolConstant} protocol=TRANSPORTLAYERPROTOCOL
+		//| {EFApplicationProtocolConstant} protocol=APPLICATIONLAYERPROTOCOL
+		//| {EFIPv6Constant} ipv6=EFIPV6SYNTAX
+		//| {EFIPv4Constant} ipv4=EFIPV4SYNTAX | any='any' | localhost='localhost'
+		//| {EFNetworkConstant} network=EFNetworkSYNTAX
+		//| port=EFNetportSYNTAX
+		//| {EFThis} 'this'
+		//| {EFSuper} 'super'
+		//| {EFNew} 'new' type=[EFRuleClass|QualifiedName] '(' ')'
+		//| {EFBracketsExpression} '(' expression=EFExpression ')'
+		//| EFBuiltinFunction                                               // NUOVO: built-in functions
+		//| {EFFunctionCall} functionName=QualifiedName '(' (args+=EFExpression (',' args+=EFExpression)*)? ')'
+		//| {EFSymbolRef} symbol=QualifiedName
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//{EFStringConstant} '"'value=STRING'"'
@@ -2178,30 +2176,6 @@ public class EasyWallGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//INT
 		public RuleCall getRawnetmaskINTTerminalRuleCall_3_2_0() { return cRawnetmaskINTTerminalRuleCall_3_2_0; }
 	}
-	public class EFNetmaskSYNTAXElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.easywall.EasyWall.EFNetmaskSYNTAX");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cSolidusKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cSubnetAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cSubnetINTTerminalRuleCall_1_0 = (RuleCall)cSubnetAssignment_1.eContents().get(0);
-		
-		//EFNetmaskSYNTAX returns EFNetmaskConstant:
-		//    '/' subnet=INT
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'/' subnet=INT
-		public Group getGroup() { return cGroup; }
-		
-		//'/'
-		public Keyword getSolidusKeyword_0() { return cSolidusKeyword_0; }
-		
-		//subnet=INT
-		public Assignment getSubnetAssignment_1() { return cSubnetAssignment_1; }
-		
-		//INT
-		public RuleCall getSubnetINTTerminalRuleCall_1_0() { return cSubnetINTTerminalRuleCall_1_0; }
-	}
 	public class EFNetportSYNTAXElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.easywall.EasyWall.EFNetportSYNTAX");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -2855,7 +2829,6 @@ public class EasyWallGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	private final TerminalRule tEFIPV4SYNTAX;
 	private final TerminalRule tEFIPV6SYNTAX;
 	private final EFNetworkSYNTAXElements pEFNetworkSYNTAX;
-	private final EFNetmaskSYNTAXElements pEFNetmaskSYNTAX;
 	private final EFNetportSYNTAXElements pEFNetportSYNTAX;
 	
 	private final Grammar grammar;
@@ -2919,7 +2892,6 @@ public class EasyWallGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		this.tEFIPV4SYNTAX = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.easywall.EasyWall.EFIPV4SYNTAX");
 		this.tEFIPV6SYNTAX = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.easywall.EasyWall.EFIPV6SYNTAX");
 		this.pEFNetworkSYNTAX = new EFNetworkSYNTAXElements();
-		this.pEFNetmaskSYNTAX = new EFNetmaskSYNTAXElements();
 		this.pEFNetportSYNTAX = new EFNetportSYNTAXElements();
 	}
 	
@@ -3375,7 +3347,6 @@ public class EasyWallGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	//  | {EFIPv4Constant} ipv4=EFIPV4SYNTAX | any='any' | localhost='localhost'
 	//  | {EFNetworkConstant} network=EFNetworkSYNTAX
 	//  | port=EFNetportSYNTAX
-	////  | {EFNetmaskConstant} netmask=EFNetmaskSYNTAX
 	//  | {EFThis} 'this'
 	//  | {EFSuper} 'super'
 	//  | {EFNew} 'new' type=[EFRuleClass|QualifiedName] '(' ')'
@@ -3621,17 +3592,6 @@ public class EasyWallGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	
 	public ParserRule getEFNetworkSYNTAXRule() {
 		return getEFNetworkSYNTAXAccess().getRule();
-	}
-	
-	//EFNetmaskSYNTAX returns EFNetmaskConstant:
-	//    '/' subnet=INT
-	//;
-	public EFNetmaskSYNTAXElements getEFNetmaskSYNTAXAccess() {
-		return pEFNetmaskSYNTAX;
-	}
-	
-	public ParserRule getEFNetmaskSYNTAXRule() {
-		return getEFNetmaskSYNTAXAccess().getRule();
 	}
 	
 	//EFNetportSYNTAX returns EFNetportConstant:

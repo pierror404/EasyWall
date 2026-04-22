@@ -41,7 +41,6 @@ import org.xtext.example.easywall.easyWall.EFIntConstant;
 import org.xtext.example.easywall.easyWall.EFMemberSelection;
 import org.xtext.example.easywall.easyWall.EFMethod;
 import org.xtext.example.easywall.easyWall.EFMultExpression;
-import org.xtext.example.easywall.easyWall.EFNetmaskConstant;
 import org.xtext.example.easywall.easyWall.EFNetportConstant;
 import org.xtext.example.easywall.easyWall.EFNetworkConstant;
 import org.xtext.example.easywall.easyWall.EFNetworkProtocolConstant;
@@ -198,9 +197,6 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				return; 
 			case EasyWallPackage.EF_MULT_EXPRESSION:
 				sequence_EFMultExpression(context, (EFMultExpression) semanticObject); 
-				return; 
-			case EasyWallPackage.EF_NETMASK_CONSTANT:
-				sequence_EFNetmaskSYNTAX(context, (EFNetmaskConstant) semanticObject); 
 				return; 
 			case EasyWallPackage.EF_NETPORT_CONSTANT:
 				sequence_EFNetportSYNTAX(context, (EFNetportConstant) semanticObject); 
@@ -939,26 +935,6 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getEFMultExpressionAccess().getEFMultExpressionLeftAction_1_0(), semanticObject.getLeft());
 		feeder.accept(grammarAccess.getEFMultExpressionAccess().getRightEFUnaryExpressionParserRuleCall_1_2_0(), semanticObject.getRight());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     EFNetmaskSYNTAX returns EFNetmaskConstant
-	 *
-	 * Constraint:
-	 *     subnet=INT
-	 * </pre>
-	 */
-	protected void sequence_EFNetmaskSYNTAX(ISerializationContext context, EFNetmaskConstant semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, EasyWallPackage.Literals.EF_NETMASK_CONSTANT__SUBNET) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EasyWallPackage.Literals.EF_NETMASK_CONSTANT__SUBNET));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEFNetmaskSYNTAXAccess().getSubnetINTTerminalRuleCall_1_0(), semanticObject.getSubnet());
 		feeder.finish();
 	}
 	

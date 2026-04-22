@@ -997,34 +997,6 @@ public interface EasyWallPackage extends EPackage
   int EF_NETWORK_CONSTANT_FEATURE_COUNT = EF_EXPRESSION_FEATURE_COUNT + 5;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.easywall.easyWall.impl.EFNetmaskConstantImpl <em>EF Netmask Constant</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.easywall.easyWall.impl.EFNetmaskConstantImpl
-   * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFNetmaskConstant()
-   * @generated
-   */
-  int EF_NETMASK_CONSTANT = 20;
-
-  /**
-   * The feature id for the '<em><b>Subnet</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_NETMASK_CONSTANT__SUBNET = 0;
-
-  /**
-   * The number of structural features of the '<em>EF Netmask Constant</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_NETMASK_CONSTANT_FEATURE_COUNT = 1;
-
-  /**
    * The meta object id for the '{@link org.xtext.example.easywall.easyWall.impl.EFNetportConstantImpl <em>EF Netport Constant</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1032,7 +1004,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFNetportConstant()
    * @generated
    */
-  int EF_NETPORT_CONSTANT = 21;
+  int EF_NETPORT_CONSTANT = 20;
 
   /**
    * The feature id for the '<em><b>Netport</b></em>' attribute.
@@ -1060,7 +1032,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFAssignment()
    * @generated
    */
-  int EF_ASSIGNMENT = 22;
+  int EF_ASSIGNMENT = 21;
 
   /**
    * The feature id for the '<em><b>Any</b></em>' attribute.
@@ -1124,7 +1096,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFOrExpression()
    * @generated
    */
-  int EF_OR_EXPRESSION = 23;
+  int EF_OR_EXPRESSION = 22;
 
   /**
    * The feature id for the '<em><b>Any</b></em>' attribute.
@@ -1188,7 +1160,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFAndExpression()
    * @generated
    */
-  int EF_AND_EXPRESSION = 24;
+  int EF_AND_EXPRESSION = 23;
 
   /**
    * The feature id for the '<em><b>Any</b></em>' attribute.
@@ -1252,7 +1224,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFEqualExpression()
    * @generated
    */
-  int EF_EQUAL_EXPRESSION = 25;
+  int EF_EQUAL_EXPRESSION = 24;
 
   /**
    * The feature id for the '<em><b>Any</b></em>' attribute.
@@ -1316,7 +1288,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFRelExpression()
    * @generated
    */
-  int EF_REL_EXPRESSION = 26;
+  int EF_REL_EXPRESSION = 25;
 
   /**
    * The feature id for the '<em><b>Any</b></em>' attribute.
@@ -1380,7 +1352,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFAddExpression()
    * @generated
    */
-  int EF_ADD_EXPRESSION = 27;
+  int EF_ADD_EXPRESSION = 26;
 
   /**
    * The feature id for the '<em><b>Any</b></em>' attribute.
@@ -1444,7 +1416,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFMultExpression()
    * @generated
    */
-  int EF_MULT_EXPRESSION = 28;
+  int EF_MULT_EXPRESSION = 27;
 
   /**
    * The feature id for the '<em><b>Any</b></em>' attribute.
@@ -1508,7 +1480,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFNotExpression()
    * @generated
    */
-  int EF_NOT_EXPRESSION = 29;
+  int EF_NOT_EXPRESSION = 28;
 
   /**
    * The feature id for the '<em><b>Any</b></em>' attribute.
@@ -1563,7 +1535,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFMemberSelection()
    * @generated
    */
-  int EF_MEMBER_SELECTION = 30;
+  int EF_MEMBER_SELECTION = 29;
 
   /**
    * The feature id for the '<em><b>Any</b></em>' attribute.
@@ -1636,7 +1608,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFStringConstant()
    * @generated
    */
-  int EF_STRING_CONSTANT = 31;
+  int EF_STRING_CONSTANT = 30;
 
   /**
    * The feature id for the '<em><b>Any</b></em>' attribute.
@@ -1691,7 +1663,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFIntConstant()
    * @generated
    */
-  int EF_INT_CONSTANT = 32;
+  int EF_INT_CONSTANT = 31;
 
   /**
    * The feature id for the '<em><b>Any</b></em>' attribute.
@@ -1746,7 +1718,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFBoolConstant()
    * @generated
    */
-  int EF_BOOL_CONSTANT = 33;
+  int EF_BOOL_CONSTANT = 32;
 
   /**
    * The feature id for the '<em><b>Any</b></em>' attribute.
@@ -1801,7 +1773,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFDirectionConstant()
    * @generated
    */
-  int EF_DIRECTION_CONSTANT = 34;
+  int EF_DIRECTION_CONSTANT = 33;
 
   /**
    * The feature id for the '<em><b>Any</b></em>' attribute.
@@ -1856,7 +1828,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFNetworkProtocolConstant()
    * @generated
    */
-  int EF_NETWORK_PROTOCOL_CONSTANT = 35;
+  int EF_NETWORK_PROTOCOL_CONSTANT = 34;
 
   /**
    * The feature id for the '<em><b>Any</b></em>' attribute.
@@ -1911,7 +1883,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFTransportProtocolConstant()
    * @generated
    */
-  int EF_TRANSPORT_PROTOCOL_CONSTANT = 36;
+  int EF_TRANSPORT_PROTOCOL_CONSTANT = 35;
 
   /**
    * The feature id for the '<em><b>Any</b></em>' attribute.
@@ -1966,7 +1938,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFApplicationProtocolConstant()
    * @generated
    */
-  int EF_APPLICATION_PROTOCOL_CONSTANT = 37;
+  int EF_APPLICATION_PROTOCOL_CONSTANT = 36;
 
   /**
    * The feature id for the '<em><b>Any</b></em>' attribute.
@@ -2021,7 +1993,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFIPv6Constant()
    * @generated
    */
-  int EFI_PV6_CONSTANT = 38;
+  int EFI_PV6_CONSTANT = 37;
 
   /**
    * The feature id for the '<em><b>Any</b></em>' attribute.
@@ -2076,7 +2048,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFIPv4Constant()
    * @generated
    */
-  int EFI_PV4_CONSTANT = 39;
+  int EFI_PV4_CONSTANT = 38;
 
   /**
    * The feature id for the '<em><b>Any</b></em>' attribute.
@@ -2131,7 +2103,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFThis()
    * @generated
    */
-  int EF_THIS = 40;
+  int EF_THIS = 39;
 
   /**
    * The feature id for the '<em><b>Any</b></em>' attribute.
@@ -2177,7 +2149,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFSuper()
    * @generated
    */
-  int EF_SUPER = 41;
+  int EF_SUPER = 40;
 
   /**
    * The feature id for the '<em><b>Any</b></em>' attribute.
@@ -2223,7 +2195,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFNew()
    * @generated
    */
-  int EF_NEW = 42;
+  int EF_NEW = 41;
 
   /**
    * The feature id for the '<em><b>Any</b></em>' attribute.
@@ -2278,7 +2250,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFBracketsExpression()
    * @generated
    */
-  int EF_BRACKETS_EXPRESSION = 43;
+  int EF_BRACKETS_EXPRESSION = 42;
 
   /**
    * The feature id for the '<em><b>Any</b></em>' attribute.
@@ -2333,7 +2305,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFFunctionCall()
    * @generated
    */
-  int EF_FUNCTION_CALL = 44;
+  int EF_FUNCTION_CALL = 43;
 
   /**
    * The feature id for the '<em><b>Any</b></em>' attribute.
@@ -2397,7 +2369,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFSymbolRef()
    * @generated
    */
-  int EF_SYMBOL_REF = 45;
+  int EF_SYMBOL_REF = 44;
 
   /**
    * The feature id for the '<em><b>Any</b></em>' attribute.
@@ -2452,7 +2424,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFAllow()
    * @generated
    */
-  int EF_ALLOW = 46;
+  int EF_ALLOW = 45;
 
   /**
    * The feature id for the '<em><b>Any</b></em>' attribute.
@@ -2498,7 +2470,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFDrop()
    * @generated
    */
-  int EF_DROP = 47;
+  int EF_DROP = 46;
 
   /**
    * The feature id for the '<em><b>Any</b></em>' attribute.
@@ -2544,7 +2516,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFReject()
    * @generated
    */
-  int EF_REJECT = 48;
+  int EF_REJECT = 47;
 
   /**
    * The feature id for the '<em><b>Any</b></em>' attribute.
@@ -2590,7 +2562,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFWriteLog()
    * @generated
    */
-  int EF_WRITE_LOG = 49;
+  int EF_WRITE_LOG = 48;
 
   /**
    * The feature id for the '<em><b>Any</b></em>' attribute.
@@ -2645,7 +2617,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFWriteLogLevel()
    * @generated
    */
-  int EF_WRITE_LOG_LEVEL = 50;
+  int EF_WRITE_LOG_LEVEL = 49;
 
   /**
    * The feature id for the '<em><b>Any</b></em>' attribute.
@@ -2709,7 +2681,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFGetTime()
    * @generated
    */
-  int EF_GET_TIME = 51;
+  int EF_GET_TIME = 50;
 
   /**
    * The feature id for the '<em><b>Any</b></em>' attribute.
@@ -2755,7 +2727,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFGetPacketField()
    * @generated
    */
-  int EF_GET_PACKET_FIELD = 52;
+  int EF_GET_PACKET_FIELD = 51;
 
   /**
    * The feature id for the '<em><b>Any</b></em>' attribute.
@@ -2810,7 +2782,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFDefaultAction()
    * @generated
    */
-  int EF_DEFAULT_ACTION = 53;
+  int EF_DEFAULT_ACTION = 52;
 
   /**
    * The meta object id for the '{@link org.xtext.example.easywall.easyWall.EFNetworkNativeType <em>EF Network Native Type</em>}' enum.
@@ -2820,7 +2792,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFNetworkNativeType()
    * @generated
    */
-  int EF_NETWORK_NATIVE_TYPE = 54;
+  int EF_NETWORK_NATIVE_TYPE = 53;
 
   /**
    * The meta object id for the '{@link org.xtext.example.easywall.easyWall.EFPrimitiveType <em>EF Primitive Type</em>}' enum.
@@ -2830,7 +2802,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFPrimitiveType()
    * @generated
    */
-  int EF_PRIMITIVE_TYPE = 55;
+  int EF_PRIMITIVE_TYPE = 54;
 
   /**
    * The meta object id for the '{@link org.xtext.example.easywall.easyWall.EFDirectionNativeType <em>EF Direction Native Type</em>}' enum.
@@ -2840,7 +2812,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFDirectionNativeType()
    * @generated
    */
-  int EF_DIRECTION_NATIVE_TYPE = 56;
+  int EF_DIRECTION_NATIVE_TYPE = 55;
 
   /**
    * The meta object id for the '{@link org.xtext.example.easywall.easyWall.EFLogLevel <em>EF Log Level</em>}' enum.
@@ -2850,7 +2822,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFLogLevel()
    * @generated
    */
-  int EF_LOG_LEVEL = 57;
+  int EF_LOG_LEVEL = 56;
 
   /**
    * The meta object id for the '{@link org.xtext.example.easywall.easyWall.EFRulesTypes <em>EF Rules Types</em>}' enum.
@@ -2860,7 +2832,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFRulesTypes()
    * @generated
    */
-  int EF_RULES_TYPES = 58;
+  int EF_RULES_TYPES = 57;
 
   /**
    * The meta object id for the '{@link org.xtext.example.easywall.easyWall.NETWORKLAYERPROTOCOL <em>NETWORKLAYERPROTOCOL</em>}' enum.
@@ -2870,7 +2842,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getNETWORKLAYERPROTOCOL()
    * @generated
    */
-  int NETWORKLAYERPROTOCOL = 59;
+  int NETWORKLAYERPROTOCOL = 58;
 
   /**
    * The meta object id for the '{@link org.xtext.example.easywall.easyWall.TRANSPORTLAYERPROTOCOL <em>TRANSPORTLAYERPROTOCOL</em>}' enum.
@@ -2880,7 +2852,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getTRANSPORTLAYERPROTOCOL()
    * @generated
    */
-  int TRANSPORTLAYERPROTOCOL = 60;
+  int TRANSPORTLAYERPROTOCOL = 59;
 
   /**
    * The meta object id for the '{@link org.xtext.example.easywall.easyWall.APPLICATIONLAYERPROTOCOL <em>APPLICATIONLAYERPROTOCOL</em>}' enum.
@@ -2890,7 +2862,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getAPPLICATIONLAYERPROTOCOL()
    * @generated
    */
-  int APPLICATIONLAYERPROTOCOL = 61;
+  int APPLICATIONLAYERPROTOCOL = 60;
 
 
   /**
@@ -3587,27 +3559,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   EAttribute getEFNetworkConstant_Rawnetmask();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.easywall.easyWall.EFNetmaskConstant <em>EF Netmask Constant</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>EF Netmask Constant</em>'.
-   * @see org.xtext.example.easywall.easyWall.EFNetmaskConstant
-   * @generated
-   */
-  EClass getEFNetmaskConstant();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.easywall.easyWall.EFNetmaskConstant#getSubnet <em>Subnet</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Subnet</em>'.
-   * @see org.xtext.example.easywall.easyWall.EFNetmaskConstant#getSubnet()
-   * @see #getEFNetmaskConstant()
-   * @generated
-   */
-  EAttribute getEFNetmaskConstant_Subnet();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.easywall.easyWall.EFNetportConstant <em>EF Netport Constant</em>}'.
@@ -5008,24 +4959,6 @@ public interface EasyWallPackage extends EPackage
      * @generated
      */
     EAttribute EF_NETWORK_CONSTANT__RAWNETMASK = eINSTANCE.getEFNetworkConstant_Rawnetmask();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.easywall.easyWall.impl.EFNetmaskConstantImpl <em>EF Netmask Constant</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.easywall.easyWall.impl.EFNetmaskConstantImpl
-     * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFNetmaskConstant()
-     * @generated
-     */
-    EClass EF_NETMASK_CONSTANT = eINSTANCE.getEFNetmaskConstant();
-
-    /**
-     * The meta object literal for the '<em><b>Subnet</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EF_NETMASK_CONSTANT__SUBNET = eINSTANCE.getEFNetmaskConstant_Subnet();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.easywall.easyWall.impl.EFNetportConstantImpl <em>EF Netport Constant</em>}' class.

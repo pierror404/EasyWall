@@ -43,7 +43,6 @@ import org.xtext.example.easywall.easyWall.EFMember;
 import org.xtext.example.easywall.easyWall.EFMemberSelection;
 import org.xtext.example.easywall.easyWall.EFMethod;
 import org.xtext.example.easywall.easyWall.EFMultExpression;
-import org.xtext.example.easywall.easyWall.EFNetmaskConstant;
 import org.xtext.example.easywall.easyWall.EFNetportConstant;
 import org.xtext.example.easywall.easyWall.EFNetworkConstant;
 import org.xtext.example.easywall.easyWall.EFNetworkNativeType;
@@ -220,13 +219,6 @@ public class EasyWallPackageImpl extends EPackageImpl implements EasyWallPackage
    * @generated
    */
   private EClass efNetworkConstantEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass efNetmaskConstantEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1298,28 +1290,6 @@ public class EasyWallPackageImpl extends EPackageImpl implements EasyWallPackage
    * @generated
    */
   @Override
-  public EClass getEFNetmaskConstant()
-  {
-    return efNetmaskConstantEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getEFNetmaskConstant_Subnet()
-  {
-    return (EAttribute)efNetmaskConstantEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getEFNetportConstant()
   {
     return efNetportConstantEClass;
@@ -2288,9 +2258,6 @@ public class EasyWallPackageImpl extends EPackageImpl implements EasyWallPackage
     createEAttribute(efNetworkConstantEClass, EF_NETWORK_CONSTANT__RAWIP);
     createEAttribute(efNetworkConstantEClass, EF_NETWORK_CONSTANT__RAWNETMASK);
 
-    efNetmaskConstantEClass = createEClass(EF_NETMASK_CONSTANT);
-    createEAttribute(efNetmaskConstantEClass, EF_NETMASK_CONSTANT__SUBNET);
-
     efNetportConstantEClass = createEClass(EF_NETPORT_CONSTANT);
     createEAttribute(efNetportConstantEClass, EF_NETPORT_CONSTANT__NETPORT);
 
@@ -2560,9 +2527,6 @@ public class EasyWallPackageImpl extends EPackageImpl implements EasyWallPackage
     initEAttribute(getEFNetworkConstant_Varnetmask(), ecorePackage.getEString(), "varnetmask", null, 0, 1, EFNetworkConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEFNetworkConstant_Rawip(), ecorePackage.getEString(), "rawip", null, 0, 1, EFNetworkConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEFNetworkConstant_Rawnetmask(), ecorePackage.getEInt(), "rawnetmask", null, 0, 1, EFNetworkConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(efNetmaskConstantEClass, EFNetmaskConstant.class, "EFNetmaskConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getEFNetmaskConstant_Subnet(), ecorePackage.getEInt(), "subnet", null, 0, 1, EFNetmaskConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(efNetportConstantEClass, EFNetportConstant.class, "EFNetportConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getEFNetportConstant_Netport(), ecorePackage.getEInt(), "netport", null, 0, 1, EFNetportConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

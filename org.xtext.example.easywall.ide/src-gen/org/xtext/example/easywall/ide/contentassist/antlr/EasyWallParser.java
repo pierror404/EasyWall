@@ -133,7 +133,6 @@ public class EasyWallParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getEFNetworkSYNTAXAccess().getGroup_1(), "rule__EFNetworkSYNTAX__Group_1__0");
 			builder.put(grammarAccess.getEFNetworkSYNTAXAccess().getGroup_2(), "rule__EFNetworkSYNTAX__Group_2__0");
 			builder.put(grammarAccess.getEFNetworkSYNTAXAccess().getGroup_3(), "rule__EFNetworkSYNTAX__Group_3__0");
-			builder.put(grammarAccess.getEFNetmaskSYNTAXAccess().getGroup(), "rule__EFNetmaskSYNTAX__Group__0");
 			builder.put(grammarAccess.getEFNetportSYNTAXAccess().getGroup(), "rule__EFNetportSYNTAX__Group__0");
 			builder.put(grammarAccess.getEFProgramAccess().getRulesAssignment_1_0(), "rule__EFProgram__RulesAssignment_1_0");
 			builder.put(grammarAccess.getEFProgramAccess().getFirewallAssignment_1_1(), "rule__EFProgram__FirewallAssignment_1_1");
@@ -212,7 +211,6 @@ public class EasyWallParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getEFNetworkSYNTAXAccess().getVarnetmaskAssignment_2_2(), "rule__EFNetworkSYNTAX__VarnetmaskAssignment_2_2");
 			builder.put(grammarAccess.getEFNetworkSYNTAXAccess().getVaripAssignment_3_0(), "rule__EFNetworkSYNTAX__VaripAssignment_3_0");
 			builder.put(grammarAccess.getEFNetworkSYNTAXAccess().getRawnetmaskAssignment_3_2(), "rule__EFNetworkSYNTAX__RawnetmaskAssignment_3_2");
-			builder.put(grammarAccess.getEFNetmaskSYNTAXAccess().getSubnetAssignment_1(), "rule__EFNetmaskSYNTAX__SubnetAssignment_1");
 			builder.put(grammarAccess.getEFNetportSYNTAXAccess().getNetportAssignment_2(), "rule__EFNetportSYNTAX__NetportAssignment_2");
 		}
 	}

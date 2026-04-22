@@ -204,15 +204,6 @@ public interface EasyWallFactory extends EFactory
   EFNetworkConstant createEFNetworkConstant();
 
   /**
-   * Returns a new object of class '<em>EF Netmask Constant</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>EF Netmask Constant</em>'.
-   * @generated
-   */
-  EFNetmaskConstant createEFNetmaskConstant();
-
-  /**
    * Returns a new object of class '<em>EF Netport Constant</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

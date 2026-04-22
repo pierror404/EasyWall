@@ -154,9 +154,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EasyWall.ecore#//EFNetworkConstant/rawip"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EasyWall.ecore#//EFNetworkConstant/rawnetmask"/>
     </genClasses>
-    <genClasses ecoreClass="EasyWall.ecore#//EFNetmaskConstant">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EasyWall.ecore#//EFNetmaskConstant/subnet"/>
-    </genClasses>
     <genClasses ecoreClass="EasyWall.ecore#//EFNetportConstant">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EasyWall.ecore#//EFNetportConstant/netport"/>
     </genClasses>
