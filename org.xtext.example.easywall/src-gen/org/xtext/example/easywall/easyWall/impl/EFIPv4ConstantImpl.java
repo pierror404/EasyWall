@@ -21,6 +21,8 @@ import org.xtext.example.easywall.easyWall.EasyWallPackage;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.example.easywall.easyWall.impl.EFIPv4ConstantImpl#getIpv4 <em>Ipv4</em>}</li>
+ *   <li>{@link org.xtext.example.easywall.easyWall.impl.EFIPv4ConstantImpl#getAny <em>Any</em>}</li>
+ *   <li>{@link org.xtext.example.easywall.easyWall.impl.EFIPv4ConstantImpl#getLocalhost <em>Localhost</em>}</li>
  * </ul>
  *
  * @generated
@@ -46,6 +48,46 @@ public class EFIPv4ConstantImpl extends EFExpressionImpl implements EFIPv4Consta
    * @ordered
    */
   protected String ipv4 = IPV4_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getAny() <em>Any</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAny()
+   * @generated
+   * @ordered
+   */
+  protected static final String ANY_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getAny() <em>Any</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAny()
+   * @generated
+   * @ordered
+   */
+  protected String any = ANY_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getLocalhost() <em>Localhost</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLocalhost()
+   * @generated
+   * @ordered
+   */
+  protected static final String LOCALHOST_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getLocalhost() <em>Localhost</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLocalhost()
+   * @generated
+   * @ordered
+   */
+  protected String localhost = LOCALHOST_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -99,12 +141,66 @@ public class EFIPv4ConstantImpl extends EFExpressionImpl implements EFIPv4Consta
    * @generated
    */
   @Override
+  public String getAny()
+  {
+    return any;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setAny(String newAny)
+  {
+    String oldAny = any;
+    any = newAny;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EasyWallPackage.EFI_PV4_CONSTANT__ANY, oldAny, any));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getLocalhost()
+  {
+    return localhost;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setLocalhost(String newLocalhost)
+  {
+    String oldLocalhost = localhost;
+    localhost = newLocalhost;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EasyWallPackage.EFI_PV4_CONSTANT__LOCALHOST, oldLocalhost, localhost));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
       case EasyWallPackage.EFI_PV4_CONSTANT__IPV4:
         return getIpv4();
+      case EasyWallPackage.EFI_PV4_CONSTANT__ANY:
+        return getAny();
+      case EasyWallPackage.EFI_PV4_CONSTANT__LOCALHOST:
+        return getLocalhost();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -121,6 +217,12 @@ public class EFIPv4ConstantImpl extends EFExpressionImpl implements EFIPv4Consta
     {
       case EasyWallPackage.EFI_PV4_CONSTANT__IPV4:
         setIpv4((String)newValue);
+        return;
+      case EasyWallPackage.EFI_PV4_CONSTANT__ANY:
+        setAny((String)newValue);
+        return;
+      case EasyWallPackage.EFI_PV4_CONSTANT__LOCALHOST:
+        setLocalhost((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -139,6 +241,12 @@ public class EFIPv4ConstantImpl extends EFExpressionImpl implements EFIPv4Consta
       case EasyWallPackage.EFI_PV4_CONSTANT__IPV4:
         setIpv4(IPV4_EDEFAULT);
         return;
+      case EasyWallPackage.EFI_PV4_CONSTANT__ANY:
+        setAny(ANY_EDEFAULT);
+        return;
+      case EasyWallPackage.EFI_PV4_CONSTANT__LOCALHOST:
+        setLocalhost(LOCALHOST_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -155,6 +263,10 @@ public class EFIPv4ConstantImpl extends EFExpressionImpl implements EFIPv4Consta
     {
       case EasyWallPackage.EFI_PV4_CONSTANT__IPV4:
         return IPV4_EDEFAULT == null ? ipv4 != null : !IPV4_EDEFAULT.equals(ipv4);
+      case EasyWallPackage.EFI_PV4_CONSTANT__ANY:
+        return ANY_EDEFAULT == null ? any != null : !ANY_EDEFAULT.equals(any);
+      case EasyWallPackage.EFI_PV4_CONSTANT__LOCALHOST:
+        return LOCALHOST_EDEFAULT == null ? localhost != null : !LOCALHOST_EDEFAULT.equals(localhost);
     }
     return super.eIsSet(featureID);
   }
@@ -172,6 +284,10 @@ public class EFIPv4ConstantImpl extends EFExpressionImpl implements EFIPv4Consta
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (ipv4: ");
     result.append(ipv4);
+    result.append(", any: ");
+    result.append(any);
+    result.append(", localhost: ");
+    result.append(localhost);
     result.append(')');
     return result.toString();
   }

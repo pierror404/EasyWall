@@ -1107,7 +1107,7 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EasyWallPackage.Literals.EF_BRACKETS_EXPRESSION__EXPRESSION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEFPrimaryExpressionAccess().getExpressionEFExpressionParserRuleCall_16_2_0(), semanticObject.getExpression());
+		feeder.accept(grammarAccess.getEFPrimaryExpressionAccess().getExpressionEFExpressionParserRuleCall_14_2_0(), semanticObject.getExpression());
 		feeder.finish();
 	}
 	
@@ -1176,11 +1176,17 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     EFPrimaryExpression returns EFExpression
 	 *
 	 * Constraint:
-	 *     (any='any' | localhost='localhost' | port=EFNetportSYNTAX)
+	 *     port=EFNetportSYNTAX
 	 * </pre>
 	 */
 	protected void sequence_EFPrimaryExpression(ISerializationContext context, EFExpression semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, EasyWallPackage.Literals.EF_EXPRESSION__PORT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EasyWallPackage.Literals.EF_EXPRESSION__PORT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getEFPrimaryExpressionAccess().getPortEFNetportSYNTAXParserRuleCall_10_0(), semanticObject.getPort());
+		feeder.finish();
 	}
 	
 	
@@ -1242,17 +1248,11 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     EFPrimaryExpression returns EFIPv4Constant
 	 *
 	 * Constraint:
-	 *     ipv4=EFIPV4SYNTAX
+	 *     (ipv4=EFIPV4SYNTAX | any='any' | localhost='localhost')
 	 * </pre>
 	 */
 	protected void sequence_EFPrimaryExpression(ISerializationContext context, EFIPv4Constant semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, EasyWallPackage.Literals.EFI_PV4_CONSTANT__IPV4) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EasyWallPackage.Literals.EFI_PV4_CONSTANT__IPV4));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEFPrimaryExpressionAccess().getIpv4EFIPV4SYNTAXTerminalRuleCall_8_1_0(), semanticObject.getIpv4());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -1368,7 +1368,7 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EasyWallPackage.Literals.EF_NETWORK_CONSTANT__NETWORK));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEFPrimaryExpressionAccess().getNetworkEFNetworkSYNTAXParserRuleCall_11_1_0(), semanticObject.getNetwork());
+		feeder.accept(grammarAccess.getEFPrimaryExpressionAccess().getNetworkEFNetworkSYNTAXParserRuleCall_9_1_0(), semanticObject.getNetwork());
 		feeder.finish();
 	}
 	
@@ -1446,7 +1446,7 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EasyWallPackage.Literals.EF_NEW__TYPE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEFPrimaryExpressionAccess().getTypeEFRuleClassQualifiedNameParserRuleCall_15_2_0_1(), semanticObject.eGet(EasyWallPackage.Literals.EF_NEW__TYPE, false));
+		feeder.accept(grammarAccess.getEFPrimaryExpressionAccess().getTypeEFRuleClassQualifiedNameParserRuleCall_13_2_0_1(), semanticObject.eGet(EasyWallPackage.Literals.EF_NEW__TYPE, false));
 		feeder.finish();
 	}
 	
@@ -1485,7 +1485,7 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EasyWallPackage.Literals.EF_STRING_CONSTANT__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEFPrimaryExpressionAccess().getValueSTRINGTerminalRuleCall_0_2_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getEFPrimaryExpressionAccess().getValueSTRINGTerminalRuleCall_0_1_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -1557,7 +1557,7 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EasyWallPackage.Literals.EF_SYMBOL_REF__SYMBOL));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEFPrimaryExpressionAccess().getSymbolQualifiedNameParserRuleCall_19_1_0(), semanticObject.getSymbol());
+		feeder.accept(grammarAccess.getEFPrimaryExpressionAccess().getSymbolQualifiedNameParserRuleCall_17_1_0(), semanticObject.getSymbol());
 		feeder.finish();
 	}
 	

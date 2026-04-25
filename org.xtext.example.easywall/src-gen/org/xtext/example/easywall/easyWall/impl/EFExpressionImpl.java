@@ -23,8 +23,6 @@ import org.xtext.example.easywall.easyWall.EasyWallPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.easywall.easyWall.impl.EFExpressionImpl#getAny <em>Any</em>}</li>
- *   <li>{@link org.xtext.example.easywall.easyWall.impl.EFExpressionImpl#getLocalhost <em>Localhost</em>}</li>
  *   <li>{@link org.xtext.example.easywall.easyWall.impl.EFExpressionImpl#getPort <em>Port</em>}</li>
  * </ul>
  *
@@ -32,46 +30,6 @@ import org.xtext.example.easywall.easyWall.EasyWallPackage;
  */
 public class EFExpressionImpl extends EFStatementImpl implements EFExpression
 {
-  /**
-   * The default value of the '{@link #getAny() <em>Any</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAny()
-   * @generated
-   * @ordered
-   */
-  protected static final String ANY_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getAny() <em>Any</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAny()
-   * @generated
-   * @ordered
-   */
-  protected String any = ANY_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getLocalhost() <em>Localhost</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getLocalhost()
-   * @generated
-   * @ordered
-   */
-  protected static final String LOCALHOST_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getLocalhost() <em>Localhost</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getLocalhost()
-   * @generated
-   * @ordered
-   */
-  protected String localhost = LOCALHOST_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getPort() <em>Port</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -101,56 +59,6 @@ public class EFExpressionImpl extends EFStatementImpl implements EFExpression
   protected EClass eStaticClass()
   {
     return EasyWallPackage.Literals.EF_EXPRESSION;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getAny()
-  {
-    return any;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setAny(String newAny)
-  {
-    String oldAny = any;
-    any = newAny;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EasyWallPackage.EF_EXPRESSION__ANY, oldAny, any));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getLocalhost()
-  {
-    return localhost;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setLocalhost(String newLocalhost)
-  {
-    String oldLocalhost = localhost;
-    localhost = newLocalhost;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EasyWallPackage.EF_EXPRESSION__LOCALHOST, oldLocalhost, localhost));
   }
 
   /**
@@ -229,10 +137,6 @@ public class EFExpressionImpl extends EFStatementImpl implements EFExpression
   {
     switch (featureID)
     {
-      case EasyWallPackage.EF_EXPRESSION__ANY:
-        return getAny();
-      case EasyWallPackage.EF_EXPRESSION__LOCALHOST:
-        return getLocalhost();
       case EasyWallPackage.EF_EXPRESSION__PORT:
         return getPort();
     }
@@ -249,12 +153,6 @@ public class EFExpressionImpl extends EFStatementImpl implements EFExpression
   {
     switch (featureID)
     {
-      case EasyWallPackage.EF_EXPRESSION__ANY:
-        setAny((String)newValue);
-        return;
-      case EasyWallPackage.EF_EXPRESSION__LOCALHOST:
-        setLocalhost((String)newValue);
-        return;
       case EasyWallPackage.EF_EXPRESSION__PORT:
         setPort((EFNetportConstant)newValue);
         return;
@@ -272,12 +170,6 @@ public class EFExpressionImpl extends EFStatementImpl implements EFExpression
   {
     switch (featureID)
     {
-      case EasyWallPackage.EF_EXPRESSION__ANY:
-        setAny(ANY_EDEFAULT);
-        return;
-      case EasyWallPackage.EF_EXPRESSION__LOCALHOST:
-        setLocalhost(LOCALHOST_EDEFAULT);
-        return;
       case EasyWallPackage.EF_EXPRESSION__PORT:
         setPort((EFNetportConstant)null);
         return;
@@ -295,33 +187,10 @@ public class EFExpressionImpl extends EFStatementImpl implements EFExpression
   {
     switch (featureID)
     {
-      case EasyWallPackage.EF_EXPRESSION__ANY:
-        return ANY_EDEFAULT == null ? any != null : !ANY_EDEFAULT.equals(any);
-      case EasyWallPackage.EF_EXPRESSION__LOCALHOST:
-        return LOCALHOST_EDEFAULT == null ? localhost != null : !LOCALHOST_EDEFAULT.equals(localhost);
       case EasyWallPackage.EF_EXPRESSION__PORT:
         return port != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (any: ");
-    result.append(any);
-    result.append(", localhost: ");
-    result.append(localhost);
-    result.append(')');
-    return result.toString();
   }
 
 } //EFExpressionImpl

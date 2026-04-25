@@ -13,8 +13,6 @@ package org.xtext.example.easywall.easyWall;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.easywall.easyWall.EFExpression#getAny <em>Any</em>}</li>
- *   <li>{@link org.xtext.example.easywall.easyWall.EFExpression#getLocalhost <em>Localhost</em>}</li>
  *   <li>{@link org.xtext.example.easywall.easyWall.EFExpression#getPort <em>Port</em>}</li>
  * </ul>
  *
@@ -24,50 +22,6 @@ package org.xtext.example.easywall.easyWall;
  */
 public interface EFExpression extends EFStatement
 {
-  /**
-   * Returns the value of the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Any</em>' attribute.
-   * @see #setAny(String)
-   * @see org.xtext.example.easywall.easyWall.EasyWallPackage#getEFExpression_Any()
-   * @model
-   * @generated
-   */
-  String getAny();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.easywall.easyWall.EFExpression#getAny <em>Any</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Any</em>' attribute.
-   * @see #getAny()
-   * @generated
-   */
-  void setAny(String value);
-
-  /**
-   * Returns the value of the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Localhost</em>' attribute.
-   * @see #setLocalhost(String)
-   * @see org.xtext.example.easywall.easyWall.EasyWallPackage#getEFExpression_Localhost()
-   * @model
-   * @generated
-   */
-  String getLocalhost();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.easywall.easyWall.EFExpression#getLocalhost <em>Localhost</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Localhost</em>' attribute.
-   * @see #getLocalhost()
-   * @generated
-   */
-  void setLocalhost(String value);
-
   /**
    * Returns the value of the '<em><b>Port</b></em>' containment reference.
    * <!-- begin-user-doc -->

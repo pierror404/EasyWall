@@ -23,7 +23,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalEasyWallParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_EFIPV6SYNTAX", "RULE_EFIPV4SYNTAX", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'pack'", "';'", "'import'", "'.'", "'.*'", "'firewall'", "'{'", "'}'", "'default'", "'apply'", "'set'", "'var'", "'='", "':'", "'fun'", "'('", "','", "')'", "'void'", "'return'", "'if'", "'else'", "'->'", "'\"'", "'true'", "'false'", "'any'", "'localhost'", "'this'", "'super'", "'new'", "'allow'", "'block'", "'drop'", "'reject'", "'writelog'", "'getTime'", "'getPacketField'", "'rule'", "'at'", "'||'", "'or'", "'&&'", "'and'", "'!'", "'not'", "'=='", "'!='", "'isequalto'", "'>='", "'<='", "'>'", "'<'", "'+'", "'-'", "'*'", "'div'", "'%'", "'/'", "'deny'", "'network'", "'netip'", "'netipv6'", "'netport'", "'protocol'", "'direction'", "'netmask'", "'int'", "'string'", "'bool'", "'in'", "'out'", "'forward'", "'debug'", "'info'", "'warning'", "'error'", "'critical'", "'NetworkLayer'", "'TransportLayer'", "'ApplicationLayer'", "'IPv4'", "'IPv6'", "'ARP'", "'ICMP'", "'NAT'", "'RIP'", "'OSPF'", "'IPSEC'", "'IGMP'", "'UDP'", "'TCP'", "'QUIC'", "'SCTP'", "'HTTP'", "'HTTPS'", "'SMTP'", "'POP3'", "'IMAP'", "'FTP'", "'TFTP'", "'SNMP'", "'TELNET'", "'SSH'", "'DNS'", "'DHCP'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_EFIPV6SYNTAX", "RULE_EFIPV4SYNTAX", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'pack'", "';'", "'import'", "'.'", "'.*'", "'firewall'", "'{'", "'}'", "'default'", "'apply'", "'set'", "'var'", "'='", "':'", "'fun'", "'('", "','", "')'", "'void'", "'return'", "'if'", "'else'", "'->'", "'true'", "'false'", "'any'", "'localhost'", "'this'", "'super'", "'new'", "'allow'", "'block'", "'drop'", "'reject'", "'writelog'", "'getTime'", "'getPacketField'", "'rule'", "'at'", "'||'", "'or'", "'&&'", "'and'", "'!'", "'not'", "'=='", "'!='", "'isequalto'", "'>='", "'<='", "'>'", "'<'", "'+'", "'-'", "'*'", "'div'", "'%'", "'/'", "'deny'", "'network'", "'netip'", "'netipv6'", "'netport'", "'protocol'", "'direction'", "'netmask'", "'int'", "'string'", "'bool'", "'in'", "'out'", "'forward'", "'debug'", "'info'", "'warning'", "'error'", "'critical'", "'NetworkLayer'", "'TransportLayer'", "'ApplicationLayer'", "'IPv4'", "'IPv6'", "'ARP'", "'ICMP'", "'NAT'", "'RIP'", "'OSPF'", "'IPSEC'", "'IGMP'", "'UDP'", "'TCP'", "'QUIC'", "'SCTP'", "'HTTP'", "'HTTPS'", "'SMTP'", "'POP3'", "'IMAP'", "'FTP'", "'TFTP'", "'SNMP'", "'TELNET'", "'SSH'", "'DNS'", "'DHCP'"
     };
     public static final int T__50=50;
     public static final int T__59=59;
@@ -106,7 +106,6 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
     public static final int RULE_SL_COMMENT=10;
     public static final int T__77=77;
     public static final int T__78=78;
-    public static final int T__118=118;
     public static final int T__79=79;
     public static final int RULE_EFIPV4SYNTAX=8;
     public static final int T__73=73;
@@ -263,7 +262,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
             int alt2=2;
             int LA2_0 = input.LA(1);
 
-            if ( (LA2_0==EOF||LA2_0==51) ) {
+            if ( (LA2_0==EOF||LA2_0==50) ) {
                 alt2=1;
             }
             else if ( (LA2_0==18) ) {
@@ -286,7 +285,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                         int alt1=2;
                         int LA1_0 = input.LA(1);
 
-                        if ( (LA1_0==51) ) {
+                        if ( (LA1_0==50) ) {
                             alt1=1;
                         }
 
@@ -1977,20 +1976,20 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                 alt12=1;
                 }
                 break;
+            case 72:
             case 73:
             case 74:
             case 75:
             case 76:
             case 77:
             case 78:
-            case 79:
                 {
                 alt12=2;
                 }
                 break;
+            case 79:
             case 80:
             case 81:
-            case 82:
                 {
                 alt12=3;
                 }
@@ -2400,20 +2399,20 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
             // InternalEasyWall.g:818:3: ( ( (lv_nativetype_8_0= ruleEFNetworkNativeType ) ) | ( (lv_primitivetype_9_0= ruleEFPrimitiveType ) ) | ( ( ruleQualifiedName ) ) | ( (lv_void_11_0= 'void' ) ) )
             int alt15=4;
             switch ( input.LA(1) ) {
+            case 72:
             case 73:
             case 74:
             case 75:
             case 76:
             case 77:
             case 78:
-            case 79:
                 {
                 alt15=1;
                 }
                 break;
+            case 79:
             case 80:
             case 81:
-            case 82:
                 {
                 alt15=2;
                 }
@@ -2833,7 +2832,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                 int alt16=2;
                 int LA16_0 = input.LA(1);
 
-                if ( (LA16_0==RULE_ID||(LA16_0>=RULE_INT && LA16_0<=RULE_EFIPV4SYNTAX)||(LA16_0>=23 && LA16_0<=24)||LA16_0==26||LA16_0==28||(LA16_0>=32 && LA16_0<=33)||(LA16_0>=36 && LA16_0<=50)||(LA16_0>=57 && LA16_0<=58)||(LA16_0>=83 && LA16_0<=85)||(LA16_0>=94 && LA16_0<=118)) ) {
+                if ( ((LA16_0>=RULE_ID && LA16_0<=RULE_EFIPV4SYNTAX)||(LA16_0>=23 && LA16_0<=24)||LA16_0==26||LA16_0==28||(LA16_0>=32 && LA16_0<=33)||(LA16_0>=36 && LA16_0<=49)||(LA16_0>=56 && LA16_0<=57)||(LA16_0>=82 && LA16_0<=84)||(LA16_0>=93 && LA16_0<=117)) ) {
                     alt16=1;
                 }
 
@@ -2987,6 +2986,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                 }
                 break;
             case RULE_ID:
+            case RULE_STRING:
             case RULE_INT:
             case RULE_EFIPV6SYNTAX:
             case RULE_EFIPV4SYNTAX:
@@ -3006,12 +3006,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
             case 47:
             case 48:
             case 49:
-            case 50:
+            case 56:
             case 57:
-            case 58:
+            case 82:
             case 83:
             case 84:
-            case 85:
+            case 93:
             case 94:
             case 95:
             case 96:
@@ -3036,7 +3036,6 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
             case 115:
             case 116:
             case 117:
-            case 118:
                 {
                 alt17=3;
                 }
@@ -3617,7 +3616,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
             int alt19=2;
             int LA19_0 = input.LA(1);
 
-            if ( (LA19_0==RULE_ID||(LA19_0>=RULE_INT && LA19_0<=RULE_EFIPV4SYNTAX)||(LA19_0>=23 && LA19_0<=24)||LA19_0==26||LA19_0==28||(LA19_0>=32 && LA19_0<=33)||(LA19_0>=36 && LA19_0<=50)||(LA19_0>=57 && LA19_0<=58)||(LA19_0>=83 && LA19_0<=85)||(LA19_0>=94 && LA19_0<=118)) ) {
+            if ( ((LA19_0>=RULE_ID && LA19_0<=RULE_EFIPV4SYNTAX)||(LA19_0>=23 && LA19_0<=24)||LA19_0==26||LA19_0==28||(LA19_0>=32 && LA19_0<=33)||(LA19_0>=36 && LA19_0<=49)||(LA19_0>=56 && LA19_0<=57)||(LA19_0>=82 && LA19_0<=84)||(LA19_0>=93 && LA19_0<=117)) ) {
                 alt19=1;
             }
             else if ( (LA19_0==19) ) {
@@ -4064,7 +4063,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                 int alt21=2;
                 int LA21_0 = input.LA(1);
 
-                if ( ((LA21_0>=53 && LA21_0<=54)) ) {
+                if ( ((LA21_0>=52 && LA21_0<=53)) ) {
                     alt21=1;
                 }
 
@@ -4251,7 +4250,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                 int alt22=2;
                 int LA22_0 = input.LA(1);
 
-                if ( ((LA22_0>=55 && LA22_0<=56)) ) {
+                if ( ((LA22_0>=54 && LA22_0<=55)) ) {
                     alt22=1;
                 }
 
@@ -4438,7 +4437,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                 int alt23=2;
                 int LA23_0 = input.LA(1);
 
-                if ( ((LA23_0>=59 && LA23_0<=61)) ) {
+                if ( ((LA23_0>=58 && LA23_0<=60)) ) {
                     alt23=1;
                 }
 
@@ -4625,7 +4624,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                 int alt24=2;
                 int LA24_0 = input.LA(1);
 
-                if ( ((LA24_0>=62 && LA24_0<=65)) ) {
+                if ( ((LA24_0>=61 && LA24_0<=64)) ) {
                     alt24=1;
                 }
 
@@ -4812,7 +4811,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                 int alt25=2;
                 int LA25_0 = input.LA(1);
 
-                if ( ((LA25_0>=66 && LA25_0<=67)) ) {
+                if ( ((LA25_0>=65 && LA25_0<=66)) ) {
                     alt25=1;
                 }
 
@@ -4999,7 +4998,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                 int alt26=2;
                 int LA26_0 = input.LA(1);
 
-                if ( ((LA26_0>=68 && LA26_0<=70)) ) {
+                if ( ((LA26_0>=67 && LA26_0<=69)) ) {
                     alt26=1;
                 }
 
@@ -5165,10 +5164,10 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
             int alt27=2;
             int LA27_0 = input.LA(1);
 
-            if ( ((LA27_0>=57 && LA27_0<=58)) ) {
+            if ( ((LA27_0>=56 && LA27_0<=57)) ) {
                 alt27=1;
             }
-            else if ( (LA27_0==RULE_ID||(LA27_0>=RULE_INT && LA27_0<=RULE_EFIPV4SYNTAX)||LA27_0==26||LA27_0==28||(LA27_0>=36 && LA27_0<=50)||(LA27_0>=83 && LA27_0<=85)||(LA27_0>=94 && LA27_0<=118)) ) {
+            else if ( ((LA27_0>=RULE_ID && LA27_0<=RULE_EFIPV4SYNTAX)||LA27_0==26||LA27_0==28||(LA27_0>=36 && LA27_0<=49)||(LA27_0>=82 && LA27_0<=84)||(LA27_0>=93 && LA27_0<=117)) ) {
                 alt27=2;
             }
             else {
@@ -5463,7 +5462,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
             	            int alt29=2;
             	            int LA29_0 = input.LA(1);
 
-            	            if ( (LA29_0==RULE_ID||(LA29_0>=RULE_INT && LA29_0<=RULE_EFIPV4SYNTAX)||LA29_0==26||LA29_0==28||(LA29_0>=36 && LA29_0<=50)||(LA29_0>=57 && LA29_0<=58)||(LA29_0>=83 && LA29_0<=85)||(LA29_0>=94 && LA29_0<=118)) ) {
+            	            if ( ((LA29_0>=RULE_ID && LA29_0<=RULE_EFIPV4SYNTAX)||LA29_0==26||LA29_0==28||(LA29_0>=36 && LA29_0<=49)||(LA29_0>=56 && LA29_0<=57)||(LA29_0>=82 && LA29_0<=84)||(LA29_0>=93 && LA29_0<=117)) ) {
             	                alt29=1;
             	            }
             	            switch (alt29) {
@@ -5662,71 +5661,69 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEFPrimaryExpression"
-    // InternalEasyWall.g:1880:1: ruleEFPrimaryExpression returns [EObject current=null] : ( ( () otherlv_1= '\"' ( (lv_value_2_0= RULE_STRING ) ) otherlv_3= '\"' ) | ( () ( (lv_value_5_0= RULE_INT ) ) ) | ( () ( ( (lv_value_7_1= 'true' | lv_value_7_2= 'false' ) ) ) ) | ( () ( (lv_direction_9_0= ruleEFDirectionNativeType ) ) ) | ( () ( (lv_protocol_11_0= ruleNETWORKLAYERPROTOCOL ) ) ) | ( () ( (lv_protocol_13_0= ruleTRANSPORTLAYERPROTOCOL ) ) ) | ( () ( (lv_protocol_15_0= ruleAPPLICATIONLAYERPROTOCOL ) ) ) | ( () ( (lv_ipv6_17_0= RULE_EFIPV6SYNTAX ) ) ) | ( () ( (lv_ipv4_19_0= RULE_EFIPV4SYNTAX ) ) ) | ( (lv_any_20_0= 'any' ) ) | ( (lv_localhost_21_0= 'localhost' ) ) | ( () ( (lv_network_23_0= ruleEFNetworkSYNTAX ) ) ) | ( (lv_port_24_0= ruleEFNetportSYNTAX ) ) | ( () otherlv_26= 'this' ) | ( () otherlv_28= 'super' ) | ( () otherlv_30= 'new' ( ( ruleQualifiedName ) ) otherlv_32= '(' otherlv_33= ')' ) | ( () otherlv_35= '(' ( (lv_expression_36_0= ruleEFExpression ) ) otherlv_37= ')' ) | this_EFBuiltinFunction_38= ruleEFBuiltinFunction | ( () ( (lv_functionName_40_0= ruleQualifiedName ) ) otherlv_41= '(' ( ( (lv_args_42_0= ruleEFExpression ) ) (otherlv_43= ',' ( (lv_args_44_0= ruleEFExpression ) ) )* )? otherlv_45= ')' ) | ( () ( (lv_symbol_47_0= ruleQualifiedName ) ) ) ) ;
+    // InternalEasyWall.g:1880:1: ruleEFPrimaryExpression returns [EObject current=null] : ( ( () ( (lv_value_1_0= RULE_STRING ) ) ) | ( () ( (lv_value_3_0= RULE_INT ) ) ) | ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) ) | ( () ( (lv_direction_7_0= ruleEFDirectionNativeType ) ) ) | ( () ( (lv_protocol_9_0= ruleNETWORKLAYERPROTOCOL ) ) ) | ( () ( (lv_protocol_11_0= ruleTRANSPORTLAYERPROTOCOL ) ) ) | ( () ( (lv_protocol_13_0= ruleAPPLICATIONLAYERPROTOCOL ) ) ) | ( () ( (lv_ipv6_15_0= RULE_EFIPV6SYNTAX ) ) ) | ( () ( ( (lv_ipv4_17_0= RULE_EFIPV4SYNTAX ) ) | ( (lv_any_18_0= 'any' ) ) | ( (lv_localhost_19_0= 'localhost' ) ) ) ) | ( () ( (lv_network_21_0= ruleEFNetworkSYNTAX ) ) ) | ( (lv_port_22_0= ruleEFNetportSYNTAX ) ) | ( () otherlv_24= 'this' ) | ( () otherlv_26= 'super' ) | ( () otherlv_28= 'new' ( ( ruleQualifiedName ) ) otherlv_30= '(' otherlv_31= ')' ) | ( () otherlv_33= '(' ( (lv_expression_34_0= ruleEFExpression ) ) otherlv_35= ')' ) | this_EFBuiltinFunction_36= ruleEFBuiltinFunction | ( () ( (lv_functionName_38_0= ruleQualifiedName ) ) otherlv_39= '(' ( ( (lv_args_40_0= ruleEFExpression ) ) (otherlv_41= ',' ( (lv_args_42_0= ruleEFExpression ) ) )* )? otherlv_43= ')' ) | ( () ( (lv_symbol_45_0= ruleQualifiedName ) ) ) ) ;
     public final EObject ruleEFPrimaryExpression() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_1=null;
-        Token lv_value_2_0=null;
-        Token otherlv_3=null;
-        Token lv_value_5_0=null;
-        Token lv_value_7_1=null;
-        Token lv_value_7_2=null;
-        Token lv_ipv6_17_0=null;
-        Token lv_ipv4_19_0=null;
-        Token lv_any_20_0=null;
-        Token lv_localhost_21_0=null;
+        Token lv_value_1_0=null;
+        Token lv_value_3_0=null;
+        Token lv_value_5_1=null;
+        Token lv_value_5_2=null;
+        Token lv_ipv6_15_0=null;
+        Token lv_ipv4_17_0=null;
+        Token lv_any_18_0=null;
+        Token lv_localhost_19_0=null;
+        Token otherlv_24=null;
         Token otherlv_26=null;
         Token otherlv_28=null;
         Token otherlv_30=null;
-        Token otherlv_32=null;
+        Token otherlv_31=null;
         Token otherlv_33=null;
         Token otherlv_35=null;
-        Token otherlv_37=null;
+        Token otherlv_39=null;
         Token otherlv_41=null;
         Token otherlv_43=null;
-        Token otherlv_45=null;
-        Enumerator lv_direction_9_0 = null;
+        Enumerator lv_direction_7_0 = null;
+
+        Enumerator lv_protocol_9_0 = null;
 
         Enumerator lv_protocol_11_0 = null;
 
         Enumerator lv_protocol_13_0 = null;
 
-        Enumerator lv_protocol_15_0 = null;
+        EObject lv_network_21_0 = null;
 
-        EObject lv_network_23_0 = null;
+        EObject lv_port_22_0 = null;
 
-        EObject lv_port_24_0 = null;
+        EObject lv_expression_34_0 = null;
 
-        EObject lv_expression_36_0 = null;
+        EObject this_EFBuiltinFunction_36 = null;
 
-        EObject this_EFBuiltinFunction_38 = null;
+        AntlrDatatypeRuleToken lv_functionName_38_0 = null;
 
-        AntlrDatatypeRuleToken lv_functionName_40_0 = null;
+        EObject lv_args_40_0 = null;
 
         EObject lv_args_42_0 = null;
 
-        EObject lv_args_44_0 = null;
-
-        AntlrDatatypeRuleToken lv_symbol_47_0 = null;
+        AntlrDatatypeRuleToken lv_symbol_45_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalEasyWall.g:1886:2: ( ( ( () otherlv_1= '\"' ( (lv_value_2_0= RULE_STRING ) ) otherlv_3= '\"' ) | ( () ( (lv_value_5_0= RULE_INT ) ) ) | ( () ( ( (lv_value_7_1= 'true' | lv_value_7_2= 'false' ) ) ) ) | ( () ( (lv_direction_9_0= ruleEFDirectionNativeType ) ) ) | ( () ( (lv_protocol_11_0= ruleNETWORKLAYERPROTOCOL ) ) ) | ( () ( (lv_protocol_13_0= ruleTRANSPORTLAYERPROTOCOL ) ) ) | ( () ( (lv_protocol_15_0= ruleAPPLICATIONLAYERPROTOCOL ) ) ) | ( () ( (lv_ipv6_17_0= RULE_EFIPV6SYNTAX ) ) ) | ( () ( (lv_ipv4_19_0= RULE_EFIPV4SYNTAX ) ) ) | ( (lv_any_20_0= 'any' ) ) | ( (lv_localhost_21_0= 'localhost' ) ) | ( () ( (lv_network_23_0= ruleEFNetworkSYNTAX ) ) ) | ( (lv_port_24_0= ruleEFNetportSYNTAX ) ) | ( () otherlv_26= 'this' ) | ( () otherlv_28= 'super' ) | ( () otherlv_30= 'new' ( ( ruleQualifiedName ) ) otherlv_32= '(' otherlv_33= ')' ) | ( () otherlv_35= '(' ( (lv_expression_36_0= ruleEFExpression ) ) otherlv_37= ')' ) | this_EFBuiltinFunction_38= ruleEFBuiltinFunction | ( () ( (lv_functionName_40_0= ruleQualifiedName ) ) otherlv_41= '(' ( ( (lv_args_42_0= ruleEFExpression ) ) (otherlv_43= ',' ( (lv_args_44_0= ruleEFExpression ) ) )* )? otherlv_45= ')' ) | ( () ( (lv_symbol_47_0= ruleQualifiedName ) ) ) ) )
-            // InternalEasyWall.g:1887:2: ( ( () otherlv_1= '\"' ( (lv_value_2_0= RULE_STRING ) ) otherlv_3= '\"' ) | ( () ( (lv_value_5_0= RULE_INT ) ) ) | ( () ( ( (lv_value_7_1= 'true' | lv_value_7_2= 'false' ) ) ) ) | ( () ( (lv_direction_9_0= ruleEFDirectionNativeType ) ) ) | ( () ( (lv_protocol_11_0= ruleNETWORKLAYERPROTOCOL ) ) ) | ( () ( (lv_protocol_13_0= ruleTRANSPORTLAYERPROTOCOL ) ) ) | ( () ( (lv_protocol_15_0= ruleAPPLICATIONLAYERPROTOCOL ) ) ) | ( () ( (lv_ipv6_17_0= RULE_EFIPV6SYNTAX ) ) ) | ( () ( (lv_ipv4_19_0= RULE_EFIPV4SYNTAX ) ) ) | ( (lv_any_20_0= 'any' ) ) | ( (lv_localhost_21_0= 'localhost' ) ) | ( () ( (lv_network_23_0= ruleEFNetworkSYNTAX ) ) ) | ( (lv_port_24_0= ruleEFNetportSYNTAX ) ) | ( () otherlv_26= 'this' ) | ( () otherlv_28= 'super' ) | ( () otherlv_30= 'new' ( ( ruleQualifiedName ) ) otherlv_32= '(' otherlv_33= ')' ) | ( () otherlv_35= '(' ( (lv_expression_36_0= ruleEFExpression ) ) otherlv_37= ')' ) | this_EFBuiltinFunction_38= ruleEFBuiltinFunction | ( () ( (lv_functionName_40_0= ruleQualifiedName ) ) otherlv_41= '(' ( ( (lv_args_42_0= ruleEFExpression ) ) (otherlv_43= ',' ( (lv_args_44_0= ruleEFExpression ) ) )* )? otherlv_45= ')' ) | ( () ( (lv_symbol_47_0= ruleQualifiedName ) ) ) )
+            // InternalEasyWall.g:1886:2: ( ( ( () ( (lv_value_1_0= RULE_STRING ) ) ) | ( () ( (lv_value_3_0= RULE_INT ) ) ) | ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) ) | ( () ( (lv_direction_7_0= ruleEFDirectionNativeType ) ) ) | ( () ( (lv_protocol_9_0= ruleNETWORKLAYERPROTOCOL ) ) ) | ( () ( (lv_protocol_11_0= ruleTRANSPORTLAYERPROTOCOL ) ) ) | ( () ( (lv_protocol_13_0= ruleAPPLICATIONLAYERPROTOCOL ) ) ) | ( () ( (lv_ipv6_15_0= RULE_EFIPV6SYNTAX ) ) ) | ( () ( ( (lv_ipv4_17_0= RULE_EFIPV4SYNTAX ) ) | ( (lv_any_18_0= 'any' ) ) | ( (lv_localhost_19_0= 'localhost' ) ) ) ) | ( () ( (lv_network_21_0= ruleEFNetworkSYNTAX ) ) ) | ( (lv_port_22_0= ruleEFNetportSYNTAX ) ) | ( () otherlv_24= 'this' ) | ( () otherlv_26= 'super' ) | ( () otherlv_28= 'new' ( ( ruleQualifiedName ) ) otherlv_30= '(' otherlv_31= ')' ) | ( () otherlv_33= '(' ( (lv_expression_34_0= ruleEFExpression ) ) otherlv_35= ')' ) | this_EFBuiltinFunction_36= ruleEFBuiltinFunction | ( () ( (lv_functionName_38_0= ruleQualifiedName ) ) otherlv_39= '(' ( ( (lv_args_40_0= ruleEFExpression ) ) (otherlv_41= ',' ( (lv_args_42_0= ruleEFExpression ) ) )* )? otherlv_43= ')' ) | ( () ( (lv_symbol_45_0= ruleQualifiedName ) ) ) ) )
+            // InternalEasyWall.g:1887:2: ( ( () ( (lv_value_1_0= RULE_STRING ) ) ) | ( () ( (lv_value_3_0= RULE_INT ) ) ) | ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) ) | ( () ( (lv_direction_7_0= ruleEFDirectionNativeType ) ) ) | ( () ( (lv_protocol_9_0= ruleNETWORKLAYERPROTOCOL ) ) ) | ( () ( (lv_protocol_11_0= ruleTRANSPORTLAYERPROTOCOL ) ) ) | ( () ( (lv_protocol_13_0= ruleAPPLICATIONLAYERPROTOCOL ) ) ) | ( () ( (lv_ipv6_15_0= RULE_EFIPV6SYNTAX ) ) ) | ( () ( ( (lv_ipv4_17_0= RULE_EFIPV4SYNTAX ) ) | ( (lv_any_18_0= 'any' ) ) | ( (lv_localhost_19_0= 'localhost' ) ) ) ) | ( () ( (lv_network_21_0= ruleEFNetworkSYNTAX ) ) ) | ( (lv_port_22_0= ruleEFNetportSYNTAX ) ) | ( () otherlv_24= 'this' ) | ( () otherlv_26= 'super' ) | ( () otherlv_28= 'new' ( ( ruleQualifiedName ) ) otherlv_30= '(' otherlv_31= ')' ) | ( () otherlv_33= '(' ( (lv_expression_34_0= ruleEFExpression ) ) otherlv_35= ')' ) | this_EFBuiltinFunction_36= ruleEFBuiltinFunction | ( () ( (lv_functionName_38_0= ruleQualifiedName ) ) otherlv_39= '(' ( ( (lv_args_40_0= ruleEFExpression ) ) (otherlv_41= ',' ( (lv_args_42_0= ruleEFExpression ) ) )* )? otherlv_43= ')' ) | ( () ( (lv_symbol_45_0= ruleQualifiedName ) ) ) )
             {
-            // InternalEasyWall.g:1887:2: ( ( () otherlv_1= '\"' ( (lv_value_2_0= RULE_STRING ) ) otherlv_3= '\"' ) | ( () ( (lv_value_5_0= RULE_INT ) ) ) | ( () ( ( (lv_value_7_1= 'true' | lv_value_7_2= 'false' ) ) ) ) | ( () ( (lv_direction_9_0= ruleEFDirectionNativeType ) ) ) | ( () ( (lv_protocol_11_0= ruleNETWORKLAYERPROTOCOL ) ) ) | ( () ( (lv_protocol_13_0= ruleTRANSPORTLAYERPROTOCOL ) ) ) | ( () ( (lv_protocol_15_0= ruleAPPLICATIONLAYERPROTOCOL ) ) ) | ( () ( (lv_ipv6_17_0= RULE_EFIPV6SYNTAX ) ) ) | ( () ( (lv_ipv4_19_0= RULE_EFIPV4SYNTAX ) ) ) | ( (lv_any_20_0= 'any' ) ) | ( (lv_localhost_21_0= 'localhost' ) ) | ( () ( (lv_network_23_0= ruleEFNetworkSYNTAX ) ) ) | ( (lv_port_24_0= ruleEFNetportSYNTAX ) ) | ( () otherlv_26= 'this' ) | ( () otherlv_28= 'super' ) | ( () otherlv_30= 'new' ( ( ruleQualifiedName ) ) otherlv_32= '(' otherlv_33= ')' ) | ( () otherlv_35= '(' ( (lv_expression_36_0= ruleEFExpression ) ) otherlv_37= ')' ) | this_EFBuiltinFunction_38= ruleEFBuiltinFunction | ( () ( (lv_functionName_40_0= ruleQualifiedName ) ) otherlv_41= '(' ( ( (lv_args_42_0= ruleEFExpression ) ) (otherlv_43= ',' ( (lv_args_44_0= ruleEFExpression ) ) )* )? otherlv_45= ')' ) | ( () ( (lv_symbol_47_0= ruleQualifiedName ) ) ) )
-            int alt35=20;
-            alt35 = dfa35.predict(input);
-            switch (alt35) {
+            // InternalEasyWall.g:1887:2: ( ( () ( (lv_value_1_0= RULE_STRING ) ) ) | ( () ( (lv_value_3_0= RULE_INT ) ) ) | ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) ) | ( () ( (lv_direction_7_0= ruleEFDirectionNativeType ) ) ) | ( () ( (lv_protocol_9_0= ruleNETWORKLAYERPROTOCOL ) ) ) | ( () ( (lv_protocol_11_0= ruleTRANSPORTLAYERPROTOCOL ) ) ) | ( () ( (lv_protocol_13_0= ruleAPPLICATIONLAYERPROTOCOL ) ) ) | ( () ( (lv_ipv6_15_0= RULE_EFIPV6SYNTAX ) ) ) | ( () ( ( (lv_ipv4_17_0= RULE_EFIPV4SYNTAX ) ) | ( (lv_any_18_0= 'any' ) ) | ( (lv_localhost_19_0= 'localhost' ) ) ) ) | ( () ( (lv_network_21_0= ruleEFNetworkSYNTAX ) ) ) | ( (lv_port_22_0= ruleEFNetportSYNTAX ) ) | ( () otherlv_24= 'this' ) | ( () otherlv_26= 'super' ) | ( () otherlv_28= 'new' ( ( ruleQualifiedName ) ) otherlv_30= '(' otherlv_31= ')' ) | ( () otherlv_33= '(' ( (lv_expression_34_0= ruleEFExpression ) ) otherlv_35= ')' ) | this_EFBuiltinFunction_36= ruleEFBuiltinFunction | ( () ( (lv_functionName_38_0= ruleQualifiedName ) ) otherlv_39= '(' ( ( (lv_args_40_0= ruleEFExpression ) ) (otherlv_41= ',' ( (lv_args_42_0= ruleEFExpression ) ) )* )? otherlv_43= ')' ) | ( () ( (lv_symbol_45_0= ruleQualifiedName ) ) ) )
+            int alt36=18;
+            alt36 = dfa36.predict(input);
+            switch (alt36) {
                 case 1 :
-                    // InternalEasyWall.g:1888:3: ( () otherlv_1= '\"' ( (lv_value_2_0= RULE_STRING ) ) otherlv_3= '\"' )
+                    // InternalEasyWall.g:1888:3: ( () ( (lv_value_1_0= RULE_STRING ) ) )
                     {
-                    // InternalEasyWall.g:1888:3: ( () otherlv_1= '\"' ( (lv_value_2_0= RULE_STRING ) ) otherlv_3= '\"' )
-                    // InternalEasyWall.g:1889:4: () otherlv_1= '\"' ( (lv_value_2_0= RULE_STRING ) ) otherlv_3= '\"'
+                    // InternalEasyWall.g:1888:3: ( () ( (lv_value_1_0= RULE_STRING ) ) )
+                    // InternalEasyWall.g:1889:4: () ( (lv_value_1_0= RULE_STRING ) )
                     {
                     // InternalEasyWall.g:1889:4: ()
                     // InternalEasyWall.g:1890:5: 
@@ -5741,22 +5738,16 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_1=(Token)match(input,36,FOLLOW_37); if (state.failed) return current;
+                    // InternalEasyWall.g:1896:4: ( (lv_value_1_0= RULE_STRING ) )
+                    // InternalEasyWall.g:1897:5: (lv_value_1_0= RULE_STRING )
+                    {
+                    // InternalEasyWall.g:1897:5: (lv_value_1_0= RULE_STRING )
+                    // InternalEasyWall.g:1898:6: lv_value_1_0= RULE_STRING
+                    {
+                    lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      				newLeafNode(otherlv_1, grammarAccess.getEFPrimaryExpressionAccess().getQuotationMarkKeyword_0_1());
-                      			
-                    }
-                    // InternalEasyWall.g:1900:4: ( (lv_value_2_0= RULE_STRING ) )
-                    // InternalEasyWall.g:1901:5: (lv_value_2_0= RULE_STRING )
-                    {
-                    // InternalEasyWall.g:1901:5: (lv_value_2_0= RULE_STRING )
-                    // InternalEasyWall.g:1902:6: lv_value_2_0= RULE_STRING
-                    {
-                    lv_value_2_0=(Token)match(input,RULE_STRING,FOLLOW_38); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      						newLeafNode(lv_value_2_0, grammarAccess.getEFPrimaryExpressionAccess().getValueSTRINGTerminalRuleCall_0_2_0());
+                      						newLeafNode(lv_value_1_0, grammarAccess.getEFPrimaryExpressionAccess().getValueSTRINGTerminalRuleCall_0_1_0());
                       					
                     }
                     if ( state.backtracking==0 ) {
@@ -5767,7 +5758,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                       						setWithLastConsumed(
                       							current,
                       							"value",
-                      							lv_value_2_0,
+                      							lv_value_1_0,
                       							"org.eclipse.xtext.common.Terminals.STRING");
                       					
                     }
@@ -5777,12 +5768,6 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_3=(Token)match(input,36,FOLLOW_2); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      				newLeafNode(otherlv_3, grammarAccess.getEFPrimaryExpressionAccess().getQuotationMarkKeyword_0_3());
-                      			
-                    }
 
                     }
 
@@ -5790,13 +5775,13 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalEasyWall.g:1924:3: ( () ( (lv_value_5_0= RULE_INT ) ) )
+                    // InternalEasyWall.g:1916:3: ( () ( (lv_value_3_0= RULE_INT ) ) )
                     {
-                    // InternalEasyWall.g:1924:3: ( () ( (lv_value_5_0= RULE_INT ) ) )
-                    // InternalEasyWall.g:1925:4: () ( (lv_value_5_0= RULE_INT ) )
+                    // InternalEasyWall.g:1916:3: ( () ( (lv_value_3_0= RULE_INT ) ) )
+                    // InternalEasyWall.g:1917:4: () ( (lv_value_3_0= RULE_INT ) )
                     {
-                    // InternalEasyWall.g:1925:4: ()
-                    // InternalEasyWall.g:1926:5: 
+                    // InternalEasyWall.g:1917:4: ()
+                    // InternalEasyWall.g:1918:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -5808,16 +5793,16 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalEasyWall.g:1932:4: ( (lv_value_5_0= RULE_INT ) )
-                    // InternalEasyWall.g:1933:5: (lv_value_5_0= RULE_INT )
+                    // InternalEasyWall.g:1924:4: ( (lv_value_3_0= RULE_INT ) )
+                    // InternalEasyWall.g:1925:5: (lv_value_3_0= RULE_INT )
                     {
-                    // InternalEasyWall.g:1933:5: (lv_value_5_0= RULE_INT )
-                    // InternalEasyWall.g:1934:6: lv_value_5_0= RULE_INT
+                    // InternalEasyWall.g:1925:5: (lv_value_3_0= RULE_INT )
+                    // InternalEasyWall.g:1926:6: lv_value_3_0= RULE_INT
                     {
-                    lv_value_5_0=(Token)match(input,RULE_INT,FOLLOW_2); if (state.failed) return current;
+                    lv_value_3_0=(Token)match(input,RULE_INT,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      						newLeafNode(lv_value_5_0, grammarAccess.getEFPrimaryExpressionAccess().getValueINTTerminalRuleCall_1_1_0());
+                      						newLeafNode(lv_value_3_0, grammarAccess.getEFPrimaryExpressionAccess().getValueINTTerminalRuleCall_1_1_0());
                       					
                     }
                     if ( state.backtracking==0 ) {
@@ -5828,7 +5813,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                       						setWithLastConsumed(
                       							current,
                       							"value",
-                      							lv_value_5_0,
+                      							lv_value_3_0,
                       							"org.eclipse.xtext.common.Terminals.INT");
                       					
                     }
@@ -5845,13 +5830,13 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalEasyWall.g:1952:3: ( () ( ( (lv_value_7_1= 'true' | lv_value_7_2= 'false' ) ) ) )
+                    // InternalEasyWall.g:1944:3: ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) )
                     {
-                    // InternalEasyWall.g:1952:3: ( () ( ( (lv_value_7_1= 'true' | lv_value_7_2= 'false' ) ) ) )
-                    // InternalEasyWall.g:1953:4: () ( ( (lv_value_7_1= 'true' | lv_value_7_2= 'false' ) ) )
+                    // InternalEasyWall.g:1944:3: ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) )
+                    // InternalEasyWall.g:1945:4: () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) )
                     {
-                    // InternalEasyWall.g:1953:4: ()
-                    // InternalEasyWall.g:1954:5: 
+                    // InternalEasyWall.g:1945:4: ()
+                    // InternalEasyWall.g:1946:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -5863,20 +5848,20 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalEasyWall.g:1960:4: ( ( (lv_value_7_1= 'true' | lv_value_7_2= 'false' ) ) )
-                    // InternalEasyWall.g:1961:5: ( (lv_value_7_1= 'true' | lv_value_7_2= 'false' ) )
+                    // InternalEasyWall.g:1952:4: ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) )
+                    // InternalEasyWall.g:1953:5: ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) )
                     {
-                    // InternalEasyWall.g:1961:5: ( (lv_value_7_1= 'true' | lv_value_7_2= 'false' ) )
-                    // InternalEasyWall.g:1962:6: (lv_value_7_1= 'true' | lv_value_7_2= 'false' )
+                    // InternalEasyWall.g:1953:5: ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) )
+                    // InternalEasyWall.g:1954:6: (lv_value_5_1= 'true' | lv_value_5_2= 'false' )
                     {
-                    // InternalEasyWall.g:1962:6: (lv_value_7_1= 'true' | lv_value_7_2= 'false' )
+                    // InternalEasyWall.g:1954:6: (lv_value_5_1= 'true' | lv_value_5_2= 'false' )
                     int alt32=2;
                     int LA32_0 = input.LA(1);
 
-                    if ( (LA32_0==37) ) {
+                    if ( (LA32_0==36) ) {
                         alt32=1;
                     }
-                    else if ( (LA32_0==38) ) {
+                    else if ( (LA32_0==37) ) {
                         alt32=2;
                     }
                     else {
@@ -5888,12 +5873,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     switch (alt32) {
                         case 1 :
-                            // InternalEasyWall.g:1963:7: lv_value_7_1= 'true'
+                            // InternalEasyWall.g:1955:7: lv_value_5_1= 'true'
                             {
-                            lv_value_7_1=(Token)match(input,37,FOLLOW_2); if (state.failed) return current;
+                            lv_value_5_1=(Token)match(input,36,FOLLOW_2); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
 
-                              							newLeafNode(lv_value_7_1, grammarAccess.getEFPrimaryExpressionAccess().getValueTrueKeyword_2_1_0_0());
+                              							newLeafNode(lv_value_5_1, grammarAccess.getEFPrimaryExpressionAccess().getValueTrueKeyword_2_1_0_0());
                               						
                             }
                             if ( state.backtracking==0 ) {
@@ -5901,19 +5886,19 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                               							if (current==null) {
                               								current = createModelElement(grammarAccess.getEFPrimaryExpressionRule());
                               							}
-                              							setWithLastConsumed(current, "value", lv_value_7_1, null);
+                              							setWithLastConsumed(current, "value", lv_value_5_1, null);
                               						
                             }
 
                             }
                             break;
                         case 2 :
-                            // InternalEasyWall.g:1974:7: lv_value_7_2= 'false'
+                            // InternalEasyWall.g:1966:7: lv_value_5_2= 'false'
                             {
-                            lv_value_7_2=(Token)match(input,38,FOLLOW_2); if (state.failed) return current;
+                            lv_value_5_2=(Token)match(input,37,FOLLOW_2); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
 
-                              							newLeafNode(lv_value_7_2, grammarAccess.getEFPrimaryExpressionAccess().getValueFalseKeyword_2_1_0_1());
+                              							newLeafNode(lv_value_5_2, grammarAccess.getEFPrimaryExpressionAccess().getValueFalseKeyword_2_1_0_1());
                               						
                             }
                             if ( state.backtracking==0 ) {
@@ -5921,7 +5906,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                               							if (current==null) {
                               								current = createModelElement(grammarAccess.getEFPrimaryExpressionRule());
                               							}
-                              							setWithLastConsumed(current, "value", lv_value_7_2, null);
+                              							setWithLastConsumed(current, "value", lv_value_5_2, null);
                               						
                             }
 
@@ -5943,13 +5928,13 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalEasyWall.g:1989:3: ( () ( (lv_direction_9_0= ruleEFDirectionNativeType ) ) )
+                    // InternalEasyWall.g:1981:3: ( () ( (lv_direction_7_0= ruleEFDirectionNativeType ) ) )
                     {
-                    // InternalEasyWall.g:1989:3: ( () ( (lv_direction_9_0= ruleEFDirectionNativeType ) ) )
-                    // InternalEasyWall.g:1990:4: () ( (lv_direction_9_0= ruleEFDirectionNativeType ) )
+                    // InternalEasyWall.g:1981:3: ( () ( (lv_direction_7_0= ruleEFDirectionNativeType ) ) )
+                    // InternalEasyWall.g:1982:4: () ( (lv_direction_7_0= ruleEFDirectionNativeType ) )
                     {
-                    // InternalEasyWall.g:1990:4: ()
-                    // InternalEasyWall.g:1991:5: 
+                    // InternalEasyWall.g:1982:4: ()
+                    // InternalEasyWall.g:1983:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -5961,11 +5946,11 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalEasyWall.g:1997:4: ( (lv_direction_9_0= ruleEFDirectionNativeType ) )
-                    // InternalEasyWall.g:1998:5: (lv_direction_9_0= ruleEFDirectionNativeType )
+                    // InternalEasyWall.g:1989:4: ( (lv_direction_7_0= ruleEFDirectionNativeType ) )
+                    // InternalEasyWall.g:1990:5: (lv_direction_7_0= ruleEFDirectionNativeType )
                     {
-                    // InternalEasyWall.g:1998:5: (lv_direction_9_0= ruleEFDirectionNativeType )
-                    // InternalEasyWall.g:1999:6: lv_direction_9_0= ruleEFDirectionNativeType
+                    // InternalEasyWall.g:1990:5: (lv_direction_7_0= ruleEFDirectionNativeType )
+                    // InternalEasyWall.g:1991:6: lv_direction_7_0= ruleEFDirectionNativeType
                     {
                     if ( state.backtracking==0 ) {
 
@@ -5973,7 +5958,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                       					
                     }
                     pushFollow(FOLLOW_2);
-                    lv_direction_9_0=ruleEFDirectionNativeType();
+                    lv_direction_7_0=ruleEFDirectionNativeType();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -5985,7 +5970,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                       						set(
                       							current,
                       							"direction",
-                      							lv_direction_9_0,
+                      							lv_direction_7_0,
                       							"org.xtext.example.easywall.EasyWall.EFDirectionNativeType");
                       						afterParserOrEnumRuleCall();
                       					
@@ -6003,13 +5988,13 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalEasyWall.g:2018:3: ( () ( (lv_protocol_11_0= ruleNETWORKLAYERPROTOCOL ) ) )
+                    // InternalEasyWall.g:2010:3: ( () ( (lv_protocol_9_0= ruleNETWORKLAYERPROTOCOL ) ) )
                     {
-                    // InternalEasyWall.g:2018:3: ( () ( (lv_protocol_11_0= ruleNETWORKLAYERPROTOCOL ) ) )
-                    // InternalEasyWall.g:2019:4: () ( (lv_protocol_11_0= ruleNETWORKLAYERPROTOCOL ) )
+                    // InternalEasyWall.g:2010:3: ( () ( (lv_protocol_9_0= ruleNETWORKLAYERPROTOCOL ) ) )
+                    // InternalEasyWall.g:2011:4: () ( (lv_protocol_9_0= ruleNETWORKLAYERPROTOCOL ) )
                     {
-                    // InternalEasyWall.g:2019:4: ()
-                    // InternalEasyWall.g:2020:5: 
+                    // InternalEasyWall.g:2011:4: ()
+                    // InternalEasyWall.g:2012:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -6021,11 +6006,11 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalEasyWall.g:2026:4: ( (lv_protocol_11_0= ruleNETWORKLAYERPROTOCOL ) )
-                    // InternalEasyWall.g:2027:5: (lv_protocol_11_0= ruleNETWORKLAYERPROTOCOL )
+                    // InternalEasyWall.g:2018:4: ( (lv_protocol_9_0= ruleNETWORKLAYERPROTOCOL ) )
+                    // InternalEasyWall.g:2019:5: (lv_protocol_9_0= ruleNETWORKLAYERPROTOCOL )
                     {
-                    // InternalEasyWall.g:2027:5: (lv_protocol_11_0= ruleNETWORKLAYERPROTOCOL )
-                    // InternalEasyWall.g:2028:6: lv_protocol_11_0= ruleNETWORKLAYERPROTOCOL
+                    // InternalEasyWall.g:2019:5: (lv_protocol_9_0= ruleNETWORKLAYERPROTOCOL )
+                    // InternalEasyWall.g:2020:6: lv_protocol_9_0= ruleNETWORKLAYERPROTOCOL
                     {
                     if ( state.backtracking==0 ) {
 
@@ -6033,7 +6018,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                       					
                     }
                     pushFollow(FOLLOW_2);
-                    lv_protocol_11_0=ruleNETWORKLAYERPROTOCOL();
+                    lv_protocol_9_0=ruleNETWORKLAYERPROTOCOL();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -6045,7 +6030,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                       						set(
                       							current,
                       							"protocol",
-                      							lv_protocol_11_0,
+                      							lv_protocol_9_0,
                       							"org.xtext.example.easywall.EasyWall.NETWORKLAYERPROTOCOL");
                       						afterParserOrEnumRuleCall();
                       					
@@ -6063,13 +6048,13 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalEasyWall.g:2047:3: ( () ( (lv_protocol_13_0= ruleTRANSPORTLAYERPROTOCOL ) ) )
+                    // InternalEasyWall.g:2039:3: ( () ( (lv_protocol_11_0= ruleTRANSPORTLAYERPROTOCOL ) ) )
                     {
-                    // InternalEasyWall.g:2047:3: ( () ( (lv_protocol_13_0= ruleTRANSPORTLAYERPROTOCOL ) ) )
-                    // InternalEasyWall.g:2048:4: () ( (lv_protocol_13_0= ruleTRANSPORTLAYERPROTOCOL ) )
+                    // InternalEasyWall.g:2039:3: ( () ( (lv_protocol_11_0= ruleTRANSPORTLAYERPROTOCOL ) ) )
+                    // InternalEasyWall.g:2040:4: () ( (lv_protocol_11_0= ruleTRANSPORTLAYERPROTOCOL ) )
                     {
-                    // InternalEasyWall.g:2048:4: ()
-                    // InternalEasyWall.g:2049:5: 
+                    // InternalEasyWall.g:2040:4: ()
+                    // InternalEasyWall.g:2041:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -6081,11 +6066,11 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalEasyWall.g:2055:4: ( (lv_protocol_13_0= ruleTRANSPORTLAYERPROTOCOL ) )
-                    // InternalEasyWall.g:2056:5: (lv_protocol_13_0= ruleTRANSPORTLAYERPROTOCOL )
+                    // InternalEasyWall.g:2047:4: ( (lv_protocol_11_0= ruleTRANSPORTLAYERPROTOCOL ) )
+                    // InternalEasyWall.g:2048:5: (lv_protocol_11_0= ruleTRANSPORTLAYERPROTOCOL )
                     {
-                    // InternalEasyWall.g:2056:5: (lv_protocol_13_0= ruleTRANSPORTLAYERPROTOCOL )
-                    // InternalEasyWall.g:2057:6: lv_protocol_13_0= ruleTRANSPORTLAYERPROTOCOL
+                    // InternalEasyWall.g:2048:5: (lv_protocol_11_0= ruleTRANSPORTLAYERPROTOCOL )
+                    // InternalEasyWall.g:2049:6: lv_protocol_11_0= ruleTRANSPORTLAYERPROTOCOL
                     {
                     if ( state.backtracking==0 ) {
 
@@ -6093,7 +6078,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                       					
                     }
                     pushFollow(FOLLOW_2);
-                    lv_protocol_13_0=ruleTRANSPORTLAYERPROTOCOL();
+                    lv_protocol_11_0=ruleTRANSPORTLAYERPROTOCOL();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -6105,7 +6090,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                       						set(
                       							current,
                       							"protocol",
-                      							lv_protocol_13_0,
+                      							lv_protocol_11_0,
                       							"org.xtext.example.easywall.EasyWall.TRANSPORTLAYERPROTOCOL");
                       						afterParserOrEnumRuleCall();
                       					
@@ -6123,13 +6108,13 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalEasyWall.g:2076:3: ( () ( (lv_protocol_15_0= ruleAPPLICATIONLAYERPROTOCOL ) ) )
+                    // InternalEasyWall.g:2068:3: ( () ( (lv_protocol_13_0= ruleAPPLICATIONLAYERPROTOCOL ) ) )
                     {
-                    // InternalEasyWall.g:2076:3: ( () ( (lv_protocol_15_0= ruleAPPLICATIONLAYERPROTOCOL ) ) )
-                    // InternalEasyWall.g:2077:4: () ( (lv_protocol_15_0= ruleAPPLICATIONLAYERPROTOCOL ) )
+                    // InternalEasyWall.g:2068:3: ( () ( (lv_protocol_13_0= ruleAPPLICATIONLAYERPROTOCOL ) ) )
+                    // InternalEasyWall.g:2069:4: () ( (lv_protocol_13_0= ruleAPPLICATIONLAYERPROTOCOL ) )
                     {
-                    // InternalEasyWall.g:2077:4: ()
-                    // InternalEasyWall.g:2078:5: 
+                    // InternalEasyWall.g:2069:4: ()
+                    // InternalEasyWall.g:2070:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -6141,11 +6126,11 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalEasyWall.g:2084:4: ( (lv_protocol_15_0= ruleAPPLICATIONLAYERPROTOCOL ) )
-                    // InternalEasyWall.g:2085:5: (lv_protocol_15_0= ruleAPPLICATIONLAYERPROTOCOL )
+                    // InternalEasyWall.g:2076:4: ( (lv_protocol_13_0= ruleAPPLICATIONLAYERPROTOCOL ) )
+                    // InternalEasyWall.g:2077:5: (lv_protocol_13_0= ruleAPPLICATIONLAYERPROTOCOL )
                     {
-                    // InternalEasyWall.g:2085:5: (lv_protocol_15_0= ruleAPPLICATIONLAYERPROTOCOL )
-                    // InternalEasyWall.g:2086:6: lv_protocol_15_0= ruleAPPLICATIONLAYERPROTOCOL
+                    // InternalEasyWall.g:2077:5: (lv_protocol_13_0= ruleAPPLICATIONLAYERPROTOCOL )
+                    // InternalEasyWall.g:2078:6: lv_protocol_13_0= ruleAPPLICATIONLAYERPROTOCOL
                     {
                     if ( state.backtracking==0 ) {
 
@@ -6153,7 +6138,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                       					
                     }
                     pushFollow(FOLLOW_2);
-                    lv_protocol_15_0=ruleAPPLICATIONLAYERPROTOCOL();
+                    lv_protocol_13_0=ruleAPPLICATIONLAYERPROTOCOL();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -6165,7 +6150,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                       						set(
                       							current,
                       							"protocol",
-                      							lv_protocol_15_0,
+                      							lv_protocol_13_0,
                       							"org.xtext.example.easywall.EasyWall.APPLICATIONLAYERPROTOCOL");
                       						afterParserOrEnumRuleCall();
                       					
@@ -6183,13 +6168,13 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalEasyWall.g:2105:3: ( () ( (lv_ipv6_17_0= RULE_EFIPV6SYNTAX ) ) )
+                    // InternalEasyWall.g:2097:3: ( () ( (lv_ipv6_15_0= RULE_EFIPV6SYNTAX ) ) )
                     {
-                    // InternalEasyWall.g:2105:3: ( () ( (lv_ipv6_17_0= RULE_EFIPV6SYNTAX ) ) )
-                    // InternalEasyWall.g:2106:4: () ( (lv_ipv6_17_0= RULE_EFIPV6SYNTAX ) )
+                    // InternalEasyWall.g:2097:3: ( () ( (lv_ipv6_15_0= RULE_EFIPV6SYNTAX ) ) )
+                    // InternalEasyWall.g:2098:4: () ( (lv_ipv6_15_0= RULE_EFIPV6SYNTAX ) )
                     {
-                    // InternalEasyWall.g:2106:4: ()
-                    // InternalEasyWall.g:2107:5: 
+                    // InternalEasyWall.g:2098:4: ()
+                    // InternalEasyWall.g:2099:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -6201,16 +6186,16 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalEasyWall.g:2113:4: ( (lv_ipv6_17_0= RULE_EFIPV6SYNTAX ) )
-                    // InternalEasyWall.g:2114:5: (lv_ipv6_17_0= RULE_EFIPV6SYNTAX )
+                    // InternalEasyWall.g:2105:4: ( (lv_ipv6_15_0= RULE_EFIPV6SYNTAX ) )
+                    // InternalEasyWall.g:2106:5: (lv_ipv6_15_0= RULE_EFIPV6SYNTAX )
                     {
-                    // InternalEasyWall.g:2114:5: (lv_ipv6_17_0= RULE_EFIPV6SYNTAX )
-                    // InternalEasyWall.g:2115:6: lv_ipv6_17_0= RULE_EFIPV6SYNTAX
+                    // InternalEasyWall.g:2106:5: (lv_ipv6_15_0= RULE_EFIPV6SYNTAX )
+                    // InternalEasyWall.g:2107:6: lv_ipv6_15_0= RULE_EFIPV6SYNTAX
                     {
-                    lv_ipv6_17_0=(Token)match(input,RULE_EFIPV6SYNTAX,FOLLOW_2); if (state.failed) return current;
+                    lv_ipv6_15_0=(Token)match(input,RULE_EFIPV6SYNTAX,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      						newLeafNode(lv_ipv6_17_0, grammarAccess.getEFPrimaryExpressionAccess().getIpv6EFIPV6SYNTAXTerminalRuleCall_7_1_0());
+                      						newLeafNode(lv_ipv6_15_0, grammarAccess.getEFPrimaryExpressionAccess().getIpv6EFIPV6SYNTAXTerminalRuleCall_7_1_0());
                       					
                     }
                     if ( state.backtracking==0 ) {
@@ -6221,7 +6206,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                       						setWithLastConsumed(
                       							current,
                       							"ipv6",
-                      							lv_ipv6_17_0,
+                      							lv_ipv6_15_0,
                       							"org.xtext.example.easywall.EasyWall.EFIPV6SYNTAX");
                       					
                     }
@@ -6238,13 +6223,13 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // InternalEasyWall.g:2133:3: ( () ( (lv_ipv4_19_0= RULE_EFIPV4SYNTAX ) ) )
+                    // InternalEasyWall.g:2125:3: ( () ( ( (lv_ipv4_17_0= RULE_EFIPV4SYNTAX ) ) | ( (lv_any_18_0= 'any' ) ) | ( (lv_localhost_19_0= 'localhost' ) ) ) )
                     {
-                    // InternalEasyWall.g:2133:3: ( () ( (lv_ipv4_19_0= RULE_EFIPV4SYNTAX ) ) )
-                    // InternalEasyWall.g:2134:4: () ( (lv_ipv4_19_0= RULE_EFIPV4SYNTAX ) )
+                    // InternalEasyWall.g:2125:3: ( () ( ( (lv_ipv4_17_0= RULE_EFIPV4SYNTAX ) ) | ( (lv_any_18_0= 'any' ) ) | ( (lv_localhost_19_0= 'localhost' ) ) ) )
+                    // InternalEasyWall.g:2126:4: () ( ( (lv_ipv4_17_0= RULE_EFIPV4SYNTAX ) ) | ( (lv_any_18_0= 'any' ) ) | ( (lv_localhost_19_0= 'localhost' ) ) )
                     {
-                    // InternalEasyWall.g:2134:4: ()
-                    // InternalEasyWall.g:2135:5: 
+                    // InternalEasyWall.g:2126:4: ()
+                    // InternalEasyWall.g:2127:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -6256,33 +6241,133 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalEasyWall.g:2141:4: ( (lv_ipv4_19_0= RULE_EFIPV4SYNTAX ) )
-                    // InternalEasyWall.g:2142:5: (lv_ipv4_19_0= RULE_EFIPV4SYNTAX )
-                    {
-                    // InternalEasyWall.g:2142:5: (lv_ipv4_19_0= RULE_EFIPV4SYNTAX )
-                    // InternalEasyWall.g:2143:6: lv_ipv4_19_0= RULE_EFIPV4SYNTAX
-                    {
-                    lv_ipv4_19_0=(Token)match(input,RULE_EFIPV4SYNTAX,FOLLOW_2); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
+                    // InternalEasyWall.g:2133:4: ( ( (lv_ipv4_17_0= RULE_EFIPV4SYNTAX ) ) | ( (lv_any_18_0= 'any' ) ) | ( (lv_localhost_19_0= 'localhost' ) ) )
+                    int alt33=3;
+                    switch ( input.LA(1) ) {
+                    case RULE_EFIPV4SYNTAX:
+                        {
+                        alt33=1;
+                        }
+                        break;
+                    case 38:
+                        {
+                        alt33=2;
+                        }
+                        break;
+                    case 39:
+                        {
+                        alt33=3;
+                        }
+                        break;
+                    default:
+                        if (state.backtracking>0) {state.failed=true; return current;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 33, 0, input);
 
-                      						newLeafNode(lv_ipv4_19_0, grammarAccess.getEFPrimaryExpressionAccess().getIpv4EFIPV4SYNTAXTerminalRuleCall_8_1_0());
-                      					
+                        throw nvae;
                     }
-                    if ( state.backtracking==0 ) {
 
-                      						if (current==null) {
-                      							current = createModelElement(grammarAccess.getEFPrimaryExpressionRule());
-                      						}
-                      						setWithLastConsumed(
-                      							current,
-                      							"ipv4",
-                      							lv_ipv4_19_0,
-                      							"org.xtext.example.easywall.EasyWall.EFIPV4SYNTAX");
-                      					
-                    }
+                    switch (alt33) {
+                        case 1 :
+                            // InternalEasyWall.g:2134:5: ( (lv_ipv4_17_0= RULE_EFIPV4SYNTAX ) )
+                            {
+                            // InternalEasyWall.g:2134:5: ( (lv_ipv4_17_0= RULE_EFIPV4SYNTAX ) )
+                            // InternalEasyWall.g:2135:6: (lv_ipv4_17_0= RULE_EFIPV4SYNTAX )
+                            {
+                            // InternalEasyWall.g:2135:6: (lv_ipv4_17_0= RULE_EFIPV4SYNTAX )
+                            // InternalEasyWall.g:2136:7: lv_ipv4_17_0= RULE_EFIPV4SYNTAX
+                            {
+                            lv_ipv4_17_0=(Token)match(input,RULE_EFIPV4SYNTAX,FOLLOW_2); if (state.failed) return current;
+                            if ( state.backtracking==0 ) {
 
-                    }
+                              							newLeafNode(lv_ipv4_17_0, grammarAccess.getEFPrimaryExpressionAccess().getIpv4EFIPV4SYNTAXTerminalRuleCall_8_1_0_0());
+                              						
+                            }
+                            if ( state.backtracking==0 ) {
 
+                              							if (current==null) {
+                              								current = createModelElement(grammarAccess.getEFPrimaryExpressionRule());
+                              							}
+                              							setWithLastConsumed(
+                              								current,
+                              								"ipv4",
+                              								lv_ipv4_17_0,
+                              								"org.xtext.example.easywall.EasyWall.EFIPV4SYNTAX");
+                              						
+                            }
+
+                            }
+
+
+                            }
+
+
+                            }
+                            break;
+                        case 2 :
+                            // InternalEasyWall.g:2153:5: ( (lv_any_18_0= 'any' ) )
+                            {
+                            // InternalEasyWall.g:2153:5: ( (lv_any_18_0= 'any' ) )
+                            // InternalEasyWall.g:2154:6: (lv_any_18_0= 'any' )
+                            {
+                            // InternalEasyWall.g:2154:6: (lv_any_18_0= 'any' )
+                            // InternalEasyWall.g:2155:7: lv_any_18_0= 'any'
+                            {
+                            lv_any_18_0=(Token)match(input,38,FOLLOW_2); if (state.failed) return current;
+                            if ( state.backtracking==0 ) {
+
+                              							newLeafNode(lv_any_18_0, grammarAccess.getEFPrimaryExpressionAccess().getAnyAnyKeyword_8_1_1_0());
+                              						
+                            }
+                            if ( state.backtracking==0 ) {
+
+                              							if (current==null) {
+                              								current = createModelElement(grammarAccess.getEFPrimaryExpressionRule());
+                              							}
+                              							setWithLastConsumed(current, "any", lv_any_18_0, "any");
+                              						
+                            }
+
+                            }
+
+
+                            }
+
+
+                            }
+                            break;
+                        case 3 :
+                            // InternalEasyWall.g:2168:5: ( (lv_localhost_19_0= 'localhost' ) )
+                            {
+                            // InternalEasyWall.g:2168:5: ( (lv_localhost_19_0= 'localhost' ) )
+                            // InternalEasyWall.g:2169:6: (lv_localhost_19_0= 'localhost' )
+                            {
+                            // InternalEasyWall.g:2169:6: (lv_localhost_19_0= 'localhost' )
+                            // InternalEasyWall.g:2170:7: lv_localhost_19_0= 'localhost'
+                            {
+                            lv_localhost_19_0=(Token)match(input,39,FOLLOW_2); if (state.failed) return current;
+                            if ( state.backtracking==0 ) {
+
+                              							newLeafNode(lv_localhost_19_0, grammarAccess.getEFPrimaryExpressionAccess().getLocalhostLocalhostKeyword_8_1_2_0());
+                              						
+                            }
+                            if ( state.backtracking==0 ) {
+
+                              							if (current==null) {
+                              								current = createModelElement(grammarAccess.getEFPrimaryExpressionRule());
+                              							}
+                              							setWithLastConsumed(current, "localhost", lv_localhost_19_0, "localhost");
+                              						
+                            }
+
+                            }
+
+
+                            }
+
+
+                            }
+                            break;
 
                     }
 
@@ -6293,101 +6378,37 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // InternalEasyWall.g:2161:3: ( (lv_any_20_0= 'any' ) )
+                    // InternalEasyWall.g:2185:3: ( () ( (lv_network_21_0= ruleEFNetworkSYNTAX ) ) )
                     {
-                    // InternalEasyWall.g:2161:3: ( (lv_any_20_0= 'any' ) )
-                    // InternalEasyWall.g:2162:4: (lv_any_20_0= 'any' )
+                    // InternalEasyWall.g:2185:3: ( () ( (lv_network_21_0= ruleEFNetworkSYNTAX ) ) )
+                    // InternalEasyWall.g:2186:4: () ( (lv_network_21_0= ruleEFNetworkSYNTAX ) )
                     {
-                    // InternalEasyWall.g:2162:4: (lv_any_20_0= 'any' )
-                    // InternalEasyWall.g:2163:5: lv_any_20_0= 'any'
-                    {
-                    lv_any_20_0=(Token)match(input,39,FOLLOW_2); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      					newLeafNode(lv_any_20_0, grammarAccess.getEFPrimaryExpressionAccess().getAnyAnyKeyword_9_0());
-                      				
-                    }
-                    if ( state.backtracking==0 ) {
-
-                      					if (current==null) {
-                      						current = createModelElement(grammarAccess.getEFPrimaryExpressionRule());
-                      					}
-                      					setWithLastConsumed(current, "any", lv_any_20_0, "any");
-                      				
-                    }
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 11 :
-                    // InternalEasyWall.g:2176:3: ( (lv_localhost_21_0= 'localhost' ) )
-                    {
-                    // InternalEasyWall.g:2176:3: ( (lv_localhost_21_0= 'localhost' ) )
-                    // InternalEasyWall.g:2177:4: (lv_localhost_21_0= 'localhost' )
-                    {
-                    // InternalEasyWall.g:2177:4: (lv_localhost_21_0= 'localhost' )
-                    // InternalEasyWall.g:2178:5: lv_localhost_21_0= 'localhost'
-                    {
-                    lv_localhost_21_0=(Token)match(input,40,FOLLOW_2); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      					newLeafNode(lv_localhost_21_0, grammarAccess.getEFPrimaryExpressionAccess().getLocalhostLocalhostKeyword_10_0());
-                      				
-                    }
-                    if ( state.backtracking==0 ) {
-
-                      					if (current==null) {
-                      						current = createModelElement(grammarAccess.getEFPrimaryExpressionRule());
-                      					}
-                      					setWithLastConsumed(current, "localhost", lv_localhost_21_0, "localhost");
-                      				
-                    }
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 12 :
-                    // InternalEasyWall.g:2191:3: ( () ( (lv_network_23_0= ruleEFNetworkSYNTAX ) ) )
-                    {
-                    // InternalEasyWall.g:2191:3: ( () ( (lv_network_23_0= ruleEFNetworkSYNTAX ) ) )
-                    // InternalEasyWall.g:2192:4: () ( (lv_network_23_0= ruleEFNetworkSYNTAX ) )
-                    {
-                    // InternalEasyWall.g:2192:4: ()
-                    // InternalEasyWall.g:2193:5: 
+                    // InternalEasyWall.g:2186:4: ()
+                    // InternalEasyWall.g:2187:5: 
                     {
                     if ( state.backtracking==0 ) {
 
                       					current = forceCreateModelElement(
-                      						grammarAccess.getEFPrimaryExpressionAccess().getEFNetworkConstantAction_11_0(),
+                      						grammarAccess.getEFPrimaryExpressionAccess().getEFNetworkConstantAction_9_0(),
                       						current);
                       				
                     }
 
                     }
 
-                    // InternalEasyWall.g:2199:4: ( (lv_network_23_0= ruleEFNetworkSYNTAX ) )
-                    // InternalEasyWall.g:2200:5: (lv_network_23_0= ruleEFNetworkSYNTAX )
+                    // InternalEasyWall.g:2193:4: ( (lv_network_21_0= ruleEFNetworkSYNTAX ) )
+                    // InternalEasyWall.g:2194:5: (lv_network_21_0= ruleEFNetworkSYNTAX )
                     {
-                    // InternalEasyWall.g:2200:5: (lv_network_23_0= ruleEFNetworkSYNTAX )
-                    // InternalEasyWall.g:2201:6: lv_network_23_0= ruleEFNetworkSYNTAX
+                    // InternalEasyWall.g:2194:5: (lv_network_21_0= ruleEFNetworkSYNTAX )
+                    // InternalEasyWall.g:2195:6: lv_network_21_0= ruleEFNetworkSYNTAX
                     {
                     if ( state.backtracking==0 ) {
 
-                      						newCompositeNode(grammarAccess.getEFPrimaryExpressionAccess().getNetworkEFNetworkSYNTAXParserRuleCall_11_1_0());
+                      						newCompositeNode(grammarAccess.getEFPrimaryExpressionAccess().getNetworkEFNetworkSYNTAXParserRuleCall_9_1_0());
                       					
                     }
                     pushFollow(FOLLOW_2);
-                    lv_network_23_0=ruleEFNetworkSYNTAX();
+                    lv_network_21_0=ruleEFNetworkSYNTAX();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -6399,7 +6420,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                       						set(
                       							current,
                       							"network",
-                      							lv_network_23_0,
+                      							lv_network_21_0,
                       							"org.xtext.example.easywall.EasyWall.EFNetworkSYNTAX");
                       						afterParserOrEnumRuleCall();
                       					
@@ -6416,22 +6437,22 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 13 :
-                    // InternalEasyWall.g:2220:3: ( (lv_port_24_0= ruleEFNetportSYNTAX ) )
+                case 11 :
+                    // InternalEasyWall.g:2214:3: ( (lv_port_22_0= ruleEFNetportSYNTAX ) )
                     {
-                    // InternalEasyWall.g:2220:3: ( (lv_port_24_0= ruleEFNetportSYNTAX ) )
-                    // InternalEasyWall.g:2221:4: (lv_port_24_0= ruleEFNetportSYNTAX )
+                    // InternalEasyWall.g:2214:3: ( (lv_port_22_0= ruleEFNetportSYNTAX ) )
+                    // InternalEasyWall.g:2215:4: (lv_port_22_0= ruleEFNetportSYNTAX )
                     {
-                    // InternalEasyWall.g:2221:4: (lv_port_24_0= ruleEFNetportSYNTAX )
-                    // InternalEasyWall.g:2222:5: lv_port_24_0= ruleEFNetportSYNTAX
+                    // InternalEasyWall.g:2215:4: (lv_port_22_0= ruleEFNetportSYNTAX )
+                    // InternalEasyWall.g:2216:5: lv_port_22_0= ruleEFNetportSYNTAX
                     {
                     if ( state.backtracking==0 ) {
 
-                      					newCompositeNode(grammarAccess.getEFPrimaryExpressionAccess().getPortEFNetportSYNTAXParserRuleCall_12_0());
+                      					newCompositeNode(grammarAccess.getEFPrimaryExpressionAccess().getPortEFNetportSYNTAXParserRuleCall_10_0());
                       				
                     }
                     pushFollow(FOLLOW_2);
-                    lv_port_24_0=ruleEFNetportSYNTAX();
+                    lv_port_22_0=ruleEFNetportSYNTAX();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -6443,7 +6464,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                       					set(
                       						current,
                       						"port",
-                      						lv_port_24_0,
+                      						lv_port_22_0,
                       						"org.xtext.example.easywall.EasyWall.EFNetportSYNTAX");
                       					afterParserOrEnumRuleCall();
                       				
@@ -6457,19 +6478,50 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 14 :
-                    // InternalEasyWall.g:2240:3: ( () otherlv_26= 'this' )
+                case 12 :
+                    // InternalEasyWall.g:2234:3: ( () otherlv_24= 'this' )
                     {
-                    // InternalEasyWall.g:2240:3: ( () otherlv_26= 'this' )
-                    // InternalEasyWall.g:2241:4: () otherlv_26= 'this'
+                    // InternalEasyWall.g:2234:3: ( () otherlv_24= 'this' )
+                    // InternalEasyWall.g:2235:4: () otherlv_24= 'this'
                     {
-                    // InternalEasyWall.g:2241:4: ()
-                    // InternalEasyWall.g:2242:5: 
+                    // InternalEasyWall.g:2235:4: ()
+                    // InternalEasyWall.g:2236:5: 
                     {
                     if ( state.backtracking==0 ) {
 
                       					current = forceCreateModelElement(
-                      						grammarAccess.getEFPrimaryExpressionAccess().getEFThisAction_13_0(),
+                      						grammarAccess.getEFPrimaryExpressionAccess().getEFThisAction_11_0(),
+                      						current);
+                      				
+                    }
+
+                    }
+
+                    otherlv_24=(Token)match(input,40,FOLLOW_2); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      				newLeafNode(otherlv_24, grammarAccess.getEFPrimaryExpressionAccess().getThisKeyword_11_1());
+                      			
+                    }
+
+                    }
+
+
+                    }
+                    break;
+                case 13 :
+                    // InternalEasyWall.g:2248:3: ( () otherlv_26= 'super' )
+                    {
+                    // InternalEasyWall.g:2248:3: ( () otherlv_26= 'super' )
+                    // InternalEasyWall.g:2249:4: () otherlv_26= 'super'
+                    {
+                    // InternalEasyWall.g:2249:4: ()
+                    // InternalEasyWall.g:2250:5: 
+                    {
+                    if ( state.backtracking==0 ) {
+
+                      					current = forceCreateModelElement(
+                      						grammarAccess.getEFPrimaryExpressionAccess().getEFSuperAction_12_0(),
                       						current);
                       				
                     }
@@ -6479,7 +6531,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     otherlv_26=(Token)match(input,41,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      				newLeafNode(otherlv_26, grammarAccess.getEFPrimaryExpressionAccess().getThisKeyword_13_1());
+                      				newLeafNode(otherlv_26, grammarAccess.getEFPrimaryExpressionAccess().getSuperKeyword_12_1());
                       			
                     }
 
@@ -6488,67 +6540,36 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 15 :
-                    // InternalEasyWall.g:2254:3: ( () otherlv_28= 'super' )
+                case 14 :
+                    // InternalEasyWall.g:2262:3: ( () otherlv_28= 'new' ( ( ruleQualifiedName ) ) otherlv_30= '(' otherlv_31= ')' )
                     {
-                    // InternalEasyWall.g:2254:3: ( () otherlv_28= 'super' )
-                    // InternalEasyWall.g:2255:4: () otherlv_28= 'super'
+                    // InternalEasyWall.g:2262:3: ( () otherlv_28= 'new' ( ( ruleQualifiedName ) ) otherlv_30= '(' otherlv_31= ')' )
+                    // InternalEasyWall.g:2263:4: () otherlv_28= 'new' ( ( ruleQualifiedName ) ) otherlv_30= '(' otherlv_31= ')'
                     {
-                    // InternalEasyWall.g:2255:4: ()
-                    // InternalEasyWall.g:2256:5: 
+                    // InternalEasyWall.g:2263:4: ()
+                    // InternalEasyWall.g:2264:5: 
                     {
                     if ( state.backtracking==0 ) {
 
                       					current = forceCreateModelElement(
-                      						grammarAccess.getEFPrimaryExpressionAccess().getEFSuperAction_14_0(),
+                      						grammarAccess.getEFPrimaryExpressionAccess().getEFNewAction_13_0(),
                       						current);
                       				
                     }
 
                     }
 
-                    otherlv_28=(Token)match(input,42,FOLLOW_2); if (state.failed) return current;
+                    otherlv_28=(Token)match(input,42,FOLLOW_5); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      				newLeafNode(otherlv_28, grammarAccess.getEFPrimaryExpressionAccess().getSuperKeyword_14_1());
+                      				newLeafNode(otherlv_28, grammarAccess.getEFPrimaryExpressionAccess().getNewKeyword_13_1());
                       			
                     }
-
-                    }
-
-
-                    }
-                    break;
-                case 16 :
-                    // InternalEasyWall.g:2268:3: ( () otherlv_30= 'new' ( ( ruleQualifiedName ) ) otherlv_32= '(' otherlv_33= ')' )
+                    // InternalEasyWall.g:2274:4: ( ( ruleQualifiedName ) )
+                    // InternalEasyWall.g:2275:5: ( ruleQualifiedName )
                     {
-                    // InternalEasyWall.g:2268:3: ( () otherlv_30= 'new' ( ( ruleQualifiedName ) ) otherlv_32= '(' otherlv_33= ')' )
-                    // InternalEasyWall.g:2269:4: () otherlv_30= 'new' ( ( ruleQualifiedName ) ) otherlv_32= '(' otherlv_33= ')'
-                    {
-                    // InternalEasyWall.g:2269:4: ()
-                    // InternalEasyWall.g:2270:5: 
-                    {
-                    if ( state.backtracking==0 ) {
-
-                      					current = forceCreateModelElement(
-                      						grammarAccess.getEFPrimaryExpressionAccess().getEFNewAction_15_0(),
-                      						current);
-                      				
-                    }
-
-                    }
-
-                    otherlv_30=(Token)match(input,43,FOLLOW_5); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      				newLeafNode(otherlv_30, grammarAccess.getEFPrimaryExpressionAccess().getNewKeyword_15_1());
-                      			
-                    }
-                    // InternalEasyWall.g:2280:4: ( ( ruleQualifiedName ) )
-                    // InternalEasyWall.g:2281:5: ( ruleQualifiedName )
-                    {
-                    // InternalEasyWall.g:2281:5: ( ruleQualifiedName )
-                    // InternalEasyWall.g:2282:6: ruleQualifiedName
+                    // InternalEasyWall.g:2275:5: ( ruleQualifiedName )
+                    // InternalEasyWall.g:2276:6: ruleQualifiedName
                     {
                     if ( state.backtracking==0 ) {
 
@@ -6559,7 +6580,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     if ( state.backtracking==0 ) {
 
-                      						newCompositeNode(grammarAccess.getEFPrimaryExpressionAccess().getTypeEFRuleClassCrossReference_15_2_0());
+                      						newCompositeNode(grammarAccess.getEFPrimaryExpressionAccess().getTypeEFRuleClassCrossReference_13_2_0());
                       					
                     }
                     pushFollow(FOLLOW_19);
@@ -6578,16 +6599,16 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_32=(Token)match(input,28,FOLLOW_24); if (state.failed) return current;
+                    otherlv_30=(Token)match(input,28,FOLLOW_24); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      				newLeafNode(otherlv_32, grammarAccess.getEFPrimaryExpressionAccess().getLeftParenthesisKeyword_15_3());
+                      				newLeafNode(otherlv_30, grammarAccess.getEFPrimaryExpressionAccess().getLeftParenthesisKeyword_13_3());
                       			
                     }
-                    otherlv_33=(Token)match(input,30,FOLLOW_2); if (state.failed) return current;
+                    otherlv_31=(Token)match(input,30,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      				newLeafNode(otherlv_33, grammarAccess.getEFPrimaryExpressionAccess().getRightParenthesisKeyword_15_4());
+                      				newLeafNode(otherlv_31, grammarAccess.getEFPrimaryExpressionAccess().getRightParenthesisKeyword_13_4());
                       			
                     }
 
@@ -6596,44 +6617,44 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 17 :
-                    // InternalEasyWall.g:2306:3: ( () otherlv_35= '(' ( (lv_expression_36_0= ruleEFExpression ) ) otherlv_37= ')' )
+                case 15 :
+                    // InternalEasyWall.g:2300:3: ( () otherlv_33= '(' ( (lv_expression_34_0= ruleEFExpression ) ) otherlv_35= ')' )
                     {
-                    // InternalEasyWall.g:2306:3: ( () otherlv_35= '(' ( (lv_expression_36_0= ruleEFExpression ) ) otherlv_37= ')' )
-                    // InternalEasyWall.g:2307:4: () otherlv_35= '(' ( (lv_expression_36_0= ruleEFExpression ) ) otherlv_37= ')'
+                    // InternalEasyWall.g:2300:3: ( () otherlv_33= '(' ( (lv_expression_34_0= ruleEFExpression ) ) otherlv_35= ')' )
+                    // InternalEasyWall.g:2301:4: () otherlv_33= '(' ( (lv_expression_34_0= ruleEFExpression ) ) otherlv_35= ')'
                     {
-                    // InternalEasyWall.g:2307:4: ()
-                    // InternalEasyWall.g:2308:5: 
+                    // InternalEasyWall.g:2301:4: ()
+                    // InternalEasyWall.g:2302:5: 
                     {
                     if ( state.backtracking==0 ) {
 
                       					current = forceCreateModelElement(
-                      						grammarAccess.getEFPrimaryExpressionAccess().getEFBracketsExpressionAction_16_0(),
+                      						grammarAccess.getEFPrimaryExpressionAccess().getEFBracketsExpressionAction_14_0(),
                       						current);
                       				
                     }
 
                     }
 
-                    otherlv_35=(Token)match(input,28,FOLLOW_16); if (state.failed) return current;
+                    otherlv_33=(Token)match(input,28,FOLLOW_16); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      				newLeafNode(otherlv_35, grammarAccess.getEFPrimaryExpressionAccess().getLeftParenthesisKeyword_16_1());
+                      				newLeafNode(otherlv_33, grammarAccess.getEFPrimaryExpressionAccess().getLeftParenthesisKeyword_14_1());
                       			
                     }
-                    // InternalEasyWall.g:2318:4: ( (lv_expression_36_0= ruleEFExpression ) )
-                    // InternalEasyWall.g:2319:5: (lv_expression_36_0= ruleEFExpression )
+                    // InternalEasyWall.g:2312:4: ( (lv_expression_34_0= ruleEFExpression ) )
+                    // InternalEasyWall.g:2313:5: (lv_expression_34_0= ruleEFExpression )
                     {
-                    // InternalEasyWall.g:2319:5: (lv_expression_36_0= ruleEFExpression )
-                    // InternalEasyWall.g:2320:6: lv_expression_36_0= ruleEFExpression
+                    // InternalEasyWall.g:2313:5: (lv_expression_34_0= ruleEFExpression )
+                    // InternalEasyWall.g:2314:6: lv_expression_34_0= ruleEFExpression
                     {
                     if ( state.backtracking==0 ) {
 
-                      						newCompositeNode(grammarAccess.getEFPrimaryExpressionAccess().getExpressionEFExpressionParserRuleCall_16_2_0());
+                      						newCompositeNode(grammarAccess.getEFPrimaryExpressionAccess().getExpressionEFExpressionParserRuleCall_14_2_0());
                       					
                     }
                     pushFollow(FOLLOW_24);
-                    lv_expression_36_0=ruleEFExpression();
+                    lv_expression_34_0=ruleEFExpression();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -6645,7 +6666,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                       						set(
                       							current,
                       							"expression",
-                      							lv_expression_36_0,
+                      							lv_expression_34_0,
                       							"org.xtext.example.easywall.EasyWall.EFExpression");
                       						afterParserOrEnumRuleCall();
                       					
@@ -6656,10 +6677,10 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_37=(Token)match(input,30,FOLLOW_2); if (state.failed) return current;
+                    otherlv_35=(Token)match(input,30,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      				newLeafNode(otherlv_37, grammarAccess.getEFPrimaryExpressionAccess().getRightParenthesisKeyword_16_3());
+                      				newLeafNode(otherlv_35, grammarAccess.getEFPrimaryExpressionAccess().getRightParenthesisKeyword_14_3());
                       			
                     }
 
@@ -6668,60 +6689,60 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 18 :
-                    // InternalEasyWall.g:2343:3: this_EFBuiltinFunction_38= ruleEFBuiltinFunction
+                case 16 :
+                    // InternalEasyWall.g:2337:3: this_EFBuiltinFunction_36= ruleEFBuiltinFunction
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getEFPrimaryExpressionAccess().getEFBuiltinFunctionParserRuleCall_17());
+                      			newCompositeNode(grammarAccess.getEFPrimaryExpressionAccess().getEFBuiltinFunctionParserRuleCall_15());
                       		
                     }
                     pushFollow(FOLLOW_2);
-                    this_EFBuiltinFunction_38=ruleEFBuiltinFunction();
+                    this_EFBuiltinFunction_36=ruleEFBuiltinFunction();
 
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      			current = this_EFBuiltinFunction_38;
+                      			current = this_EFBuiltinFunction_36;
                       			afterParserOrEnumRuleCall();
                       		
                     }
 
                     }
                     break;
-                case 19 :
-                    // InternalEasyWall.g:2352:3: ( () ( (lv_functionName_40_0= ruleQualifiedName ) ) otherlv_41= '(' ( ( (lv_args_42_0= ruleEFExpression ) ) (otherlv_43= ',' ( (lv_args_44_0= ruleEFExpression ) ) )* )? otherlv_45= ')' )
+                case 17 :
+                    // InternalEasyWall.g:2346:3: ( () ( (lv_functionName_38_0= ruleQualifiedName ) ) otherlv_39= '(' ( ( (lv_args_40_0= ruleEFExpression ) ) (otherlv_41= ',' ( (lv_args_42_0= ruleEFExpression ) ) )* )? otherlv_43= ')' )
                     {
-                    // InternalEasyWall.g:2352:3: ( () ( (lv_functionName_40_0= ruleQualifiedName ) ) otherlv_41= '(' ( ( (lv_args_42_0= ruleEFExpression ) ) (otherlv_43= ',' ( (lv_args_44_0= ruleEFExpression ) ) )* )? otherlv_45= ')' )
-                    // InternalEasyWall.g:2353:4: () ( (lv_functionName_40_0= ruleQualifiedName ) ) otherlv_41= '(' ( ( (lv_args_42_0= ruleEFExpression ) ) (otherlv_43= ',' ( (lv_args_44_0= ruleEFExpression ) ) )* )? otherlv_45= ')'
+                    // InternalEasyWall.g:2346:3: ( () ( (lv_functionName_38_0= ruleQualifiedName ) ) otherlv_39= '(' ( ( (lv_args_40_0= ruleEFExpression ) ) (otherlv_41= ',' ( (lv_args_42_0= ruleEFExpression ) ) )* )? otherlv_43= ')' )
+                    // InternalEasyWall.g:2347:4: () ( (lv_functionName_38_0= ruleQualifiedName ) ) otherlv_39= '(' ( ( (lv_args_40_0= ruleEFExpression ) ) (otherlv_41= ',' ( (lv_args_42_0= ruleEFExpression ) ) )* )? otherlv_43= ')'
                     {
-                    // InternalEasyWall.g:2353:4: ()
-                    // InternalEasyWall.g:2354:5: 
+                    // InternalEasyWall.g:2347:4: ()
+                    // InternalEasyWall.g:2348:5: 
                     {
                     if ( state.backtracking==0 ) {
 
                       					current = forceCreateModelElement(
-                      						grammarAccess.getEFPrimaryExpressionAccess().getEFFunctionCallAction_18_0(),
+                      						grammarAccess.getEFPrimaryExpressionAccess().getEFFunctionCallAction_16_0(),
                       						current);
                       				
                     }
 
                     }
 
-                    // InternalEasyWall.g:2360:4: ( (lv_functionName_40_0= ruleQualifiedName ) )
-                    // InternalEasyWall.g:2361:5: (lv_functionName_40_0= ruleQualifiedName )
+                    // InternalEasyWall.g:2354:4: ( (lv_functionName_38_0= ruleQualifiedName ) )
+                    // InternalEasyWall.g:2355:5: (lv_functionName_38_0= ruleQualifiedName )
                     {
-                    // InternalEasyWall.g:2361:5: (lv_functionName_40_0= ruleQualifiedName )
-                    // InternalEasyWall.g:2362:6: lv_functionName_40_0= ruleQualifiedName
+                    // InternalEasyWall.g:2355:5: (lv_functionName_38_0= ruleQualifiedName )
+                    // InternalEasyWall.g:2356:6: lv_functionName_38_0= ruleQualifiedName
                     {
                     if ( state.backtracking==0 ) {
 
-                      						newCompositeNode(grammarAccess.getEFPrimaryExpressionAccess().getFunctionNameQualifiedNameParserRuleCall_18_1_0());
+                      						newCompositeNode(grammarAccess.getEFPrimaryExpressionAccess().getFunctionNameQualifiedNameParserRuleCall_16_1_0());
                       					
                     }
                     pushFollow(FOLLOW_19);
-                    lv_functionName_40_0=ruleQualifiedName();
+                    lv_functionName_38_0=ruleQualifiedName();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -6733,7 +6754,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                       						set(
                       							current,
                       							"functionName",
-                      							lv_functionName_40_0,
+                      							lv_functionName_38_0,
                       							"org.xtext.example.easywall.EasyWall.QualifiedName");
                       						afterParserOrEnumRuleCall();
                       					
@@ -6744,36 +6765,36 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_41=(Token)match(input,28,FOLLOW_36); if (state.failed) return current;
+                    otherlv_39=(Token)match(input,28,FOLLOW_36); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      				newLeafNode(otherlv_41, grammarAccess.getEFPrimaryExpressionAccess().getLeftParenthesisKeyword_18_2());
+                      				newLeafNode(otherlv_39, grammarAccess.getEFPrimaryExpressionAccess().getLeftParenthesisKeyword_16_2());
                       			
                     }
-                    // InternalEasyWall.g:2383:4: ( ( (lv_args_42_0= ruleEFExpression ) ) (otherlv_43= ',' ( (lv_args_44_0= ruleEFExpression ) ) )* )?
-                    int alt34=2;
-                    int LA34_0 = input.LA(1);
+                    // InternalEasyWall.g:2377:4: ( ( (lv_args_40_0= ruleEFExpression ) ) (otherlv_41= ',' ( (lv_args_42_0= ruleEFExpression ) ) )* )?
+                    int alt35=2;
+                    int LA35_0 = input.LA(1);
 
-                    if ( (LA34_0==RULE_ID||(LA34_0>=RULE_INT && LA34_0<=RULE_EFIPV4SYNTAX)||LA34_0==26||LA34_0==28||(LA34_0>=36 && LA34_0<=50)||(LA34_0>=57 && LA34_0<=58)||(LA34_0>=83 && LA34_0<=85)||(LA34_0>=94 && LA34_0<=118)) ) {
-                        alt34=1;
+                    if ( ((LA35_0>=RULE_ID && LA35_0<=RULE_EFIPV4SYNTAX)||LA35_0==26||LA35_0==28||(LA35_0>=36 && LA35_0<=49)||(LA35_0>=56 && LA35_0<=57)||(LA35_0>=82 && LA35_0<=84)||(LA35_0>=93 && LA35_0<=117)) ) {
+                        alt35=1;
                     }
-                    switch (alt34) {
+                    switch (alt35) {
                         case 1 :
-                            // InternalEasyWall.g:2384:5: ( (lv_args_42_0= ruleEFExpression ) ) (otherlv_43= ',' ( (lv_args_44_0= ruleEFExpression ) ) )*
+                            // InternalEasyWall.g:2378:5: ( (lv_args_40_0= ruleEFExpression ) ) (otherlv_41= ',' ( (lv_args_42_0= ruleEFExpression ) ) )*
                             {
-                            // InternalEasyWall.g:2384:5: ( (lv_args_42_0= ruleEFExpression ) )
-                            // InternalEasyWall.g:2385:6: (lv_args_42_0= ruleEFExpression )
+                            // InternalEasyWall.g:2378:5: ( (lv_args_40_0= ruleEFExpression ) )
+                            // InternalEasyWall.g:2379:6: (lv_args_40_0= ruleEFExpression )
                             {
-                            // InternalEasyWall.g:2385:6: (lv_args_42_0= ruleEFExpression )
-                            // InternalEasyWall.g:2386:7: lv_args_42_0= ruleEFExpression
+                            // InternalEasyWall.g:2379:6: (lv_args_40_0= ruleEFExpression )
+                            // InternalEasyWall.g:2380:7: lv_args_40_0= ruleEFExpression
                             {
                             if ( state.backtracking==0 ) {
 
-                              							newCompositeNode(grammarAccess.getEFPrimaryExpressionAccess().getArgsEFExpressionParserRuleCall_18_3_0_0());
+                              							newCompositeNode(grammarAccess.getEFPrimaryExpressionAccess().getArgsEFExpressionParserRuleCall_16_3_0_0());
                               						
                             }
                             pushFollow(FOLLOW_21);
-                            lv_args_42_0=ruleEFExpression();
+                            lv_args_40_0=ruleEFExpression();
 
                             state._fsp--;
                             if (state.failed) return current;
@@ -6785,7 +6806,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                               							add(
                               								current,
                               								"args",
-                              								lv_args_42_0,
+                              								lv_args_40_0,
                               								"org.xtext.example.easywall.EasyWall.EFExpression");
                               							afterParserOrEnumRuleCall();
                               						
@@ -6796,40 +6817,40 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
                             }
 
-                            // InternalEasyWall.g:2403:5: (otherlv_43= ',' ( (lv_args_44_0= ruleEFExpression ) ) )*
-                            loop33:
+                            // InternalEasyWall.g:2397:5: (otherlv_41= ',' ( (lv_args_42_0= ruleEFExpression ) ) )*
+                            loop34:
                             do {
-                                int alt33=2;
-                                int LA33_0 = input.LA(1);
+                                int alt34=2;
+                                int LA34_0 = input.LA(1);
 
-                                if ( (LA33_0==29) ) {
-                                    alt33=1;
+                                if ( (LA34_0==29) ) {
+                                    alt34=1;
                                 }
 
 
-                                switch (alt33) {
+                                switch (alt34) {
                             	case 1 :
-                            	    // InternalEasyWall.g:2404:6: otherlv_43= ',' ( (lv_args_44_0= ruleEFExpression ) )
+                            	    // InternalEasyWall.g:2398:6: otherlv_41= ',' ( (lv_args_42_0= ruleEFExpression ) )
                             	    {
-                            	    otherlv_43=(Token)match(input,29,FOLLOW_16); if (state.failed) return current;
+                            	    otherlv_41=(Token)match(input,29,FOLLOW_16); if (state.failed) return current;
                             	    if ( state.backtracking==0 ) {
 
-                            	      						newLeafNode(otherlv_43, grammarAccess.getEFPrimaryExpressionAccess().getCommaKeyword_18_3_1_0());
+                            	      						newLeafNode(otherlv_41, grammarAccess.getEFPrimaryExpressionAccess().getCommaKeyword_16_3_1_0());
                             	      					
                             	    }
-                            	    // InternalEasyWall.g:2408:6: ( (lv_args_44_0= ruleEFExpression ) )
-                            	    // InternalEasyWall.g:2409:7: (lv_args_44_0= ruleEFExpression )
+                            	    // InternalEasyWall.g:2402:6: ( (lv_args_42_0= ruleEFExpression ) )
+                            	    // InternalEasyWall.g:2403:7: (lv_args_42_0= ruleEFExpression )
                             	    {
-                            	    // InternalEasyWall.g:2409:7: (lv_args_44_0= ruleEFExpression )
-                            	    // InternalEasyWall.g:2410:8: lv_args_44_0= ruleEFExpression
+                            	    // InternalEasyWall.g:2403:7: (lv_args_42_0= ruleEFExpression )
+                            	    // InternalEasyWall.g:2404:8: lv_args_42_0= ruleEFExpression
                             	    {
                             	    if ( state.backtracking==0 ) {
 
-                            	      								newCompositeNode(grammarAccess.getEFPrimaryExpressionAccess().getArgsEFExpressionParserRuleCall_18_3_1_1_0());
+                            	      								newCompositeNode(grammarAccess.getEFPrimaryExpressionAccess().getArgsEFExpressionParserRuleCall_16_3_1_1_0());
                             	      							
                             	    }
                             	    pushFollow(FOLLOW_21);
-                            	    lv_args_44_0=ruleEFExpression();
+                            	    lv_args_42_0=ruleEFExpression();
 
                             	    state._fsp--;
                             	    if (state.failed) return current;
@@ -6841,7 +6862,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                             	      								add(
                             	      									current,
                             	      									"args",
-                            	      									lv_args_44_0,
+                            	      									lv_args_42_0,
                             	      									"org.xtext.example.easywall.EasyWall.EFExpression");
                             	      								afterParserOrEnumRuleCall();
                             	      							
@@ -6857,7 +6878,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                             	    break;
 
                             	default :
-                            	    break loop33;
+                            	    break loop34;
                                 }
                             } while (true);
 
@@ -6867,10 +6888,10 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_45=(Token)match(input,30,FOLLOW_2); if (state.failed) return current;
+                    otherlv_43=(Token)match(input,30,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      				newLeafNode(otherlv_45, grammarAccess.getEFPrimaryExpressionAccess().getRightParenthesisKeyword_18_4());
+                      				newLeafNode(otherlv_43, grammarAccess.getEFPrimaryExpressionAccess().getRightParenthesisKeyword_16_4());
                       			
                     }
 
@@ -6879,38 +6900,38 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 20 :
-                    // InternalEasyWall.g:2435:3: ( () ( (lv_symbol_47_0= ruleQualifiedName ) ) )
+                case 18 :
+                    // InternalEasyWall.g:2429:3: ( () ( (lv_symbol_45_0= ruleQualifiedName ) ) )
                     {
-                    // InternalEasyWall.g:2435:3: ( () ( (lv_symbol_47_0= ruleQualifiedName ) ) )
-                    // InternalEasyWall.g:2436:4: () ( (lv_symbol_47_0= ruleQualifiedName ) )
+                    // InternalEasyWall.g:2429:3: ( () ( (lv_symbol_45_0= ruleQualifiedName ) ) )
+                    // InternalEasyWall.g:2430:4: () ( (lv_symbol_45_0= ruleQualifiedName ) )
                     {
-                    // InternalEasyWall.g:2436:4: ()
-                    // InternalEasyWall.g:2437:5: 
+                    // InternalEasyWall.g:2430:4: ()
+                    // InternalEasyWall.g:2431:5: 
                     {
                     if ( state.backtracking==0 ) {
 
                       					current = forceCreateModelElement(
-                      						grammarAccess.getEFPrimaryExpressionAccess().getEFSymbolRefAction_19_0(),
+                      						grammarAccess.getEFPrimaryExpressionAccess().getEFSymbolRefAction_17_0(),
                       						current);
                       				
                     }
 
                     }
 
-                    // InternalEasyWall.g:2443:4: ( (lv_symbol_47_0= ruleQualifiedName ) )
-                    // InternalEasyWall.g:2444:5: (lv_symbol_47_0= ruleQualifiedName )
+                    // InternalEasyWall.g:2437:4: ( (lv_symbol_45_0= ruleQualifiedName ) )
+                    // InternalEasyWall.g:2438:5: (lv_symbol_45_0= ruleQualifiedName )
                     {
-                    // InternalEasyWall.g:2444:5: (lv_symbol_47_0= ruleQualifiedName )
-                    // InternalEasyWall.g:2445:6: lv_symbol_47_0= ruleQualifiedName
+                    // InternalEasyWall.g:2438:5: (lv_symbol_45_0= ruleQualifiedName )
+                    // InternalEasyWall.g:2439:6: lv_symbol_45_0= ruleQualifiedName
                     {
                     if ( state.backtracking==0 ) {
 
-                      						newCompositeNode(grammarAccess.getEFPrimaryExpressionAccess().getSymbolQualifiedNameParserRuleCall_19_1_0());
+                      						newCompositeNode(grammarAccess.getEFPrimaryExpressionAccess().getSymbolQualifiedNameParserRuleCall_17_1_0());
                       					
                     }
                     pushFollow(FOLLOW_2);
-                    lv_symbol_47_0=ruleQualifiedName();
+                    lv_symbol_45_0=ruleQualifiedName();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -6922,7 +6943,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                       						set(
                       							current,
                       							"symbol",
-                      							lv_symbol_47_0,
+                      							lv_symbol_45_0,
                       							"org.xtext.example.easywall.EasyWall.QualifiedName");
                       						afterParserOrEnumRuleCall();
                       					
@@ -6964,7 +6985,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEFBuiltinFunction"
-    // InternalEasyWall.g:2467:1: entryRuleEFBuiltinFunction returns [EObject current=null] : iv_ruleEFBuiltinFunction= ruleEFBuiltinFunction EOF ;
+    // InternalEasyWall.g:2461:1: entryRuleEFBuiltinFunction returns [EObject current=null] : iv_ruleEFBuiltinFunction= ruleEFBuiltinFunction EOF ;
     public final EObject entryRuleEFBuiltinFunction() throws RecognitionException {
         EObject current = null;
 
@@ -6972,8 +6993,8 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalEasyWall.g:2467:58: (iv_ruleEFBuiltinFunction= ruleEFBuiltinFunction EOF )
-            // InternalEasyWall.g:2468:2: iv_ruleEFBuiltinFunction= ruleEFBuiltinFunction EOF
+            // InternalEasyWall.g:2461:58: (iv_ruleEFBuiltinFunction= ruleEFBuiltinFunction EOF )
+            // InternalEasyWall.g:2462:2: iv_ruleEFBuiltinFunction= ruleEFBuiltinFunction EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEFBuiltinFunctionRule()); 
@@ -7004,7 +7025,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEFBuiltinFunction"
-    // InternalEasyWall.g:2474:1: ruleEFBuiltinFunction returns [EObject current=null] : ( ( () otherlv_1= 'allow' otherlv_2= '(' otherlv_3= ')' ) | ( () otherlv_5= 'block' otherlv_6= '(' otherlv_7= ')' ) | ( () otherlv_9= 'drop' otherlv_10= '(' otherlv_11= ')' ) | ( () otherlv_13= 'reject' otherlv_14= '(' otherlv_15= ')' ) | ( () otherlv_17= 'writelog' otherlv_18= '(' ( (lv_message_19_0= ruleEFExpression ) ) otherlv_20= ')' ) | ( () otherlv_22= 'writelog' otherlv_23= '(' ( (lv_level_24_0= ruleEFLogLevel ) ) otherlv_25= ',' ( (lv_message_26_0= ruleEFExpression ) ) otherlv_27= ')' ) | ( () otherlv_29= 'getTime' otherlv_30= '(' otherlv_31= ')' ) | ( () otherlv_33= 'getPacketField' otherlv_34= '(' ( (lv_field_35_0= RULE_STRING ) ) otherlv_36= ')' ) ) ;
+    // InternalEasyWall.g:2468:1: ruleEFBuiltinFunction returns [EObject current=null] : ( ( () otherlv_1= 'allow' otherlv_2= '(' otherlv_3= ')' ) | ( () otherlv_5= 'block' otherlv_6= '(' otherlv_7= ')' ) | ( () otherlv_9= 'drop' otherlv_10= '(' otherlv_11= ')' ) | ( () otherlv_13= 'reject' otherlv_14= '(' otherlv_15= ')' ) | ( () otherlv_17= 'writelog' otherlv_18= '(' ( (lv_message_19_0= ruleEFExpression ) ) otherlv_20= ')' ) | ( () otherlv_22= 'writelog' otherlv_23= '(' ( (lv_level_24_0= ruleEFLogLevel ) ) otherlv_25= ',' ( (lv_message_26_0= ruleEFExpression ) ) otherlv_27= ')' ) | ( () otherlv_29= 'getTime' otherlv_30= '(' otherlv_31= ')' ) | ( () otherlv_33= 'getPacketField' otherlv_34= '(' ( (lv_field_35_0= RULE_STRING ) ) otherlv_36= ')' ) ) ;
     public final EObject ruleEFBuiltinFunction() throws RecognitionException {
         EObject current = null;
 
@@ -7045,21 +7066,21 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalEasyWall.g:2480:2: ( ( ( () otherlv_1= 'allow' otherlv_2= '(' otherlv_3= ')' ) | ( () otherlv_5= 'block' otherlv_6= '(' otherlv_7= ')' ) | ( () otherlv_9= 'drop' otherlv_10= '(' otherlv_11= ')' ) | ( () otherlv_13= 'reject' otherlv_14= '(' otherlv_15= ')' ) | ( () otherlv_17= 'writelog' otherlv_18= '(' ( (lv_message_19_0= ruleEFExpression ) ) otherlv_20= ')' ) | ( () otherlv_22= 'writelog' otherlv_23= '(' ( (lv_level_24_0= ruleEFLogLevel ) ) otherlv_25= ',' ( (lv_message_26_0= ruleEFExpression ) ) otherlv_27= ')' ) | ( () otherlv_29= 'getTime' otherlv_30= '(' otherlv_31= ')' ) | ( () otherlv_33= 'getPacketField' otherlv_34= '(' ( (lv_field_35_0= RULE_STRING ) ) otherlv_36= ')' ) ) )
-            // InternalEasyWall.g:2481:2: ( ( () otherlv_1= 'allow' otherlv_2= '(' otherlv_3= ')' ) | ( () otherlv_5= 'block' otherlv_6= '(' otherlv_7= ')' ) | ( () otherlv_9= 'drop' otherlv_10= '(' otherlv_11= ')' ) | ( () otherlv_13= 'reject' otherlv_14= '(' otherlv_15= ')' ) | ( () otherlv_17= 'writelog' otherlv_18= '(' ( (lv_message_19_0= ruleEFExpression ) ) otherlv_20= ')' ) | ( () otherlv_22= 'writelog' otherlv_23= '(' ( (lv_level_24_0= ruleEFLogLevel ) ) otherlv_25= ',' ( (lv_message_26_0= ruleEFExpression ) ) otherlv_27= ')' ) | ( () otherlv_29= 'getTime' otherlv_30= '(' otherlv_31= ')' ) | ( () otherlv_33= 'getPacketField' otherlv_34= '(' ( (lv_field_35_0= RULE_STRING ) ) otherlv_36= ')' ) )
+            // InternalEasyWall.g:2474:2: ( ( ( () otherlv_1= 'allow' otherlv_2= '(' otherlv_3= ')' ) | ( () otherlv_5= 'block' otherlv_6= '(' otherlv_7= ')' ) | ( () otherlv_9= 'drop' otherlv_10= '(' otherlv_11= ')' ) | ( () otherlv_13= 'reject' otherlv_14= '(' otherlv_15= ')' ) | ( () otherlv_17= 'writelog' otherlv_18= '(' ( (lv_message_19_0= ruleEFExpression ) ) otherlv_20= ')' ) | ( () otherlv_22= 'writelog' otherlv_23= '(' ( (lv_level_24_0= ruleEFLogLevel ) ) otherlv_25= ',' ( (lv_message_26_0= ruleEFExpression ) ) otherlv_27= ')' ) | ( () otherlv_29= 'getTime' otherlv_30= '(' otherlv_31= ')' ) | ( () otherlv_33= 'getPacketField' otherlv_34= '(' ( (lv_field_35_0= RULE_STRING ) ) otherlv_36= ')' ) ) )
+            // InternalEasyWall.g:2475:2: ( ( () otherlv_1= 'allow' otherlv_2= '(' otherlv_3= ')' ) | ( () otherlv_5= 'block' otherlv_6= '(' otherlv_7= ')' ) | ( () otherlv_9= 'drop' otherlv_10= '(' otherlv_11= ')' ) | ( () otherlv_13= 'reject' otherlv_14= '(' otherlv_15= ')' ) | ( () otherlv_17= 'writelog' otherlv_18= '(' ( (lv_message_19_0= ruleEFExpression ) ) otherlv_20= ')' ) | ( () otherlv_22= 'writelog' otherlv_23= '(' ( (lv_level_24_0= ruleEFLogLevel ) ) otherlv_25= ',' ( (lv_message_26_0= ruleEFExpression ) ) otherlv_27= ')' ) | ( () otherlv_29= 'getTime' otherlv_30= '(' otherlv_31= ')' ) | ( () otherlv_33= 'getPacketField' otherlv_34= '(' ( (lv_field_35_0= RULE_STRING ) ) otherlv_36= ')' ) )
             {
-            // InternalEasyWall.g:2481:2: ( ( () otherlv_1= 'allow' otherlv_2= '(' otherlv_3= ')' ) | ( () otherlv_5= 'block' otherlv_6= '(' otherlv_7= ')' ) | ( () otherlv_9= 'drop' otherlv_10= '(' otherlv_11= ')' ) | ( () otherlv_13= 'reject' otherlv_14= '(' otherlv_15= ')' ) | ( () otherlv_17= 'writelog' otherlv_18= '(' ( (lv_message_19_0= ruleEFExpression ) ) otherlv_20= ')' ) | ( () otherlv_22= 'writelog' otherlv_23= '(' ( (lv_level_24_0= ruleEFLogLevel ) ) otherlv_25= ',' ( (lv_message_26_0= ruleEFExpression ) ) otherlv_27= ')' ) | ( () otherlv_29= 'getTime' otherlv_30= '(' otherlv_31= ')' ) | ( () otherlv_33= 'getPacketField' otherlv_34= '(' ( (lv_field_35_0= RULE_STRING ) ) otherlv_36= ')' ) )
-            int alt36=8;
-            alt36 = dfa36.predict(input);
-            switch (alt36) {
+            // InternalEasyWall.g:2475:2: ( ( () otherlv_1= 'allow' otherlv_2= '(' otherlv_3= ')' ) | ( () otherlv_5= 'block' otherlv_6= '(' otherlv_7= ')' ) | ( () otherlv_9= 'drop' otherlv_10= '(' otherlv_11= ')' ) | ( () otherlv_13= 'reject' otherlv_14= '(' otherlv_15= ')' ) | ( () otherlv_17= 'writelog' otherlv_18= '(' ( (lv_message_19_0= ruleEFExpression ) ) otherlv_20= ')' ) | ( () otherlv_22= 'writelog' otherlv_23= '(' ( (lv_level_24_0= ruleEFLogLevel ) ) otherlv_25= ',' ( (lv_message_26_0= ruleEFExpression ) ) otherlv_27= ')' ) | ( () otherlv_29= 'getTime' otherlv_30= '(' otherlv_31= ')' ) | ( () otherlv_33= 'getPacketField' otherlv_34= '(' ( (lv_field_35_0= RULE_STRING ) ) otherlv_36= ')' ) )
+            int alt37=8;
+            alt37 = dfa37.predict(input);
+            switch (alt37) {
                 case 1 :
-                    // InternalEasyWall.g:2482:3: ( () otherlv_1= 'allow' otherlv_2= '(' otherlv_3= ')' )
+                    // InternalEasyWall.g:2476:3: ( () otherlv_1= 'allow' otherlv_2= '(' otherlv_3= ')' )
                     {
-                    // InternalEasyWall.g:2482:3: ( () otherlv_1= 'allow' otherlv_2= '(' otherlv_3= ')' )
-                    // InternalEasyWall.g:2483:4: () otherlv_1= 'allow' otherlv_2= '(' otherlv_3= ')'
+                    // InternalEasyWall.g:2476:3: ( () otherlv_1= 'allow' otherlv_2= '(' otherlv_3= ')' )
+                    // InternalEasyWall.g:2477:4: () otherlv_1= 'allow' otherlv_2= '(' otherlv_3= ')'
                     {
-                    // InternalEasyWall.g:2483:4: ()
-                    // InternalEasyWall.g:2484:5: 
+                    // InternalEasyWall.g:2477:4: ()
+                    // InternalEasyWall.g:2478:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -7071,7 +7092,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_1=(Token)match(input,44,FOLLOW_19); if (state.failed) return current;
+                    otherlv_1=(Token)match(input,43,FOLLOW_19); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_1, grammarAccess.getEFBuiltinFunctionAccess().getAllowKeyword_0_1());
@@ -7096,13 +7117,13 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalEasyWall.g:2504:3: ( () otherlv_5= 'block' otherlv_6= '(' otherlv_7= ')' )
+                    // InternalEasyWall.g:2498:3: ( () otherlv_5= 'block' otherlv_6= '(' otherlv_7= ')' )
                     {
-                    // InternalEasyWall.g:2504:3: ( () otherlv_5= 'block' otherlv_6= '(' otherlv_7= ')' )
-                    // InternalEasyWall.g:2505:4: () otherlv_5= 'block' otherlv_6= '(' otherlv_7= ')'
+                    // InternalEasyWall.g:2498:3: ( () otherlv_5= 'block' otherlv_6= '(' otherlv_7= ')' )
+                    // InternalEasyWall.g:2499:4: () otherlv_5= 'block' otherlv_6= '(' otherlv_7= ')'
                     {
-                    // InternalEasyWall.g:2505:4: ()
-                    // InternalEasyWall.g:2506:5: 
+                    // InternalEasyWall.g:2499:4: ()
+                    // InternalEasyWall.g:2500:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -7114,7 +7135,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_5=(Token)match(input,45,FOLLOW_19); if (state.failed) return current;
+                    otherlv_5=(Token)match(input,44,FOLLOW_19); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_5, grammarAccess.getEFBuiltinFunctionAccess().getBlockKeyword_1_1());
@@ -7139,13 +7160,13 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalEasyWall.g:2526:3: ( () otherlv_9= 'drop' otherlv_10= '(' otherlv_11= ')' )
+                    // InternalEasyWall.g:2520:3: ( () otherlv_9= 'drop' otherlv_10= '(' otherlv_11= ')' )
                     {
-                    // InternalEasyWall.g:2526:3: ( () otherlv_9= 'drop' otherlv_10= '(' otherlv_11= ')' )
-                    // InternalEasyWall.g:2527:4: () otherlv_9= 'drop' otherlv_10= '(' otherlv_11= ')'
+                    // InternalEasyWall.g:2520:3: ( () otherlv_9= 'drop' otherlv_10= '(' otherlv_11= ')' )
+                    // InternalEasyWall.g:2521:4: () otherlv_9= 'drop' otherlv_10= '(' otherlv_11= ')'
                     {
-                    // InternalEasyWall.g:2527:4: ()
-                    // InternalEasyWall.g:2528:5: 
+                    // InternalEasyWall.g:2521:4: ()
+                    // InternalEasyWall.g:2522:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -7157,7 +7178,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_9=(Token)match(input,46,FOLLOW_19); if (state.failed) return current;
+                    otherlv_9=(Token)match(input,45,FOLLOW_19); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_9, grammarAccess.getEFBuiltinFunctionAccess().getDropKeyword_2_1());
@@ -7182,13 +7203,13 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalEasyWall.g:2548:3: ( () otherlv_13= 'reject' otherlv_14= '(' otherlv_15= ')' )
+                    // InternalEasyWall.g:2542:3: ( () otherlv_13= 'reject' otherlv_14= '(' otherlv_15= ')' )
                     {
-                    // InternalEasyWall.g:2548:3: ( () otherlv_13= 'reject' otherlv_14= '(' otherlv_15= ')' )
-                    // InternalEasyWall.g:2549:4: () otherlv_13= 'reject' otherlv_14= '(' otherlv_15= ')'
+                    // InternalEasyWall.g:2542:3: ( () otherlv_13= 'reject' otherlv_14= '(' otherlv_15= ')' )
+                    // InternalEasyWall.g:2543:4: () otherlv_13= 'reject' otherlv_14= '(' otherlv_15= ')'
                     {
-                    // InternalEasyWall.g:2549:4: ()
-                    // InternalEasyWall.g:2550:5: 
+                    // InternalEasyWall.g:2543:4: ()
+                    // InternalEasyWall.g:2544:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -7200,7 +7221,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_13=(Token)match(input,47,FOLLOW_19); if (state.failed) return current;
+                    otherlv_13=(Token)match(input,46,FOLLOW_19); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_13, grammarAccess.getEFBuiltinFunctionAccess().getRejectKeyword_3_1());
@@ -7225,13 +7246,13 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalEasyWall.g:2570:3: ( () otherlv_17= 'writelog' otherlv_18= '(' ( (lv_message_19_0= ruleEFExpression ) ) otherlv_20= ')' )
+                    // InternalEasyWall.g:2564:3: ( () otherlv_17= 'writelog' otherlv_18= '(' ( (lv_message_19_0= ruleEFExpression ) ) otherlv_20= ')' )
                     {
-                    // InternalEasyWall.g:2570:3: ( () otherlv_17= 'writelog' otherlv_18= '(' ( (lv_message_19_0= ruleEFExpression ) ) otherlv_20= ')' )
-                    // InternalEasyWall.g:2571:4: () otherlv_17= 'writelog' otherlv_18= '(' ( (lv_message_19_0= ruleEFExpression ) ) otherlv_20= ')'
+                    // InternalEasyWall.g:2564:3: ( () otherlv_17= 'writelog' otherlv_18= '(' ( (lv_message_19_0= ruleEFExpression ) ) otherlv_20= ')' )
+                    // InternalEasyWall.g:2565:4: () otherlv_17= 'writelog' otherlv_18= '(' ( (lv_message_19_0= ruleEFExpression ) ) otherlv_20= ')'
                     {
-                    // InternalEasyWall.g:2571:4: ()
-                    // InternalEasyWall.g:2572:5: 
+                    // InternalEasyWall.g:2565:4: ()
+                    // InternalEasyWall.g:2566:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -7243,7 +7264,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_17=(Token)match(input,48,FOLLOW_19); if (state.failed) return current;
+                    otherlv_17=(Token)match(input,47,FOLLOW_19); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_17, grammarAccess.getEFBuiltinFunctionAccess().getWritelogKeyword_4_1());
@@ -7255,11 +7276,11 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                       				newLeafNode(otherlv_18, grammarAccess.getEFBuiltinFunctionAccess().getLeftParenthesisKeyword_4_2());
                       			
                     }
-                    // InternalEasyWall.g:2586:4: ( (lv_message_19_0= ruleEFExpression ) )
-                    // InternalEasyWall.g:2587:5: (lv_message_19_0= ruleEFExpression )
+                    // InternalEasyWall.g:2580:4: ( (lv_message_19_0= ruleEFExpression ) )
+                    // InternalEasyWall.g:2581:5: (lv_message_19_0= ruleEFExpression )
                     {
-                    // InternalEasyWall.g:2587:5: (lv_message_19_0= ruleEFExpression )
-                    // InternalEasyWall.g:2588:6: lv_message_19_0= ruleEFExpression
+                    // InternalEasyWall.g:2581:5: (lv_message_19_0= ruleEFExpression )
+                    // InternalEasyWall.g:2582:6: lv_message_19_0= ruleEFExpression
                     {
                     if ( state.backtracking==0 ) {
 
@@ -7303,13 +7324,13 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalEasyWall.g:2611:3: ( () otherlv_22= 'writelog' otherlv_23= '(' ( (lv_level_24_0= ruleEFLogLevel ) ) otherlv_25= ',' ( (lv_message_26_0= ruleEFExpression ) ) otherlv_27= ')' )
+                    // InternalEasyWall.g:2605:3: ( () otherlv_22= 'writelog' otherlv_23= '(' ( (lv_level_24_0= ruleEFLogLevel ) ) otherlv_25= ',' ( (lv_message_26_0= ruleEFExpression ) ) otherlv_27= ')' )
                     {
-                    // InternalEasyWall.g:2611:3: ( () otherlv_22= 'writelog' otherlv_23= '(' ( (lv_level_24_0= ruleEFLogLevel ) ) otherlv_25= ',' ( (lv_message_26_0= ruleEFExpression ) ) otherlv_27= ')' )
-                    // InternalEasyWall.g:2612:4: () otherlv_22= 'writelog' otherlv_23= '(' ( (lv_level_24_0= ruleEFLogLevel ) ) otherlv_25= ',' ( (lv_message_26_0= ruleEFExpression ) ) otherlv_27= ')'
+                    // InternalEasyWall.g:2605:3: ( () otherlv_22= 'writelog' otherlv_23= '(' ( (lv_level_24_0= ruleEFLogLevel ) ) otherlv_25= ',' ( (lv_message_26_0= ruleEFExpression ) ) otherlv_27= ')' )
+                    // InternalEasyWall.g:2606:4: () otherlv_22= 'writelog' otherlv_23= '(' ( (lv_level_24_0= ruleEFLogLevel ) ) otherlv_25= ',' ( (lv_message_26_0= ruleEFExpression ) ) otherlv_27= ')'
                     {
-                    // InternalEasyWall.g:2612:4: ()
-                    // InternalEasyWall.g:2613:5: 
+                    // InternalEasyWall.g:2606:4: ()
+                    // InternalEasyWall.g:2607:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -7321,30 +7342,30 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_22=(Token)match(input,48,FOLLOW_19); if (state.failed) return current;
+                    otherlv_22=(Token)match(input,47,FOLLOW_19); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_22, grammarAccess.getEFBuiltinFunctionAccess().getWritelogKeyword_5_1());
                       			
                     }
-                    otherlv_23=(Token)match(input,28,FOLLOW_39); if (state.failed) return current;
+                    otherlv_23=(Token)match(input,28,FOLLOW_37); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_23, grammarAccess.getEFBuiltinFunctionAccess().getLeftParenthesisKeyword_5_2());
                       			
                     }
-                    // InternalEasyWall.g:2627:4: ( (lv_level_24_0= ruleEFLogLevel ) )
-                    // InternalEasyWall.g:2628:5: (lv_level_24_0= ruleEFLogLevel )
+                    // InternalEasyWall.g:2621:4: ( (lv_level_24_0= ruleEFLogLevel ) )
+                    // InternalEasyWall.g:2622:5: (lv_level_24_0= ruleEFLogLevel )
                     {
-                    // InternalEasyWall.g:2628:5: (lv_level_24_0= ruleEFLogLevel )
-                    // InternalEasyWall.g:2629:6: lv_level_24_0= ruleEFLogLevel
+                    // InternalEasyWall.g:2622:5: (lv_level_24_0= ruleEFLogLevel )
+                    // InternalEasyWall.g:2623:6: lv_level_24_0= ruleEFLogLevel
                     {
                     if ( state.backtracking==0 ) {
 
                       						newCompositeNode(grammarAccess.getEFBuiltinFunctionAccess().getLevelEFLogLevelEnumRuleCall_5_3_0());
                       					
                     }
-                    pushFollow(FOLLOW_40);
+                    pushFollow(FOLLOW_38);
                     lv_level_24_0=ruleEFLogLevel();
 
                     state._fsp--;
@@ -7374,11 +7395,11 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                       				newLeafNode(otherlv_25, grammarAccess.getEFBuiltinFunctionAccess().getCommaKeyword_5_4());
                       			
                     }
-                    // InternalEasyWall.g:2650:4: ( (lv_message_26_0= ruleEFExpression ) )
-                    // InternalEasyWall.g:2651:5: (lv_message_26_0= ruleEFExpression )
+                    // InternalEasyWall.g:2644:4: ( (lv_message_26_0= ruleEFExpression ) )
+                    // InternalEasyWall.g:2645:5: (lv_message_26_0= ruleEFExpression )
                     {
-                    // InternalEasyWall.g:2651:5: (lv_message_26_0= ruleEFExpression )
-                    // InternalEasyWall.g:2652:6: lv_message_26_0= ruleEFExpression
+                    // InternalEasyWall.g:2645:5: (lv_message_26_0= ruleEFExpression )
+                    // InternalEasyWall.g:2646:6: lv_message_26_0= ruleEFExpression
                     {
                     if ( state.backtracking==0 ) {
 
@@ -7422,13 +7443,13 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalEasyWall.g:2675:3: ( () otherlv_29= 'getTime' otherlv_30= '(' otherlv_31= ')' )
+                    // InternalEasyWall.g:2669:3: ( () otherlv_29= 'getTime' otherlv_30= '(' otherlv_31= ')' )
                     {
-                    // InternalEasyWall.g:2675:3: ( () otherlv_29= 'getTime' otherlv_30= '(' otherlv_31= ')' )
-                    // InternalEasyWall.g:2676:4: () otherlv_29= 'getTime' otherlv_30= '(' otherlv_31= ')'
+                    // InternalEasyWall.g:2669:3: ( () otherlv_29= 'getTime' otherlv_30= '(' otherlv_31= ')' )
+                    // InternalEasyWall.g:2670:4: () otherlv_29= 'getTime' otherlv_30= '(' otherlv_31= ')'
                     {
-                    // InternalEasyWall.g:2676:4: ()
-                    // InternalEasyWall.g:2677:5: 
+                    // InternalEasyWall.g:2670:4: ()
+                    // InternalEasyWall.g:2671:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -7440,7 +7461,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_29=(Token)match(input,49,FOLLOW_19); if (state.failed) return current;
+                    otherlv_29=(Token)match(input,48,FOLLOW_19); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_29, grammarAccess.getEFBuiltinFunctionAccess().getGetTimeKeyword_6_1());
@@ -7465,13 +7486,13 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalEasyWall.g:2697:3: ( () otherlv_33= 'getPacketField' otherlv_34= '(' ( (lv_field_35_0= RULE_STRING ) ) otherlv_36= ')' )
+                    // InternalEasyWall.g:2691:3: ( () otherlv_33= 'getPacketField' otherlv_34= '(' ( (lv_field_35_0= RULE_STRING ) ) otherlv_36= ')' )
                     {
-                    // InternalEasyWall.g:2697:3: ( () otherlv_33= 'getPacketField' otherlv_34= '(' ( (lv_field_35_0= RULE_STRING ) ) otherlv_36= ')' )
-                    // InternalEasyWall.g:2698:4: () otherlv_33= 'getPacketField' otherlv_34= '(' ( (lv_field_35_0= RULE_STRING ) ) otherlv_36= ')'
+                    // InternalEasyWall.g:2691:3: ( () otherlv_33= 'getPacketField' otherlv_34= '(' ( (lv_field_35_0= RULE_STRING ) ) otherlv_36= ')' )
+                    // InternalEasyWall.g:2692:4: () otherlv_33= 'getPacketField' otherlv_34= '(' ( (lv_field_35_0= RULE_STRING ) ) otherlv_36= ')'
                     {
-                    // InternalEasyWall.g:2698:4: ()
-                    // InternalEasyWall.g:2699:5: 
+                    // InternalEasyWall.g:2692:4: ()
+                    // InternalEasyWall.g:2693:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -7483,23 +7504,23 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_33=(Token)match(input,50,FOLLOW_19); if (state.failed) return current;
+                    otherlv_33=(Token)match(input,49,FOLLOW_19); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_33, grammarAccess.getEFBuiltinFunctionAccess().getGetPacketFieldKeyword_7_1());
                       			
                     }
-                    otherlv_34=(Token)match(input,28,FOLLOW_37); if (state.failed) return current;
+                    otherlv_34=(Token)match(input,28,FOLLOW_39); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_34, grammarAccess.getEFBuiltinFunctionAccess().getLeftParenthesisKeyword_7_2());
                       			
                     }
-                    // InternalEasyWall.g:2713:4: ( (lv_field_35_0= RULE_STRING ) )
-                    // InternalEasyWall.g:2714:5: (lv_field_35_0= RULE_STRING )
+                    // InternalEasyWall.g:2707:4: ( (lv_field_35_0= RULE_STRING ) )
+                    // InternalEasyWall.g:2708:5: (lv_field_35_0= RULE_STRING )
                     {
-                    // InternalEasyWall.g:2714:5: (lv_field_35_0= RULE_STRING )
-                    // InternalEasyWall.g:2715:6: lv_field_35_0= RULE_STRING
+                    // InternalEasyWall.g:2708:5: (lv_field_35_0= RULE_STRING )
+                    // InternalEasyWall.g:2709:6: lv_field_35_0= RULE_STRING
                     {
                     lv_field_35_0=(Token)match(input,RULE_STRING,FOLLOW_24); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -7562,7 +7583,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEFRule"
-    // InternalEasyWall.g:2740:1: entryRuleEFRule returns [EObject current=null] : iv_ruleEFRule= ruleEFRule EOF ;
+    // InternalEasyWall.g:2734:1: entryRuleEFRule returns [EObject current=null] : iv_ruleEFRule= ruleEFRule EOF ;
     public final EObject entryRuleEFRule() throws RecognitionException {
         EObject current = null;
 
@@ -7570,8 +7591,8 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalEasyWall.g:2740:47: (iv_ruleEFRule= ruleEFRule EOF )
-            // InternalEasyWall.g:2741:2: iv_ruleEFRule= ruleEFRule EOF
+            // InternalEasyWall.g:2734:47: (iv_ruleEFRule= ruleEFRule EOF )
+            // InternalEasyWall.g:2735:2: iv_ruleEFRule= ruleEFRule EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEFRuleRule()); 
@@ -7602,7 +7623,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEFRule"
-    // InternalEasyWall.g:2747:1: ruleEFRule returns [EObject current=null] : ( (lv_rules_0_0= ruleEFRuleClass ) ) ;
+    // InternalEasyWall.g:2741:1: ruleEFRule returns [EObject current=null] : ( (lv_rules_0_0= ruleEFRuleClass ) ) ;
     public final EObject ruleEFRule() throws RecognitionException {
         EObject current = null;
 
@@ -7613,14 +7634,14 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalEasyWall.g:2753:2: ( ( (lv_rules_0_0= ruleEFRuleClass ) ) )
-            // InternalEasyWall.g:2754:2: ( (lv_rules_0_0= ruleEFRuleClass ) )
+            // InternalEasyWall.g:2747:2: ( ( (lv_rules_0_0= ruleEFRuleClass ) ) )
+            // InternalEasyWall.g:2748:2: ( (lv_rules_0_0= ruleEFRuleClass ) )
             {
-            // InternalEasyWall.g:2754:2: ( (lv_rules_0_0= ruleEFRuleClass ) )
-            // InternalEasyWall.g:2755:3: (lv_rules_0_0= ruleEFRuleClass )
+            // InternalEasyWall.g:2748:2: ( (lv_rules_0_0= ruleEFRuleClass ) )
+            // InternalEasyWall.g:2749:3: (lv_rules_0_0= ruleEFRuleClass )
             {
-            // InternalEasyWall.g:2755:3: (lv_rules_0_0= ruleEFRuleClass )
-            // InternalEasyWall.g:2756:4: lv_rules_0_0= ruleEFRuleClass
+            // InternalEasyWall.g:2749:3: (lv_rules_0_0= ruleEFRuleClass )
+            // InternalEasyWall.g:2750:4: lv_rules_0_0= ruleEFRuleClass
             {
             if ( state.backtracking==0 ) {
 
@@ -7673,7 +7694,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEFRuleClass"
-    // InternalEasyWall.g:2776:1: entryRuleEFRuleClass returns [EObject current=null] : iv_ruleEFRuleClass= ruleEFRuleClass EOF ;
+    // InternalEasyWall.g:2770:1: entryRuleEFRuleClass returns [EObject current=null] : iv_ruleEFRuleClass= ruleEFRuleClass EOF ;
     public final EObject entryRuleEFRuleClass() throws RecognitionException {
         EObject current = null;
 
@@ -7681,8 +7702,8 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalEasyWall.g:2776:52: (iv_ruleEFRuleClass= ruleEFRuleClass EOF )
-            // InternalEasyWall.g:2777:2: iv_ruleEFRuleClass= ruleEFRuleClass EOF
+            // InternalEasyWall.g:2770:52: (iv_ruleEFRuleClass= ruleEFRuleClass EOF )
+            // InternalEasyWall.g:2771:2: iv_ruleEFRuleClass= ruleEFRuleClass EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEFRuleClassRule()); 
@@ -7713,7 +7734,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEFRuleClass"
-    // InternalEasyWall.g:2783:1: ruleEFRuleClass returns [EObject current=null] : (otherlv_0= 'rule' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'at' ( (lv_type_3_0= ruleEFRulesTypes ) ) otherlv_4= '{' ( (lv_members_5_0= ruleEFMember ) )* otherlv_6= '}' ) ;
+    // InternalEasyWall.g:2777:1: ruleEFRuleClass returns [EObject current=null] : (otherlv_0= 'rule' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'at' ( (lv_type_3_0= ruleEFRulesTypes ) ) otherlv_4= '{' ( (lv_members_5_0= ruleEFMember ) )* otherlv_6= '}' ) ;
     public final EObject ruleEFRuleClass() throws RecognitionException {
         EObject current = null;
 
@@ -7731,25 +7752,25 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalEasyWall.g:2789:2: ( (otherlv_0= 'rule' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'at' ( (lv_type_3_0= ruleEFRulesTypes ) ) otherlv_4= '{' ( (lv_members_5_0= ruleEFMember ) )* otherlv_6= '}' ) )
-            // InternalEasyWall.g:2790:2: (otherlv_0= 'rule' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'at' ( (lv_type_3_0= ruleEFRulesTypes ) ) otherlv_4= '{' ( (lv_members_5_0= ruleEFMember ) )* otherlv_6= '}' )
+            // InternalEasyWall.g:2783:2: ( (otherlv_0= 'rule' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'at' ( (lv_type_3_0= ruleEFRulesTypes ) ) otherlv_4= '{' ( (lv_members_5_0= ruleEFMember ) )* otherlv_6= '}' ) )
+            // InternalEasyWall.g:2784:2: (otherlv_0= 'rule' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'at' ( (lv_type_3_0= ruleEFRulesTypes ) ) otherlv_4= '{' ( (lv_members_5_0= ruleEFMember ) )* otherlv_6= '}' )
             {
-            // InternalEasyWall.g:2790:2: (otherlv_0= 'rule' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'at' ( (lv_type_3_0= ruleEFRulesTypes ) ) otherlv_4= '{' ( (lv_members_5_0= ruleEFMember ) )* otherlv_6= '}' )
-            // InternalEasyWall.g:2791:3: otherlv_0= 'rule' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'at' ( (lv_type_3_0= ruleEFRulesTypes ) ) otherlv_4= '{' ( (lv_members_5_0= ruleEFMember ) )* otherlv_6= '}'
+            // InternalEasyWall.g:2784:2: (otherlv_0= 'rule' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'at' ( (lv_type_3_0= ruleEFRulesTypes ) ) otherlv_4= '{' ( (lv_members_5_0= ruleEFMember ) )* otherlv_6= '}' )
+            // InternalEasyWall.g:2785:3: otherlv_0= 'rule' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'at' ( (lv_type_3_0= ruleEFRulesTypes ) ) otherlv_4= '{' ( (lv_members_5_0= ruleEFMember ) )* otherlv_6= '}'
             {
-            otherlv_0=(Token)match(input,51,FOLLOW_5); if (state.failed) return current;
+            otherlv_0=(Token)match(input,50,FOLLOW_5); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_0, grammarAccess.getEFRuleClassAccess().getRuleKeyword_0());
               		
             }
-            // InternalEasyWall.g:2795:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalEasyWall.g:2796:4: (lv_name_1_0= RULE_ID )
+            // InternalEasyWall.g:2789:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalEasyWall.g:2790:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalEasyWall.g:2796:4: (lv_name_1_0= RULE_ID )
-            // InternalEasyWall.g:2797:5: lv_name_1_0= RULE_ID
+            // InternalEasyWall.g:2790:4: (lv_name_1_0= RULE_ID )
+            // InternalEasyWall.g:2791:5: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_41); if (state.failed) return current;
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_40); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               					newLeafNode(lv_name_1_0, grammarAccess.getEFRuleClassAccess().getNameIDTerminalRuleCall_1_0());
@@ -7773,17 +7794,17 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,52,FOLLOW_42); if (state.failed) return current;
+            otherlv_2=(Token)match(input,51,FOLLOW_41); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_2, grammarAccess.getEFRuleClassAccess().getAtKeyword_2());
               		
             }
-            // InternalEasyWall.g:2817:3: ( (lv_type_3_0= ruleEFRulesTypes ) )
-            // InternalEasyWall.g:2818:4: (lv_type_3_0= ruleEFRulesTypes )
+            // InternalEasyWall.g:2811:3: ( (lv_type_3_0= ruleEFRulesTypes ) )
+            // InternalEasyWall.g:2812:4: (lv_type_3_0= ruleEFRulesTypes )
             {
-            // InternalEasyWall.g:2818:4: (lv_type_3_0= ruleEFRulesTypes )
-            // InternalEasyWall.g:2819:5: lv_type_3_0= ruleEFRulesTypes
+            // InternalEasyWall.g:2812:4: (lv_type_3_0= ruleEFRulesTypes )
+            // InternalEasyWall.g:2813:5: lv_type_3_0= ruleEFRulesTypes
             {
             if ( state.backtracking==0 ) {
 
@@ -7814,36 +7835,36 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,19,FOLLOW_43); if (state.failed) return current;
+            otherlv_4=(Token)match(input,19,FOLLOW_42); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_4, grammarAccess.getEFRuleClassAccess().getLeftCurlyBracketKeyword_4());
               		
             }
-            // InternalEasyWall.g:2840:3: ( (lv_members_5_0= ruleEFMember ) )*
-            loop37:
+            // InternalEasyWall.g:2834:3: ( (lv_members_5_0= ruleEFMember ) )*
+            loop38:
             do {
-                int alt37=2;
-                int LA37_0 = input.LA(1);
+                int alt38=2;
+                int LA38_0 = input.LA(1);
 
-                if ( ((LA37_0>=23 && LA37_0<=24)||LA37_0==27) ) {
-                    alt37=1;
+                if ( ((LA38_0>=23 && LA38_0<=24)||LA38_0==27) ) {
+                    alt38=1;
                 }
 
 
-                switch (alt37) {
+                switch (alt38) {
             	case 1 :
-            	    // InternalEasyWall.g:2841:4: (lv_members_5_0= ruleEFMember )
+            	    // InternalEasyWall.g:2835:4: (lv_members_5_0= ruleEFMember )
             	    {
-            	    // InternalEasyWall.g:2841:4: (lv_members_5_0= ruleEFMember )
-            	    // InternalEasyWall.g:2842:5: lv_members_5_0= ruleEFMember
+            	    // InternalEasyWall.g:2835:4: (lv_members_5_0= ruleEFMember )
+            	    // InternalEasyWall.g:2836:5: lv_members_5_0= ruleEFMember
             	    {
             	    if ( state.backtracking==0 ) {
 
             	      					newCompositeNode(grammarAccess.getEFRuleClassAccess().getMembersEFMemberParserRuleCall_5_0());
             	      				
             	    }
-            	    pushFollow(FOLLOW_43);
+            	    pushFollow(FOLLOW_42);
             	    lv_members_5_0=ruleEFMember();
 
             	    state._fsp--;
@@ -7869,7 +7890,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop37;
+            	    break loop38;
                 }
             } while (true);
 
@@ -7904,7 +7925,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEFOr"
-    // InternalEasyWall.g:2867:1: entryRuleEFOr returns [String current=null] : iv_ruleEFOr= ruleEFOr EOF ;
+    // InternalEasyWall.g:2861:1: entryRuleEFOr returns [String current=null] : iv_ruleEFOr= ruleEFOr EOF ;
     public final String entryRuleEFOr() throws RecognitionException {
         String current = null;
 
@@ -7912,8 +7933,8 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalEasyWall.g:2867:44: (iv_ruleEFOr= ruleEFOr EOF )
-            // InternalEasyWall.g:2868:2: iv_ruleEFOr= ruleEFOr EOF
+            // InternalEasyWall.g:2861:44: (iv_ruleEFOr= ruleEFOr EOF )
+            // InternalEasyWall.g:2862:2: iv_ruleEFOr= ruleEFOr EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEFOrRule()); 
@@ -7944,7 +7965,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEFOr"
-    // InternalEasyWall.g:2874:1: ruleEFOr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '||' | kw= 'or' ) ;
+    // InternalEasyWall.g:2868:1: ruleEFOr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '||' | kw= 'or' ) ;
     public final AntlrDatatypeRuleToken ruleEFOr() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -7954,31 +7975,31 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalEasyWall.g:2880:2: ( (kw= '||' | kw= 'or' ) )
-            // InternalEasyWall.g:2881:2: (kw= '||' | kw= 'or' )
+            // InternalEasyWall.g:2874:2: ( (kw= '||' | kw= 'or' ) )
+            // InternalEasyWall.g:2875:2: (kw= '||' | kw= 'or' )
             {
-            // InternalEasyWall.g:2881:2: (kw= '||' | kw= 'or' )
-            int alt38=2;
-            int LA38_0 = input.LA(1);
+            // InternalEasyWall.g:2875:2: (kw= '||' | kw= 'or' )
+            int alt39=2;
+            int LA39_0 = input.LA(1);
 
-            if ( (LA38_0==53) ) {
-                alt38=1;
+            if ( (LA39_0==52) ) {
+                alt39=1;
             }
-            else if ( (LA38_0==54) ) {
-                alt38=2;
+            else if ( (LA39_0==53) ) {
+                alt39=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 38, 0, input);
+                    new NoViableAltException("", 39, 0, input);
 
                 throw nvae;
             }
-            switch (alt38) {
+            switch (alt39) {
                 case 1 :
-                    // InternalEasyWall.g:2882:3: kw= '||'
+                    // InternalEasyWall.g:2876:3: kw= '||'
                     {
-                    kw=(Token)match(input,53,FOLLOW_2); if (state.failed) return current;
+                    kw=(Token)match(input,52,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			current.merge(kw);
@@ -7989,9 +8010,9 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalEasyWall.g:2888:3: kw= 'or'
+                    // InternalEasyWall.g:2882:3: kw= 'or'
                     {
-                    kw=(Token)match(input,54,FOLLOW_2); if (state.failed) return current;
+                    kw=(Token)match(input,53,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			current.merge(kw);
@@ -8026,7 +8047,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEFAnd"
-    // InternalEasyWall.g:2897:1: entryRuleEFAnd returns [String current=null] : iv_ruleEFAnd= ruleEFAnd EOF ;
+    // InternalEasyWall.g:2891:1: entryRuleEFAnd returns [String current=null] : iv_ruleEFAnd= ruleEFAnd EOF ;
     public final String entryRuleEFAnd() throws RecognitionException {
         String current = null;
 
@@ -8034,8 +8055,8 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalEasyWall.g:2897:45: (iv_ruleEFAnd= ruleEFAnd EOF )
-            // InternalEasyWall.g:2898:2: iv_ruleEFAnd= ruleEFAnd EOF
+            // InternalEasyWall.g:2891:45: (iv_ruleEFAnd= ruleEFAnd EOF )
+            // InternalEasyWall.g:2892:2: iv_ruleEFAnd= ruleEFAnd EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEFAndRule()); 
@@ -8066,7 +8087,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEFAnd"
-    // InternalEasyWall.g:2904:1: ruleEFAnd returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '&&' | kw= 'and' ) ;
+    // InternalEasyWall.g:2898:1: ruleEFAnd returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '&&' | kw= 'and' ) ;
     public final AntlrDatatypeRuleToken ruleEFAnd() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8076,31 +8097,31 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalEasyWall.g:2910:2: ( (kw= '&&' | kw= 'and' ) )
-            // InternalEasyWall.g:2911:2: (kw= '&&' | kw= 'and' )
+            // InternalEasyWall.g:2904:2: ( (kw= '&&' | kw= 'and' ) )
+            // InternalEasyWall.g:2905:2: (kw= '&&' | kw= 'and' )
             {
-            // InternalEasyWall.g:2911:2: (kw= '&&' | kw= 'and' )
-            int alt39=2;
-            int LA39_0 = input.LA(1);
+            // InternalEasyWall.g:2905:2: (kw= '&&' | kw= 'and' )
+            int alt40=2;
+            int LA40_0 = input.LA(1);
 
-            if ( (LA39_0==55) ) {
-                alt39=1;
+            if ( (LA40_0==54) ) {
+                alt40=1;
             }
-            else if ( (LA39_0==56) ) {
-                alt39=2;
+            else if ( (LA40_0==55) ) {
+                alt40=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 39, 0, input);
+                    new NoViableAltException("", 40, 0, input);
 
                 throw nvae;
             }
-            switch (alt39) {
+            switch (alt40) {
                 case 1 :
-                    // InternalEasyWall.g:2912:3: kw= '&&'
+                    // InternalEasyWall.g:2906:3: kw= '&&'
                     {
-                    kw=(Token)match(input,55,FOLLOW_2); if (state.failed) return current;
+                    kw=(Token)match(input,54,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			current.merge(kw);
@@ -8111,9 +8132,9 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalEasyWall.g:2918:3: kw= 'and'
+                    // InternalEasyWall.g:2912:3: kw= 'and'
                     {
-                    kw=(Token)match(input,56,FOLLOW_2); if (state.failed) return current;
+                    kw=(Token)match(input,55,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			current.merge(kw);
@@ -8148,7 +8169,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEFNot"
-    // InternalEasyWall.g:2927:1: entryRuleEFNot returns [String current=null] : iv_ruleEFNot= ruleEFNot EOF ;
+    // InternalEasyWall.g:2921:1: entryRuleEFNot returns [String current=null] : iv_ruleEFNot= ruleEFNot EOF ;
     public final String entryRuleEFNot() throws RecognitionException {
         String current = null;
 
@@ -8156,8 +8177,8 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalEasyWall.g:2927:45: (iv_ruleEFNot= ruleEFNot EOF )
-            // InternalEasyWall.g:2928:2: iv_ruleEFNot= ruleEFNot EOF
+            // InternalEasyWall.g:2921:45: (iv_ruleEFNot= ruleEFNot EOF )
+            // InternalEasyWall.g:2922:2: iv_ruleEFNot= ruleEFNot EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEFNotRule()); 
@@ -8188,7 +8209,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEFNot"
-    // InternalEasyWall.g:2934:1: ruleEFNot returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '!' | kw= 'not' ) ;
+    // InternalEasyWall.g:2928:1: ruleEFNot returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '!' | kw= 'not' ) ;
     public final AntlrDatatypeRuleToken ruleEFNot() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8198,31 +8219,31 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalEasyWall.g:2940:2: ( (kw= '!' | kw= 'not' ) )
-            // InternalEasyWall.g:2941:2: (kw= '!' | kw= 'not' )
+            // InternalEasyWall.g:2934:2: ( (kw= '!' | kw= 'not' ) )
+            // InternalEasyWall.g:2935:2: (kw= '!' | kw= 'not' )
             {
-            // InternalEasyWall.g:2941:2: (kw= '!' | kw= 'not' )
-            int alt40=2;
-            int LA40_0 = input.LA(1);
+            // InternalEasyWall.g:2935:2: (kw= '!' | kw= 'not' )
+            int alt41=2;
+            int LA41_0 = input.LA(1);
 
-            if ( (LA40_0==57) ) {
-                alt40=1;
+            if ( (LA41_0==56) ) {
+                alt41=1;
             }
-            else if ( (LA40_0==58) ) {
-                alt40=2;
+            else if ( (LA41_0==57) ) {
+                alt41=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 40, 0, input);
+                    new NoViableAltException("", 41, 0, input);
 
                 throw nvae;
             }
-            switch (alt40) {
+            switch (alt41) {
                 case 1 :
-                    // InternalEasyWall.g:2942:3: kw= '!'
+                    // InternalEasyWall.g:2936:3: kw= '!'
                     {
-                    kw=(Token)match(input,57,FOLLOW_2); if (state.failed) return current;
+                    kw=(Token)match(input,56,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			current.merge(kw);
@@ -8233,9 +8254,9 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalEasyWall.g:2948:3: kw= 'not'
+                    // InternalEasyWall.g:2942:3: kw= 'not'
                     {
-                    kw=(Token)match(input,58,FOLLOW_2); if (state.failed) return current;
+                    kw=(Token)match(input,57,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			current.merge(kw);
@@ -8270,7 +8291,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEFEqualOperators"
-    // InternalEasyWall.g:2957:1: entryRuleEFEqualOperators returns [String current=null] : iv_ruleEFEqualOperators= ruleEFEqualOperators EOF ;
+    // InternalEasyWall.g:2951:1: entryRuleEFEqualOperators returns [String current=null] : iv_ruleEFEqualOperators= ruleEFEqualOperators EOF ;
     public final String entryRuleEFEqualOperators() throws RecognitionException {
         String current = null;
 
@@ -8278,8 +8299,8 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalEasyWall.g:2957:56: (iv_ruleEFEqualOperators= ruleEFEqualOperators EOF )
-            // InternalEasyWall.g:2958:2: iv_ruleEFEqualOperators= ruleEFEqualOperators EOF
+            // InternalEasyWall.g:2951:56: (iv_ruleEFEqualOperators= ruleEFEqualOperators EOF )
+            // InternalEasyWall.g:2952:2: iv_ruleEFEqualOperators= ruleEFEqualOperators EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEFEqualOperatorsRule()); 
@@ -8310,7 +8331,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEFEqualOperators"
-    // InternalEasyWall.g:2964:1: ruleEFEqualOperators returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '==' | kw= '!=' | kw= 'isequalto' ) ;
+    // InternalEasyWall.g:2958:1: ruleEFEqualOperators returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '==' | kw= '!=' | kw= 'isequalto' ) ;
     public final AntlrDatatypeRuleToken ruleEFEqualOperators() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8320,40 +8341,40 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalEasyWall.g:2970:2: ( (kw= '==' | kw= '!=' | kw= 'isequalto' ) )
-            // InternalEasyWall.g:2971:2: (kw= '==' | kw= '!=' | kw= 'isequalto' )
+            // InternalEasyWall.g:2964:2: ( (kw= '==' | kw= '!=' | kw= 'isequalto' ) )
+            // InternalEasyWall.g:2965:2: (kw= '==' | kw= '!=' | kw= 'isequalto' )
             {
-            // InternalEasyWall.g:2971:2: (kw= '==' | kw= '!=' | kw= 'isequalto' )
-            int alt41=3;
+            // InternalEasyWall.g:2965:2: (kw= '==' | kw= '!=' | kw= 'isequalto' )
+            int alt42=3;
             switch ( input.LA(1) ) {
+            case 58:
+                {
+                alt42=1;
+                }
+                break;
             case 59:
                 {
-                alt41=1;
+                alt42=2;
                 }
                 break;
             case 60:
                 {
-                alt41=2;
-                }
-                break;
-            case 61:
-                {
-                alt41=3;
+                alt42=3;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 41, 0, input);
+                    new NoViableAltException("", 42, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt41) {
+            switch (alt42) {
                 case 1 :
-                    // InternalEasyWall.g:2972:3: kw= '=='
+                    // InternalEasyWall.g:2966:3: kw= '=='
                     {
-                    kw=(Token)match(input,59,FOLLOW_2); if (state.failed) return current;
+                    kw=(Token)match(input,58,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			current.merge(kw);
@@ -8364,9 +8385,9 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalEasyWall.g:2978:3: kw= '!='
+                    // InternalEasyWall.g:2972:3: kw= '!='
                     {
-                    kw=(Token)match(input,60,FOLLOW_2); if (state.failed) return current;
+                    kw=(Token)match(input,59,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			current.merge(kw);
@@ -8377,9 +8398,9 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalEasyWall.g:2984:3: kw= 'isequalto'
+                    // InternalEasyWall.g:2978:3: kw= 'isequalto'
                     {
-                    kw=(Token)match(input,61,FOLLOW_2); if (state.failed) return current;
+                    kw=(Token)match(input,60,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			current.merge(kw);
@@ -8414,7 +8435,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEFRelOperators"
-    // InternalEasyWall.g:2993:1: entryRuleEFRelOperators returns [String current=null] : iv_ruleEFRelOperators= ruleEFRelOperators EOF ;
+    // InternalEasyWall.g:2987:1: entryRuleEFRelOperators returns [String current=null] : iv_ruleEFRelOperators= ruleEFRelOperators EOF ;
     public final String entryRuleEFRelOperators() throws RecognitionException {
         String current = null;
 
@@ -8422,8 +8443,8 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalEasyWall.g:2993:54: (iv_ruleEFRelOperators= ruleEFRelOperators EOF )
-            // InternalEasyWall.g:2994:2: iv_ruleEFRelOperators= ruleEFRelOperators EOF
+            // InternalEasyWall.g:2987:54: (iv_ruleEFRelOperators= ruleEFRelOperators EOF )
+            // InternalEasyWall.g:2988:2: iv_ruleEFRelOperators= ruleEFRelOperators EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEFRelOperatorsRule()); 
@@ -8454,7 +8475,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEFRelOperators"
-    // InternalEasyWall.g:3000:1: ruleEFRelOperators returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '>=' | kw= '<=' | kw= '>' | kw= '<' ) ;
+    // InternalEasyWall.g:2994:1: ruleEFRelOperators returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '>=' | kw= '<=' | kw= '>' | kw= '<' ) ;
     public final AntlrDatatypeRuleToken ruleEFRelOperators() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8464,45 +8485,45 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalEasyWall.g:3006:2: ( (kw= '>=' | kw= '<=' | kw= '>' | kw= '<' ) )
-            // InternalEasyWall.g:3007:2: (kw= '>=' | kw= '<=' | kw= '>' | kw= '<' )
+            // InternalEasyWall.g:3000:2: ( (kw= '>=' | kw= '<=' | kw= '>' | kw= '<' ) )
+            // InternalEasyWall.g:3001:2: (kw= '>=' | kw= '<=' | kw= '>' | kw= '<' )
             {
-            // InternalEasyWall.g:3007:2: (kw= '>=' | kw= '<=' | kw= '>' | kw= '<' )
-            int alt42=4;
+            // InternalEasyWall.g:3001:2: (kw= '>=' | kw= '<=' | kw= '>' | kw= '<' )
+            int alt43=4;
             switch ( input.LA(1) ) {
+            case 61:
+                {
+                alt43=1;
+                }
+                break;
             case 62:
                 {
-                alt42=1;
+                alt43=2;
                 }
                 break;
             case 63:
                 {
-                alt42=2;
+                alt43=3;
                 }
                 break;
             case 64:
                 {
-                alt42=3;
-                }
-                break;
-            case 65:
-                {
-                alt42=4;
+                alt43=4;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 42, 0, input);
+                    new NoViableAltException("", 43, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt42) {
+            switch (alt43) {
                 case 1 :
-                    // InternalEasyWall.g:3008:3: kw= '>='
+                    // InternalEasyWall.g:3002:3: kw= '>='
                     {
-                    kw=(Token)match(input,62,FOLLOW_2); if (state.failed) return current;
+                    kw=(Token)match(input,61,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			current.merge(kw);
@@ -8513,9 +8534,9 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalEasyWall.g:3014:3: kw= '<='
+                    // InternalEasyWall.g:3008:3: kw= '<='
                     {
-                    kw=(Token)match(input,63,FOLLOW_2); if (state.failed) return current;
+                    kw=(Token)match(input,62,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			current.merge(kw);
@@ -8526,9 +8547,9 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalEasyWall.g:3020:3: kw= '>'
+                    // InternalEasyWall.g:3014:3: kw= '>'
                     {
-                    kw=(Token)match(input,64,FOLLOW_2); if (state.failed) return current;
+                    kw=(Token)match(input,63,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			current.merge(kw);
@@ -8539,9 +8560,9 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalEasyWall.g:3026:3: kw= '<'
+                    // InternalEasyWall.g:3020:3: kw= '<'
                     {
-                    kw=(Token)match(input,65,FOLLOW_2); if (state.failed) return current;
+                    kw=(Token)match(input,64,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			current.merge(kw);
@@ -8576,7 +8597,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEFAddOperators"
-    // InternalEasyWall.g:3035:1: entryRuleEFAddOperators returns [String current=null] : iv_ruleEFAddOperators= ruleEFAddOperators EOF ;
+    // InternalEasyWall.g:3029:1: entryRuleEFAddOperators returns [String current=null] : iv_ruleEFAddOperators= ruleEFAddOperators EOF ;
     public final String entryRuleEFAddOperators() throws RecognitionException {
         String current = null;
 
@@ -8584,8 +8605,8 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalEasyWall.g:3035:54: (iv_ruleEFAddOperators= ruleEFAddOperators EOF )
-            // InternalEasyWall.g:3036:2: iv_ruleEFAddOperators= ruleEFAddOperators EOF
+            // InternalEasyWall.g:3029:54: (iv_ruleEFAddOperators= ruleEFAddOperators EOF )
+            // InternalEasyWall.g:3030:2: iv_ruleEFAddOperators= ruleEFAddOperators EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEFAddOperatorsRule()); 
@@ -8616,7 +8637,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEFAddOperators"
-    // InternalEasyWall.g:3042:1: ruleEFAddOperators returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '+' | kw= '-' ) ;
+    // InternalEasyWall.g:3036:1: ruleEFAddOperators returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '+' | kw= '-' ) ;
     public final AntlrDatatypeRuleToken ruleEFAddOperators() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8626,31 +8647,31 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalEasyWall.g:3048:2: ( (kw= '+' | kw= '-' ) )
-            // InternalEasyWall.g:3049:2: (kw= '+' | kw= '-' )
+            // InternalEasyWall.g:3042:2: ( (kw= '+' | kw= '-' ) )
+            // InternalEasyWall.g:3043:2: (kw= '+' | kw= '-' )
             {
-            // InternalEasyWall.g:3049:2: (kw= '+' | kw= '-' )
-            int alt43=2;
-            int LA43_0 = input.LA(1);
+            // InternalEasyWall.g:3043:2: (kw= '+' | kw= '-' )
+            int alt44=2;
+            int LA44_0 = input.LA(1);
 
-            if ( (LA43_0==66) ) {
-                alt43=1;
+            if ( (LA44_0==65) ) {
+                alt44=1;
             }
-            else if ( (LA43_0==67) ) {
-                alt43=2;
+            else if ( (LA44_0==66) ) {
+                alt44=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 43, 0, input);
+                    new NoViableAltException("", 44, 0, input);
 
                 throw nvae;
             }
-            switch (alt43) {
+            switch (alt44) {
                 case 1 :
-                    // InternalEasyWall.g:3050:3: kw= '+'
+                    // InternalEasyWall.g:3044:3: kw= '+'
                     {
-                    kw=(Token)match(input,66,FOLLOW_2); if (state.failed) return current;
+                    kw=(Token)match(input,65,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			current.merge(kw);
@@ -8661,9 +8682,9 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalEasyWall.g:3056:3: kw= '-'
+                    // InternalEasyWall.g:3050:3: kw= '-'
                     {
-                    kw=(Token)match(input,67,FOLLOW_2); if (state.failed) return current;
+                    kw=(Token)match(input,66,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			current.merge(kw);
@@ -8698,7 +8719,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEFMultOperators"
-    // InternalEasyWall.g:3065:1: entryRuleEFMultOperators returns [String current=null] : iv_ruleEFMultOperators= ruleEFMultOperators EOF ;
+    // InternalEasyWall.g:3059:1: entryRuleEFMultOperators returns [String current=null] : iv_ruleEFMultOperators= ruleEFMultOperators EOF ;
     public final String entryRuleEFMultOperators() throws RecognitionException {
         String current = null;
 
@@ -8706,8 +8727,8 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalEasyWall.g:3065:55: (iv_ruleEFMultOperators= ruleEFMultOperators EOF )
-            // InternalEasyWall.g:3066:2: iv_ruleEFMultOperators= ruleEFMultOperators EOF
+            // InternalEasyWall.g:3059:55: (iv_ruleEFMultOperators= ruleEFMultOperators EOF )
+            // InternalEasyWall.g:3060:2: iv_ruleEFMultOperators= ruleEFMultOperators EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEFMultOperatorsRule()); 
@@ -8738,7 +8759,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEFMultOperators"
-    // InternalEasyWall.g:3072:1: ruleEFMultOperators returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '*' | kw= 'div' | kw= '%' ) ;
+    // InternalEasyWall.g:3066:1: ruleEFMultOperators returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '*' | kw= 'div' | kw= '%' ) ;
     public final AntlrDatatypeRuleToken ruleEFMultOperators() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8748,40 +8769,40 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalEasyWall.g:3078:2: ( (kw= '*' | kw= 'div' | kw= '%' ) )
-            // InternalEasyWall.g:3079:2: (kw= '*' | kw= 'div' | kw= '%' )
+            // InternalEasyWall.g:3072:2: ( (kw= '*' | kw= 'div' | kw= '%' ) )
+            // InternalEasyWall.g:3073:2: (kw= '*' | kw= 'div' | kw= '%' )
             {
-            // InternalEasyWall.g:3079:2: (kw= '*' | kw= 'div' | kw= '%' )
-            int alt44=3;
+            // InternalEasyWall.g:3073:2: (kw= '*' | kw= 'div' | kw= '%' )
+            int alt45=3;
             switch ( input.LA(1) ) {
+            case 67:
+                {
+                alt45=1;
+                }
+                break;
             case 68:
                 {
-                alt44=1;
+                alt45=2;
                 }
                 break;
             case 69:
                 {
-                alt44=2;
-                }
-                break;
-            case 70:
-                {
-                alt44=3;
+                alt45=3;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 44, 0, input);
+                    new NoViableAltException("", 45, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt44) {
+            switch (alt45) {
                 case 1 :
-                    // InternalEasyWall.g:3080:3: kw= '*'
+                    // InternalEasyWall.g:3074:3: kw= '*'
                     {
-                    kw=(Token)match(input,68,FOLLOW_2); if (state.failed) return current;
+                    kw=(Token)match(input,67,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			current.merge(kw);
@@ -8792,9 +8813,9 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalEasyWall.g:3086:3: kw= 'div'
+                    // InternalEasyWall.g:3080:3: kw= 'div'
                     {
-                    kw=(Token)match(input,69,FOLLOW_2); if (state.failed) return current;
+                    kw=(Token)match(input,68,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			current.merge(kw);
@@ -8805,9 +8826,9 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalEasyWall.g:3092:3: kw= '%'
+                    // InternalEasyWall.g:3086:3: kw= '%'
                     {
-                    kw=(Token)match(input,70,FOLLOW_2); if (state.failed) return current;
+                    kw=(Token)match(input,69,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			current.merge(kw);
@@ -8842,7 +8863,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEFNetworkSYNTAX"
-    // InternalEasyWall.g:3101:1: entryRuleEFNetworkSYNTAX returns [EObject current=null] : iv_ruleEFNetworkSYNTAX= ruleEFNetworkSYNTAX EOF ;
+    // InternalEasyWall.g:3095:1: entryRuleEFNetworkSYNTAX returns [EObject current=null] : iv_ruleEFNetworkSYNTAX= ruleEFNetworkSYNTAX EOF ;
     public final EObject entryRuleEFNetworkSYNTAX() throws RecognitionException {
         EObject current = null;
 
@@ -8850,8 +8871,8 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalEasyWall.g:3101:56: (iv_ruleEFNetworkSYNTAX= ruleEFNetworkSYNTAX EOF )
-            // InternalEasyWall.g:3102:2: iv_ruleEFNetworkSYNTAX= ruleEFNetworkSYNTAX EOF
+            // InternalEasyWall.g:3095:56: (iv_ruleEFNetworkSYNTAX= ruleEFNetworkSYNTAX EOF )
+            // InternalEasyWall.g:3096:2: iv_ruleEFNetworkSYNTAX= ruleEFNetworkSYNTAX EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEFNetworkSYNTAXRule()); 
@@ -8882,7 +8903,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEFNetworkSYNTAX"
-    // InternalEasyWall.g:3108:1: ruleEFNetworkSYNTAX returns [EObject current=null] : ( ( ( (lv_varip_0_0= RULE_ID ) ) otherlv_1= '/' ( (lv_varnetmask_2_0= RULE_ID ) ) ) | ( ( (lv_rawip_3_0= RULE_EFIPV4SYNTAX ) ) otherlv_4= '/' ( (lv_rawnetmask_5_0= RULE_INT ) ) ) | ( ( (lv_rawip_6_0= RULE_EFIPV4SYNTAX ) ) otherlv_7= '/' ( (lv_varnetmask_8_0= RULE_ID ) ) ) | ( ( (lv_varip_9_0= RULE_ID ) ) otherlv_10= '/' ( (lv_rawnetmask_11_0= RULE_INT ) ) ) ) ;
+    // InternalEasyWall.g:3102:1: ruleEFNetworkSYNTAX returns [EObject current=null] : ( ( ( (lv_varip_0_0= RULE_ID ) ) otherlv_1= '/' ( (lv_varnetmask_2_0= RULE_ID ) ) ) | ( ( (lv_rawip_3_0= RULE_EFIPV4SYNTAX ) ) otherlv_4= '/' ( (lv_rawnetmask_5_0= RULE_INT ) ) ) | ( ( (lv_rawip_6_0= RULE_EFIPV4SYNTAX ) ) otherlv_7= '/' ( (lv_varnetmask_8_0= RULE_ID ) ) ) | ( ( (lv_varip_9_0= RULE_ID ) ) otherlv_10= '/' ( (lv_rawnetmask_11_0= RULE_INT ) ) ) ) ;
     public final EObject ruleEFNetworkSYNTAX() throws RecognitionException {
         EObject current = null;
 
@@ -8903,29 +8924,29 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalEasyWall.g:3114:2: ( ( ( ( (lv_varip_0_0= RULE_ID ) ) otherlv_1= '/' ( (lv_varnetmask_2_0= RULE_ID ) ) ) | ( ( (lv_rawip_3_0= RULE_EFIPV4SYNTAX ) ) otherlv_4= '/' ( (lv_rawnetmask_5_0= RULE_INT ) ) ) | ( ( (lv_rawip_6_0= RULE_EFIPV4SYNTAX ) ) otherlv_7= '/' ( (lv_varnetmask_8_0= RULE_ID ) ) ) | ( ( (lv_varip_9_0= RULE_ID ) ) otherlv_10= '/' ( (lv_rawnetmask_11_0= RULE_INT ) ) ) ) )
-            // InternalEasyWall.g:3115:2: ( ( ( (lv_varip_0_0= RULE_ID ) ) otherlv_1= '/' ( (lv_varnetmask_2_0= RULE_ID ) ) ) | ( ( (lv_rawip_3_0= RULE_EFIPV4SYNTAX ) ) otherlv_4= '/' ( (lv_rawnetmask_5_0= RULE_INT ) ) ) | ( ( (lv_rawip_6_0= RULE_EFIPV4SYNTAX ) ) otherlv_7= '/' ( (lv_varnetmask_8_0= RULE_ID ) ) ) | ( ( (lv_varip_9_0= RULE_ID ) ) otherlv_10= '/' ( (lv_rawnetmask_11_0= RULE_INT ) ) ) )
+            // InternalEasyWall.g:3108:2: ( ( ( ( (lv_varip_0_0= RULE_ID ) ) otherlv_1= '/' ( (lv_varnetmask_2_0= RULE_ID ) ) ) | ( ( (lv_rawip_3_0= RULE_EFIPV4SYNTAX ) ) otherlv_4= '/' ( (lv_rawnetmask_5_0= RULE_INT ) ) ) | ( ( (lv_rawip_6_0= RULE_EFIPV4SYNTAX ) ) otherlv_7= '/' ( (lv_varnetmask_8_0= RULE_ID ) ) ) | ( ( (lv_varip_9_0= RULE_ID ) ) otherlv_10= '/' ( (lv_rawnetmask_11_0= RULE_INT ) ) ) ) )
+            // InternalEasyWall.g:3109:2: ( ( ( (lv_varip_0_0= RULE_ID ) ) otherlv_1= '/' ( (lv_varnetmask_2_0= RULE_ID ) ) ) | ( ( (lv_rawip_3_0= RULE_EFIPV4SYNTAX ) ) otherlv_4= '/' ( (lv_rawnetmask_5_0= RULE_INT ) ) ) | ( ( (lv_rawip_6_0= RULE_EFIPV4SYNTAX ) ) otherlv_7= '/' ( (lv_varnetmask_8_0= RULE_ID ) ) ) | ( ( (lv_varip_9_0= RULE_ID ) ) otherlv_10= '/' ( (lv_rawnetmask_11_0= RULE_INT ) ) ) )
             {
-            // InternalEasyWall.g:3115:2: ( ( ( (lv_varip_0_0= RULE_ID ) ) otherlv_1= '/' ( (lv_varnetmask_2_0= RULE_ID ) ) ) | ( ( (lv_rawip_3_0= RULE_EFIPV4SYNTAX ) ) otherlv_4= '/' ( (lv_rawnetmask_5_0= RULE_INT ) ) ) | ( ( (lv_rawip_6_0= RULE_EFIPV4SYNTAX ) ) otherlv_7= '/' ( (lv_varnetmask_8_0= RULE_ID ) ) ) | ( ( (lv_varip_9_0= RULE_ID ) ) otherlv_10= '/' ( (lv_rawnetmask_11_0= RULE_INT ) ) ) )
-            int alt45=4;
-            int LA45_0 = input.LA(1);
+            // InternalEasyWall.g:3109:2: ( ( ( (lv_varip_0_0= RULE_ID ) ) otherlv_1= '/' ( (lv_varnetmask_2_0= RULE_ID ) ) ) | ( ( (lv_rawip_3_0= RULE_EFIPV4SYNTAX ) ) otherlv_4= '/' ( (lv_rawnetmask_5_0= RULE_INT ) ) ) | ( ( (lv_rawip_6_0= RULE_EFIPV4SYNTAX ) ) otherlv_7= '/' ( (lv_varnetmask_8_0= RULE_ID ) ) ) | ( ( (lv_varip_9_0= RULE_ID ) ) otherlv_10= '/' ( (lv_rawnetmask_11_0= RULE_INT ) ) ) )
+            int alt46=4;
+            int LA46_0 = input.LA(1);
 
-            if ( (LA45_0==RULE_ID) ) {
-                int LA45_1 = input.LA(2);
+            if ( (LA46_0==RULE_ID) ) {
+                int LA46_1 = input.LA(2);
 
-                if ( (LA45_1==71) ) {
-                    int LA45_3 = input.LA(3);
+                if ( (LA46_1==70) ) {
+                    int LA46_3 = input.LA(3);
 
-                    if ( (LA45_3==RULE_ID) ) {
-                        alt45=1;
+                    if ( (LA46_3==RULE_ID) ) {
+                        alt46=1;
                     }
-                    else if ( (LA45_3==RULE_INT) ) {
-                        alt45=4;
+                    else if ( (LA46_3==RULE_INT) ) {
+                        alt46=4;
                     }
                     else {
                         if (state.backtracking>0) {state.failed=true; return current;}
                         NoViableAltException nvae =
-                            new NoViableAltException("", 45, 3, input);
+                            new NoViableAltException("", 46, 3, input);
 
                         throw nvae;
                     }
@@ -8933,27 +8954,27 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                 else {
                     if (state.backtracking>0) {state.failed=true; return current;}
                     NoViableAltException nvae =
-                        new NoViableAltException("", 45, 1, input);
+                        new NoViableAltException("", 46, 1, input);
 
                     throw nvae;
                 }
             }
-            else if ( (LA45_0==RULE_EFIPV4SYNTAX) ) {
-                int LA45_2 = input.LA(2);
+            else if ( (LA46_0==RULE_EFIPV4SYNTAX) ) {
+                int LA46_2 = input.LA(2);
 
-                if ( (LA45_2==71) ) {
-                    int LA45_4 = input.LA(3);
+                if ( (LA46_2==70) ) {
+                    int LA46_4 = input.LA(3);
 
-                    if ( (LA45_4==RULE_ID) ) {
-                        alt45=3;
+                    if ( (LA46_4==RULE_INT) ) {
+                        alt46=2;
                     }
-                    else if ( (LA45_4==RULE_INT) ) {
-                        alt45=2;
+                    else if ( (LA46_4==RULE_ID) ) {
+                        alt46=3;
                     }
                     else {
                         if (state.backtracking>0) {state.failed=true; return current;}
                         NoViableAltException nvae =
-                            new NoViableAltException("", 45, 4, input);
+                            new NoViableAltException("", 46, 4, input);
 
                         throw nvae;
                     }
@@ -8961,7 +8982,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                 else {
                     if (state.backtracking>0) {state.failed=true; return current;}
                     NoViableAltException nvae =
-                        new NoViableAltException("", 45, 2, input);
+                        new NoViableAltException("", 46, 2, input);
 
                     throw nvae;
                 }
@@ -8969,24 +8990,24 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 45, 0, input);
+                    new NoViableAltException("", 46, 0, input);
 
                 throw nvae;
             }
-            switch (alt45) {
+            switch (alt46) {
                 case 1 :
-                    // InternalEasyWall.g:3116:3: ( ( (lv_varip_0_0= RULE_ID ) ) otherlv_1= '/' ( (lv_varnetmask_2_0= RULE_ID ) ) )
+                    // InternalEasyWall.g:3110:3: ( ( (lv_varip_0_0= RULE_ID ) ) otherlv_1= '/' ( (lv_varnetmask_2_0= RULE_ID ) ) )
                     {
-                    // InternalEasyWall.g:3116:3: ( ( (lv_varip_0_0= RULE_ID ) ) otherlv_1= '/' ( (lv_varnetmask_2_0= RULE_ID ) ) )
-                    // InternalEasyWall.g:3117:4: ( (lv_varip_0_0= RULE_ID ) ) otherlv_1= '/' ( (lv_varnetmask_2_0= RULE_ID ) )
+                    // InternalEasyWall.g:3110:3: ( ( (lv_varip_0_0= RULE_ID ) ) otherlv_1= '/' ( (lv_varnetmask_2_0= RULE_ID ) ) )
+                    // InternalEasyWall.g:3111:4: ( (lv_varip_0_0= RULE_ID ) ) otherlv_1= '/' ( (lv_varnetmask_2_0= RULE_ID ) )
                     {
-                    // InternalEasyWall.g:3117:4: ( (lv_varip_0_0= RULE_ID ) )
-                    // InternalEasyWall.g:3118:5: (lv_varip_0_0= RULE_ID )
+                    // InternalEasyWall.g:3111:4: ( (lv_varip_0_0= RULE_ID ) )
+                    // InternalEasyWall.g:3112:5: (lv_varip_0_0= RULE_ID )
                     {
-                    // InternalEasyWall.g:3118:5: (lv_varip_0_0= RULE_ID )
-                    // InternalEasyWall.g:3119:6: lv_varip_0_0= RULE_ID
+                    // InternalEasyWall.g:3112:5: (lv_varip_0_0= RULE_ID )
+                    // InternalEasyWall.g:3113:6: lv_varip_0_0= RULE_ID
                     {
-                    lv_varip_0_0=(Token)match(input,RULE_ID,FOLLOW_44); if (state.failed) return current;
+                    lv_varip_0_0=(Token)match(input,RULE_ID,FOLLOW_43); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       						newLeafNode(lv_varip_0_0, grammarAccess.getEFNetworkSYNTAXAccess().getVaripIDTerminalRuleCall_0_0_0());
@@ -9010,17 +9031,17 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_1=(Token)match(input,71,FOLLOW_5); if (state.failed) return current;
+                    otherlv_1=(Token)match(input,70,FOLLOW_5); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_1, grammarAccess.getEFNetworkSYNTAXAccess().getSolidusKeyword_0_1());
                       			
                     }
-                    // InternalEasyWall.g:3139:4: ( (lv_varnetmask_2_0= RULE_ID ) )
-                    // InternalEasyWall.g:3140:5: (lv_varnetmask_2_0= RULE_ID )
+                    // InternalEasyWall.g:3133:4: ( (lv_varnetmask_2_0= RULE_ID ) )
+                    // InternalEasyWall.g:3134:5: (lv_varnetmask_2_0= RULE_ID )
                     {
-                    // InternalEasyWall.g:3140:5: (lv_varnetmask_2_0= RULE_ID )
-                    // InternalEasyWall.g:3141:6: lv_varnetmask_2_0= RULE_ID
+                    // InternalEasyWall.g:3134:5: (lv_varnetmask_2_0= RULE_ID )
+                    // InternalEasyWall.g:3135:6: lv_varnetmask_2_0= RULE_ID
                     {
                     lv_varnetmask_2_0=(Token)match(input,RULE_ID,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -9053,18 +9074,18 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalEasyWall.g:3159:3: ( ( (lv_rawip_3_0= RULE_EFIPV4SYNTAX ) ) otherlv_4= '/' ( (lv_rawnetmask_5_0= RULE_INT ) ) )
+                    // InternalEasyWall.g:3153:3: ( ( (lv_rawip_3_0= RULE_EFIPV4SYNTAX ) ) otherlv_4= '/' ( (lv_rawnetmask_5_0= RULE_INT ) ) )
                     {
-                    // InternalEasyWall.g:3159:3: ( ( (lv_rawip_3_0= RULE_EFIPV4SYNTAX ) ) otherlv_4= '/' ( (lv_rawnetmask_5_0= RULE_INT ) ) )
-                    // InternalEasyWall.g:3160:4: ( (lv_rawip_3_0= RULE_EFIPV4SYNTAX ) ) otherlv_4= '/' ( (lv_rawnetmask_5_0= RULE_INT ) )
+                    // InternalEasyWall.g:3153:3: ( ( (lv_rawip_3_0= RULE_EFIPV4SYNTAX ) ) otherlv_4= '/' ( (lv_rawnetmask_5_0= RULE_INT ) ) )
+                    // InternalEasyWall.g:3154:4: ( (lv_rawip_3_0= RULE_EFIPV4SYNTAX ) ) otherlv_4= '/' ( (lv_rawnetmask_5_0= RULE_INT ) )
                     {
-                    // InternalEasyWall.g:3160:4: ( (lv_rawip_3_0= RULE_EFIPV4SYNTAX ) )
-                    // InternalEasyWall.g:3161:5: (lv_rawip_3_0= RULE_EFIPV4SYNTAX )
+                    // InternalEasyWall.g:3154:4: ( (lv_rawip_3_0= RULE_EFIPV4SYNTAX ) )
+                    // InternalEasyWall.g:3155:5: (lv_rawip_3_0= RULE_EFIPV4SYNTAX )
                     {
-                    // InternalEasyWall.g:3161:5: (lv_rawip_3_0= RULE_EFIPV4SYNTAX )
-                    // InternalEasyWall.g:3162:6: lv_rawip_3_0= RULE_EFIPV4SYNTAX
+                    // InternalEasyWall.g:3155:5: (lv_rawip_3_0= RULE_EFIPV4SYNTAX )
+                    // InternalEasyWall.g:3156:6: lv_rawip_3_0= RULE_EFIPV4SYNTAX
                     {
-                    lv_rawip_3_0=(Token)match(input,RULE_EFIPV4SYNTAX,FOLLOW_44); if (state.failed) return current;
+                    lv_rawip_3_0=(Token)match(input,RULE_EFIPV4SYNTAX,FOLLOW_43); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       						newLeafNode(lv_rawip_3_0, grammarAccess.getEFNetworkSYNTAXAccess().getRawipEFIPV4SYNTAXTerminalRuleCall_1_0_0());
@@ -9088,17 +9109,17 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_4=(Token)match(input,71,FOLLOW_45); if (state.failed) return current;
+                    otherlv_4=(Token)match(input,70,FOLLOW_44); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_4, grammarAccess.getEFNetworkSYNTAXAccess().getSolidusKeyword_1_1());
                       			
                     }
-                    // InternalEasyWall.g:3182:4: ( (lv_rawnetmask_5_0= RULE_INT ) )
-                    // InternalEasyWall.g:3183:5: (lv_rawnetmask_5_0= RULE_INT )
+                    // InternalEasyWall.g:3176:4: ( (lv_rawnetmask_5_0= RULE_INT ) )
+                    // InternalEasyWall.g:3177:5: (lv_rawnetmask_5_0= RULE_INT )
                     {
-                    // InternalEasyWall.g:3183:5: (lv_rawnetmask_5_0= RULE_INT )
-                    // InternalEasyWall.g:3184:6: lv_rawnetmask_5_0= RULE_INT
+                    // InternalEasyWall.g:3177:5: (lv_rawnetmask_5_0= RULE_INT )
+                    // InternalEasyWall.g:3178:6: lv_rawnetmask_5_0= RULE_INT
                     {
                     lv_rawnetmask_5_0=(Token)match(input,RULE_INT,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -9131,18 +9152,18 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalEasyWall.g:3202:3: ( ( (lv_rawip_6_0= RULE_EFIPV4SYNTAX ) ) otherlv_7= '/' ( (lv_varnetmask_8_0= RULE_ID ) ) )
+                    // InternalEasyWall.g:3196:3: ( ( (lv_rawip_6_0= RULE_EFIPV4SYNTAX ) ) otherlv_7= '/' ( (lv_varnetmask_8_0= RULE_ID ) ) )
                     {
-                    // InternalEasyWall.g:3202:3: ( ( (lv_rawip_6_0= RULE_EFIPV4SYNTAX ) ) otherlv_7= '/' ( (lv_varnetmask_8_0= RULE_ID ) ) )
-                    // InternalEasyWall.g:3203:4: ( (lv_rawip_6_0= RULE_EFIPV4SYNTAX ) ) otherlv_7= '/' ( (lv_varnetmask_8_0= RULE_ID ) )
+                    // InternalEasyWall.g:3196:3: ( ( (lv_rawip_6_0= RULE_EFIPV4SYNTAX ) ) otherlv_7= '/' ( (lv_varnetmask_8_0= RULE_ID ) ) )
+                    // InternalEasyWall.g:3197:4: ( (lv_rawip_6_0= RULE_EFIPV4SYNTAX ) ) otherlv_7= '/' ( (lv_varnetmask_8_0= RULE_ID ) )
                     {
-                    // InternalEasyWall.g:3203:4: ( (lv_rawip_6_0= RULE_EFIPV4SYNTAX ) )
-                    // InternalEasyWall.g:3204:5: (lv_rawip_6_0= RULE_EFIPV4SYNTAX )
+                    // InternalEasyWall.g:3197:4: ( (lv_rawip_6_0= RULE_EFIPV4SYNTAX ) )
+                    // InternalEasyWall.g:3198:5: (lv_rawip_6_0= RULE_EFIPV4SYNTAX )
                     {
-                    // InternalEasyWall.g:3204:5: (lv_rawip_6_0= RULE_EFIPV4SYNTAX )
-                    // InternalEasyWall.g:3205:6: lv_rawip_6_0= RULE_EFIPV4SYNTAX
+                    // InternalEasyWall.g:3198:5: (lv_rawip_6_0= RULE_EFIPV4SYNTAX )
+                    // InternalEasyWall.g:3199:6: lv_rawip_6_0= RULE_EFIPV4SYNTAX
                     {
-                    lv_rawip_6_0=(Token)match(input,RULE_EFIPV4SYNTAX,FOLLOW_44); if (state.failed) return current;
+                    lv_rawip_6_0=(Token)match(input,RULE_EFIPV4SYNTAX,FOLLOW_43); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       						newLeafNode(lv_rawip_6_0, grammarAccess.getEFNetworkSYNTAXAccess().getRawipEFIPV4SYNTAXTerminalRuleCall_2_0_0());
@@ -9166,17 +9187,17 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_7=(Token)match(input,71,FOLLOW_5); if (state.failed) return current;
+                    otherlv_7=(Token)match(input,70,FOLLOW_5); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_7, grammarAccess.getEFNetworkSYNTAXAccess().getSolidusKeyword_2_1());
                       			
                     }
-                    // InternalEasyWall.g:3225:4: ( (lv_varnetmask_8_0= RULE_ID ) )
-                    // InternalEasyWall.g:3226:5: (lv_varnetmask_8_0= RULE_ID )
+                    // InternalEasyWall.g:3219:4: ( (lv_varnetmask_8_0= RULE_ID ) )
+                    // InternalEasyWall.g:3220:5: (lv_varnetmask_8_0= RULE_ID )
                     {
-                    // InternalEasyWall.g:3226:5: (lv_varnetmask_8_0= RULE_ID )
-                    // InternalEasyWall.g:3227:6: lv_varnetmask_8_0= RULE_ID
+                    // InternalEasyWall.g:3220:5: (lv_varnetmask_8_0= RULE_ID )
+                    // InternalEasyWall.g:3221:6: lv_varnetmask_8_0= RULE_ID
                     {
                     lv_varnetmask_8_0=(Token)match(input,RULE_ID,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -9209,18 +9230,18 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalEasyWall.g:3245:3: ( ( (lv_varip_9_0= RULE_ID ) ) otherlv_10= '/' ( (lv_rawnetmask_11_0= RULE_INT ) ) )
+                    // InternalEasyWall.g:3239:3: ( ( (lv_varip_9_0= RULE_ID ) ) otherlv_10= '/' ( (lv_rawnetmask_11_0= RULE_INT ) ) )
                     {
-                    // InternalEasyWall.g:3245:3: ( ( (lv_varip_9_0= RULE_ID ) ) otherlv_10= '/' ( (lv_rawnetmask_11_0= RULE_INT ) ) )
-                    // InternalEasyWall.g:3246:4: ( (lv_varip_9_0= RULE_ID ) ) otherlv_10= '/' ( (lv_rawnetmask_11_0= RULE_INT ) )
+                    // InternalEasyWall.g:3239:3: ( ( (lv_varip_9_0= RULE_ID ) ) otherlv_10= '/' ( (lv_rawnetmask_11_0= RULE_INT ) ) )
+                    // InternalEasyWall.g:3240:4: ( (lv_varip_9_0= RULE_ID ) ) otherlv_10= '/' ( (lv_rawnetmask_11_0= RULE_INT ) )
                     {
-                    // InternalEasyWall.g:3246:4: ( (lv_varip_9_0= RULE_ID ) )
-                    // InternalEasyWall.g:3247:5: (lv_varip_9_0= RULE_ID )
+                    // InternalEasyWall.g:3240:4: ( (lv_varip_9_0= RULE_ID ) )
+                    // InternalEasyWall.g:3241:5: (lv_varip_9_0= RULE_ID )
                     {
-                    // InternalEasyWall.g:3247:5: (lv_varip_9_0= RULE_ID )
-                    // InternalEasyWall.g:3248:6: lv_varip_9_0= RULE_ID
+                    // InternalEasyWall.g:3241:5: (lv_varip_9_0= RULE_ID )
+                    // InternalEasyWall.g:3242:6: lv_varip_9_0= RULE_ID
                     {
-                    lv_varip_9_0=(Token)match(input,RULE_ID,FOLLOW_44); if (state.failed) return current;
+                    lv_varip_9_0=(Token)match(input,RULE_ID,FOLLOW_43); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       						newLeafNode(lv_varip_9_0, grammarAccess.getEFNetworkSYNTAXAccess().getVaripIDTerminalRuleCall_3_0_0());
@@ -9244,17 +9265,17 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_10=(Token)match(input,71,FOLLOW_45); if (state.failed) return current;
+                    otherlv_10=(Token)match(input,70,FOLLOW_44); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_10, grammarAccess.getEFNetworkSYNTAXAccess().getSolidusKeyword_3_1());
                       			
                     }
-                    // InternalEasyWall.g:3268:4: ( (lv_rawnetmask_11_0= RULE_INT ) )
-                    // InternalEasyWall.g:3269:5: (lv_rawnetmask_11_0= RULE_INT )
+                    // InternalEasyWall.g:3262:4: ( (lv_rawnetmask_11_0= RULE_INT ) )
+                    // InternalEasyWall.g:3263:5: (lv_rawnetmask_11_0= RULE_INT )
                     {
-                    // InternalEasyWall.g:3269:5: (lv_rawnetmask_11_0= RULE_INT )
-                    // InternalEasyWall.g:3270:6: lv_rawnetmask_11_0= RULE_INT
+                    // InternalEasyWall.g:3263:5: (lv_rawnetmask_11_0= RULE_INT )
+                    // InternalEasyWall.g:3264:6: lv_rawnetmask_11_0= RULE_INT
                     {
                     lv_rawnetmask_11_0=(Token)match(input,RULE_INT,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -9311,7 +9332,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEFNetportSYNTAX"
-    // InternalEasyWall.g:3291:1: entryRuleEFNetportSYNTAX returns [EObject current=null] : iv_ruleEFNetportSYNTAX= ruleEFNetportSYNTAX EOF ;
+    // InternalEasyWall.g:3285:1: entryRuleEFNetportSYNTAX returns [EObject current=null] : iv_ruleEFNetportSYNTAX= ruleEFNetportSYNTAX EOF ;
     public final EObject entryRuleEFNetportSYNTAX() throws RecognitionException {
         EObject current = null;
 
@@ -9319,8 +9340,8 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalEasyWall.g:3291:56: (iv_ruleEFNetportSYNTAX= ruleEFNetportSYNTAX EOF )
-            // InternalEasyWall.g:3292:2: iv_ruleEFNetportSYNTAX= ruleEFNetportSYNTAX EOF
+            // InternalEasyWall.g:3285:56: (iv_ruleEFNetportSYNTAX= ruleEFNetportSYNTAX EOF )
+            // InternalEasyWall.g:3286:2: iv_ruleEFNetportSYNTAX= ruleEFNetportSYNTAX EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEFNetportSYNTAXRule()); 
@@ -9351,7 +9372,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEFNetportSYNTAX"
-    // InternalEasyWall.g:3298:1: ruleEFNetportSYNTAX returns [EObject current=null] : ( () otherlv_1= ':' ( (lv_netport_2_0= RULE_INT ) ) ) ;
+    // InternalEasyWall.g:3292:1: ruleEFNetportSYNTAX returns [EObject current=null] : ( () otherlv_1= ':' ( (lv_netport_2_0= RULE_INT ) ) ) ;
     public final EObject ruleEFNetportSYNTAX() throws RecognitionException {
         EObject current = null;
 
@@ -9362,14 +9383,14 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalEasyWall.g:3304:2: ( ( () otherlv_1= ':' ( (lv_netport_2_0= RULE_INT ) ) ) )
-            // InternalEasyWall.g:3305:2: ( () otherlv_1= ':' ( (lv_netport_2_0= RULE_INT ) ) )
+            // InternalEasyWall.g:3298:2: ( ( () otherlv_1= ':' ( (lv_netport_2_0= RULE_INT ) ) ) )
+            // InternalEasyWall.g:3299:2: ( () otherlv_1= ':' ( (lv_netport_2_0= RULE_INT ) ) )
             {
-            // InternalEasyWall.g:3305:2: ( () otherlv_1= ':' ( (lv_netport_2_0= RULE_INT ) ) )
-            // InternalEasyWall.g:3306:3: () otherlv_1= ':' ( (lv_netport_2_0= RULE_INT ) )
+            // InternalEasyWall.g:3299:2: ( () otherlv_1= ':' ( (lv_netport_2_0= RULE_INT ) ) )
+            // InternalEasyWall.g:3300:3: () otherlv_1= ':' ( (lv_netport_2_0= RULE_INT ) )
             {
-            // InternalEasyWall.g:3306:3: ()
-            // InternalEasyWall.g:3307:4: 
+            // InternalEasyWall.g:3300:3: ()
+            // InternalEasyWall.g:3301:4: 
             {
             if ( state.backtracking==0 ) {
 
@@ -9381,17 +9402,17 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,26,FOLLOW_45); if (state.failed) return current;
+            otherlv_1=(Token)match(input,26,FOLLOW_44); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_1, grammarAccess.getEFNetportSYNTAXAccess().getColonKeyword_1());
               		
             }
-            // InternalEasyWall.g:3317:3: ( (lv_netport_2_0= RULE_INT ) )
-            // InternalEasyWall.g:3318:4: (lv_netport_2_0= RULE_INT )
+            // InternalEasyWall.g:3311:3: ( (lv_netport_2_0= RULE_INT ) )
+            // InternalEasyWall.g:3312:4: (lv_netport_2_0= RULE_INT )
             {
-            // InternalEasyWall.g:3318:4: (lv_netport_2_0= RULE_INT )
-            // InternalEasyWall.g:3319:5: lv_netport_2_0= RULE_INT
+            // InternalEasyWall.g:3312:4: (lv_netport_2_0= RULE_INT )
+            // InternalEasyWall.g:3313:5: lv_netport_2_0= RULE_INT
             {
             lv_netport_2_0=(Token)match(input,RULE_INT,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -9442,7 +9463,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEFDefaultAction"
-    // InternalEasyWall.g:3339:1: ruleEFDefaultAction returns [Enumerator current=null] : ( (enumLiteral_0= 'allow' ) | (enumLiteral_1= 'deny' ) ) ;
+    // InternalEasyWall.g:3333:1: ruleEFDefaultAction returns [Enumerator current=null] : ( (enumLiteral_0= 'allow' ) | (enumLiteral_1= 'deny' ) ) ;
     public final Enumerator ruleEFDefaultAction() throws RecognitionException {
         Enumerator current = null;
 
@@ -9453,34 +9474,34 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalEasyWall.g:3345:2: ( ( (enumLiteral_0= 'allow' ) | (enumLiteral_1= 'deny' ) ) )
-            // InternalEasyWall.g:3346:2: ( (enumLiteral_0= 'allow' ) | (enumLiteral_1= 'deny' ) )
+            // InternalEasyWall.g:3339:2: ( ( (enumLiteral_0= 'allow' ) | (enumLiteral_1= 'deny' ) ) )
+            // InternalEasyWall.g:3340:2: ( (enumLiteral_0= 'allow' ) | (enumLiteral_1= 'deny' ) )
             {
-            // InternalEasyWall.g:3346:2: ( (enumLiteral_0= 'allow' ) | (enumLiteral_1= 'deny' ) )
-            int alt46=2;
-            int LA46_0 = input.LA(1);
+            // InternalEasyWall.g:3340:2: ( (enumLiteral_0= 'allow' ) | (enumLiteral_1= 'deny' ) )
+            int alt47=2;
+            int LA47_0 = input.LA(1);
 
-            if ( (LA46_0==44) ) {
-                alt46=1;
+            if ( (LA47_0==43) ) {
+                alt47=1;
             }
-            else if ( (LA46_0==72) ) {
-                alt46=2;
+            else if ( (LA47_0==71) ) {
+                alt47=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 46, 0, input);
+                    new NoViableAltException("", 47, 0, input);
 
                 throw nvae;
             }
-            switch (alt46) {
+            switch (alt47) {
                 case 1 :
-                    // InternalEasyWall.g:3347:3: (enumLiteral_0= 'allow' )
+                    // InternalEasyWall.g:3341:3: (enumLiteral_0= 'allow' )
                     {
-                    // InternalEasyWall.g:3347:3: (enumLiteral_0= 'allow' )
-                    // InternalEasyWall.g:3348:4: enumLiteral_0= 'allow'
+                    // InternalEasyWall.g:3341:3: (enumLiteral_0= 'allow' )
+                    // InternalEasyWall.g:3342:4: enumLiteral_0= 'allow'
                     {
-                    enumLiteral_0=(Token)match(input,44,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,43,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getEFDefaultActionAccess().getALLOWEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -9494,12 +9515,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalEasyWall.g:3355:3: (enumLiteral_1= 'deny' )
+                    // InternalEasyWall.g:3349:3: (enumLiteral_1= 'deny' )
                     {
-                    // InternalEasyWall.g:3355:3: (enumLiteral_1= 'deny' )
-                    // InternalEasyWall.g:3356:4: enumLiteral_1= 'deny'
+                    // InternalEasyWall.g:3349:3: (enumLiteral_1= 'deny' )
+                    // InternalEasyWall.g:3350:4: enumLiteral_1= 'deny'
                     {
-                    enumLiteral_1=(Token)match(input,72,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,71,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getEFDefaultActionAccess().getDENYEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -9537,7 +9558,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEFNetworkNativeType"
-    // InternalEasyWall.g:3366:1: ruleEFNetworkNativeType returns [Enumerator current=null] : ( (enumLiteral_0= 'network' ) | (enumLiteral_1= 'netip' ) | (enumLiteral_2= 'netipv6' ) | (enumLiteral_3= 'netport' ) | (enumLiteral_4= 'protocol' ) | (enumLiteral_5= 'direction' ) | (enumLiteral_6= 'netmask' ) ) ;
+    // InternalEasyWall.g:3360:1: ruleEFNetworkNativeType returns [Enumerator current=null] : ( (enumLiteral_0= 'network' ) | (enumLiteral_1= 'netip' ) | (enumLiteral_2= 'netipv6' ) | (enumLiteral_3= 'netport' ) | (enumLiteral_4= 'protocol' ) | (enumLiteral_5= 'direction' ) | (enumLiteral_6= 'netmask' ) ) ;
     public final Enumerator ruleEFNetworkNativeType() throws RecognitionException {
         Enumerator current = null;
 
@@ -9553,63 +9574,63 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalEasyWall.g:3372:2: ( ( (enumLiteral_0= 'network' ) | (enumLiteral_1= 'netip' ) | (enumLiteral_2= 'netipv6' ) | (enumLiteral_3= 'netport' ) | (enumLiteral_4= 'protocol' ) | (enumLiteral_5= 'direction' ) | (enumLiteral_6= 'netmask' ) ) )
-            // InternalEasyWall.g:3373:2: ( (enumLiteral_0= 'network' ) | (enumLiteral_1= 'netip' ) | (enumLiteral_2= 'netipv6' ) | (enumLiteral_3= 'netport' ) | (enumLiteral_4= 'protocol' ) | (enumLiteral_5= 'direction' ) | (enumLiteral_6= 'netmask' ) )
+            // InternalEasyWall.g:3366:2: ( ( (enumLiteral_0= 'network' ) | (enumLiteral_1= 'netip' ) | (enumLiteral_2= 'netipv6' ) | (enumLiteral_3= 'netport' ) | (enumLiteral_4= 'protocol' ) | (enumLiteral_5= 'direction' ) | (enumLiteral_6= 'netmask' ) ) )
+            // InternalEasyWall.g:3367:2: ( (enumLiteral_0= 'network' ) | (enumLiteral_1= 'netip' ) | (enumLiteral_2= 'netipv6' ) | (enumLiteral_3= 'netport' ) | (enumLiteral_4= 'protocol' ) | (enumLiteral_5= 'direction' ) | (enumLiteral_6= 'netmask' ) )
             {
-            // InternalEasyWall.g:3373:2: ( (enumLiteral_0= 'network' ) | (enumLiteral_1= 'netip' ) | (enumLiteral_2= 'netipv6' ) | (enumLiteral_3= 'netport' ) | (enumLiteral_4= 'protocol' ) | (enumLiteral_5= 'direction' ) | (enumLiteral_6= 'netmask' ) )
-            int alt47=7;
+            // InternalEasyWall.g:3367:2: ( (enumLiteral_0= 'network' ) | (enumLiteral_1= 'netip' ) | (enumLiteral_2= 'netipv6' ) | (enumLiteral_3= 'netport' ) | (enumLiteral_4= 'protocol' ) | (enumLiteral_5= 'direction' ) | (enumLiteral_6= 'netmask' ) )
+            int alt48=7;
             switch ( input.LA(1) ) {
+            case 72:
+                {
+                alt48=1;
+                }
+                break;
             case 73:
                 {
-                alt47=1;
+                alt48=2;
                 }
                 break;
             case 74:
                 {
-                alt47=2;
+                alt48=3;
                 }
                 break;
             case 75:
                 {
-                alt47=3;
+                alt48=4;
                 }
                 break;
             case 76:
                 {
-                alt47=4;
+                alt48=5;
                 }
                 break;
             case 77:
                 {
-                alt47=5;
+                alt48=6;
                 }
                 break;
             case 78:
                 {
-                alt47=6;
-                }
-                break;
-            case 79:
-                {
-                alt47=7;
+                alt48=7;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 47, 0, input);
+                    new NoViableAltException("", 48, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt47) {
+            switch (alt48) {
                 case 1 :
-                    // InternalEasyWall.g:3374:3: (enumLiteral_0= 'network' )
+                    // InternalEasyWall.g:3368:3: (enumLiteral_0= 'network' )
                     {
-                    // InternalEasyWall.g:3374:3: (enumLiteral_0= 'network' )
-                    // InternalEasyWall.g:3375:4: enumLiteral_0= 'network'
+                    // InternalEasyWall.g:3368:3: (enumLiteral_0= 'network' )
+                    // InternalEasyWall.g:3369:4: enumLiteral_0= 'network'
                     {
-                    enumLiteral_0=(Token)match(input,73,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,72,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getEFNetworkNativeTypeAccess().getNETWORKEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -9623,12 +9644,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalEasyWall.g:3382:3: (enumLiteral_1= 'netip' )
+                    // InternalEasyWall.g:3376:3: (enumLiteral_1= 'netip' )
                     {
-                    // InternalEasyWall.g:3382:3: (enumLiteral_1= 'netip' )
-                    // InternalEasyWall.g:3383:4: enumLiteral_1= 'netip'
+                    // InternalEasyWall.g:3376:3: (enumLiteral_1= 'netip' )
+                    // InternalEasyWall.g:3377:4: enumLiteral_1= 'netip'
                     {
-                    enumLiteral_1=(Token)match(input,74,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,73,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getEFNetworkNativeTypeAccess().getIPv4EnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -9642,12 +9663,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalEasyWall.g:3390:3: (enumLiteral_2= 'netipv6' )
+                    // InternalEasyWall.g:3384:3: (enumLiteral_2= 'netipv6' )
                     {
-                    // InternalEasyWall.g:3390:3: (enumLiteral_2= 'netipv6' )
-                    // InternalEasyWall.g:3391:4: enumLiteral_2= 'netipv6'
+                    // InternalEasyWall.g:3384:3: (enumLiteral_2= 'netipv6' )
+                    // InternalEasyWall.g:3385:4: enumLiteral_2= 'netipv6'
                     {
-                    enumLiteral_2=(Token)match(input,75,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,74,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getEFNetworkNativeTypeAccess().getIPv6EnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -9661,12 +9682,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalEasyWall.g:3398:3: (enumLiteral_3= 'netport' )
+                    // InternalEasyWall.g:3392:3: (enumLiteral_3= 'netport' )
                     {
-                    // InternalEasyWall.g:3398:3: (enumLiteral_3= 'netport' )
-                    // InternalEasyWall.g:3399:4: enumLiteral_3= 'netport'
+                    // InternalEasyWall.g:3392:3: (enumLiteral_3= 'netport' )
+                    // InternalEasyWall.g:3393:4: enumLiteral_3= 'netport'
                     {
-                    enumLiteral_3=(Token)match(input,76,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_3=(Token)match(input,75,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getEFNetworkNativeTypeAccess().getPORTEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
@@ -9680,12 +9701,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalEasyWall.g:3406:3: (enumLiteral_4= 'protocol' )
+                    // InternalEasyWall.g:3400:3: (enumLiteral_4= 'protocol' )
                     {
-                    // InternalEasyWall.g:3406:3: (enumLiteral_4= 'protocol' )
-                    // InternalEasyWall.g:3407:4: enumLiteral_4= 'protocol'
+                    // InternalEasyWall.g:3400:3: (enumLiteral_4= 'protocol' )
+                    // InternalEasyWall.g:3401:4: enumLiteral_4= 'protocol'
                     {
-                    enumLiteral_4=(Token)match(input,77,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_4=(Token)match(input,76,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getEFNetworkNativeTypeAccess().getPROTOCOLEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
@@ -9699,12 +9720,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalEasyWall.g:3414:3: (enumLiteral_5= 'direction' )
+                    // InternalEasyWall.g:3408:3: (enumLiteral_5= 'direction' )
                     {
-                    // InternalEasyWall.g:3414:3: (enumLiteral_5= 'direction' )
-                    // InternalEasyWall.g:3415:4: enumLiteral_5= 'direction'
+                    // InternalEasyWall.g:3408:3: (enumLiteral_5= 'direction' )
+                    // InternalEasyWall.g:3409:4: enumLiteral_5= 'direction'
                     {
-                    enumLiteral_5=(Token)match(input,78,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_5=(Token)match(input,77,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getEFNetworkNativeTypeAccess().getDIRECTIONEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
@@ -9718,12 +9739,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalEasyWall.g:3422:3: (enumLiteral_6= 'netmask' )
+                    // InternalEasyWall.g:3416:3: (enumLiteral_6= 'netmask' )
                     {
-                    // InternalEasyWall.g:3422:3: (enumLiteral_6= 'netmask' )
-                    // InternalEasyWall.g:3423:4: enumLiteral_6= 'netmask'
+                    // InternalEasyWall.g:3416:3: (enumLiteral_6= 'netmask' )
+                    // InternalEasyWall.g:3417:4: enumLiteral_6= 'netmask'
                     {
-                    enumLiteral_6=(Token)match(input,79,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_6=(Token)match(input,78,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getEFNetworkNativeTypeAccess().getNETMASKEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
@@ -9761,7 +9782,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEFPrimitiveType"
-    // InternalEasyWall.g:3433:1: ruleEFPrimitiveType returns [Enumerator current=null] : ( (enumLiteral_0= 'int' ) | (enumLiteral_1= 'string' ) | (enumLiteral_2= 'bool' ) ) ;
+    // InternalEasyWall.g:3427:1: ruleEFPrimitiveType returns [Enumerator current=null] : ( (enumLiteral_0= 'int' ) | (enumLiteral_1= 'string' ) | (enumLiteral_2= 'bool' ) ) ;
     public final Enumerator ruleEFPrimitiveType() throws RecognitionException {
         Enumerator current = null;
 
@@ -9773,43 +9794,43 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalEasyWall.g:3439:2: ( ( (enumLiteral_0= 'int' ) | (enumLiteral_1= 'string' ) | (enumLiteral_2= 'bool' ) ) )
-            // InternalEasyWall.g:3440:2: ( (enumLiteral_0= 'int' ) | (enumLiteral_1= 'string' ) | (enumLiteral_2= 'bool' ) )
+            // InternalEasyWall.g:3433:2: ( ( (enumLiteral_0= 'int' ) | (enumLiteral_1= 'string' ) | (enumLiteral_2= 'bool' ) ) )
+            // InternalEasyWall.g:3434:2: ( (enumLiteral_0= 'int' ) | (enumLiteral_1= 'string' ) | (enumLiteral_2= 'bool' ) )
             {
-            // InternalEasyWall.g:3440:2: ( (enumLiteral_0= 'int' ) | (enumLiteral_1= 'string' ) | (enumLiteral_2= 'bool' ) )
-            int alt48=3;
+            // InternalEasyWall.g:3434:2: ( (enumLiteral_0= 'int' ) | (enumLiteral_1= 'string' ) | (enumLiteral_2= 'bool' ) )
+            int alt49=3;
             switch ( input.LA(1) ) {
+            case 79:
+                {
+                alt49=1;
+                }
+                break;
             case 80:
                 {
-                alt48=1;
+                alt49=2;
                 }
                 break;
             case 81:
                 {
-                alt48=2;
-                }
-                break;
-            case 82:
-                {
-                alt48=3;
+                alt49=3;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 48, 0, input);
+                    new NoViableAltException("", 49, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt48) {
+            switch (alt49) {
                 case 1 :
-                    // InternalEasyWall.g:3441:3: (enumLiteral_0= 'int' )
+                    // InternalEasyWall.g:3435:3: (enumLiteral_0= 'int' )
                     {
-                    // InternalEasyWall.g:3441:3: (enumLiteral_0= 'int' )
-                    // InternalEasyWall.g:3442:4: enumLiteral_0= 'int'
+                    // InternalEasyWall.g:3435:3: (enumLiteral_0= 'int' )
+                    // InternalEasyWall.g:3436:4: enumLiteral_0= 'int'
                     {
-                    enumLiteral_0=(Token)match(input,80,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,79,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getEFPrimitiveTypeAccess().getINTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -9823,12 +9844,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalEasyWall.g:3449:3: (enumLiteral_1= 'string' )
+                    // InternalEasyWall.g:3443:3: (enumLiteral_1= 'string' )
                     {
-                    // InternalEasyWall.g:3449:3: (enumLiteral_1= 'string' )
-                    // InternalEasyWall.g:3450:4: enumLiteral_1= 'string'
+                    // InternalEasyWall.g:3443:3: (enumLiteral_1= 'string' )
+                    // InternalEasyWall.g:3444:4: enumLiteral_1= 'string'
                     {
-                    enumLiteral_1=(Token)match(input,81,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,80,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getEFPrimitiveTypeAccess().getSTRINGEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -9842,12 +9863,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalEasyWall.g:3457:3: (enumLiteral_2= 'bool' )
+                    // InternalEasyWall.g:3451:3: (enumLiteral_2= 'bool' )
                     {
-                    // InternalEasyWall.g:3457:3: (enumLiteral_2= 'bool' )
-                    // InternalEasyWall.g:3458:4: enumLiteral_2= 'bool'
+                    // InternalEasyWall.g:3451:3: (enumLiteral_2= 'bool' )
+                    // InternalEasyWall.g:3452:4: enumLiteral_2= 'bool'
                     {
-                    enumLiteral_2=(Token)match(input,82,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,81,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getEFPrimitiveTypeAccess().getBOOLEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -9885,7 +9906,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEFDirectionNativeType"
-    // InternalEasyWall.g:3468:1: ruleEFDirectionNativeType returns [Enumerator current=null] : ( (enumLiteral_0= 'in' ) | (enumLiteral_1= 'out' ) | (enumLiteral_2= 'forward' ) ) ;
+    // InternalEasyWall.g:3462:1: ruleEFDirectionNativeType returns [Enumerator current=null] : ( (enumLiteral_0= 'in' ) | (enumLiteral_1= 'out' ) | (enumLiteral_2= 'forward' ) ) ;
     public final Enumerator ruleEFDirectionNativeType() throws RecognitionException {
         Enumerator current = null;
 
@@ -9897,43 +9918,43 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalEasyWall.g:3474:2: ( ( (enumLiteral_0= 'in' ) | (enumLiteral_1= 'out' ) | (enumLiteral_2= 'forward' ) ) )
-            // InternalEasyWall.g:3475:2: ( (enumLiteral_0= 'in' ) | (enumLiteral_1= 'out' ) | (enumLiteral_2= 'forward' ) )
+            // InternalEasyWall.g:3468:2: ( ( (enumLiteral_0= 'in' ) | (enumLiteral_1= 'out' ) | (enumLiteral_2= 'forward' ) ) )
+            // InternalEasyWall.g:3469:2: ( (enumLiteral_0= 'in' ) | (enumLiteral_1= 'out' ) | (enumLiteral_2= 'forward' ) )
             {
-            // InternalEasyWall.g:3475:2: ( (enumLiteral_0= 'in' ) | (enumLiteral_1= 'out' ) | (enumLiteral_2= 'forward' ) )
-            int alt49=3;
+            // InternalEasyWall.g:3469:2: ( (enumLiteral_0= 'in' ) | (enumLiteral_1= 'out' ) | (enumLiteral_2= 'forward' ) )
+            int alt50=3;
             switch ( input.LA(1) ) {
+            case 82:
+                {
+                alt50=1;
+                }
+                break;
             case 83:
                 {
-                alt49=1;
+                alt50=2;
                 }
                 break;
             case 84:
                 {
-                alt49=2;
-                }
-                break;
-            case 85:
-                {
-                alt49=3;
+                alt50=3;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 49, 0, input);
+                    new NoViableAltException("", 50, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt49) {
+            switch (alt50) {
                 case 1 :
-                    // InternalEasyWall.g:3476:3: (enumLiteral_0= 'in' )
+                    // InternalEasyWall.g:3470:3: (enumLiteral_0= 'in' )
                     {
-                    // InternalEasyWall.g:3476:3: (enumLiteral_0= 'in' )
-                    // InternalEasyWall.g:3477:4: enumLiteral_0= 'in'
+                    // InternalEasyWall.g:3470:3: (enumLiteral_0= 'in' )
+                    // InternalEasyWall.g:3471:4: enumLiteral_0= 'in'
                     {
-                    enumLiteral_0=(Token)match(input,83,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,82,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getEFDirectionNativeTypeAccess().getINEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -9947,12 +9968,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalEasyWall.g:3484:3: (enumLiteral_1= 'out' )
+                    // InternalEasyWall.g:3478:3: (enumLiteral_1= 'out' )
                     {
-                    // InternalEasyWall.g:3484:3: (enumLiteral_1= 'out' )
-                    // InternalEasyWall.g:3485:4: enumLiteral_1= 'out'
+                    // InternalEasyWall.g:3478:3: (enumLiteral_1= 'out' )
+                    // InternalEasyWall.g:3479:4: enumLiteral_1= 'out'
                     {
-                    enumLiteral_1=(Token)match(input,84,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,83,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getEFDirectionNativeTypeAccess().getOUTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -9966,12 +9987,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalEasyWall.g:3492:3: (enumLiteral_2= 'forward' )
+                    // InternalEasyWall.g:3486:3: (enumLiteral_2= 'forward' )
                     {
-                    // InternalEasyWall.g:3492:3: (enumLiteral_2= 'forward' )
-                    // InternalEasyWall.g:3493:4: enumLiteral_2= 'forward'
+                    // InternalEasyWall.g:3486:3: (enumLiteral_2= 'forward' )
+                    // InternalEasyWall.g:3487:4: enumLiteral_2= 'forward'
                     {
-                    enumLiteral_2=(Token)match(input,85,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,84,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getEFDirectionNativeTypeAccess().getFORWARDEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -10009,7 +10030,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEFLogLevel"
-    // InternalEasyWall.g:3503:1: ruleEFLogLevel returns [Enumerator current=null] : ( (enumLiteral_0= 'debug' ) | (enumLiteral_1= 'info' ) | (enumLiteral_2= 'warning' ) | (enumLiteral_3= 'error' ) | (enumLiteral_4= 'critical' ) ) ;
+    // InternalEasyWall.g:3497:1: ruleEFLogLevel returns [Enumerator current=null] : ( (enumLiteral_0= 'debug' ) | (enumLiteral_1= 'info' ) | (enumLiteral_2= 'warning' ) | (enumLiteral_3= 'error' ) | (enumLiteral_4= 'critical' ) ) ;
     public final Enumerator ruleEFLogLevel() throws RecognitionException {
         Enumerator current = null;
 
@@ -10023,53 +10044,53 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalEasyWall.g:3509:2: ( ( (enumLiteral_0= 'debug' ) | (enumLiteral_1= 'info' ) | (enumLiteral_2= 'warning' ) | (enumLiteral_3= 'error' ) | (enumLiteral_4= 'critical' ) ) )
-            // InternalEasyWall.g:3510:2: ( (enumLiteral_0= 'debug' ) | (enumLiteral_1= 'info' ) | (enumLiteral_2= 'warning' ) | (enumLiteral_3= 'error' ) | (enumLiteral_4= 'critical' ) )
+            // InternalEasyWall.g:3503:2: ( ( (enumLiteral_0= 'debug' ) | (enumLiteral_1= 'info' ) | (enumLiteral_2= 'warning' ) | (enumLiteral_3= 'error' ) | (enumLiteral_4= 'critical' ) ) )
+            // InternalEasyWall.g:3504:2: ( (enumLiteral_0= 'debug' ) | (enumLiteral_1= 'info' ) | (enumLiteral_2= 'warning' ) | (enumLiteral_3= 'error' ) | (enumLiteral_4= 'critical' ) )
             {
-            // InternalEasyWall.g:3510:2: ( (enumLiteral_0= 'debug' ) | (enumLiteral_1= 'info' ) | (enumLiteral_2= 'warning' ) | (enumLiteral_3= 'error' ) | (enumLiteral_4= 'critical' ) )
-            int alt50=5;
+            // InternalEasyWall.g:3504:2: ( (enumLiteral_0= 'debug' ) | (enumLiteral_1= 'info' ) | (enumLiteral_2= 'warning' ) | (enumLiteral_3= 'error' ) | (enumLiteral_4= 'critical' ) )
+            int alt51=5;
             switch ( input.LA(1) ) {
+            case 85:
+                {
+                alt51=1;
+                }
+                break;
             case 86:
                 {
-                alt50=1;
+                alt51=2;
                 }
                 break;
             case 87:
                 {
-                alt50=2;
+                alt51=3;
                 }
                 break;
             case 88:
                 {
-                alt50=3;
+                alt51=4;
                 }
                 break;
             case 89:
                 {
-                alt50=4;
-                }
-                break;
-            case 90:
-                {
-                alt50=5;
+                alt51=5;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 50, 0, input);
+                    new NoViableAltException("", 51, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt50) {
+            switch (alt51) {
                 case 1 :
-                    // InternalEasyWall.g:3511:3: (enumLiteral_0= 'debug' )
+                    // InternalEasyWall.g:3505:3: (enumLiteral_0= 'debug' )
                     {
-                    // InternalEasyWall.g:3511:3: (enumLiteral_0= 'debug' )
-                    // InternalEasyWall.g:3512:4: enumLiteral_0= 'debug'
+                    // InternalEasyWall.g:3505:3: (enumLiteral_0= 'debug' )
+                    // InternalEasyWall.g:3506:4: enumLiteral_0= 'debug'
                     {
-                    enumLiteral_0=(Token)match(input,86,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,85,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getEFLogLevelAccess().getDEBUGEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -10083,12 +10104,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalEasyWall.g:3519:3: (enumLiteral_1= 'info' )
+                    // InternalEasyWall.g:3513:3: (enumLiteral_1= 'info' )
                     {
-                    // InternalEasyWall.g:3519:3: (enumLiteral_1= 'info' )
-                    // InternalEasyWall.g:3520:4: enumLiteral_1= 'info'
+                    // InternalEasyWall.g:3513:3: (enumLiteral_1= 'info' )
+                    // InternalEasyWall.g:3514:4: enumLiteral_1= 'info'
                     {
-                    enumLiteral_1=(Token)match(input,87,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,86,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getEFLogLevelAccess().getINFOEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -10102,12 +10123,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalEasyWall.g:3527:3: (enumLiteral_2= 'warning' )
+                    // InternalEasyWall.g:3521:3: (enumLiteral_2= 'warning' )
                     {
-                    // InternalEasyWall.g:3527:3: (enumLiteral_2= 'warning' )
-                    // InternalEasyWall.g:3528:4: enumLiteral_2= 'warning'
+                    // InternalEasyWall.g:3521:3: (enumLiteral_2= 'warning' )
+                    // InternalEasyWall.g:3522:4: enumLiteral_2= 'warning'
                     {
-                    enumLiteral_2=(Token)match(input,88,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,87,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getEFLogLevelAccess().getWARNINGEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -10121,12 +10142,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalEasyWall.g:3535:3: (enumLiteral_3= 'error' )
+                    // InternalEasyWall.g:3529:3: (enumLiteral_3= 'error' )
                     {
-                    // InternalEasyWall.g:3535:3: (enumLiteral_3= 'error' )
-                    // InternalEasyWall.g:3536:4: enumLiteral_3= 'error'
+                    // InternalEasyWall.g:3529:3: (enumLiteral_3= 'error' )
+                    // InternalEasyWall.g:3530:4: enumLiteral_3= 'error'
                     {
-                    enumLiteral_3=(Token)match(input,89,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_3=(Token)match(input,88,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getEFLogLevelAccess().getERROREnumLiteralDeclaration_3().getEnumLiteral().getInstance();
@@ -10140,12 +10161,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalEasyWall.g:3543:3: (enumLiteral_4= 'critical' )
+                    // InternalEasyWall.g:3537:3: (enumLiteral_4= 'critical' )
                     {
-                    // InternalEasyWall.g:3543:3: (enumLiteral_4= 'critical' )
-                    // InternalEasyWall.g:3544:4: enumLiteral_4= 'critical'
+                    // InternalEasyWall.g:3537:3: (enumLiteral_4= 'critical' )
+                    // InternalEasyWall.g:3538:4: enumLiteral_4= 'critical'
                     {
-                    enumLiteral_4=(Token)match(input,90,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_4=(Token)match(input,89,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getEFLogLevelAccess().getCRITICALEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
@@ -10183,7 +10204,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEFRulesTypes"
-    // InternalEasyWall.g:3554:1: ruleEFRulesTypes returns [Enumerator current=null] : ( (enumLiteral_0= 'NetworkLayer' ) | (enumLiteral_1= 'TransportLayer' ) | (enumLiteral_2= 'ApplicationLayer' ) ) ;
+    // InternalEasyWall.g:3548:1: ruleEFRulesTypes returns [Enumerator current=null] : ( (enumLiteral_0= 'NetworkLayer' ) | (enumLiteral_1= 'TransportLayer' ) | (enumLiteral_2= 'ApplicationLayer' ) ) ;
     public final Enumerator ruleEFRulesTypes() throws RecognitionException {
         Enumerator current = null;
 
@@ -10195,43 +10216,43 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalEasyWall.g:3560:2: ( ( (enumLiteral_0= 'NetworkLayer' ) | (enumLiteral_1= 'TransportLayer' ) | (enumLiteral_2= 'ApplicationLayer' ) ) )
-            // InternalEasyWall.g:3561:2: ( (enumLiteral_0= 'NetworkLayer' ) | (enumLiteral_1= 'TransportLayer' ) | (enumLiteral_2= 'ApplicationLayer' ) )
+            // InternalEasyWall.g:3554:2: ( ( (enumLiteral_0= 'NetworkLayer' ) | (enumLiteral_1= 'TransportLayer' ) | (enumLiteral_2= 'ApplicationLayer' ) ) )
+            // InternalEasyWall.g:3555:2: ( (enumLiteral_0= 'NetworkLayer' ) | (enumLiteral_1= 'TransportLayer' ) | (enumLiteral_2= 'ApplicationLayer' ) )
             {
-            // InternalEasyWall.g:3561:2: ( (enumLiteral_0= 'NetworkLayer' ) | (enumLiteral_1= 'TransportLayer' ) | (enumLiteral_2= 'ApplicationLayer' ) )
-            int alt51=3;
+            // InternalEasyWall.g:3555:2: ( (enumLiteral_0= 'NetworkLayer' ) | (enumLiteral_1= 'TransportLayer' ) | (enumLiteral_2= 'ApplicationLayer' ) )
+            int alt52=3;
             switch ( input.LA(1) ) {
+            case 90:
+                {
+                alt52=1;
+                }
+                break;
             case 91:
                 {
-                alt51=1;
+                alt52=2;
                 }
                 break;
             case 92:
                 {
-                alt51=2;
-                }
-                break;
-            case 93:
-                {
-                alt51=3;
+                alt52=3;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 51, 0, input);
+                    new NoViableAltException("", 52, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt51) {
+            switch (alt52) {
                 case 1 :
-                    // InternalEasyWall.g:3562:3: (enumLiteral_0= 'NetworkLayer' )
+                    // InternalEasyWall.g:3556:3: (enumLiteral_0= 'NetworkLayer' )
                     {
-                    // InternalEasyWall.g:3562:3: (enumLiteral_0= 'NetworkLayer' )
-                    // InternalEasyWall.g:3563:4: enumLiteral_0= 'NetworkLayer'
+                    // InternalEasyWall.g:3556:3: (enumLiteral_0= 'NetworkLayer' )
+                    // InternalEasyWall.g:3557:4: enumLiteral_0= 'NetworkLayer'
                     {
-                    enumLiteral_0=(Token)match(input,91,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,90,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getEFRulesTypesAccess().getIPLEVELEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -10245,12 +10266,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalEasyWall.g:3570:3: (enumLiteral_1= 'TransportLayer' )
+                    // InternalEasyWall.g:3564:3: (enumLiteral_1= 'TransportLayer' )
                     {
-                    // InternalEasyWall.g:3570:3: (enumLiteral_1= 'TransportLayer' )
-                    // InternalEasyWall.g:3571:4: enumLiteral_1= 'TransportLayer'
+                    // InternalEasyWall.g:3564:3: (enumLiteral_1= 'TransportLayer' )
+                    // InternalEasyWall.g:3565:4: enumLiteral_1= 'TransportLayer'
                     {
-                    enumLiteral_1=(Token)match(input,92,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,91,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getEFRulesTypesAccess().getTRANSPLEVELEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -10264,12 +10285,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalEasyWall.g:3578:3: (enumLiteral_2= 'ApplicationLayer' )
+                    // InternalEasyWall.g:3572:3: (enumLiteral_2= 'ApplicationLayer' )
                     {
-                    // InternalEasyWall.g:3578:3: (enumLiteral_2= 'ApplicationLayer' )
-                    // InternalEasyWall.g:3579:4: enumLiteral_2= 'ApplicationLayer'
+                    // InternalEasyWall.g:3572:3: (enumLiteral_2= 'ApplicationLayer' )
+                    // InternalEasyWall.g:3573:4: enumLiteral_2= 'ApplicationLayer'
                     {
-                    enumLiteral_2=(Token)match(input,93,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,92,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getEFRulesTypesAccess().getAPPLEVELEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -10307,7 +10328,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNETWORKLAYERPROTOCOL"
-    // InternalEasyWall.g:3589:1: ruleNETWORKLAYERPROTOCOL returns [Enumerator current=null] : ( (enumLiteral_0= 'IPv4' ) | (enumLiteral_1= 'IPv6' ) | (enumLiteral_2= 'ARP' ) | (enumLiteral_3= 'ICMP' ) | (enumLiteral_4= 'NAT' ) | (enumLiteral_5= 'RIP' ) | (enumLiteral_6= 'OSPF' ) | (enumLiteral_7= 'IPSEC' ) | (enumLiteral_8= 'IGMP' ) ) ;
+    // InternalEasyWall.g:3583:1: ruleNETWORKLAYERPROTOCOL returns [Enumerator current=null] : ( (enumLiteral_0= 'IPv4' ) | (enumLiteral_1= 'IPv6' ) | (enumLiteral_2= 'ARP' ) | (enumLiteral_3= 'ICMP' ) | (enumLiteral_4= 'NAT' ) | (enumLiteral_5= 'RIP' ) | (enumLiteral_6= 'OSPF' ) | (enumLiteral_7= 'IPSEC' ) | (enumLiteral_8= 'IGMP' ) ) ;
     public final Enumerator ruleNETWORKLAYERPROTOCOL() throws RecognitionException {
         Enumerator current = null;
 
@@ -10325,73 +10346,73 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalEasyWall.g:3595:2: ( ( (enumLiteral_0= 'IPv4' ) | (enumLiteral_1= 'IPv6' ) | (enumLiteral_2= 'ARP' ) | (enumLiteral_3= 'ICMP' ) | (enumLiteral_4= 'NAT' ) | (enumLiteral_5= 'RIP' ) | (enumLiteral_6= 'OSPF' ) | (enumLiteral_7= 'IPSEC' ) | (enumLiteral_8= 'IGMP' ) ) )
-            // InternalEasyWall.g:3596:2: ( (enumLiteral_0= 'IPv4' ) | (enumLiteral_1= 'IPv6' ) | (enumLiteral_2= 'ARP' ) | (enumLiteral_3= 'ICMP' ) | (enumLiteral_4= 'NAT' ) | (enumLiteral_5= 'RIP' ) | (enumLiteral_6= 'OSPF' ) | (enumLiteral_7= 'IPSEC' ) | (enumLiteral_8= 'IGMP' ) )
+            // InternalEasyWall.g:3589:2: ( ( (enumLiteral_0= 'IPv4' ) | (enumLiteral_1= 'IPv6' ) | (enumLiteral_2= 'ARP' ) | (enumLiteral_3= 'ICMP' ) | (enumLiteral_4= 'NAT' ) | (enumLiteral_5= 'RIP' ) | (enumLiteral_6= 'OSPF' ) | (enumLiteral_7= 'IPSEC' ) | (enumLiteral_8= 'IGMP' ) ) )
+            // InternalEasyWall.g:3590:2: ( (enumLiteral_0= 'IPv4' ) | (enumLiteral_1= 'IPv6' ) | (enumLiteral_2= 'ARP' ) | (enumLiteral_3= 'ICMP' ) | (enumLiteral_4= 'NAT' ) | (enumLiteral_5= 'RIP' ) | (enumLiteral_6= 'OSPF' ) | (enumLiteral_7= 'IPSEC' ) | (enumLiteral_8= 'IGMP' ) )
             {
-            // InternalEasyWall.g:3596:2: ( (enumLiteral_0= 'IPv4' ) | (enumLiteral_1= 'IPv6' ) | (enumLiteral_2= 'ARP' ) | (enumLiteral_3= 'ICMP' ) | (enumLiteral_4= 'NAT' ) | (enumLiteral_5= 'RIP' ) | (enumLiteral_6= 'OSPF' ) | (enumLiteral_7= 'IPSEC' ) | (enumLiteral_8= 'IGMP' ) )
-            int alt52=9;
+            // InternalEasyWall.g:3590:2: ( (enumLiteral_0= 'IPv4' ) | (enumLiteral_1= 'IPv6' ) | (enumLiteral_2= 'ARP' ) | (enumLiteral_3= 'ICMP' ) | (enumLiteral_4= 'NAT' ) | (enumLiteral_5= 'RIP' ) | (enumLiteral_6= 'OSPF' ) | (enumLiteral_7= 'IPSEC' ) | (enumLiteral_8= 'IGMP' ) )
+            int alt53=9;
             switch ( input.LA(1) ) {
+            case 93:
+                {
+                alt53=1;
+                }
+                break;
             case 94:
                 {
-                alt52=1;
+                alt53=2;
                 }
                 break;
             case 95:
                 {
-                alt52=2;
+                alt53=3;
                 }
                 break;
             case 96:
                 {
-                alt52=3;
+                alt53=4;
                 }
                 break;
             case 97:
                 {
-                alt52=4;
+                alt53=5;
                 }
                 break;
             case 98:
                 {
-                alt52=5;
+                alt53=6;
                 }
                 break;
             case 99:
                 {
-                alt52=6;
+                alt53=7;
                 }
                 break;
             case 100:
                 {
-                alt52=7;
+                alt53=8;
                 }
                 break;
             case 101:
                 {
-                alt52=8;
-                }
-                break;
-            case 102:
-                {
-                alt52=9;
+                alt53=9;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 52, 0, input);
+                    new NoViableAltException("", 53, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt52) {
+            switch (alt53) {
                 case 1 :
-                    // InternalEasyWall.g:3597:3: (enumLiteral_0= 'IPv4' )
+                    // InternalEasyWall.g:3591:3: (enumLiteral_0= 'IPv4' )
                     {
-                    // InternalEasyWall.g:3597:3: (enumLiteral_0= 'IPv4' )
-                    // InternalEasyWall.g:3598:4: enumLiteral_0= 'IPv4'
+                    // InternalEasyWall.g:3591:3: (enumLiteral_0= 'IPv4' )
+                    // InternalEasyWall.g:3592:4: enumLiteral_0= 'IPv4'
                     {
-                    enumLiteral_0=(Token)match(input,94,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,93,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getNETWORKLAYERPROTOCOLAccess().getIPv4EnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -10405,12 +10426,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalEasyWall.g:3605:3: (enumLiteral_1= 'IPv6' )
+                    // InternalEasyWall.g:3599:3: (enumLiteral_1= 'IPv6' )
                     {
-                    // InternalEasyWall.g:3605:3: (enumLiteral_1= 'IPv6' )
-                    // InternalEasyWall.g:3606:4: enumLiteral_1= 'IPv6'
+                    // InternalEasyWall.g:3599:3: (enumLiteral_1= 'IPv6' )
+                    // InternalEasyWall.g:3600:4: enumLiteral_1= 'IPv6'
                     {
-                    enumLiteral_1=(Token)match(input,95,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,94,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getNETWORKLAYERPROTOCOLAccess().getIPv6EnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -10424,12 +10445,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalEasyWall.g:3613:3: (enumLiteral_2= 'ARP' )
+                    // InternalEasyWall.g:3607:3: (enumLiteral_2= 'ARP' )
                     {
-                    // InternalEasyWall.g:3613:3: (enumLiteral_2= 'ARP' )
-                    // InternalEasyWall.g:3614:4: enumLiteral_2= 'ARP'
+                    // InternalEasyWall.g:3607:3: (enumLiteral_2= 'ARP' )
+                    // InternalEasyWall.g:3608:4: enumLiteral_2= 'ARP'
                     {
-                    enumLiteral_2=(Token)match(input,96,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,95,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getNETWORKLAYERPROTOCOLAccess().getARPEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -10443,12 +10464,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalEasyWall.g:3621:3: (enumLiteral_3= 'ICMP' )
+                    // InternalEasyWall.g:3615:3: (enumLiteral_3= 'ICMP' )
                     {
-                    // InternalEasyWall.g:3621:3: (enumLiteral_3= 'ICMP' )
-                    // InternalEasyWall.g:3622:4: enumLiteral_3= 'ICMP'
+                    // InternalEasyWall.g:3615:3: (enumLiteral_3= 'ICMP' )
+                    // InternalEasyWall.g:3616:4: enumLiteral_3= 'ICMP'
                     {
-                    enumLiteral_3=(Token)match(input,97,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_3=(Token)match(input,96,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getNETWORKLAYERPROTOCOLAccess().getICMPEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
@@ -10462,12 +10483,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalEasyWall.g:3629:3: (enumLiteral_4= 'NAT' )
+                    // InternalEasyWall.g:3623:3: (enumLiteral_4= 'NAT' )
                     {
-                    // InternalEasyWall.g:3629:3: (enumLiteral_4= 'NAT' )
-                    // InternalEasyWall.g:3630:4: enumLiteral_4= 'NAT'
+                    // InternalEasyWall.g:3623:3: (enumLiteral_4= 'NAT' )
+                    // InternalEasyWall.g:3624:4: enumLiteral_4= 'NAT'
                     {
-                    enumLiteral_4=(Token)match(input,98,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_4=(Token)match(input,97,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getNETWORKLAYERPROTOCOLAccess().getNATEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
@@ -10481,12 +10502,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalEasyWall.g:3637:3: (enumLiteral_5= 'RIP' )
+                    // InternalEasyWall.g:3631:3: (enumLiteral_5= 'RIP' )
                     {
-                    // InternalEasyWall.g:3637:3: (enumLiteral_5= 'RIP' )
-                    // InternalEasyWall.g:3638:4: enumLiteral_5= 'RIP'
+                    // InternalEasyWall.g:3631:3: (enumLiteral_5= 'RIP' )
+                    // InternalEasyWall.g:3632:4: enumLiteral_5= 'RIP'
                     {
-                    enumLiteral_5=(Token)match(input,99,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_5=(Token)match(input,98,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getNETWORKLAYERPROTOCOLAccess().getRIPEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
@@ -10500,12 +10521,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalEasyWall.g:3645:3: (enumLiteral_6= 'OSPF' )
+                    // InternalEasyWall.g:3639:3: (enumLiteral_6= 'OSPF' )
                     {
-                    // InternalEasyWall.g:3645:3: (enumLiteral_6= 'OSPF' )
-                    // InternalEasyWall.g:3646:4: enumLiteral_6= 'OSPF'
+                    // InternalEasyWall.g:3639:3: (enumLiteral_6= 'OSPF' )
+                    // InternalEasyWall.g:3640:4: enumLiteral_6= 'OSPF'
                     {
-                    enumLiteral_6=(Token)match(input,100,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_6=(Token)match(input,99,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getNETWORKLAYERPROTOCOLAccess().getOSPFEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
@@ -10519,12 +10540,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalEasyWall.g:3653:3: (enumLiteral_7= 'IPSEC' )
+                    // InternalEasyWall.g:3647:3: (enumLiteral_7= 'IPSEC' )
                     {
-                    // InternalEasyWall.g:3653:3: (enumLiteral_7= 'IPSEC' )
-                    // InternalEasyWall.g:3654:4: enumLiteral_7= 'IPSEC'
+                    // InternalEasyWall.g:3647:3: (enumLiteral_7= 'IPSEC' )
+                    // InternalEasyWall.g:3648:4: enumLiteral_7= 'IPSEC'
                     {
-                    enumLiteral_7=(Token)match(input,101,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_7=(Token)match(input,100,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getNETWORKLAYERPROTOCOLAccess().getIPSECEnumLiteralDeclaration_7().getEnumLiteral().getInstance();
@@ -10538,12 +10559,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // InternalEasyWall.g:3661:3: (enumLiteral_8= 'IGMP' )
+                    // InternalEasyWall.g:3655:3: (enumLiteral_8= 'IGMP' )
                     {
-                    // InternalEasyWall.g:3661:3: (enumLiteral_8= 'IGMP' )
-                    // InternalEasyWall.g:3662:4: enumLiteral_8= 'IGMP'
+                    // InternalEasyWall.g:3655:3: (enumLiteral_8= 'IGMP' )
+                    // InternalEasyWall.g:3656:4: enumLiteral_8= 'IGMP'
                     {
-                    enumLiteral_8=(Token)match(input,102,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_8=(Token)match(input,101,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getNETWORKLAYERPROTOCOLAccess().getIGMPEnumLiteralDeclaration_8().getEnumLiteral().getInstance();
@@ -10581,7 +10602,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTRANSPORTLAYERPROTOCOL"
-    // InternalEasyWall.g:3672:1: ruleTRANSPORTLAYERPROTOCOL returns [Enumerator current=null] : ( (enumLiteral_0= 'UDP' ) | (enumLiteral_1= 'TCP' ) | (enumLiteral_2= 'QUIC' ) | (enumLiteral_3= 'SCTP' ) ) ;
+    // InternalEasyWall.g:3666:1: ruleTRANSPORTLAYERPROTOCOL returns [Enumerator current=null] : ( (enumLiteral_0= 'UDP' ) | (enumLiteral_1= 'TCP' ) | (enumLiteral_2= 'QUIC' ) | (enumLiteral_3= 'SCTP' ) ) ;
     public final Enumerator ruleTRANSPORTLAYERPROTOCOL() throws RecognitionException {
         Enumerator current = null;
 
@@ -10594,48 +10615,48 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalEasyWall.g:3678:2: ( ( (enumLiteral_0= 'UDP' ) | (enumLiteral_1= 'TCP' ) | (enumLiteral_2= 'QUIC' ) | (enumLiteral_3= 'SCTP' ) ) )
-            // InternalEasyWall.g:3679:2: ( (enumLiteral_0= 'UDP' ) | (enumLiteral_1= 'TCP' ) | (enumLiteral_2= 'QUIC' ) | (enumLiteral_3= 'SCTP' ) )
+            // InternalEasyWall.g:3672:2: ( ( (enumLiteral_0= 'UDP' ) | (enumLiteral_1= 'TCP' ) | (enumLiteral_2= 'QUIC' ) | (enumLiteral_3= 'SCTP' ) ) )
+            // InternalEasyWall.g:3673:2: ( (enumLiteral_0= 'UDP' ) | (enumLiteral_1= 'TCP' ) | (enumLiteral_2= 'QUIC' ) | (enumLiteral_3= 'SCTP' ) )
             {
-            // InternalEasyWall.g:3679:2: ( (enumLiteral_0= 'UDP' ) | (enumLiteral_1= 'TCP' ) | (enumLiteral_2= 'QUIC' ) | (enumLiteral_3= 'SCTP' ) )
-            int alt53=4;
+            // InternalEasyWall.g:3673:2: ( (enumLiteral_0= 'UDP' ) | (enumLiteral_1= 'TCP' ) | (enumLiteral_2= 'QUIC' ) | (enumLiteral_3= 'SCTP' ) )
+            int alt54=4;
             switch ( input.LA(1) ) {
+            case 102:
+                {
+                alt54=1;
+                }
+                break;
             case 103:
                 {
-                alt53=1;
+                alt54=2;
                 }
                 break;
             case 104:
                 {
-                alt53=2;
+                alt54=3;
                 }
                 break;
             case 105:
                 {
-                alt53=3;
-                }
-                break;
-            case 106:
-                {
-                alt53=4;
+                alt54=4;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 53, 0, input);
+                    new NoViableAltException("", 54, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt53) {
+            switch (alt54) {
                 case 1 :
-                    // InternalEasyWall.g:3680:3: (enumLiteral_0= 'UDP' )
+                    // InternalEasyWall.g:3674:3: (enumLiteral_0= 'UDP' )
                     {
-                    // InternalEasyWall.g:3680:3: (enumLiteral_0= 'UDP' )
-                    // InternalEasyWall.g:3681:4: enumLiteral_0= 'UDP'
+                    // InternalEasyWall.g:3674:3: (enumLiteral_0= 'UDP' )
+                    // InternalEasyWall.g:3675:4: enumLiteral_0= 'UDP'
                     {
-                    enumLiteral_0=(Token)match(input,103,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,102,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getTRANSPORTLAYERPROTOCOLAccess().getUDPEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -10649,12 +10670,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalEasyWall.g:3688:3: (enumLiteral_1= 'TCP' )
+                    // InternalEasyWall.g:3682:3: (enumLiteral_1= 'TCP' )
                     {
-                    // InternalEasyWall.g:3688:3: (enumLiteral_1= 'TCP' )
-                    // InternalEasyWall.g:3689:4: enumLiteral_1= 'TCP'
+                    // InternalEasyWall.g:3682:3: (enumLiteral_1= 'TCP' )
+                    // InternalEasyWall.g:3683:4: enumLiteral_1= 'TCP'
                     {
-                    enumLiteral_1=(Token)match(input,104,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,103,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getTRANSPORTLAYERPROTOCOLAccess().getTCPEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -10668,12 +10689,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalEasyWall.g:3696:3: (enumLiteral_2= 'QUIC' )
+                    // InternalEasyWall.g:3690:3: (enumLiteral_2= 'QUIC' )
                     {
-                    // InternalEasyWall.g:3696:3: (enumLiteral_2= 'QUIC' )
-                    // InternalEasyWall.g:3697:4: enumLiteral_2= 'QUIC'
+                    // InternalEasyWall.g:3690:3: (enumLiteral_2= 'QUIC' )
+                    // InternalEasyWall.g:3691:4: enumLiteral_2= 'QUIC'
                     {
-                    enumLiteral_2=(Token)match(input,105,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,104,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getTRANSPORTLAYERPROTOCOLAccess().getQUICEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -10687,12 +10708,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalEasyWall.g:3704:3: (enumLiteral_3= 'SCTP' )
+                    // InternalEasyWall.g:3698:3: (enumLiteral_3= 'SCTP' )
                     {
-                    // InternalEasyWall.g:3704:3: (enumLiteral_3= 'SCTP' )
-                    // InternalEasyWall.g:3705:4: enumLiteral_3= 'SCTP'
+                    // InternalEasyWall.g:3698:3: (enumLiteral_3= 'SCTP' )
+                    // InternalEasyWall.g:3699:4: enumLiteral_3= 'SCTP'
                     {
-                    enumLiteral_3=(Token)match(input,106,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_3=(Token)match(input,105,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getTRANSPORTLAYERPROTOCOLAccess().getSCTPEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
@@ -10730,7 +10751,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAPPLICATIONLAYERPROTOCOL"
-    // InternalEasyWall.g:3715:1: ruleAPPLICATIONLAYERPROTOCOL returns [Enumerator current=null] : ( (enumLiteral_0= 'HTTP' ) | (enumLiteral_1= 'HTTPS' ) | (enumLiteral_2= 'SMTP' ) | (enumLiteral_3= 'POP3' ) | (enumLiteral_4= 'IMAP' ) | (enumLiteral_5= 'FTP' ) | (enumLiteral_6= 'TFTP' ) | (enumLiteral_7= 'SNMP' ) | (enumLiteral_8= 'TELNET' ) | (enumLiteral_9= 'SSH' ) | (enumLiteral_10= 'DNS' ) | (enumLiteral_11= 'DHCP' ) ) ;
+    // InternalEasyWall.g:3709:1: ruleAPPLICATIONLAYERPROTOCOL returns [Enumerator current=null] : ( (enumLiteral_0= 'HTTP' ) | (enumLiteral_1= 'HTTPS' ) | (enumLiteral_2= 'SMTP' ) | (enumLiteral_3= 'POP3' ) | (enumLiteral_4= 'IMAP' ) | (enumLiteral_5= 'FTP' ) | (enumLiteral_6= 'TFTP' ) | (enumLiteral_7= 'SNMP' ) | (enumLiteral_8= 'TELNET' ) | (enumLiteral_9= 'SSH' ) | (enumLiteral_10= 'DNS' ) | (enumLiteral_11= 'DHCP' ) ) ;
     public final Enumerator ruleAPPLICATIONLAYERPROTOCOL() throws RecognitionException {
         Enumerator current = null;
 
@@ -10751,88 +10772,88 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalEasyWall.g:3721:2: ( ( (enumLiteral_0= 'HTTP' ) | (enumLiteral_1= 'HTTPS' ) | (enumLiteral_2= 'SMTP' ) | (enumLiteral_3= 'POP3' ) | (enumLiteral_4= 'IMAP' ) | (enumLiteral_5= 'FTP' ) | (enumLiteral_6= 'TFTP' ) | (enumLiteral_7= 'SNMP' ) | (enumLiteral_8= 'TELNET' ) | (enumLiteral_9= 'SSH' ) | (enumLiteral_10= 'DNS' ) | (enumLiteral_11= 'DHCP' ) ) )
-            // InternalEasyWall.g:3722:2: ( (enumLiteral_0= 'HTTP' ) | (enumLiteral_1= 'HTTPS' ) | (enumLiteral_2= 'SMTP' ) | (enumLiteral_3= 'POP3' ) | (enumLiteral_4= 'IMAP' ) | (enumLiteral_5= 'FTP' ) | (enumLiteral_6= 'TFTP' ) | (enumLiteral_7= 'SNMP' ) | (enumLiteral_8= 'TELNET' ) | (enumLiteral_9= 'SSH' ) | (enumLiteral_10= 'DNS' ) | (enumLiteral_11= 'DHCP' ) )
+            // InternalEasyWall.g:3715:2: ( ( (enumLiteral_0= 'HTTP' ) | (enumLiteral_1= 'HTTPS' ) | (enumLiteral_2= 'SMTP' ) | (enumLiteral_3= 'POP3' ) | (enumLiteral_4= 'IMAP' ) | (enumLiteral_5= 'FTP' ) | (enumLiteral_6= 'TFTP' ) | (enumLiteral_7= 'SNMP' ) | (enumLiteral_8= 'TELNET' ) | (enumLiteral_9= 'SSH' ) | (enumLiteral_10= 'DNS' ) | (enumLiteral_11= 'DHCP' ) ) )
+            // InternalEasyWall.g:3716:2: ( (enumLiteral_0= 'HTTP' ) | (enumLiteral_1= 'HTTPS' ) | (enumLiteral_2= 'SMTP' ) | (enumLiteral_3= 'POP3' ) | (enumLiteral_4= 'IMAP' ) | (enumLiteral_5= 'FTP' ) | (enumLiteral_6= 'TFTP' ) | (enumLiteral_7= 'SNMP' ) | (enumLiteral_8= 'TELNET' ) | (enumLiteral_9= 'SSH' ) | (enumLiteral_10= 'DNS' ) | (enumLiteral_11= 'DHCP' ) )
             {
-            // InternalEasyWall.g:3722:2: ( (enumLiteral_0= 'HTTP' ) | (enumLiteral_1= 'HTTPS' ) | (enumLiteral_2= 'SMTP' ) | (enumLiteral_3= 'POP3' ) | (enumLiteral_4= 'IMAP' ) | (enumLiteral_5= 'FTP' ) | (enumLiteral_6= 'TFTP' ) | (enumLiteral_7= 'SNMP' ) | (enumLiteral_8= 'TELNET' ) | (enumLiteral_9= 'SSH' ) | (enumLiteral_10= 'DNS' ) | (enumLiteral_11= 'DHCP' ) )
-            int alt54=12;
+            // InternalEasyWall.g:3716:2: ( (enumLiteral_0= 'HTTP' ) | (enumLiteral_1= 'HTTPS' ) | (enumLiteral_2= 'SMTP' ) | (enumLiteral_3= 'POP3' ) | (enumLiteral_4= 'IMAP' ) | (enumLiteral_5= 'FTP' ) | (enumLiteral_6= 'TFTP' ) | (enumLiteral_7= 'SNMP' ) | (enumLiteral_8= 'TELNET' ) | (enumLiteral_9= 'SSH' ) | (enumLiteral_10= 'DNS' ) | (enumLiteral_11= 'DHCP' ) )
+            int alt55=12;
             switch ( input.LA(1) ) {
+            case 106:
+                {
+                alt55=1;
+                }
+                break;
             case 107:
                 {
-                alt54=1;
+                alt55=2;
                 }
                 break;
             case 108:
                 {
-                alt54=2;
+                alt55=3;
                 }
                 break;
             case 109:
                 {
-                alt54=3;
+                alt55=4;
                 }
                 break;
             case 110:
                 {
-                alt54=4;
+                alt55=5;
                 }
                 break;
             case 111:
                 {
-                alt54=5;
+                alt55=6;
                 }
                 break;
             case 112:
                 {
-                alt54=6;
+                alt55=7;
                 }
                 break;
             case 113:
                 {
-                alt54=7;
+                alt55=8;
                 }
                 break;
             case 114:
                 {
-                alt54=8;
+                alt55=9;
                 }
                 break;
             case 115:
                 {
-                alt54=9;
+                alt55=10;
                 }
                 break;
             case 116:
                 {
-                alt54=10;
+                alt55=11;
                 }
                 break;
             case 117:
                 {
-                alt54=11;
-                }
-                break;
-            case 118:
-                {
-                alt54=12;
+                alt55=12;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 54, 0, input);
+                    new NoViableAltException("", 55, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt54) {
+            switch (alt55) {
                 case 1 :
-                    // InternalEasyWall.g:3723:3: (enumLiteral_0= 'HTTP' )
+                    // InternalEasyWall.g:3717:3: (enumLiteral_0= 'HTTP' )
                     {
-                    // InternalEasyWall.g:3723:3: (enumLiteral_0= 'HTTP' )
-                    // InternalEasyWall.g:3724:4: enumLiteral_0= 'HTTP'
+                    // InternalEasyWall.g:3717:3: (enumLiteral_0= 'HTTP' )
+                    // InternalEasyWall.g:3718:4: enumLiteral_0= 'HTTP'
                     {
-                    enumLiteral_0=(Token)match(input,107,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,106,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getAPPLICATIONLAYERPROTOCOLAccess().getHTTPEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -10846,12 +10867,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalEasyWall.g:3731:3: (enumLiteral_1= 'HTTPS' )
+                    // InternalEasyWall.g:3725:3: (enumLiteral_1= 'HTTPS' )
                     {
-                    // InternalEasyWall.g:3731:3: (enumLiteral_1= 'HTTPS' )
-                    // InternalEasyWall.g:3732:4: enumLiteral_1= 'HTTPS'
+                    // InternalEasyWall.g:3725:3: (enumLiteral_1= 'HTTPS' )
+                    // InternalEasyWall.g:3726:4: enumLiteral_1= 'HTTPS'
                     {
-                    enumLiteral_1=(Token)match(input,108,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,107,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getAPPLICATIONLAYERPROTOCOLAccess().getHTTPSEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -10865,12 +10886,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalEasyWall.g:3739:3: (enumLiteral_2= 'SMTP' )
+                    // InternalEasyWall.g:3733:3: (enumLiteral_2= 'SMTP' )
                     {
-                    // InternalEasyWall.g:3739:3: (enumLiteral_2= 'SMTP' )
-                    // InternalEasyWall.g:3740:4: enumLiteral_2= 'SMTP'
+                    // InternalEasyWall.g:3733:3: (enumLiteral_2= 'SMTP' )
+                    // InternalEasyWall.g:3734:4: enumLiteral_2= 'SMTP'
                     {
-                    enumLiteral_2=(Token)match(input,109,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,108,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getAPPLICATIONLAYERPROTOCOLAccess().getSMTPEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -10884,12 +10905,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalEasyWall.g:3747:3: (enumLiteral_3= 'POP3' )
+                    // InternalEasyWall.g:3741:3: (enumLiteral_3= 'POP3' )
                     {
-                    // InternalEasyWall.g:3747:3: (enumLiteral_3= 'POP3' )
-                    // InternalEasyWall.g:3748:4: enumLiteral_3= 'POP3'
+                    // InternalEasyWall.g:3741:3: (enumLiteral_3= 'POP3' )
+                    // InternalEasyWall.g:3742:4: enumLiteral_3= 'POP3'
                     {
-                    enumLiteral_3=(Token)match(input,110,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_3=(Token)match(input,109,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getAPPLICATIONLAYERPROTOCOLAccess().getPOP3EnumLiteralDeclaration_3().getEnumLiteral().getInstance();
@@ -10903,12 +10924,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalEasyWall.g:3755:3: (enumLiteral_4= 'IMAP' )
+                    // InternalEasyWall.g:3749:3: (enumLiteral_4= 'IMAP' )
                     {
-                    // InternalEasyWall.g:3755:3: (enumLiteral_4= 'IMAP' )
-                    // InternalEasyWall.g:3756:4: enumLiteral_4= 'IMAP'
+                    // InternalEasyWall.g:3749:3: (enumLiteral_4= 'IMAP' )
+                    // InternalEasyWall.g:3750:4: enumLiteral_4= 'IMAP'
                     {
-                    enumLiteral_4=(Token)match(input,111,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_4=(Token)match(input,110,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getAPPLICATIONLAYERPROTOCOLAccess().getIMAPEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
@@ -10922,12 +10943,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalEasyWall.g:3763:3: (enumLiteral_5= 'FTP' )
+                    // InternalEasyWall.g:3757:3: (enumLiteral_5= 'FTP' )
                     {
-                    // InternalEasyWall.g:3763:3: (enumLiteral_5= 'FTP' )
-                    // InternalEasyWall.g:3764:4: enumLiteral_5= 'FTP'
+                    // InternalEasyWall.g:3757:3: (enumLiteral_5= 'FTP' )
+                    // InternalEasyWall.g:3758:4: enumLiteral_5= 'FTP'
                     {
-                    enumLiteral_5=(Token)match(input,112,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_5=(Token)match(input,111,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getAPPLICATIONLAYERPROTOCOLAccess().getFTPEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
@@ -10941,12 +10962,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalEasyWall.g:3771:3: (enumLiteral_6= 'TFTP' )
+                    // InternalEasyWall.g:3765:3: (enumLiteral_6= 'TFTP' )
                     {
-                    // InternalEasyWall.g:3771:3: (enumLiteral_6= 'TFTP' )
-                    // InternalEasyWall.g:3772:4: enumLiteral_6= 'TFTP'
+                    // InternalEasyWall.g:3765:3: (enumLiteral_6= 'TFTP' )
+                    // InternalEasyWall.g:3766:4: enumLiteral_6= 'TFTP'
                     {
-                    enumLiteral_6=(Token)match(input,113,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_6=(Token)match(input,112,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getAPPLICATIONLAYERPROTOCOLAccess().getTFTPEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
@@ -10960,12 +10981,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalEasyWall.g:3779:3: (enumLiteral_7= 'SNMP' )
+                    // InternalEasyWall.g:3773:3: (enumLiteral_7= 'SNMP' )
                     {
-                    // InternalEasyWall.g:3779:3: (enumLiteral_7= 'SNMP' )
-                    // InternalEasyWall.g:3780:4: enumLiteral_7= 'SNMP'
+                    // InternalEasyWall.g:3773:3: (enumLiteral_7= 'SNMP' )
+                    // InternalEasyWall.g:3774:4: enumLiteral_7= 'SNMP'
                     {
-                    enumLiteral_7=(Token)match(input,114,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_7=(Token)match(input,113,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getAPPLICATIONLAYERPROTOCOLAccess().getSNMPEnumLiteralDeclaration_7().getEnumLiteral().getInstance();
@@ -10979,12 +11000,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // InternalEasyWall.g:3787:3: (enumLiteral_8= 'TELNET' )
+                    // InternalEasyWall.g:3781:3: (enumLiteral_8= 'TELNET' )
                     {
-                    // InternalEasyWall.g:3787:3: (enumLiteral_8= 'TELNET' )
-                    // InternalEasyWall.g:3788:4: enumLiteral_8= 'TELNET'
+                    // InternalEasyWall.g:3781:3: (enumLiteral_8= 'TELNET' )
+                    // InternalEasyWall.g:3782:4: enumLiteral_8= 'TELNET'
                     {
-                    enumLiteral_8=(Token)match(input,115,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_8=(Token)match(input,114,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getAPPLICATIONLAYERPROTOCOLAccess().getTELNETEnumLiteralDeclaration_8().getEnumLiteral().getInstance();
@@ -10998,12 +11019,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // InternalEasyWall.g:3795:3: (enumLiteral_9= 'SSH' )
+                    // InternalEasyWall.g:3789:3: (enumLiteral_9= 'SSH' )
                     {
-                    // InternalEasyWall.g:3795:3: (enumLiteral_9= 'SSH' )
-                    // InternalEasyWall.g:3796:4: enumLiteral_9= 'SSH'
+                    // InternalEasyWall.g:3789:3: (enumLiteral_9= 'SSH' )
+                    // InternalEasyWall.g:3790:4: enumLiteral_9= 'SSH'
                     {
-                    enumLiteral_9=(Token)match(input,116,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_9=(Token)match(input,115,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getAPPLICATIONLAYERPROTOCOLAccess().getSSHEnumLiteralDeclaration_9().getEnumLiteral().getInstance();
@@ -11017,12 +11038,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // InternalEasyWall.g:3803:3: (enumLiteral_10= 'DNS' )
+                    // InternalEasyWall.g:3797:3: (enumLiteral_10= 'DNS' )
                     {
-                    // InternalEasyWall.g:3803:3: (enumLiteral_10= 'DNS' )
-                    // InternalEasyWall.g:3804:4: enumLiteral_10= 'DNS'
+                    // InternalEasyWall.g:3797:3: (enumLiteral_10= 'DNS' )
+                    // InternalEasyWall.g:3798:4: enumLiteral_10= 'DNS'
                     {
-                    enumLiteral_10=(Token)match(input,117,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_10=(Token)match(input,116,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getAPPLICATIONLAYERPROTOCOLAccess().getDNSEnumLiteralDeclaration_10().getEnumLiteral().getInstance();
@@ -11036,12 +11057,12 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 12 :
-                    // InternalEasyWall.g:3811:3: (enumLiteral_11= 'DHCP' )
+                    // InternalEasyWall.g:3805:3: (enumLiteral_11= 'DHCP' )
                     {
-                    // InternalEasyWall.g:3811:3: (enumLiteral_11= 'DHCP' )
-                    // InternalEasyWall.g:3812:4: enumLiteral_11= 'DHCP'
+                    // InternalEasyWall.g:3805:3: (enumLiteral_11= 'DHCP' )
+                    // InternalEasyWall.g:3806:4: enumLiteral_11= 'DHCP'
                     {
-                    enumLiteral_11=(Token)match(input,118,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_11=(Token)match(input,117,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getAPPLICATIONLAYERPROTOCOLAccess().getDHCPEnumLiteralDeclaration_11().getEnumLiteral().getInstance();
@@ -11106,16 +11127,16 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
     }
 
 
-    protected DFA35 dfa35 = new DFA35(this);
     protected DFA36 dfa36 = new DFA36(this);
-    static final String dfa_1s = "\31\uffff";
-    static final String dfa_2s = "\11\uffff\1\23\2\uffff\1\27\13\uffff\1\27";
-    static final String dfa_3s = "\1\4\10\uffff\1\16\2\uffff\1\16\10\uffff\1\4\2\uffff\1\16";
-    static final String dfa_4s = "\1\166\10\uffff\1\107\2\uffff\1\107\10\uffff\1\4\2\uffff\1\106";
-    static final String dfa_5s = "\1\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\uffff\1\12\1\13\1\uffff\1\15\1\16\1\17\1\20\1\21\1\22\1\11\1\14\1\uffff\1\23\1\24\1\uffff";
-    static final String dfa_6s = "\31\uffff}>";
+    protected DFA37 dfa37 = new DFA37(this);
+    static final String dfa_1s = "\27\uffff";
+    static final String dfa_2s = "\11\uffff\1\12\1\uffff\1\25\12\uffff\1\25";
+    static final String dfa_3s = "\1\4\10\uffff\1\16\1\uffff\1\16\7\uffff\1\4\2\uffff\1\16";
+    static final String dfa_4s = "\1\165\10\uffff\1\106\1\uffff\1\106\7\uffff\1\4\2\uffff\1\105";
+    static final String dfa_5s = "\1\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\uffff\1\11\1\uffff\1\13\1\14\1\15\1\16\1\17\1\20\1\12\1\uffff\1\21\1\22\1\uffff";
+    static final String dfa_6s = "\27\uffff}>";
     static final String[] dfa_7s = {
-            "\1\14\1\uffff\1\2\1\10\1\11\21\uffff\1\15\1\uffff\1\21\7\uffff\1\1\2\3\1\12\1\13\1\16\1\17\1\20\7\22\40\uffff\3\4\10\uffff\11\5\4\6\14\7",
+            "\1\13\1\1\1\2\1\10\1\11\21\uffff\1\14\1\uffff\1\20\7\uffff\2\3\2\12\1\15\1\16\1\17\7\21\40\uffff\3\4\10\uffff\11\5\4\6\14\7",
             "",
             "",
             "",
@@ -11124,11 +11145,9 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
             "",
             "",
             "",
-            "\1\23\12\uffff\1\23\3\uffff\2\23\4\uffff\1\23\21\uffff\4\23\2\uffff\14\23\1\24",
+            "\1\12\12\uffff\1\12\3\uffff\2\12\4\uffff\1\12\20\uffff\4\12\2\uffff\14\12\1\22",
             "",
-            "",
-            "\1\27\1\uffff\1\25\10\uffff\1\27\2\uffff\1\26\2\27\4\uffff\1\27\21\uffff\4\27\2\uffff\14\27\1\24",
-            "",
+            "\1\25\1\uffff\1\23\10\uffff\1\25\2\uffff\1\24\2\25\4\uffff\1\25\20\uffff\4\25\2\uffff\14\25\1\22",
             "",
             "",
             "",
@@ -11136,10 +11155,10 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
             "",
             "",
             "",
-            "\1\30",
+            "\1\26",
             "",
             "",
-            "\1\27\1\uffff\1\25\10\uffff\1\27\2\uffff\1\26\2\27\4\uffff\1\27\21\uffff\4\27\2\uffff\14\27"
+            "\1\25\1\uffff\1\23\10\uffff\1\25\2\uffff\1\24\2\25\4\uffff\1\25\20\uffff\4\25\2\uffff\14\25"
     };
 
     static final short[] dfa_1 = DFA.unpackEncodedString(dfa_1s);
@@ -11150,11 +11169,11 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
     static final short[] dfa_6 = DFA.unpackEncodedString(dfa_6s);
     static final short[][] dfa_7 = unpackEncodedStringArray(dfa_7s);
 
-    class DFA35 extends DFA {
+    class DFA36 extends DFA {
 
-        public DFA35(BaseRecognizer recognizer) {
+        public DFA36(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 35;
+            this.decisionNumber = 36;
             this.eot = dfa_1;
             this.eof = dfa_2;
             this.min = dfa_3;
@@ -11164,13 +11183,13 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
             this.transition = dfa_7;
         }
         public String getDescription() {
-            return "1887:2: ( ( () otherlv_1= '\"' ( (lv_value_2_0= RULE_STRING ) ) otherlv_3= '\"' ) | ( () ( (lv_value_5_0= RULE_INT ) ) ) | ( () ( ( (lv_value_7_1= 'true' | lv_value_7_2= 'false' ) ) ) ) | ( () ( (lv_direction_9_0= ruleEFDirectionNativeType ) ) ) | ( () ( (lv_protocol_11_0= ruleNETWORKLAYERPROTOCOL ) ) ) | ( () ( (lv_protocol_13_0= ruleTRANSPORTLAYERPROTOCOL ) ) ) | ( () ( (lv_protocol_15_0= ruleAPPLICATIONLAYERPROTOCOL ) ) ) | ( () ( (lv_ipv6_17_0= RULE_EFIPV6SYNTAX ) ) ) | ( () ( (lv_ipv4_19_0= RULE_EFIPV4SYNTAX ) ) ) | ( (lv_any_20_0= 'any' ) ) | ( (lv_localhost_21_0= 'localhost' ) ) | ( () ( (lv_network_23_0= ruleEFNetworkSYNTAX ) ) ) | ( (lv_port_24_0= ruleEFNetportSYNTAX ) ) | ( () otherlv_26= 'this' ) | ( () otherlv_28= 'super' ) | ( () otherlv_30= 'new' ( ( ruleQualifiedName ) ) otherlv_32= '(' otherlv_33= ')' ) | ( () otherlv_35= '(' ( (lv_expression_36_0= ruleEFExpression ) ) otherlv_37= ')' ) | this_EFBuiltinFunction_38= ruleEFBuiltinFunction | ( () ( (lv_functionName_40_0= ruleQualifiedName ) ) otherlv_41= '(' ( ( (lv_args_42_0= ruleEFExpression ) ) (otherlv_43= ',' ( (lv_args_44_0= ruleEFExpression ) ) )* )? otherlv_45= ')' ) | ( () ( (lv_symbol_47_0= ruleQualifiedName ) ) ) )";
+            return "1887:2: ( ( () ( (lv_value_1_0= RULE_STRING ) ) ) | ( () ( (lv_value_3_0= RULE_INT ) ) ) | ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) ) | ( () ( (lv_direction_7_0= ruleEFDirectionNativeType ) ) ) | ( () ( (lv_protocol_9_0= ruleNETWORKLAYERPROTOCOL ) ) ) | ( () ( (lv_protocol_11_0= ruleTRANSPORTLAYERPROTOCOL ) ) ) | ( () ( (lv_protocol_13_0= ruleAPPLICATIONLAYERPROTOCOL ) ) ) | ( () ( (lv_ipv6_15_0= RULE_EFIPV6SYNTAX ) ) ) | ( () ( ( (lv_ipv4_17_0= RULE_EFIPV4SYNTAX ) ) | ( (lv_any_18_0= 'any' ) ) | ( (lv_localhost_19_0= 'localhost' ) ) ) ) | ( () ( (lv_network_21_0= ruleEFNetworkSYNTAX ) ) ) | ( (lv_port_22_0= ruleEFNetportSYNTAX ) ) | ( () otherlv_24= 'this' ) | ( () otherlv_26= 'super' ) | ( () otherlv_28= 'new' ( ( ruleQualifiedName ) ) otherlv_30= '(' otherlv_31= ')' ) | ( () otherlv_33= '(' ( (lv_expression_34_0= ruleEFExpression ) ) otherlv_35= ')' ) | this_EFBuiltinFunction_36= ruleEFBuiltinFunction | ( () ( (lv_functionName_38_0= ruleQualifiedName ) ) otherlv_39= '(' ( ( (lv_args_40_0= ruleEFExpression ) ) (otherlv_41= ',' ( (lv_args_42_0= ruleEFExpression ) ) )* )? otherlv_43= ')' ) | ( () ( (lv_symbol_45_0= ruleQualifiedName ) ) ) )";
         }
     }
     static final String dfa_8s = "\13\uffff";
-    static final String dfa_9s = "\1\54\4\uffff\1\34\2\uffff\1\4\2\uffff";
-    static final String dfa_10s = "\1\62\4\uffff\1\34\2\uffff\1\166\2\uffff";
-    static final String dfa_11s = "\1\uffff\1\1\1\2\1\3\1\4\1\uffff\1\7\1\10\1\uffff\1\6\1\5";
+    static final String dfa_9s = "\1\53\4\uffff\1\34\2\uffff\1\4\2\uffff";
+    static final String dfa_10s = "\1\61\4\uffff\1\34\2\uffff\1\165\2\uffff";
+    static final String dfa_11s = "\1\uffff\1\1\1\2\1\3\1\4\1\uffff\1\7\1\10\1\uffff\1\5\1\6";
     static final String dfa_12s = "\13\uffff}>";
     static final String[] dfa_13s = {
             "\1\1\1\2\1\3\1\4\1\5\1\6\1\7",
@@ -11181,7 +11200,7 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
             "\1\10",
             "",
             "",
-            "\1\12\1\uffff\3\12\21\uffff\1\12\1\uffff\1\12\7\uffff\17\12\6\uffff\2\12\30\uffff\3\12\5\11\3\uffff\31\12",
+            "\5\11\21\uffff\1\11\1\uffff\1\11\7\uffff\16\11\6\uffff\2\11\30\uffff\3\11\5\12\3\uffff\31\11",
             "",
             ""
     };
@@ -11193,11 +11212,11 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
     static final short[] dfa_12 = DFA.unpackEncodedString(dfa_12s);
     static final short[][] dfa_13 = unpackEncodedStringArray(dfa_13s);
 
-    class DFA36 extends DFA {
+    class DFA37 extends DFA {
 
-        public DFA36(BaseRecognizer recognizer) {
+        public DFA37(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 36;
+            this.decisionNumber = 37;
             this.eot = dfa_8;
             this.eof = dfa_8;
             this.min = dfa_9;
@@ -11207,15 +11226,15 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
             this.transition = dfa_13;
         }
         public String getDescription() {
-            return "2481:2: ( ( () otherlv_1= 'allow' otherlv_2= '(' otherlv_3= ')' ) | ( () otherlv_5= 'block' otherlv_6= '(' otherlv_7= ')' ) | ( () otherlv_9= 'drop' otherlv_10= '(' otherlv_11= ')' ) | ( () otherlv_13= 'reject' otherlv_14= '(' otherlv_15= ')' ) | ( () otherlv_17= 'writelog' otherlv_18= '(' ( (lv_message_19_0= ruleEFExpression ) ) otherlv_20= ')' ) | ( () otherlv_22= 'writelog' otherlv_23= '(' ( (lv_level_24_0= ruleEFLogLevel ) ) otherlv_25= ',' ( (lv_message_26_0= ruleEFExpression ) ) otherlv_27= ')' ) | ( () otherlv_29= 'getTime' otherlv_30= '(' otherlv_31= ')' ) | ( () otherlv_33= 'getPacketField' otherlv_34= '(' ( (lv_field_35_0= RULE_STRING ) ) otherlv_36= ')' ) )";
+            return "2475:2: ( ( () otherlv_1= 'allow' otherlv_2= '(' otherlv_3= ')' ) | ( () otherlv_5= 'block' otherlv_6= '(' otherlv_7= ')' ) | ( () otherlv_9= 'drop' otherlv_10= '(' otherlv_11= ')' ) | ( () otherlv_13= 'reject' otherlv_14= '(' otherlv_15= ')' ) | ( () otherlv_17= 'writelog' otherlv_18= '(' ( (lv_message_19_0= ruleEFExpression ) ) otherlv_20= ')' ) | ( () otherlv_22= 'writelog' otherlv_23= '(' ( (lv_level_24_0= ruleEFLogLevel ) ) otherlv_25= ',' ( (lv_message_26_0= ruleEFExpression ) ) otherlv_27= ')' ) | ( () otherlv_29= 'getTime' otherlv_30= '(' otherlv_31= ')' ) | ( () otherlv_33= 'getPacketField' otherlv_34= '(' ( (lv_field_35_0= RULE_STRING ) ) otherlv_36= ')' ) )";
         }
     }
  
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0008000000040002L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0008000000000002L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0004000000040002L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0004000000000002L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000004000L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000008002L});
@@ -11225,37 +11244,36 @@ public class InternalEasyWallParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000009D00000L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000500000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000100000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000080000000000L,0x0000000000000080L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000002004000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0607FFF0140001D0L,0x007FFFFFC0380000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0303FFF0140001F0L,0x003FFFFFE01C0000L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000000010L,0x000000000007FE00L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000000010L,0x000000000003FF00L});
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000010000000L});
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000040000010L});
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000060000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000080000010L,0x000000000007FE00L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0607FFF3159001D0L,0x007FFFFFC0380000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000080000010L,0x000000000003FF00L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0303FFF3159001F0L,0x003FFFFFE01C0000L});
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0607FFF3158801D0L,0x007FFFFFC0380000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0303FFF3158801F0L,0x003FFFFFE01C0000L});
     public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000400000002L});
     public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000002000002L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0060000000000002L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0180000000000002L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x3800000000000002L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0xC000000000000002L,0x0000000000000003L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000000000002L,0x000000000000000CL});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000070L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0030000000000002L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x00C0000000000002L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x1C00000000000002L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0xE000000000000002L,0x0000000000000001L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000006L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000038L});
     public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000800000002L});
     public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000000810000002L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0607FFF0540001D0L,0x007FFFFFC0380000L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000000000000L,0x0000000007C00000L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0010000000000000L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000000000000000L,0x0000000038000000L});
-    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000000009900000L});
-    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0303FFF0540001F0L,0x003FFFFFE01C0000L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000000000000L,0x0000000003E00000L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000000000000000L,0x000000001C000000L});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000000009900000L});
+    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000000000000040L});
 
 }

@@ -185,7 +185,7 @@ EFMemberSelection returns EFExpression:
 ;
 
 EFPrimaryExpression returns EFExpression:
-    {EFStringConstant} '"'value=STRING'"'
+    {EFStringConstant} value=STRING
   | {EFIntConstant} value=INT
   | {EFBoolConstant} value=('true'|'false')
   | {EFDirectionConstant} direction=EFDirectionNativeType
@@ -193,7 +193,7 @@ EFPrimaryExpression returns EFExpression:
   | {EFTransportProtocolConstant} protocol=TRANSPORTLAYERPROTOCOL
   | {EFApplicationProtocolConstant} protocol=APPLICATIONLAYERPROTOCOL
   | {EFIPv6Constant} ipv6=EFIPV6SYNTAX
-  | {EFIPv4Constant} ipv4=EFIPV4SYNTAX | any='any' | localhost='localhost' 
+  | {EFIPv4Constant} (ipv4=EFIPV4SYNTAX | any='any' | localhost='localhost')
   | {EFNetworkConstant} network=EFNetworkSYNTAX
   | port=EFNetportSYNTAX
   | {EFThis} 'this'

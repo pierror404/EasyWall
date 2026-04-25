@@ -134,8 +134,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EasyWall.ecore#//EFIfStatement/elseBlock"/>
     </genClasses>
     <genClasses ecoreClass="EasyWall.ecore#//EFExpression">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EasyWall.ecore#//EFExpression/any"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EasyWall.ecore#//EFExpression/localhost"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EasyWall.ecore#//EFExpression/port"/>
     </genClasses>
     <genClasses ecoreClass="EasyWall.ecore#//EFBuiltinFunction"/>
@@ -219,6 +217,8 @@
     </genClasses>
     <genClasses ecoreClass="EasyWall.ecore#//EFIPv4Constant">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EasyWall.ecore#//EFIPv4Constant/ipv4"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EasyWall.ecore#//EFIPv4Constant/any"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EasyWall.ecore#//EFIPv4Constant/localhost"/>
     </genClasses>
     <genClasses ecoreClass="EasyWall.ecore#//EFThis"/>
     <genClasses ecoreClass="EasyWall.ecore#//EFSuper"/>

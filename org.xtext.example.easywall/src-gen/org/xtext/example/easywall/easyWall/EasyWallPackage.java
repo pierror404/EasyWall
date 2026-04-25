@@ -621,31 +621,13 @@ public interface EasyWallPackage extends EPackage
   int EF_EXPRESSION = 15;
 
   /**
-   * The feature id for the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_EXPRESSION__ANY = EF_STATEMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_EXPRESSION__LOCALHOST = EF_STATEMENT_FEATURE_COUNT + 1;
-
-  /**
    * The feature id for the '<em><b>Port</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EF_EXPRESSION__PORT = EF_STATEMENT_FEATURE_COUNT + 2;
+  int EF_EXPRESSION__PORT = EF_STATEMENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>EF Expression</em>' class.
@@ -654,7 +636,7 @@ public interface EasyWallPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EF_EXPRESSION_FEATURE_COUNT = EF_STATEMENT_FEATURE_COUNT + 3;
+  int EF_EXPRESSION_FEATURE_COUNT = EF_STATEMENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.xtext.example.easywall.easyWall.impl.EFBuiltinFunctionImpl <em>EF Builtin Function</em>}' class.
@@ -665,24 +647,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   int EF_BUILTIN_FUNCTION = 16;
-
-  /**
-   * The feature id for the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_BUILTIN_FUNCTION__ANY = EF_EXPRESSION__ANY;
-
-  /**
-   * The feature id for the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_BUILTIN_FUNCTION__LOCALHOST = EF_EXPRESSION__LOCALHOST;
 
   /**
    * The feature id for the '<em><b>Port</b></em>' containment reference.
@@ -711,24 +675,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   int EF_BLOCK = 11;
-
-  /**
-   * The feature id for the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_BLOCK__ANY = EF_BUILTIN_FUNCTION__ANY;
-
-  /**
-   * The feature id for the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_BLOCK__LOCALHOST = EF_BUILTIN_FUNCTION__LOCALHOST;
 
   /**
    * The feature id for the '<em><b>Port</b></em>' containment reference.
@@ -916,24 +862,6 @@ public interface EasyWallPackage extends EPackage
   int EF_NETWORK_CONSTANT = 19;
 
   /**
-   * The feature id for the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_NETWORK_CONSTANT__ANY = EF_EXPRESSION__ANY;
-
-  /**
-   * The feature id for the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_NETWORK_CONSTANT__LOCALHOST = EF_EXPRESSION__LOCALHOST;
-
-  /**
    * The feature id for the '<em><b>Port</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1035,24 +963,6 @@ public interface EasyWallPackage extends EPackage
   int EF_ASSIGNMENT = 21;
 
   /**
-   * The feature id for the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_ASSIGNMENT__ANY = EF_EXPRESSION__ANY;
-
-  /**
-   * The feature id for the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_ASSIGNMENT__LOCALHOST = EF_EXPRESSION__LOCALHOST;
-
-  /**
    * The feature id for the '<em><b>Port</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1097,24 +1007,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   int EF_OR_EXPRESSION = 22;
-
-  /**
-   * The feature id for the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_OR_EXPRESSION__ANY = EF_EXPRESSION__ANY;
-
-  /**
-   * The feature id for the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_OR_EXPRESSION__LOCALHOST = EF_EXPRESSION__LOCALHOST;
 
   /**
    * The feature id for the '<em><b>Port</b></em>' containment reference.
@@ -1163,24 +1055,6 @@ public interface EasyWallPackage extends EPackage
   int EF_AND_EXPRESSION = 23;
 
   /**
-   * The feature id for the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_AND_EXPRESSION__ANY = EF_EXPRESSION__ANY;
-
-  /**
-   * The feature id for the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_AND_EXPRESSION__LOCALHOST = EF_EXPRESSION__LOCALHOST;
-
-  /**
    * The feature id for the '<em><b>Port</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1225,24 +1099,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   int EF_EQUAL_EXPRESSION = 24;
-
-  /**
-   * The feature id for the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_EQUAL_EXPRESSION__ANY = EF_EXPRESSION__ANY;
-
-  /**
-   * The feature id for the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_EQUAL_EXPRESSION__LOCALHOST = EF_EXPRESSION__LOCALHOST;
 
   /**
    * The feature id for the '<em><b>Port</b></em>' containment reference.
@@ -1291,24 +1147,6 @@ public interface EasyWallPackage extends EPackage
   int EF_REL_EXPRESSION = 25;
 
   /**
-   * The feature id for the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_REL_EXPRESSION__ANY = EF_EXPRESSION__ANY;
-
-  /**
-   * The feature id for the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_REL_EXPRESSION__LOCALHOST = EF_EXPRESSION__LOCALHOST;
-
-  /**
    * The feature id for the '<em><b>Port</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1353,24 +1191,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   int EF_ADD_EXPRESSION = 26;
-
-  /**
-   * The feature id for the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_ADD_EXPRESSION__ANY = EF_EXPRESSION__ANY;
-
-  /**
-   * The feature id for the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_ADD_EXPRESSION__LOCALHOST = EF_EXPRESSION__LOCALHOST;
 
   /**
    * The feature id for the '<em><b>Port</b></em>' containment reference.
@@ -1419,24 +1239,6 @@ public interface EasyWallPackage extends EPackage
   int EF_MULT_EXPRESSION = 27;
 
   /**
-   * The feature id for the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_MULT_EXPRESSION__ANY = EF_EXPRESSION__ANY;
-
-  /**
-   * The feature id for the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_MULT_EXPRESSION__LOCALHOST = EF_EXPRESSION__LOCALHOST;
-
-  /**
    * The feature id for the '<em><b>Port</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1483,24 +1285,6 @@ public interface EasyWallPackage extends EPackage
   int EF_NOT_EXPRESSION = 28;
 
   /**
-   * The feature id for the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_NOT_EXPRESSION__ANY = EF_EXPRESSION__ANY;
-
-  /**
-   * The feature id for the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_NOT_EXPRESSION__LOCALHOST = EF_EXPRESSION__LOCALHOST;
-
-  /**
    * The feature id for the '<em><b>Port</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1536,24 +1320,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   int EF_MEMBER_SELECTION = 29;
-
-  /**
-   * The feature id for the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_MEMBER_SELECTION__ANY = EF_EXPRESSION__ANY;
-
-  /**
-   * The feature id for the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_MEMBER_SELECTION__LOCALHOST = EF_EXPRESSION__LOCALHOST;
 
   /**
    * The feature id for the '<em><b>Port</b></em>' containment reference.
@@ -1611,24 +1377,6 @@ public interface EasyWallPackage extends EPackage
   int EF_STRING_CONSTANT = 30;
 
   /**
-   * The feature id for the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_STRING_CONSTANT__ANY = EF_EXPRESSION__ANY;
-
-  /**
-   * The feature id for the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_STRING_CONSTANT__LOCALHOST = EF_EXPRESSION__LOCALHOST;
-
-  /**
    * The feature id for the '<em><b>Port</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1664,24 +1412,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   int EF_INT_CONSTANT = 31;
-
-  /**
-   * The feature id for the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_INT_CONSTANT__ANY = EF_EXPRESSION__ANY;
-
-  /**
-   * The feature id for the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_INT_CONSTANT__LOCALHOST = EF_EXPRESSION__LOCALHOST;
 
   /**
    * The feature id for the '<em><b>Port</b></em>' containment reference.
@@ -1721,24 +1451,6 @@ public interface EasyWallPackage extends EPackage
   int EF_BOOL_CONSTANT = 32;
 
   /**
-   * The feature id for the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_BOOL_CONSTANT__ANY = EF_EXPRESSION__ANY;
-
-  /**
-   * The feature id for the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_BOOL_CONSTANT__LOCALHOST = EF_EXPRESSION__LOCALHOST;
-
-  /**
    * The feature id for the '<em><b>Port</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1774,24 +1486,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   int EF_DIRECTION_CONSTANT = 33;
-
-  /**
-   * The feature id for the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_DIRECTION_CONSTANT__ANY = EF_EXPRESSION__ANY;
-
-  /**
-   * The feature id for the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_DIRECTION_CONSTANT__LOCALHOST = EF_EXPRESSION__LOCALHOST;
 
   /**
    * The feature id for the '<em><b>Port</b></em>' containment reference.
@@ -1831,24 +1525,6 @@ public interface EasyWallPackage extends EPackage
   int EF_NETWORK_PROTOCOL_CONSTANT = 34;
 
   /**
-   * The feature id for the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_NETWORK_PROTOCOL_CONSTANT__ANY = EF_EXPRESSION__ANY;
-
-  /**
-   * The feature id for the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_NETWORK_PROTOCOL_CONSTANT__LOCALHOST = EF_EXPRESSION__LOCALHOST;
-
-  /**
    * The feature id for the '<em><b>Port</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1884,24 +1560,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   int EF_TRANSPORT_PROTOCOL_CONSTANT = 35;
-
-  /**
-   * The feature id for the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_TRANSPORT_PROTOCOL_CONSTANT__ANY = EF_EXPRESSION__ANY;
-
-  /**
-   * The feature id for the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_TRANSPORT_PROTOCOL_CONSTANT__LOCALHOST = EF_EXPRESSION__LOCALHOST;
 
   /**
    * The feature id for the '<em><b>Port</b></em>' containment reference.
@@ -1941,24 +1599,6 @@ public interface EasyWallPackage extends EPackage
   int EF_APPLICATION_PROTOCOL_CONSTANT = 36;
 
   /**
-   * The feature id for the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_APPLICATION_PROTOCOL_CONSTANT__ANY = EF_EXPRESSION__ANY;
-
-  /**
-   * The feature id for the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_APPLICATION_PROTOCOL_CONSTANT__LOCALHOST = EF_EXPRESSION__LOCALHOST;
-
-  /**
    * The feature id for the '<em><b>Port</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1994,24 +1634,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   int EFI_PV6_CONSTANT = 37;
-
-  /**
-   * The feature id for the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EFI_PV6_CONSTANT__ANY = EF_EXPRESSION__ANY;
-
-  /**
-   * The feature id for the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EFI_PV6_CONSTANT__LOCALHOST = EF_EXPRESSION__LOCALHOST;
 
   /**
    * The feature id for the '<em><b>Port</b></em>' containment reference.
@@ -2051,24 +1673,6 @@ public interface EasyWallPackage extends EPackage
   int EFI_PV4_CONSTANT = 38;
 
   /**
-   * The feature id for the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EFI_PV4_CONSTANT__ANY = EF_EXPRESSION__ANY;
-
-  /**
-   * The feature id for the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EFI_PV4_CONSTANT__LOCALHOST = EF_EXPRESSION__LOCALHOST;
-
-  /**
    * The feature id for the '<em><b>Port</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2087,13 +1691,31 @@ public interface EasyWallPackage extends EPackage
   int EFI_PV4_CONSTANT__IPV4 = EF_EXPRESSION_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Any</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EFI_PV4_CONSTANT__ANY = EF_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Localhost</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EFI_PV4_CONSTANT__LOCALHOST = EF_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
    * The number of structural features of the '<em>EFI Pv4 Constant</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EFI_PV4_CONSTANT_FEATURE_COUNT = EF_EXPRESSION_FEATURE_COUNT + 1;
+  int EFI_PV4_CONSTANT_FEATURE_COUNT = EF_EXPRESSION_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link org.xtext.example.easywall.easyWall.impl.EFThisImpl <em>EF This</em>}' class.
@@ -2104,24 +1726,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   int EF_THIS = 39;
-
-  /**
-   * The feature id for the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_THIS__ANY = EF_EXPRESSION__ANY;
-
-  /**
-   * The feature id for the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_THIS__LOCALHOST = EF_EXPRESSION__LOCALHOST;
 
   /**
    * The feature id for the '<em><b>Port</b></em>' containment reference.
@@ -2152,24 +1756,6 @@ public interface EasyWallPackage extends EPackage
   int EF_SUPER = 40;
 
   /**
-   * The feature id for the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_SUPER__ANY = EF_EXPRESSION__ANY;
-
-  /**
-   * The feature id for the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_SUPER__LOCALHOST = EF_EXPRESSION__LOCALHOST;
-
-  /**
    * The feature id for the '<em><b>Port</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2196,24 +1782,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   int EF_NEW = 41;
-
-  /**
-   * The feature id for the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_NEW__ANY = EF_EXPRESSION__ANY;
-
-  /**
-   * The feature id for the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_NEW__LOCALHOST = EF_EXPRESSION__LOCALHOST;
 
   /**
    * The feature id for the '<em><b>Port</b></em>' containment reference.
@@ -2253,24 +1821,6 @@ public interface EasyWallPackage extends EPackage
   int EF_BRACKETS_EXPRESSION = 42;
 
   /**
-   * The feature id for the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_BRACKETS_EXPRESSION__ANY = EF_EXPRESSION__ANY;
-
-  /**
-   * The feature id for the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_BRACKETS_EXPRESSION__LOCALHOST = EF_EXPRESSION__LOCALHOST;
-
-  /**
    * The feature id for the '<em><b>Port</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2306,24 +1856,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   int EF_FUNCTION_CALL = 43;
-
-  /**
-   * The feature id for the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_FUNCTION_CALL__ANY = EF_EXPRESSION__ANY;
-
-  /**
-   * The feature id for the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_FUNCTION_CALL__LOCALHOST = EF_EXPRESSION__LOCALHOST;
 
   /**
    * The feature id for the '<em><b>Port</b></em>' containment reference.
@@ -2372,24 +1904,6 @@ public interface EasyWallPackage extends EPackage
   int EF_SYMBOL_REF = 44;
 
   /**
-   * The feature id for the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_SYMBOL_REF__ANY = EF_EXPRESSION__ANY;
-
-  /**
-   * The feature id for the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_SYMBOL_REF__LOCALHOST = EF_EXPRESSION__LOCALHOST;
-
-  /**
    * The feature id for the '<em><b>Port</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2427,24 +1941,6 @@ public interface EasyWallPackage extends EPackage
   int EF_ALLOW = 45;
 
   /**
-   * The feature id for the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_ALLOW__ANY = EF_BUILTIN_FUNCTION__ANY;
-
-  /**
-   * The feature id for the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_ALLOW__LOCALHOST = EF_BUILTIN_FUNCTION__LOCALHOST;
-
-  /**
    * The feature id for the '<em><b>Port</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2471,24 +1967,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   int EF_DROP = 46;
-
-  /**
-   * The feature id for the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_DROP__ANY = EF_BUILTIN_FUNCTION__ANY;
-
-  /**
-   * The feature id for the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_DROP__LOCALHOST = EF_BUILTIN_FUNCTION__LOCALHOST;
 
   /**
    * The feature id for the '<em><b>Port</b></em>' containment reference.
@@ -2519,24 +1997,6 @@ public interface EasyWallPackage extends EPackage
   int EF_REJECT = 47;
 
   /**
-   * The feature id for the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_REJECT__ANY = EF_BUILTIN_FUNCTION__ANY;
-
-  /**
-   * The feature id for the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_REJECT__LOCALHOST = EF_BUILTIN_FUNCTION__LOCALHOST;
-
-  /**
    * The feature id for the '<em><b>Port</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2563,24 +2023,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   int EF_WRITE_LOG = 48;
-
-  /**
-   * The feature id for the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_WRITE_LOG__ANY = EF_BUILTIN_FUNCTION__ANY;
-
-  /**
-   * The feature id for the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_WRITE_LOG__LOCALHOST = EF_BUILTIN_FUNCTION__LOCALHOST;
 
   /**
    * The feature id for the '<em><b>Port</b></em>' containment reference.
@@ -2618,24 +2060,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   int EF_WRITE_LOG_LEVEL = 49;
-
-  /**
-   * The feature id for the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_WRITE_LOG_LEVEL__ANY = EF_BUILTIN_FUNCTION__ANY;
-
-  /**
-   * The feature id for the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_WRITE_LOG_LEVEL__LOCALHOST = EF_BUILTIN_FUNCTION__LOCALHOST;
 
   /**
    * The feature id for the '<em><b>Port</b></em>' containment reference.
@@ -2684,24 +2108,6 @@ public interface EasyWallPackage extends EPackage
   int EF_GET_TIME = 50;
 
   /**
-   * The feature id for the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_GET_TIME__ANY = EF_BUILTIN_FUNCTION__ANY;
-
-  /**
-   * The feature id for the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_GET_TIME__LOCALHOST = EF_BUILTIN_FUNCTION__LOCALHOST;
-
-  /**
    * The feature id for the '<em><b>Port</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2728,24 +2134,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   int EF_GET_PACKET_FIELD = 51;
-
-  /**
-   * The feature id for the '<em><b>Any</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_GET_PACKET_FIELD__ANY = EF_BUILTIN_FUNCTION__ANY;
-
-  /**
-   * The feature id for the '<em><b>Localhost</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_GET_PACKET_FIELD__LOCALHOST = EF_BUILTIN_FUNCTION__LOCALHOST;
 
   /**
    * The feature id for the '<em><b>Port</b></em>' containment reference.
@@ -3387,28 +2775,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   EClass getEFExpression();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.easywall.easyWall.EFExpression#getAny <em>Any</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Any</em>'.
-   * @see org.xtext.example.easywall.easyWall.EFExpression#getAny()
-   * @see #getEFExpression()
-   * @generated
-   */
-  EAttribute getEFExpression_Any();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.easywall.easyWall.EFExpression#getLocalhost <em>Localhost</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Localhost</em>'.
-   * @see org.xtext.example.easywall.easyWall.EFExpression#getLocalhost()
-   * @see #getEFExpression()
-   * @generated
-   */
-  EAttribute getEFExpression_Localhost();
 
   /**
    * Returns the meta object for the containment reference '{@link org.xtext.example.easywall.easyWall.EFExpression#getPort <em>Port</em>}'.
@@ -4057,6 +3423,28 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   EAttribute getEFIPv4Constant_Ipv4();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.easywall.easyWall.EFIPv4Constant#getAny <em>Any</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Any</em>'.
+   * @see org.xtext.example.easywall.easyWall.EFIPv4Constant#getAny()
+   * @see #getEFIPv4Constant()
+   * @generated
+   */
+  EAttribute getEFIPv4Constant_Any();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.easywall.easyWall.EFIPv4Constant#getLocalhost <em>Localhost</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Localhost</em>'.
+   * @see org.xtext.example.easywall.easyWall.EFIPv4Constant#getLocalhost()
+   * @see #getEFIPv4Constant()
+   * @generated
+   */
+  EAttribute getEFIPv4Constant_Localhost();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.easywall.easyWall.EFThis <em>EF This</em>}'.
@@ -4825,22 +4213,6 @@ public interface EasyWallPackage extends EPackage
     EClass EF_EXPRESSION = eINSTANCE.getEFExpression();
 
     /**
-     * The meta object literal for the '<em><b>Any</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EF_EXPRESSION__ANY = eINSTANCE.getEFExpression_Any();
-
-    /**
-     * The meta object literal for the '<em><b>Localhost</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EF_EXPRESSION__LOCALHOST = eINSTANCE.getEFExpression_Localhost();
-
-    /**
      * The meta object literal for the '<em><b>Port</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5373,6 +4745,22 @@ public interface EasyWallPackage extends EPackage
      * @generated
      */
     EAttribute EFI_PV4_CONSTANT__IPV4 = eINSTANCE.getEFIPv4Constant_Ipv4();
+
+    /**
+     * The meta object literal for the '<em><b>Any</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EFI_PV4_CONSTANT__ANY = eINSTANCE.getEFIPv4Constant_Any();
+
+    /**
+     * The meta object literal for the '<em><b>Localhost</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EFI_PV4_CONSTANT__LOCALHOST = eINSTANCE.getEFIPv4Constant_Localhost();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.easywall.easyWall.impl.EFThisImpl <em>EF This</em>}' class.

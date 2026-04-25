@@ -1114,31 +1114,9 @@ public class EasyWallPackageImpl extends EPackageImpl implements EasyWallPackage
    * @generated
    */
   @Override
-  public EAttribute getEFExpression_Any()
-  {
-    return (EAttribute)efExpressionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getEFExpression_Localhost()
-  {
-    return (EAttribute)efExpressionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EReference getEFExpression_Port()
   {
-    return (EReference)efExpressionEClass.getEStructuralFeatures().get(2);
+    return (EReference)efExpressionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1807,6 +1785,28 @@ public class EasyWallPackageImpl extends EPackageImpl implements EasyWallPackage
    * @generated
    */
   @Override
+  public EAttribute getEFIPv4Constant_Any()
+  {
+    return (EAttribute)efiPv4ConstantEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getEFIPv4Constant_Localhost()
+  {
+    return (EAttribute)efiPv4ConstantEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getEFThis()
   {
     return efThisEClass;
@@ -2237,8 +2237,6 @@ public class EasyWallPackageImpl extends EPackageImpl implements EasyWallPackage
     createEReference(efIfStatementEClass, EF_IF_STATEMENT__ELSE_BLOCK);
 
     efExpressionEClass = createEClass(EF_EXPRESSION);
-    createEAttribute(efExpressionEClass, EF_EXPRESSION__ANY);
-    createEAttribute(efExpressionEClass, EF_EXPRESSION__LOCALHOST);
     createEReference(efExpressionEClass, EF_EXPRESSION__PORT);
 
     efBuiltinFunctionEClass = createEClass(EF_BUILTIN_FUNCTION);
@@ -2323,6 +2321,8 @@ public class EasyWallPackageImpl extends EPackageImpl implements EasyWallPackage
 
     efiPv4ConstantEClass = createEClass(EFI_PV4_CONSTANT);
     createEAttribute(efiPv4ConstantEClass, EFI_PV4_CONSTANT__IPV4);
+    createEAttribute(efiPv4ConstantEClass, EFI_PV4_CONSTANT__ANY);
+    createEAttribute(efiPv4ConstantEClass, EFI_PV4_CONSTANT__LOCALHOST);
 
     efThisEClass = createEClass(EF_THIS);
 
@@ -2507,8 +2507,6 @@ public class EasyWallPackageImpl extends EPackageImpl implements EasyWallPackage
     initEReference(getEFIfStatement_ElseBlock(), this.getEFBlock(), null, "elseBlock", null, 0, 1, EFIfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(efExpressionEClass, EFExpression.class, "EFExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getEFExpression_Any(), ecorePackage.getEString(), "any", null, 0, 1, EFExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getEFExpression_Localhost(), ecorePackage.getEString(), "localhost", null, 0, 1, EFExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEFExpression_Port(), this.getEFNetportConstant(), null, "port", null, 0, 1, EFExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(efBuiltinFunctionEClass, EFBuiltinFunction.class, "EFBuiltinFunction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2593,6 +2591,8 @@ public class EasyWallPackageImpl extends EPackageImpl implements EasyWallPackage
 
     initEClass(efiPv4ConstantEClass, EFIPv4Constant.class, "EFIPv4Constant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getEFIPv4Constant_Ipv4(), ecorePackage.getEString(), "ipv4", null, 0, 1, EFIPv4Constant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEFIPv4Constant_Any(), ecorePackage.getEString(), "any", null, 0, 1, EFIPv4Constant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEFIPv4Constant_Localhost(), ecorePackage.getEString(), "localhost", null, 0, 1, EFIPv4Constant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(efThisEClass, EFThis.class, "EFThis", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

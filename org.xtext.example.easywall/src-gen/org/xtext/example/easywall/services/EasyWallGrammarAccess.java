@@ -1224,10 +1224,8 @@ public class EasyWallGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final Action cEFStringConstantAction_0_0 = (Action)cGroup_0.eContents().get(0);
-		private final Keyword cQuotationMarkKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
-		private final Assignment cValueAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
-		private final RuleCall cValueSTRINGTerminalRuleCall_0_2_0 = (RuleCall)cValueAssignment_0_2.eContents().get(0);
-		private final Keyword cQuotationMarkKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
+		private final Assignment cValueAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cValueSTRINGTerminalRuleCall_0_1_0 = (RuleCall)cValueAssignment_0_1.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Action cEFIntConstantAction_1_0 = (Action)cGroup_1.eContents().get(0);
 		private final Assignment cValueAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
@@ -1260,59 +1258,60 @@ public class EasyWallGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final RuleCall cIpv6EFIPV6SYNTAXTerminalRuleCall_7_1_0 = (RuleCall)cIpv6Assignment_7_1.eContents().get(0);
 		private final Group cGroup_8 = (Group)cAlternatives.eContents().get(8);
 		private final Action cEFIPv4ConstantAction_8_0 = (Action)cGroup_8.eContents().get(0);
-		private final Assignment cIpv4Assignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
-		private final RuleCall cIpv4EFIPV4SYNTAXTerminalRuleCall_8_1_0 = (RuleCall)cIpv4Assignment_8_1.eContents().get(0);
-		private final Assignment cAnyAssignment_9 = (Assignment)cAlternatives.eContents().get(9);
-		private final Keyword cAnyAnyKeyword_9_0 = (Keyword)cAnyAssignment_9.eContents().get(0);
-		private final Assignment cLocalhostAssignment_10 = (Assignment)cAlternatives.eContents().get(10);
-		private final Keyword cLocalhostLocalhostKeyword_10_0 = (Keyword)cLocalhostAssignment_10.eContents().get(0);
+		private final Alternatives cAlternatives_8_1 = (Alternatives)cGroup_8.eContents().get(1);
+		private final Assignment cIpv4Assignment_8_1_0 = (Assignment)cAlternatives_8_1.eContents().get(0);
+		private final RuleCall cIpv4EFIPV4SYNTAXTerminalRuleCall_8_1_0_0 = (RuleCall)cIpv4Assignment_8_1_0.eContents().get(0);
+		private final Assignment cAnyAssignment_8_1_1 = (Assignment)cAlternatives_8_1.eContents().get(1);
+		private final Keyword cAnyAnyKeyword_8_1_1_0 = (Keyword)cAnyAssignment_8_1_1.eContents().get(0);
+		private final Assignment cLocalhostAssignment_8_1_2 = (Assignment)cAlternatives_8_1.eContents().get(2);
+		private final Keyword cLocalhostLocalhostKeyword_8_1_2_0 = (Keyword)cLocalhostAssignment_8_1_2.eContents().get(0);
+		private final Group cGroup_9 = (Group)cAlternatives.eContents().get(9);
+		private final Action cEFNetworkConstantAction_9_0 = (Action)cGroup_9.eContents().get(0);
+		private final Assignment cNetworkAssignment_9_1 = (Assignment)cGroup_9.eContents().get(1);
+		private final RuleCall cNetworkEFNetworkSYNTAXParserRuleCall_9_1_0 = (RuleCall)cNetworkAssignment_9_1.eContents().get(0);
+		private final Assignment cPortAssignment_10 = (Assignment)cAlternatives.eContents().get(10);
+		private final RuleCall cPortEFNetportSYNTAXParserRuleCall_10_0 = (RuleCall)cPortAssignment_10.eContents().get(0);
 		private final Group cGroup_11 = (Group)cAlternatives.eContents().get(11);
-		private final Action cEFNetworkConstantAction_11_0 = (Action)cGroup_11.eContents().get(0);
-		private final Assignment cNetworkAssignment_11_1 = (Assignment)cGroup_11.eContents().get(1);
-		private final RuleCall cNetworkEFNetworkSYNTAXParserRuleCall_11_1_0 = (RuleCall)cNetworkAssignment_11_1.eContents().get(0);
-		private final Assignment cPortAssignment_12 = (Assignment)cAlternatives.eContents().get(12);
-		private final RuleCall cPortEFNetportSYNTAXParserRuleCall_12_0 = (RuleCall)cPortAssignment_12.eContents().get(0);
+		private final Action cEFThisAction_11_0 = (Action)cGroup_11.eContents().get(0);
+		private final Keyword cThisKeyword_11_1 = (Keyword)cGroup_11.eContents().get(1);
+		private final Group cGroup_12 = (Group)cAlternatives.eContents().get(12);
+		private final Action cEFSuperAction_12_0 = (Action)cGroup_12.eContents().get(0);
+		private final Keyword cSuperKeyword_12_1 = (Keyword)cGroup_12.eContents().get(1);
 		private final Group cGroup_13 = (Group)cAlternatives.eContents().get(13);
-		private final Action cEFThisAction_13_0 = (Action)cGroup_13.eContents().get(0);
-		private final Keyword cThisKeyword_13_1 = (Keyword)cGroup_13.eContents().get(1);
+		private final Action cEFNewAction_13_0 = (Action)cGroup_13.eContents().get(0);
+		private final Keyword cNewKeyword_13_1 = (Keyword)cGroup_13.eContents().get(1);
+		private final Assignment cTypeAssignment_13_2 = (Assignment)cGroup_13.eContents().get(2);
+		private final CrossReference cTypeEFRuleClassCrossReference_13_2_0 = (CrossReference)cTypeAssignment_13_2.eContents().get(0);
+		private final RuleCall cTypeEFRuleClassQualifiedNameParserRuleCall_13_2_0_1 = (RuleCall)cTypeEFRuleClassCrossReference_13_2_0.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_13_3 = (Keyword)cGroup_13.eContents().get(3);
+		private final Keyword cRightParenthesisKeyword_13_4 = (Keyword)cGroup_13.eContents().get(4);
 		private final Group cGroup_14 = (Group)cAlternatives.eContents().get(14);
-		private final Action cEFSuperAction_14_0 = (Action)cGroup_14.eContents().get(0);
-		private final Keyword cSuperKeyword_14_1 = (Keyword)cGroup_14.eContents().get(1);
-		private final Group cGroup_15 = (Group)cAlternatives.eContents().get(15);
-		private final Action cEFNewAction_15_0 = (Action)cGroup_15.eContents().get(0);
-		private final Keyword cNewKeyword_15_1 = (Keyword)cGroup_15.eContents().get(1);
-		private final Assignment cTypeAssignment_15_2 = (Assignment)cGroup_15.eContents().get(2);
-		private final CrossReference cTypeEFRuleClassCrossReference_15_2_0 = (CrossReference)cTypeAssignment_15_2.eContents().get(0);
-		private final RuleCall cTypeEFRuleClassQualifiedNameParserRuleCall_15_2_0_1 = (RuleCall)cTypeEFRuleClassCrossReference_15_2_0.eContents().get(1);
-		private final Keyword cLeftParenthesisKeyword_15_3 = (Keyword)cGroup_15.eContents().get(3);
-		private final Keyword cRightParenthesisKeyword_15_4 = (Keyword)cGroup_15.eContents().get(4);
+		private final Action cEFBracketsExpressionAction_14_0 = (Action)cGroup_14.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_14_1 = (Keyword)cGroup_14.eContents().get(1);
+		private final Assignment cExpressionAssignment_14_2 = (Assignment)cGroup_14.eContents().get(2);
+		private final RuleCall cExpressionEFExpressionParserRuleCall_14_2_0 = (RuleCall)cExpressionAssignment_14_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_14_3 = (Keyword)cGroup_14.eContents().get(3);
+		private final RuleCall cEFBuiltinFunctionParserRuleCall_15 = (RuleCall)cAlternatives.eContents().get(15);
 		private final Group cGroup_16 = (Group)cAlternatives.eContents().get(16);
-		private final Action cEFBracketsExpressionAction_16_0 = (Action)cGroup_16.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_16_1 = (Keyword)cGroup_16.eContents().get(1);
-		private final Assignment cExpressionAssignment_16_2 = (Assignment)cGroup_16.eContents().get(2);
-		private final RuleCall cExpressionEFExpressionParserRuleCall_16_2_0 = (RuleCall)cExpressionAssignment_16_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_16_3 = (Keyword)cGroup_16.eContents().get(3);
-		private final RuleCall cEFBuiltinFunctionParserRuleCall_17 = (RuleCall)cAlternatives.eContents().get(17);
-		private final Group cGroup_18 = (Group)cAlternatives.eContents().get(18);
-		private final Action cEFFunctionCallAction_18_0 = (Action)cGroup_18.eContents().get(0);
-		private final Assignment cFunctionNameAssignment_18_1 = (Assignment)cGroup_18.eContents().get(1);
-		private final RuleCall cFunctionNameQualifiedNameParserRuleCall_18_1_0 = (RuleCall)cFunctionNameAssignment_18_1.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_18_2 = (Keyword)cGroup_18.eContents().get(2);
-		private final Group cGroup_18_3 = (Group)cGroup_18.eContents().get(3);
-		private final Assignment cArgsAssignment_18_3_0 = (Assignment)cGroup_18_3.eContents().get(0);
-		private final RuleCall cArgsEFExpressionParserRuleCall_18_3_0_0 = (RuleCall)cArgsAssignment_18_3_0.eContents().get(0);
-		private final Group cGroup_18_3_1 = (Group)cGroup_18_3.eContents().get(1);
-		private final Keyword cCommaKeyword_18_3_1_0 = (Keyword)cGroup_18_3_1.eContents().get(0);
-		private final Assignment cArgsAssignment_18_3_1_1 = (Assignment)cGroup_18_3_1.eContents().get(1);
-		private final RuleCall cArgsEFExpressionParserRuleCall_18_3_1_1_0 = (RuleCall)cArgsAssignment_18_3_1_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_18_4 = (Keyword)cGroup_18.eContents().get(4);
-		private final Group cGroup_19 = (Group)cAlternatives.eContents().get(19);
-		private final Action cEFSymbolRefAction_19_0 = (Action)cGroup_19.eContents().get(0);
-		private final Assignment cSymbolAssignment_19_1 = (Assignment)cGroup_19.eContents().get(1);
-		private final RuleCall cSymbolQualifiedNameParserRuleCall_19_1_0 = (RuleCall)cSymbolAssignment_19_1.eContents().get(0);
+		private final Action cEFFunctionCallAction_16_0 = (Action)cGroup_16.eContents().get(0);
+		private final Assignment cFunctionNameAssignment_16_1 = (Assignment)cGroup_16.eContents().get(1);
+		private final RuleCall cFunctionNameQualifiedNameParserRuleCall_16_1_0 = (RuleCall)cFunctionNameAssignment_16_1.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_16_2 = (Keyword)cGroup_16.eContents().get(2);
+		private final Group cGroup_16_3 = (Group)cGroup_16.eContents().get(3);
+		private final Assignment cArgsAssignment_16_3_0 = (Assignment)cGroup_16_3.eContents().get(0);
+		private final RuleCall cArgsEFExpressionParserRuleCall_16_3_0_0 = (RuleCall)cArgsAssignment_16_3_0.eContents().get(0);
+		private final Group cGroup_16_3_1 = (Group)cGroup_16_3.eContents().get(1);
+		private final Keyword cCommaKeyword_16_3_1_0 = (Keyword)cGroup_16_3_1.eContents().get(0);
+		private final Assignment cArgsAssignment_16_3_1_1 = (Assignment)cGroup_16_3_1.eContents().get(1);
+		private final RuleCall cArgsEFExpressionParserRuleCall_16_3_1_1_0 = (RuleCall)cArgsAssignment_16_3_1_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_16_4 = (Keyword)cGroup_16.eContents().get(4);
+		private final Group cGroup_17 = (Group)cAlternatives.eContents().get(17);
+		private final Action cEFSymbolRefAction_17_0 = (Action)cGroup_17.eContents().get(0);
+		private final Assignment cSymbolAssignment_17_1 = (Assignment)cGroup_17.eContents().get(1);
+		private final RuleCall cSymbolQualifiedNameParserRuleCall_17_1_0 = (RuleCall)cSymbolAssignment_17_1.eContents().get(0);
 		
 		//EFPrimaryExpression returns EFExpression:
-		//    {EFStringConstant} '"'value=STRING'"'
+		//    {EFStringConstant} value=STRING
 		//  | {EFIntConstant} value=INT
 		//  | {EFBoolConstant} value=('true'|'false')
 		//  | {EFDirectionConstant} direction=EFDirectionNativeType
@@ -1320,7 +1319,7 @@ public class EasyWallGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//  | {EFTransportProtocolConstant} protocol=TRANSPORTLAYERPROTOCOL
 		//  | {EFApplicationProtocolConstant} protocol=APPLICATIONLAYERPROTOCOL
 		//  | {EFIPv6Constant} ipv6=EFIPV6SYNTAX
-		//  | {EFIPv4Constant} ipv4=EFIPV4SYNTAX | any='any' | localhost='localhost'
+		//  | {EFIPv4Constant} (ipv4=EFIPV4SYNTAX | any='any' | localhost='localhost')
 		//  | {EFNetworkConstant} network=EFNetworkSYNTAX
 		//  | port=EFNetportSYNTAX
 		//  | {EFThis} 'this'
@@ -1333,7 +1332,7 @@ public class EasyWallGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//  {EFStringConstant} '"'value=STRING'"'
+		//  {EFStringConstant} value=STRING
 		//| {EFIntConstant} value=INT
 		//| {EFBoolConstant} value=('true'|'false')
 		//| {EFDirectionConstant} direction=EFDirectionNativeType
@@ -1341,7 +1340,7 @@ public class EasyWallGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//| {EFTransportProtocolConstant} protocol=TRANSPORTLAYERPROTOCOL
 		//| {EFApplicationProtocolConstant} protocol=APPLICATIONLAYERPROTOCOL
 		//| {EFIPv6Constant} ipv6=EFIPV6SYNTAX
-		//| {EFIPv4Constant} ipv4=EFIPV4SYNTAX | any='any' | localhost='localhost'
+		//| {EFIPv4Constant} (ipv4=EFIPV4SYNTAX | any='any' | localhost='localhost')
 		//| {EFNetworkConstant} network=EFNetworkSYNTAX
 		//| port=EFNetportSYNTAX
 		//| {EFThis} 'this'
@@ -1353,23 +1352,17 @@ public class EasyWallGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//| {EFSymbolRef} symbol=QualifiedName
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//{EFStringConstant} '"'value=STRING'"'
+		//{EFStringConstant} value=STRING
 		public Group getGroup_0() { return cGroup_0; }
 		
 		//{EFStringConstant}
 		public Action getEFStringConstantAction_0_0() { return cEFStringConstantAction_0_0; }
 		
-		//'"'
-		public Keyword getQuotationMarkKeyword_0_1() { return cQuotationMarkKeyword_0_1; }
-		
 		//value=STRING
-		public Assignment getValueAssignment_0_2() { return cValueAssignment_0_2; }
+		public Assignment getValueAssignment_0_1() { return cValueAssignment_0_1; }
 		
 		//STRING
-		public RuleCall getValueSTRINGTerminalRuleCall_0_2_0() { return cValueSTRINGTerminalRuleCall_0_2_0; }
-		
-		//'"'
-		public Keyword getQuotationMarkKeyword_0_3() { return cQuotationMarkKeyword_0_3; }
+		public RuleCall getValueSTRINGTerminalRuleCall_0_1_0() { return cValueSTRINGTerminalRuleCall_0_1_0; }
 		
 		//{EFIntConstant} value=INT
 		public Group getGroup_1() { return cGroup_1; }
@@ -1461,161 +1454,164 @@ public class EasyWallGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//EFIPV6SYNTAX
 		public RuleCall getIpv6EFIPV6SYNTAXTerminalRuleCall_7_1_0() { return cIpv6EFIPV6SYNTAXTerminalRuleCall_7_1_0; }
 		
-		//{EFIPv4Constant} ipv4=EFIPV4SYNTAX
+		//{EFIPv4Constant} (ipv4=EFIPV4SYNTAX | any='any' | localhost='localhost')
 		public Group getGroup_8() { return cGroup_8; }
 		
 		//{EFIPv4Constant}
 		public Action getEFIPv4ConstantAction_8_0() { return cEFIPv4ConstantAction_8_0; }
 		
+		//(ipv4=EFIPV4SYNTAX | any='any' | localhost='localhost')
+		public Alternatives getAlternatives_8_1() { return cAlternatives_8_1; }
+		
 		//ipv4=EFIPV4SYNTAX
-		public Assignment getIpv4Assignment_8_1() { return cIpv4Assignment_8_1; }
+		public Assignment getIpv4Assignment_8_1_0() { return cIpv4Assignment_8_1_0; }
 		
 		//EFIPV4SYNTAX
-		public RuleCall getIpv4EFIPV4SYNTAXTerminalRuleCall_8_1_0() { return cIpv4EFIPV4SYNTAXTerminalRuleCall_8_1_0; }
+		public RuleCall getIpv4EFIPV4SYNTAXTerminalRuleCall_8_1_0_0() { return cIpv4EFIPV4SYNTAXTerminalRuleCall_8_1_0_0; }
 		
 		//any='any'
-		public Assignment getAnyAssignment_9() { return cAnyAssignment_9; }
+		public Assignment getAnyAssignment_8_1_1() { return cAnyAssignment_8_1_1; }
 		
 		//'any'
-		public Keyword getAnyAnyKeyword_9_0() { return cAnyAnyKeyword_9_0; }
+		public Keyword getAnyAnyKeyword_8_1_1_0() { return cAnyAnyKeyword_8_1_1_0; }
 		
 		//localhost='localhost'
-		public Assignment getLocalhostAssignment_10() { return cLocalhostAssignment_10; }
+		public Assignment getLocalhostAssignment_8_1_2() { return cLocalhostAssignment_8_1_2; }
 		
 		//'localhost'
-		public Keyword getLocalhostLocalhostKeyword_10_0() { return cLocalhostLocalhostKeyword_10_0; }
+		public Keyword getLocalhostLocalhostKeyword_8_1_2_0() { return cLocalhostLocalhostKeyword_8_1_2_0; }
 		
 		//{EFNetworkConstant} network=EFNetworkSYNTAX
-		public Group getGroup_11() { return cGroup_11; }
+		public Group getGroup_9() { return cGroup_9; }
 		
 		//{EFNetworkConstant}
-		public Action getEFNetworkConstantAction_11_0() { return cEFNetworkConstantAction_11_0; }
+		public Action getEFNetworkConstantAction_9_0() { return cEFNetworkConstantAction_9_0; }
 		
 		//network=EFNetworkSYNTAX
-		public Assignment getNetworkAssignment_11_1() { return cNetworkAssignment_11_1; }
+		public Assignment getNetworkAssignment_9_1() { return cNetworkAssignment_9_1; }
 		
 		//EFNetworkSYNTAX
-		public RuleCall getNetworkEFNetworkSYNTAXParserRuleCall_11_1_0() { return cNetworkEFNetworkSYNTAXParserRuleCall_11_1_0; }
+		public RuleCall getNetworkEFNetworkSYNTAXParserRuleCall_9_1_0() { return cNetworkEFNetworkSYNTAXParserRuleCall_9_1_0; }
 		
 		//port=EFNetportSYNTAX
-		public Assignment getPortAssignment_12() { return cPortAssignment_12; }
+		public Assignment getPortAssignment_10() { return cPortAssignment_10; }
 		
 		//EFNetportSYNTAX
-		public RuleCall getPortEFNetportSYNTAXParserRuleCall_12_0() { return cPortEFNetportSYNTAXParserRuleCall_12_0; }
+		public RuleCall getPortEFNetportSYNTAXParserRuleCall_10_0() { return cPortEFNetportSYNTAXParserRuleCall_10_0; }
 		
 		//{EFThis} 'this'
-		public Group getGroup_13() { return cGroup_13; }
+		public Group getGroup_11() { return cGroup_11; }
 		
 		//{EFThis}
-		public Action getEFThisAction_13_0() { return cEFThisAction_13_0; }
+		public Action getEFThisAction_11_0() { return cEFThisAction_11_0; }
 		
 		//'this'
-		public Keyword getThisKeyword_13_1() { return cThisKeyword_13_1; }
+		public Keyword getThisKeyword_11_1() { return cThisKeyword_11_1; }
 		
 		//{EFSuper} 'super'
-		public Group getGroup_14() { return cGroup_14; }
+		public Group getGroup_12() { return cGroup_12; }
 		
 		//{EFSuper}
-		public Action getEFSuperAction_14_0() { return cEFSuperAction_14_0; }
+		public Action getEFSuperAction_12_0() { return cEFSuperAction_12_0; }
 		
 		//'super'
-		public Keyword getSuperKeyword_14_1() { return cSuperKeyword_14_1; }
+		public Keyword getSuperKeyword_12_1() { return cSuperKeyword_12_1; }
 		
 		//{EFNew} 'new' type=[EFRuleClass|QualifiedName] '(' ')'
-		public Group getGroup_15() { return cGroup_15; }
+		public Group getGroup_13() { return cGroup_13; }
 		
 		//{EFNew}
-		public Action getEFNewAction_15_0() { return cEFNewAction_15_0; }
+		public Action getEFNewAction_13_0() { return cEFNewAction_13_0; }
 		
 		//'new'
-		public Keyword getNewKeyword_15_1() { return cNewKeyword_15_1; }
+		public Keyword getNewKeyword_13_1() { return cNewKeyword_13_1; }
 		
 		//type=[EFRuleClass|QualifiedName]
-		public Assignment getTypeAssignment_15_2() { return cTypeAssignment_15_2; }
+		public Assignment getTypeAssignment_13_2() { return cTypeAssignment_13_2; }
 		
 		//[EFRuleClass|QualifiedName]
-		public CrossReference getTypeEFRuleClassCrossReference_15_2_0() { return cTypeEFRuleClassCrossReference_15_2_0; }
+		public CrossReference getTypeEFRuleClassCrossReference_13_2_0() { return cTypeEFRuleClassCrossReference_13_2_0; }
 		
 		//QualifiedName
-		public RuleCall getTypeEFRuleClassQualifiedNameParserRuleCall_15_2_0_1() { return cTypeEFRuleClassQualifiedNameParserRuleCall_15_2_0_1; }
+		public RuleCall getTypeEFRuleClassQualifiedNameParserRuleCall_13_2_0_1() { return cTypeEFRuleClassQualifiedNameParserRuleCall_13_2_0_1; }
 		
 		//'('
-		public Keyword getLeftParenthesisKeyword_15_3() { return cLeftParenthesisKeyword_15_3; }
+		public Keyword getLeftParenthesisKeyword_13_3() { return cLeftParenthesisKeyword_13_3; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_15_4() { return cRightParenthesisKeyword_15_4; }
+		public Keyword getRightParenthesisKeyword_13_4() { return cRightParenthesisKeyword_13_4; }
 		
 		//{EFBracketsExpression} '(' expression=EFExpression ')'
-		public Group getGroup_16() { return cGroup_16; }
+		public Group getGroup_14() { return cGroup_14; }
 		
 		//{EFBracketsExpression}
-		public Action getEFBracketsExpressionAction_16_0() { return cEFBracketsExpressionAction_16_0; }
+		public Action getEFBracketsExpressionAction_14_0() { return cEFBracketsExpressionAction_14_0; }
 		
 		//'('
-		public Keyword getLeftParenthesisKeyword_16_1() { return cLeftParenthesisKeyword_16_1; }
+		public Keyword getLeftParenthesisKeyword_14_1() { return cLeftParenthesisKeyword_14_1; }
 		
 		//expression=EFExpression
-		public Assignment getExpressionAssignment_16_2() { return cExpressionAssignment_16_2; }
+		public Assignment getExpressionAssignment_14_2() { return cExpressionAssignment_14_2; }
 		
 		//EFExpression
-		public RuleCall getExpressionEFExpressionParserRuleCall_16_2_0() { return cExpressionEFExpressionParserRuleCall_16_2_0; }
+		public RuleCall getExpressionEFExpressionParserRuleCall_14_2_0() { return cExpressionEFExpressionParserRuleCall_14_2_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_16_3() { return cRightParenthesisKeyword_16_3; }
+		public Keyword getRightParenthesisKeyword_14_3() { return cRightParenthesisKeyword_14_3; }
 		
 		//EFBuiltinFunction
-		public RuleCall getEFBuiltinFunctionParserRuleCall_17() { return cEFBuiltinFunctionParserRuleCall_17; }
+		public RuleCall getEFBuiltinFunctionParserRuleCall_15() { return cEFBuiltinFunctionParserRuleCall_15; }
 		
 		//{EFFunctionCall} functionName=QualifiedName '(' (args+=EFExpression (',' args+=EFExpression)*)? ')'
-		public Group getGroup_18() { return cGroup_18; }
+		public Group getGroup_16() { return cGroup_16; }
 		
 		//{EFFunctionCall}
-		public Action getEFFunctionCallAction_18_0() { return cEFFunctionCallAction_18_0; }
+		public Action getEFFunctionCallAction_16_0() { return cEFFunctionCallAction_16_0; }
 		
 		//functionName=QualifiedName
-		public Assignment getFunctionNameAssignment_18_1() { return cFunctionNameAssignment_18_1; }
+		public Assignment getFunctionNameAssignment_16_1() { return cFunctionNameAssignment_16_1; }
 		
 		//QualifiedName
-		public RuleCall getFunctionNameQualifiedNameParserRuleCall_18_1_0() { return cFunctionNameQualifiedNameParserRuleCall_18_1_0; }
+		public RuleCall getFunctionNameQualifiedNameParserRuleCall_16_1_0() { return cFunctionNameQualifiedNameParserRuleCall_16_1_0; }
 		
 		//'('
-		public Keyword getLeftParenthesisKeyword_18_2() { return cLeftParenthesisKeyword_18_2; }
+		public Keyword getLeftParenthesisKeyword_16_2() { return cLeftParenthesisKeyword_16_2; }
 		
 		//(args+=EFExpression (',' args+=EFExpression)*)?
-		public Group getGroup_18_3() { return cGroup_18_3; }
+		public Group getGroup_16_3() { return cGroup_16_3; }
 		
 		//args+=EFExpression
-		public Assignment getArgsAssignment_18_3_0() { return cArgsAssignment_18_3_0; }
+		public Assignment getArgsAssignment_16_3_0() { return cArgsAssignment_16_3_0; }
 		
 		//EFExpression
-		public RuleCall getArgsEFExpressionParserRuleCall_18_3_0_0() { return cArgsEFExpressionParserRuleCall_18_3_0_0; }
+		public RuleCall getArgsEFExpressionParserRuleCall_16_3_0_0() { return cArgsEFExpressionParserRuleCall_16_3_0_0; }
 		
 		//(',' args+=EFExpression)*
-		public Group getGroup_18_3_1() { return cGroup_18_3_1; }
+		public Group getGroup_16_3_1() { return cGroup_16_3_1; }
 		
 		//','
-		public Keyword getCommaKeyword_18_3_1_0() { return cCommaKeyword_18_3_1_0; }
+		public Keyword getCommaKeyword_16_3_1_0() { return cCommaKeyword_16_3_1_0; }
 		
 		//args+=EFExpression
-		public Assignment getArgsAssignment_18_3_1_1() { return cArgsAssignment_18_3_1_1; }
+		public Assignment getArgsAssignment_16_3_1_1() { return cArgsAssignment_16_3_1_1; }
 		
 		//EFExpression
-		public RuleCall getArgsEFExpressionParserRuleCall_18_3_1_1_0() { return cArgsEFExpressionParserRuleCall_18_3_1_1_0; }
+		public RuleCall getArgsEFExpressionParserRuleCall_16_3_1_1_0() { return cArgsEFExpressionParserRuleCall_16_3_1_1_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_18_4() { return cRightParenthesisKeyword_18_4; }
+		public Keyword getRightParenthesisKeyword_16_4() { return cRightParenthesisKeyword_16_4; }
 		
 		//{EFSymbolRef} symbol=QualifiedName
-		public Group getGroup_19() { return cGroup_19; }
+		public Group getGroup_17() { return cGroup_17; }
 		
 		//{EFSymbolRef}
-		public Action getEFSymbolRefAction_19_0() { return cEFSymbolRefAction_19_0; }
+		public Action getEFSymbolRefAction_17_0() { return cEFSymbolRefAction_17_0; }
 		
 		//symbol=QualifiedName
-		public Assignment getSymbolAssignment_19_1() { return cSymbolAssignment_19_1; }
+		public Assignment getSymbolAssignment_17_1() { return cSymbolAssignment_17_1; }
 		
 		//QualifiedName
-		public RuleCall getSymbolQualifiedNameParserRuleCall_19_1_0() { return cSymbolQualifiedNameParserRuleCall_19_1_0; }
+		public RuleCall getSymbolQualifiedNameParserRuleCall_17_1_0() { return cSymbolQualifiedNameParserRuleCall_17_1_0; }
 	}
 	public class EFBuiltinFunctionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.easywall.EasyWall.EFBuiltinFunction");
@@ -3336,7 +3332,7 @@ public class EasyWallGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	}
 	
 	//EFPrimaryExpression returns EFExpression:
-	//    {EFStringConstant} '"'value=STRING'"'
+	//    {EFStringConstant} value=STRING
 	//  | {EFIntConstant} value=INT
 	//  | {EFBoolConstant} value=('true'|'false')
 	//  | {EFDirectionConstant} direction=EFDirectionNativeType
@@ -3344,7 +3340,7 @@ public class EasyWallGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	//  | {EFTransportProtocolConstant} protocol=TRANSPORTLAYERPROTOCOL
 	//  | {EFApplicationProtocolConstant} protocol=APPLICATIONLAYERPROTOCOL
 	//  | {EFIPv6Constant} ipv6=EFIPV6SYNTAX
-	//  | {EFIPv4Constant} ipv4=EFIPV4SYNTAX | any='any' | localhost='localhost'
+	//  | {EFIPv4Constant} (ipv4=EFIPV4SYNTAX | any='any' | localhost='localhost')
 	//  | {EFNetworkConstant} network=EFNetworkSYNTAX
 	//  | port=EFNetportSYNTAX
 	//  | {EFThis} 'this'

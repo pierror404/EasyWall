@@ -102,8 +102,6 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EFExpression" eSuperTypes="#//EFStatement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="any" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="localhost" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="#//EFNetportConstant"
         containment="true"/>
   </eClassifiers>
@@ -251,6 +249,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EFIPv4Constant" eSuperTypes="#//EFExpression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ipv4" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="any" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="localhost" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EFThis" eSuperTypes="#//EFExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="EFSuper" eSuperTypes="#//EFExpression"/>
