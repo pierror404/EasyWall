@@ -84,7 +84,6 @@ public class EasyWallSwitch<T> extends Switch<T>
       {
         EFHeader efHeader = (EFHeader)theEObject;
         T result = caseEFHeader(efHeader);
-        if (result == null) result = caseEFProgram(efHeader);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }

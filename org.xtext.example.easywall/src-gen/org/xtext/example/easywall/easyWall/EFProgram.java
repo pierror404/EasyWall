@@ -3,6 +3,8 @@
  */
 package org.xtext.example.easywall.easyWall;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -10,6 +12,14 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>EF Program</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.xtext.example.easywall.easyWall.EFProgram#getHeader <em>Header</em>}</li>
+ *   <li>{@link org.xtext.example.easywall.easyWall.EFProgram#getRules <em>Rules</em>}</li>
+ *   <li>{@link org.xtext.example.easywall.easyWall.EFProgram#getFirewall <em>Firewall</em>}</li>
+ * </ul>
  *
  * @see org.xtext.example.easywall.easyWall.EasyWallPackage#getEFProgram()
  * @model
@@ -17,4 +27,60 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface EFProgram extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Header</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Header</em>' containment reference.
+   * @see #setHeader(EFHeader)
+   * @see org.xtext.example.easywall.easyWall.EasyWallPackage#getEFProgram_Header()
+   * @model containment="true"
+   * @generated
+   */
+  EFHeader getHeader();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.easywall.easyWall.EFProgram#getHeader <em>Header</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Header</em>' containment reference.
+   * @see #getHeader()
+   * @generated
+   */
+  void setHeader(EFHeader value);
+
+  /**
+   * Returns the value of the '<em><b>Rules</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.example.easywall.easyWall.EFRule}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Rules</em>' containment reference list.
+   * @see org.xtext.example.easywall.easyWall.EasyWallPackage#getEFProgram_Rules()
+   * @model containment="true"
+   * @generated
+   */
+  EList<EFRule> getRules();
+
+  /**
+   * Returns the value of the '<em><b>Firewall</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Firewall</em>' containment reference.
+   * @see #setFirewall(EFFirewall)
+   * @see org.xtext.example.easywall.easyWall.EasyWallPackage#getEFProgram_Firewall()
+   * @model containment="true"
+   * @generated
+   */
+  EFFirewall getFirewall();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.easywall.easyWall.EFProgram#getFirewall <em>Firewall</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Firewall</em>' containment reference.
+   * @see #getFirewall()
+   * @generated
+   */
+  void setFirewall(EFFirewall value);
+
 } // EFProgram

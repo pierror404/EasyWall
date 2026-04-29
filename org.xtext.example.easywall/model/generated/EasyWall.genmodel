@@ -72,10 +72,12 @@
       <genEnumLiterals ecoreEnumLiteral="EasyWall.ecore#//APPLICATIONLAYERPROTOCOL/DNS"/>
       <genEnumLiterals ecoreEnumLiteral="EasyWall.ecore#//APPLICATIONLAYERPROTOCOL/DHCP"/>
     </genEnums>
-    <genClasses ecoreClass="EasyWall.ecore#//EFProgram"/>
+    <genClasses ecoreClass="EasyWall.ecore#//EFProgram">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EasyWall.ecore#//EFProgram/header"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EasyWall.ecore#//EFProgram/rules"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EasyWall.ecore#//EFProgram/firewall"/>
+    </genClasses>
     <genClasses ecoreClass="EasyWall.ecore#//EFHeader">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EasyWall.ecore#//EFHeader/rules"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EasyWall.ecore#//EFHeader/firewall"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EasyWall.ecore#//EFHeader/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EasyWall.ecore#//EFHeader/imports"/>
     </genClasses>

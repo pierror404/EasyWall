@@ -3,22 +3,75 @@
  */
 package org.xtext.example.easywall.easyWall.impl;
 
-import org.eclipse.emf.ecore.EClass;
+import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+import org.xtext.example.easywall.easyWall.EFFirewall;
+import org.xtext.example.easywall.easyWall.EFHeader;
 import org.xtext.example.easywall.easyWall.EFProgram;
+import org.xtext.example.easywall.easyWall.EFRule;
 import org.xtext.example.easywall.easyWall.EasyWallPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>EF Program</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link org.xtext.example.easywall.easyWall.impl.EFProgramImpl#getHeader <em>Header</em>}</li>
+ *   <li>{@link org.xtext.example.easywall.easyWall.impl.EFProgramImpl#getRules <em>Rules</em>}</li>
+ *   <li>{@link org.xtext.example.easywall.easyWall.impl.EFProgramImpl#getFirewall <em>Firewall</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class EFProgramImpl extends MinimalEObjectImpl.Container implements EFProgram
 {
+  /**
+   * The cached value of the '{@link #getHeader() <em>Header</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getHeader()
+   * @generated
+   * @ordered
+   */
+  protected EFHeader header;
+
+  /**
+   * The cached value of the '{@link #getRules() <em>Rules</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRules()
+   * @generated
+   * @ordered
+   */
+  protected EList<EFRule> rules;
+
+  /**
+   * The cached value of the '{@link #getFirewall() <em>Firewall</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFirewall()
+   * @generated
+   * @ordered
+   */
+  protected EFFirewall firewall;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -38,6 +91,229 @@ public class EFProgramImpl extends MinimalEObjectImpl.Container implements EFPro
   protected EClass eStaticClass()
   {
     return EasyWallPackage.Literals.EF_PROGRAM;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EFHeader getHeader()
+  {
+    return header;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetHeader(EFHeader newHeader, NotificationChain msgs)
+  {
+    EFHeader oldHeader = header;
+    header = newHeader;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EasyWallPackage.EF_PROGRAM__HEADER, oldHeader, newHeader);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setHeader(EFHeader newHeader)
+  {
+    if (newHeader != header)
+    {
+      NotificationChain msgs = null;
+      if (header != null)
+        msgs = ((InternalEObject)header).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EasyWallPackage.EF_PROGRAM__HEADER, null, msgs);
+      if (newHeader != null)
+        msgs = ((InternalEObject)newHeader).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EasyWallPackage.EF_PROGRAM__HEADER, null, msgs);
+      msgs = basicSetHeader(newHeader, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EasyWallPackage.EF_PROGRAM__HEADER, newHeader, newHeader));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<EFRule> getRules()
+  {
+    if (rules == null)
+    {
+      rules = new EObjectContainmentEList<EFRule>(EFRule.class, this, EasyWallPackage.EF_PROGRAM__RULES);
+    }
+    return rules;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EFFirewall getFirewall()
+  {
+    return firewall;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetFirewall(EFFirewall newFirewall, NotificationChain msgs)
+  {
+    EFFirewall oldFirewall = firewall;
+    firewall = newFirewall;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EasyWallPackage.EF_PROGRAM__FIREWALL, oldFirewall, newFirewall);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setFirewall(EFFirewall newFirewall)
+  {
+    if (newFirewall != firewall)
+    {
+      NotificationChain msgs = null;
+      if (firewall != null)
+        msgs = ((InternalEObject)firewall).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EasyWallPackage.EF_PROGRAM__FIREWALL, null, msgs);
+      if (newFirewall != null)
+        msgs = ((InternalEObject)newFirewall).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EasyWallPackage.EF_PROGRAM__FIREWALL, null, msgs);
+      msgs = basicSetFirewall(newFirewall, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EasyWallPackage.EF_PROGRAM__FIREWALL, newFirewall, newFirewall));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case EasyWallPackage.EF_PROGRAM__HEADER:
+        return basicSetHeader(null, msgs);
+      case EasyWallPackage.EF_PROGRAM__RULES:
+        return ((InternalEList<?>)getRules()).basicRemove(otherEnd, msgs);
+      case EasyWallPackage.EF_PROGRAM__FIREWALL:
+        return basicSetFirewall(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case EasyWallPackage.EF_PROGRAM__HEADER:
+        return getHeader();
+      case EasyWallPackage.EF_PROGRAM__RULES:
+        return getRules();
+      case EasyWallPackage.EF_PROGRAM__FIREWALL:
+        return getFirewall();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @SuppressWarnings("unchecked")
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case EasyWallPackage.EF_PROGRAM__HEADER:
+        setHeader((EFHeader)newValue);
+        return;
+      case EasyWallPackage.EF_PROGRAM__RULES:
+        getRules().clear();
+        getRules().addAll((Collection<? extends EFRule>)newValue);
+        return;
+      case EasyWallPackage.EF_PROGRAM__FIREWALL:
+        setFirewall((EFFirewall)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case EasyWallPackage.EF_PROGRAM__HEADER:
+        setHeader((EFHeader)null);
+        return;
+      case EasyWallPackage.EF_PROGRAM__RULES:
+        getRules().clear();
+        return;
+      case EasyWallPackage.EF_PROGRAM__FIREWALL:
+        setFirewall((EFFirewall)null);
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case EasyWallPackage.EF_PROGRAM__HEADER:
+        return header != null;
+      case EasyWallPackage.EF_PROGRAM__RULES:
+        return rules != null && !rules.isEmpty();
+      case EasyWallPackage.EF_PROGRAM__FIREWALL:
+        return firewall != null;
+    }
+    return super.eIsSet(featureID);
   }
 
 } //EFProgramImpl

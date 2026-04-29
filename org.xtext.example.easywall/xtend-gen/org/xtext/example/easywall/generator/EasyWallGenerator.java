@@ -3,10 +3,34 @@
  */
 package org.xtext.example.easywall.generator;
 
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Iterators;
+import java.util.Objects;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.xbase.lib.Functions.Function1;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
+import org.xtext.example.easywall.easyWall.EFBlock;
+import org.xtext.example.easywall.easyWall.EFDefaultPolicy;
+import org.xtext.example.easywall.easyWall.EFExpression;
+import org.xtext.example.easywall.easyWall.EFField;
+import org.xtext.example.easywall.easyWall.EFFirewall;
+import org.xtext.example.easywall.easyWall.EFHeader;
+import org.xtext.example.easywall.easyWall.EFIfStatement;
+import org.xtext.example.easywall.easyWall.EFMethod;
+import org.xtext.example.easywall.easyWall.EFNetworkNativeType;
+import org.xtext.example.easywall.easyWall.EFPrimitiveType;
+import org.xtext.example.easywall.easyWall.EFProgram;
+import org.xtext.example.easywall.easyWall.EFReturn;
+import org.xtext.example.easywall.easyWall.EFRule;
+import org.xtext.example.easywall.easyWall.EFRuleClass;
+import org.xtext.example.easywall.easyWall.EFRuleReference;
+import org.xtext.example.easywall.easyWall.EFStatement;
 
 /**
  * Generates code from your model files on save.
@@ -17,5 +41,497 @@ import org.eclipse.xtext.generator.IGeneratorContext;
 public class EasyWallGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    final EFProgram program = IterableExtensions.<EFProgram>head(IteratorExtensions.<EFProgram>toIterable(Iterators.<EFProgram>filter(resource.getAllContents(), EFProgram.class)));
+    if ((program == null)) {
+      return;
+    }
+    String _elvis = null;
+    EFHeader _header = program.getHeader();
+    String _name = null;
+    if (_header!=null) {
+      _name=_header.getName();
+    }
+    if (_name != null) {
+      _elvis = _name;
+    } else {
+      _elvis = "generated.firewall";
+    }
+    final String packageName = _elvis;
+    final String packagePath = packageName.replace(".", "/");
+    EList<EFRule> _rules = program.getRules();
+    for (final EFRule ruleWrapper : _rules) {
+      {
+        final EFRuleClass rule = ruleWrapper.getRules();
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append(packagePath);
+        _builder.append("/");
+        String _name_1 = rule.getName();
+        _builder.append(_name_1);
+        _builder.append(".java");
+        fsa.generateFile(_builder.toString(), this.compileRuleClass(rule, packageName));
+      }
+    }
+    EFFirewall _firewall = program.getFirewall();
+    boolean _tripleNotEquals = (_firewall != null);
+    if (_tripleNotEquals) {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append(packagePath);
+      _builder.append("/");
+      String _name_1 = program.getFirewall().getName();
+      _builder.append(_name_1);
+      _builder.append(".java");
+      fsa.generateFile(_builder.toString(), 
+        this.compileFirewallClass(program.getFirewall(), packageName));
+    }
+  }
+
+  public CharSequence compileRuleClass(final EFRuleClass rule, final String packageName) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("package ");
+    _builder.append(packageName);
+    _builder.append(";");
+    _builder.newLineIfNotEmpty();
+    _builder.newLine();
+    _builder.append("import fr.pierror.firewall.*;");
+    _builder.newLine();
+    _builder.append("import fr.pierror.firewall.model.*;");
+    _builder.newLine();
+    _builder.append("import java.util.*;");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("public class ");
+    String _name = rule.getName();
+    _builder.append(_name);
+    _builder.append(" extends Rule {");
+    _builder.newLineIfNotEmpty();
+    _builder.append("    ");
+    _builder.newLine();
+    {
+      Iterable<EFField> _filter = Iterables.<EFField>filter(rule.getMembers(), EFField.class);
+      for(final EFField field : _filter) {
+        _builder.append("    ");
+        CharSequence _compileField = this.compileField(field);
+        _builder.append(_compileField, "    ");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("public ");
+    String _name_1 = rule.getName();
+    _builder.append(_name_1, "    ");
+    _builder.append("() {");
+    _builder.newLineIfNotEmpty();
+    _builder.append("        ");
+    _builder.append("// Constructor");
+    _builder.newLine();
+    _builder.append("        ");
+    final EFField protocolField = this.findField(rule, "rule_protocol");
+    _builder.newLineIfNotEmpty();
+    _builder.append("        ");
+    final EFField directionField = this.findField(rule, "rule_direction");
+    _builder.newLineIfNotEmpty();
+    _builder.append("        ");
+    final EFField sourceField = this.findField(rule, "rule_src");
+    _builder.newLineIfNotEmpty();
+    _builder.append("        ");
+    final EFField sourcePortField = this.findField(rule, "rule_src_port");
+    _builder.newLineIfNotEmpty();
+    _builder.append("        ");
+    final EFField destinationField = this.findField(rule, "rule_dest");
+    _builder.newLineIfNotEmpty();
+    _builder.append("        ");
+    final EFField destinationPortField = this.findField(rule, "rule_dest_port");
+    _builder.newLineIfNotEmpty();
+    {
+      EFNetworkNativeType _nativetype = sourceField.getNativetype();
+      boolean _tripleEquals = (_nativetype == EFNetworkNativeType.NETWORK);
+      if (_tripleEquals) {
+        _builder.append("        ");
+        _builder.append("super(");
+        _builder.newLine();
+        _builder.append("        ");
+        _builder.append("\t");
+        _builder.append("Layer.");
+        String _upperCase = rule.getType().toString().replace("Layer", "").toUpperCase();
+        _builder.append(_upperCase, "        \t");
+        _builder.append(", // layer");
+        _builder.newLineIfNotEmpty();
+        _builder.append("        ");
+        _builder.append("\t");
+        String _string = rule.getType().toString();
+        _builder.append(_string, "        \t");
+        _builder.append("Protocol.");
+        String _name_2 = protocolField.getName();
+        _builder.append(_name_2, "        \t");
+        _builder.append(", //protocol");
+        _builder.newLineIfNotEmpty();
+        _builder.append("        ");
+        _builder.append("\t");
+        _builder.append("//source");
+        _builder.newLine();
+        _builder.append("        ");
+        _builder.append("\t");
+        _builder.append("//destination");
+        _builder.newLine();
+        _builder.append("        ");
+        _builder.append("\t");
+        _builder.append("Direction.");
+        String _upperCase_1 = directionField.getName().toUpperCase();
+        _builder.append(_upperCase_1, "        \t");
+        _builder.append(", //direction              \t\t");
+        _builder.newLineIfNotEmpty();
+        _builder.append("        ");
+        _builder.append("\t");
+        _builder.append(");");
+        _builder.newLine();
+      }
+    }
+    _builder.append("    ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("@Override");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("public boolean matches(Packet packet) {");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("boolean matches = true;");
+    _builder.newLine();
+    {
+      if ((protocolField != null)) {
+        _builder.append("        ");
+        _builder.append("if (packet.getProtocol() != this.");
+        String _name_3 = protocolField.getName();
+        _builder.append(_name_3, "        ");
+        _builder.append(") matches = false;");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    {
+      if ((sourceField != null)) {
+        _builder.append("        ");
+        _builder.append("if (!packet.getSourceIp().equals(this.");
+        String _name_4 = sourceField.getName();
+        _builder.append(_name_4, "        ");
+        _builder.append(")) matches = false;");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("        ");
+    _builder.append("return matches;");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("@Override");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("public void trigger(Packet packet, FirewallContext context) {");
+    _builder.newLine();
+    {
+      final Function1<EFMethod, Boolean> _function = (EFMethod it) -> {
+        String _name_5 = it.getName();
+        return Boolean.valueOf(Objects.equals(_name_5, "trigger"));
+      };
+      Iterable<EFMethod> _filter_1 = IterableExtensions.<EFMethod>filter(Iterables.<EFMethod>filter(rule.getMembers(), EFMethod.class), _function);
+      for(final EFMethod method : _filter_1) {
+        {
+          EList<EFStatement> _statements = method.getBody().getStatements();
+          for(final EFStatement stmt : _statements) {
+            _builder.append("        ");
+            CharSequence _compileStatement = this.compileStatement(stmt);
+            _builder.append(_compileStatement, "        ");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+      }
+    }
+    _builder.append("    ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("@Override");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("public String getName() { return \"");
+    String _name_5 = rule.getName();
+    _builder.append(_name_5, "    ");
+    _builder.append("\"; }");
+    _builder.newLineIfNotEmpty();
+    _builder.append("}");
+    _builder.newLine();
+    return _builder;
+  }
+
+  public EFField findField(final EFRuleClass rule, final String name) {
+    final Function1<EFField, Boolean> _function = (EFField it) -> {
+      return Boolean.valueOf(name.equalsIgnoreCase(name));
+    };
+    return IterableExtensions.<EFField>findFirst(Iterables.<EFField>filter(rule.getMembers(), EFField.class), _function);
+  }
+
+  public CharSequence compileStatement(final EFStatement stmt) {
+    CharSequence _switchResult = null;
+    boolean _matched = false;
+    if (stmt instanceof EFReturn) {
+      _matched=true;
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("return ");
+      String _compileExpr = this.compileExpr(((EFReturn)stmt).getExpression());
+      _builder.append(_compileExpr);
+      _builder.append(";");
+      _switchResult = _builder;
+    }
+    if (!_matched) {
+      if (stmt instanceof EFIfStatement) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("if (");
+        String _compileExpr = this.compileExpr(((EFIfStatement)stmt).getExpression());
+        _builder.append(_compileExpr);
+        _builder.append(") {");
+        _builder.newLineIfNotEmpty();
+        _builder.append("    ");
+        {
+          EList<EFStatement> _statements = ((EFIfStatement)stmt).getThenBlock().getStatements();
+          for(final EFStatement s : _statements) {
+            CharSequence _compileStatement = this.compileStatement(s);
+            _builder.append(_compileStatement, "    ");
+          }
+        }
+        _builder.newLineIfNotEmpty();
+        _builder.append("} ");
+        {
+          EFBlock _elseBlock = ((EFIfStatement)stmt).getElseBlock();
+          boolean _tripleNotEquals = (_elseBlock != null);
+          if (_tripleNotEquals) {
+            _builder.append("else {");
+            _builder.newLineIfNotEmpty();
+            _builder.append("    ");
+            {
+              EList<EFStatement> _statements_1 = ((EFIfStatement)stmt).getElseBlock().getStatements();
+              for(final EFStatement s_1 : _statements_1) {
+                CharSequence _compileStatement_1 = this.compileStatement(s_1);
+                _builder.append(_compileStatement_1, "    ");
+              }
+            }
+            _builder.newLineIfNotEmpty();
+            _builder.append("}");
+          }
+        }
+        _builder.newLineIfNotEmpty();
+        _switchResult = _builder;
+      }
+    }
+    if (!_matched) {
+      if (stmt instanceof EFField) {
+        _matched=true;
+        _switchResult = this.compileField(((EFField)stmt));
+      }
+    }
+    if (!_matched) {
+      if (stmt instanceof EFExpression) {
+        _matched=true;
+        String _compileExpr = this.compileExpr(((EFExpression)stmt));
+        _switchResult = (_compileExpr + ";");
+      }
+    }
+    if (!_matched) {
+      _switchResult = "";
+    }
+    return _switchResult;
+  }
+
+  public String compileExpr(final EFExpression expr) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method or field op is undefined for the type EFEqualExpression"
+      + "\nThe method or field op is undefined for the type EFRelExpression"
+      + "\nThe method or field op is undefined for the type EFAddExpression"
+      + "\n== cannot be resolved");
+  }
+
+  public CharSequence compileField(final EFField field) {
+    CharSequence _xblockexpression = null;
+    {
+      final String type = this.getJavaType(field);
+      String _xifexpression = null;
+      EFExpression _expression = field.getExpression();
+      boolean _tripleNotEquals = (_expression != null);
+      if (_tripleNotEquals) {
+        String _compileExpr = this.compileExpr(field.getExpression());
+        _xifexpression = (" = " + _compileExpr);
+      } else {
+        _xifexpression = "";
+      }
+      final String init = _xifexpression;
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("private ");
+      _builder.append(type);
+      _builder.append(" ");
+      String _name = field.getName();
+      _builder.append(_name);
+      _builder.append(init);
+      _builder.append(";");
+      _xblockexpression = _builder;
+    }
+    return _xblockexpression;
+  }
+
+  public CharSequence compileFirewallClass(final EFFirewall firewall, final String packageName) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("package ");
+    _builder.append(packageName);
+    _builder.append(";");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.newLine();
+    _builder.append("import fr.pierror.firewall.Firewall;");
+    _builder.newLine();
+    _builder.append("import fr.pierror.firewall.model.Action;");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("public class ");
+    String _name = firewall.getName();
+    _builder.append(_name);
+    _builder.append(" {");
+    _builder.newLineIfNotEmpty();
+    _builder.append("    ");
+    _builder.append("private Firewall engine;");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("public ");
+    String _name_1 = firewall.getName();
+    _builder.append(_name_1, "    ");
+    _builder.append("() {");
+    _builder.newLineIfNotEmpty();
+    _builder.append("        ");
+    _builder.append("this.engine = new Firewall();");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("// Set default policy");
+    _builder.newLine();
+    {
+      EFDefaultPolicy _defaultPolicy = firewall.getDefaultPolicy();
+      boolean _tripleNotEquals = (_defaultPolicy != null);
+      if (_tripleNotEquals) {
+        _builder.append("        ");
+        _builder.append("engine.setDefaultPolicy(Action.");
+        String _upperCase = firewall.getDefaultPolicy().getAction().toString().toUpperCase();
+        _builder.append(_upperCase, "        ");
+        _builder.append(");");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("// Load Rules");
+    _builder.newLine();
+    {
+      EList<EFRuleReference> _ruleRefs = firewall.getRuleRefs();
+      for(final EFRuleReference ref : _ruleRefs) {
+        _builder.append("        ");
+        _builder.append("engine.addRule(new ");
+        String _name_2 = ref.getRule().getName();
+        _builder.append(_name_2, "        ");
+        _builder.append("());");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("    ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("public void start() {");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("System.out.println(\"Firewall ");
+    String _name_3 = firewall.getName();
+    _builder.append(_name_3, "        ");
+    _builder.append(" running...\");");
+    _builder.newLineIfNotEmpty();
+    _builder.append("        ");
+    _builder.append("engine.listen();");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("public static void main(String[] args) {");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("new ");
+    String _name_4 = firewall.getName();
+    _builder.append(_name_4, "        ");
+    _builder.append("().start();");
+    _builder.newLineIfNotEmpty();
+    _builder.append("    ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    return _builder;
+  }
+
+  public String getJavaType(final EFField field) {
+    EFNetworkNativeType _nativetype = field.getNativetype();
+    boolean _tripleNotEquals = (_nativetype != null);
+    if (_tripleNotEquals) {
+      String _switchResult = null;
+      EFNetworkNativeType _nativetype_1 = field.getNativetype();
+      if (_nativetype_1 != null) {
+        switch (_nativetype_1) {
+          case IPV4:
+            _switchResult = "String";
+            break;
+          case PORT:
+            _switchResult = "int";
+            break;
+          case PROTOCOL:
+            _switchResult = "Protocol";
+            break;
+          default:
+            _switchResult = "Object";
+            break;
+        }
+      } else {
+        _switchResult = "Object";
+      }
+      return _switchResult;
+    }
+    String _switchResult_1 = null;
+    EFPrimitiveType _primitivetype = field.getPrimitivetype();
+    if (_primitivetype != null) {
+      switch (_primitivetype) {
+        case INT:
+          _switchResult_1 = "int";
+          break;
+        case STRING:
+          _switchResult_1 = "String";
+          break;
+        case BOOL:
+          _switchResult_1 = "boolean";
+          break;
+        default:
+          _switchResult_1 = "Object";
+          break;
+      }
+    } else {
+      _switchResult_1 = "Object";
+    }
+    return _switchResult_1;
   }
 }

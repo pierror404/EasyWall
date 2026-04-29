@@ -69,13 +69,40 @@ public interface EasyWallPackage extends EPackage
   int EF_PROGRAM = 0;
 
   /**
+   * The feature id for the '<em><b>Header</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EF_PROGRAM__HEADER = 0;
+
+  /**
+   * The feature id for the '<em><b>Rules</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EF_PROGRAM__RULES = 1;
+
+  /**
+   * The feature id for the '<em><b>Firewall</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EF_PROGRAM__FIREWALL = 2;
+
+  /**
    * The number of structural features of the '<em>EF Program</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EF_PROGRAM_FEATURE_COUNT = 0;
+  int EF_PROGRAM_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.xtext.example.easywall.easyWall.impl.EFHeaderImpl <em>EF Header</em>}' class.
@@ -88,31 +115,13 @@ public interface EasyWallPackage extends EPackage
   int EF_HEADER = 1;
 
   /**
-   * The feature id for the '<em><b>Rules</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_HEADER__RULES = EF_PROGRAM_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Firewall</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_HEADER__FIREWALL = EF_PROGRAM_FEATURE_COUNT + 1;
-
-  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EF_HEADER__NAME = EF_PROGRAM_FEATURE_COUNT + 2;
+  int EF_HEADER__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Imports</b></em>' containment reference list.
@@ -121,7 +130,7 @@ public interface EasyWallPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EF_HEADER__IMPORTS = EF_PROGRAM_FEATURE_COUNT + 3;
+  int EF_HEADER__IMPORTS = 1;
 
   /**
    * The number of structural features of the '<em>EF Header</em>' class.
@@ -130,7 +139,7 @@ public interface EasyWallPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EF_HEADER_FEATURE_COUNT = EF_PROGRAM_FEATURE_COUNT + 4;
+  int EF_HEADER_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.example.easywall.easyWall.impl.EFImportsImpl <em>EF Imports</em>}' class.
@@ -2264,6 +2273,39 @@ public interface EasyWallPackage extends EPackage
   EClass getEFProgram();
 
   /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.easywall.easyWall.EFProgram#getHeader <em>Header</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Header</em>'.
+   * @see org.xtext.example.easywall.easyWall.EFProgram#getHeader()
+   * @see #getEFProgram()
+   * @generated
+   */
+  EReference getEFProgram_Header();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.easywall.easyWall.EFProgram#getRules <em>Rules</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Rules</em>'.
+   * @see org.xtext.example.easywall.easyWall.EFProgram#getRules()
+   * @see #getEFProgram()
+   * @generated
+   */
+  EReference getEFProgram_Rules();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.easywall.easyWall.EFProgram#getFirewall <em>Firewall</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Firewall</em>'.
+   * @see org.xtext.example.easywall.easyWall.EFProgram#getFirewall()
+   * @see #getEFProgram()
+   * @generated
+   */
+  EReference getEFProgram_Firewall();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.example.easywall.easyWall.EFHeader <em>EF Header</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2272,28 +2314,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   EClass getEFHeader();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.easywall.easyWall.EFHeader#getRules <em>Rules</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Rules</em>'.
-   * @see org.xtext.example.easywall.easyWall.EFHeader#getRules()
-   * @see #getEFHeader()
-   * @generated
-   */
-  EReference getEFHeader_Rules();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.easywall.easyWall.EFHeader#getFirewall <em>Firewall</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Firewall</em>'.
-   * @see org.xtext.example.easywall.easyWall.EFHeader#getFirewall()
-   * @see #getEFHeader()
-   * @generated
-   */
-  EReference getEFHeader_Firewall();
 
   /**
    * Returns the meta object for the attribute '{@link org.xtext.example.easywall.easyWall.EFHeader#getName <em>Name</em>}'.
@@ -3799,6 +3819,30 @@ public interface EasyWallPackage extends EPackage
     EClass EF_PROGRAM = eINSTANCE.getEFProgram();
 
     /**
+     * The meta object literal for the '<em><b>Header</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EF_PROGRAM__HEADER = eINSTANCE.getEFProgram_Header();
+
+    /**
+     * The meta object literal for the '<em><b>Rules</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EF_PROGRAM__RULES = eINSTANCE.getEFProgram_Rules();
+
+    /**
+     * The meta object literal for the '<em><b>Firewall</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EF_PROGRAM__FIREWALL = eINSTANCE.getEFProgram_Firewall();
+
+    /**
      * The meta object literal for the '{@link org.xtext.example.easywall.easyWall.impl.EFHeaderImpl <em>EF Header</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3807,22 +3851,6 @@ public interface EasyWallPackage extends EPackage
      * @generated
      */
     EClass EF_HEADER = eINSTANCE.getEFHeader();
-
-    /**
-     * The meta object literal for the '<em><b>Rules</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EF_HEADER__RULES = eINSTANCE.getEFHeader_Rules();
-
-    /**
-     * The meta object literal for the '<em><b>Firewall</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EF_HEADER__FIREWALL = eINSTANCE.getEFHeader_Firewall();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.

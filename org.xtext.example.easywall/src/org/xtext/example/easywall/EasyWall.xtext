@@ -6,7 +6,7 @@ generate easyWall "http://www.xtext.org/example/easywall/EasyWall"
 // ROOT - Ora supporta file separati
 // ============================================
 EFProgram:
-    EFHeader 
+    header=EFHeader 
     ((rules+=EFRule)* | firewall=EFFirewall) // Supporta multipli rules E firewall in file diversi
 ;
 

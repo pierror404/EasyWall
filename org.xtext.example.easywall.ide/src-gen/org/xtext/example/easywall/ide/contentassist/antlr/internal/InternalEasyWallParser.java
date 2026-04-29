@@ -8776,28 +8776,34 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFProgram__Group__0__Impl"
-    // InternalEasyWall.g:2219:1: rule__EFProgram__Group__0__Impl : ( ruleEFHeader ) ;
+    // InternalEasyWall.g:2219:1: rule__EFProgram__Group__0__Impl : ( ( rule__EFProgram__HeaderAssignment_0 ) ) ;
     public final void rule__EFProgram__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:2223:1: ( ( ruleEFHeader ) )
-            // InternalEasyWall.g:2224:1: ( ruleEFHeader )
+            // InternalEasyWall.g:2223:1: ( ( ( rule__EFProgram__HeaderAssignment_0 ) ) )
+            // InternalEasyWall.g:2224:1: ( ( rule__EFProgram__HeaderAssignment_0 ) )
             {
-            // InternalEasyWall.g:2224:1: ( ruleEFHeader )
-            // InternalEasyWall.g:2225:2: ruleEFHeader
+            // InternalEasyWall.g:2224:1: ( ( rule__EFProgram__HeaderAssignment_0 ) )
+            // InternalEasyWall.g:2225:2: ( rule__EFProgram__HeaderAssignment_0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getEFProgramAccess().getEFHeaderParserRuleCall_0()); 
+               before(grammarAccess.getEFProgramAccess().getHeaderAssignment_0()); 
             }
+            // InternalEasyWall.g:2226:2: ( rule__EFProgram__HeaderAssignment_0 )
+            // InternalEasyWall.g:2226:3: rule__EFProgram__HeaderAssignment_0
+            {
             pushFollow(FOLLOW_2);
-            ruleEFHeader();
+            rule__EFProgram__HeaderAssignment_0();
 
             state._fsp--;
             if (state.failed) return ;
+
+            }
+
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getEFProgramAccess().getEFHeaderParserRuleCall_0()); 
+               after(grammarAccess.getEFProgramAccess().getHeaderAssignment_0()); 
             }
 
             }
@@ -27249,18 +27255,63 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__EFNetportSYNTAX__Group__2__Impl"
 
 
+    // $ANTLR start "rule__EFProgram__HeaderAssignment_0"
+    // InternalEasyWall.g:8201:1: rule__EFProgram__HeaderAssignment_0 : ( ruleEFHeader ) ;
+    public final void rule__EFProgram__HeaderAssignment_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalEasyWall.g:8205:1: ( ( ruleEFHeader ) )
+            // InternalEasyWall.g:8206:2: ( ruleEFHeader )
+            {
+            // InternalEasyWall.g:8206:2: ( ruleEFHeader )
+            // InternalEasyWall.g:8207:3: ruleEFHeader
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getEFProgramAccess().getHeaderEFHeaderParserRuleCall_0_0()); 
+            }
+            pushFollow(FOLLOW_2);
+            ruleEFHeader();
+
+            state._fsp--;
+            if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getEFProgramAccess().getHeaderEFHeaderParserRuleCall_0_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__EFProgram__HeaderAssignment_0"
+
+
     // $ANTLR start "rule__EFProgram__RulesAssignment_1_0"
-    // InternalEasyWall.g:8201:1: rule__EFProgram__RulesAssignment_1_0 : ( ruleEFRule ) ;
+    // InternalEasyWall.g:8216:1: rule__EFProgram__RulesAssignment_1_0 : ( ruleEFRule ) ;
     public final void rule__EFProgram__RulesAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8205:1: ( ( ruleEFRule ) )
-            // InternalEasyWall.g:8206:2: ( ruleEFRule )
+            // InternalEasyWall.g:8220:1: ( ( ruleEFRule ) )
+            // InternalEasyWall.g:8221:2: ( ruleEFRule )
             {
-            // InternalEasyWall.g:8206:2: ( ruleEFRule )
-            // InternalEasyWall.g:8207:3: ruleEFRule
+            // InternalEasyWall.g:8221:2: ( ruleEFRule )
+            // InternalEasyWall.g:8222:3: ruleEFRule
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFProgramAccess().getRulesEFRuleParserRuleCall_1_0_0()); 
@@ -27295,17 +27346,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFProgram__FirewallAssignment_1_1"
-    // InternalEasyWall.g:8216:1: rule__EFProgram__FirewallAssignment_1_1 : ( ruleEFFirewall ) ;
+    // InternalEasyWall.g:8231:1: rule__EFProgram__FirewallAssignment_1_1 : ( ruleEFFirewall ) ;
     public final void rule__EFProgram__FirewallAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8220:1: ( ( ruleEFFirewall ) )
-            // InternalEasyWall.g:8221:2: ( ruleEFFirewall )
+            // InternalEasyWall.g:8235:1: ( ( ruleEFFirewall ) )
+            // InternalEasyWall.g:8236:2: ( ruleEFFirewall )
             {
-            // InternalEasyWall.g:8221:2: ( ruleEFFirewall )
-            // InternalEasyWall.g:8222:3: ruleEFFirewall
+            // InternalEasyWall.g:8236:2: ( ruleEFFirewall )
+            // InternalEasyWall.g:8237:3: ruleEFFirewall
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFProgramAccess().getFirewallEFFirewallParserRuleCall_1_1_0()); 
@@ -27340,17 +27391,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFHeader__NameAssignment_1_1"
-    // InternalEasyWall.g:8231:1: rule__EFHeader__NameAssignment_1_1 : ( ruleQualifiedName ) ;
+    // InternalEasyWall.g:8246:1: rule__EFHeader__NameAssignment_1_1 : ( ruleQualifiedName ) ;
     public final void rule__EFHeader__NameAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8235:1: ( ( ruleQualifiedName ) )
-            // InternalEasyWall.g:8236:2: ( ruleQualifiedName )
+            // InternalEasyWall.g:8250:1: ( ( ruleQualifiedName ) )
+            // InternalEasyWall.g:8251:2: ( ruleQualifiedName )
             {
-            // InternalEasyWall.g:8236:2: ( ruleQualifiedName )
-            // InternalEasyWall.g:8237:3: ruleQualifiedName
+            // InternalEasyWall.g:8251:2: ( ruleQualifiedName )
+            // InternalEasyWall.g:8252:3: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFHeaderAccess().getNameQualifiedNameParserRuleCall_1_1_0()); 
@@ -27385,17 +27436,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFHeader__ImportsAssignment_2"
-    // InternalEasyWall.g:8246:1: rule__EFHeader__ImportsAssignment_2 : ( ruleEFImports ) ;
+    // InternalEasyWall.g:8261:1: rule__EFHeader__ImportsAssignment_2 : ( ruleEFImports ) ;
     public final void rule__EFHeader__ImportsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8250:1: ( ( ruleEFImports ) )
-            // InternalEasyWall.g:8251:2: ( ruleEFImports )
+            // InternalEasyWall.g:8265:1: ( ( ruleEFImports ) )
+            // InternalEasyWall.g:8266:2: ( ruleEFImports )
             {
-            // InternalEasyWall.g:8251:2: ( ruleEFImports )
-            // InternalEasyWall.g:8252:3: ruleEFImports
+            // InternalEasyWall.g:8266:2: ( ruleEFImports )
+            // InternalEasyWall.g:8267:3: ruleEFImports
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFHeaderAccess().getImportsEFImportsParserRuleCall_2_0()); 
@@ -27430,17 +27481,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFImports__ImportedNamespaceAssignment_1"
-    // InternalEasyWall.g:8261:1: rule__EFImports__ImportedNamespaceAssignment_1 : ( ruleQualifiedNameWithWildcard ) ;
+    // InternalEasyWall.g:8276:1: rule__EFImports__ImportedNamespaceAssignment_1 : ( ruleQualifiedNameWithWildcard ) ;
     public final void rule__EFImports__ImportedNamespaceAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8265:1: ( ( ruleQualifiedNameWithWildcard ) )
-            // InternalEasyWall.g:8266:2: ( ruleQualifiedNameWithWildcard )
+            // InternalEasyWall.g:8280:1: ( ( ruleQualifiedNameWithWildcard ) )
+            // InternalEasyWall.g:8281:2: ( ruleQualifiedNameWithWildcard )
             {
-            // InternalEasyWall.g:8266:2: ( ruleQualifiedNameWithWildcard )
-            // InternalEasyWall.g:8267:3: ruleQualifiedNameWithWildcard
+            // InternalEasyWall.g:8281:2: ( ruleQualifiedNameWithWildcard )
+            // InternalEasyWall.g:8282:3: ruleQualifiedNameWithWildcard
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFImportsAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0()); 
@@ -27475,17 +27526,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFFirewall__NameAssignment_1"
-    // InternalEasyWall.g:8276:1: rule__EFFirewall__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalEasyWall.g:8291:1: rule__EFFirewall__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__EFFirewall__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8280:1: ( ( RULE_ID ) )
-            // InternalEasyWall.g:8281:2: ( RULE_ID )
+            // InternalEasyWall.g:8295:1: ( ( RULE_ID ) )
+            // InternalEasyWall.g:8296:2: ( RULE_ID )
             {
-            // InternalEasyWall.g:8281:2: ( RULE_ID )
-            // InternalEasyWall.g:8282:3: RULE_ID
+            // InternalEasyWall.g:8296:2: ( RULE_ID )
+            // InternalEasyWall.g:8297:3: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFFirewallAccess().getNameIDTerminalRuleCall_1_0()); 
@@ -27516,17 +27567,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFFirewall__DefaultPolicyAssignment_3"
-    // InternalEasyWall.g:8291:1: rule__EFFirewall__DefaultPolicyAssignment_3 : ( ruleEFDefaultPolicy ) ;
+    // InternalEasyWall.g:8306:1: rule__EFFirewall__DefaultPolicyAssignment_3 : ( ruleEFDefaultPolicy ) ;
     public final void rule__EFFirewall__DefaultPolicyAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8295:1: ( ( ruleEFDefaultPolicy ) )
-            // InternalEasyWall.g:8296:2: ( ruleEFDefaultPolicy )
+            // InternalEasyWall.g:8310:1: ( ( ruleEFDefaultPolicy ) )
+            // InternalEasyWall.g:8311:2: ( ruleEFDefaultPolicy )
             {
-            // InternalEasyWall.g:8296:2: ( ruleEFDefaultPolicy )
-            // InternalEasyWall.g:8297:3: ruleEFDefaultPolicy
+            // InternalEasyWall.g:8311:2: ( ruleEFDefaultPolicy )
+            // InternalEasyWall.g:8312:3: ruleEFDefaultPolicy
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFFirewallAccess().getDefaultPolicyEFDefaultPolicyParserRuleCall_3_0()); 
@@ -27561,17 +27612,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFFirewall__MembersAssignment_4"
-    // InternalEasyWall.g:8306:1: rule__EFFirewall__MembersAssignment_4 : ( ruleEFMember ) ;
+    // InternalEasyWall.g:8321:1: rule__EFFirewall__MembersAssignment_4 : ( ruleEFMember ) ;
     public final void rule__EFFirewall__MembersAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8310:1: ( ( ruleEFMember ) )
-            // InternalEasyWall.g:8311:2: ( ruleEFMember )
+            // InternalEasyWall.g:8325:1: ( ( ruleEFMember ) )
+            // InternalEasyWall.g:8326:2: ( ruleEFMember )
             {
-            // InternalEasyWall.g:8311:2: ( ruleEFMember )
-            // InternalEasyWall.g:8312:3: ruleEFMember
+            // InternalEasyWall.g:8326:2: ( ruleEFMember )
+            // InternalEasyWall.g:8327:3: ruleEFMember
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFFirewallAccess().getMembersEFMemberParserRuleCall_4_0()); 
@@ -27606,17 +27657,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFFirewall__RuleRefsAssignment_5"
-    // InternalEasyWall.g:8321:1: rule__EFFirewall__RuleRefsAssignment_5 : ( ruleEFRuleReference ) ;
+    // InternalEasyWall.g:8336:1: rule__EFFirewall__RuleRefsAssignment_5 : ( ruleEFRuleReference ) ;
     public final void rule__EFFirewall__RuleRefsAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8325:1: ( ( ruleEFRuleReference ) )
-            // InternalEasyWall.g:8326:2: ( ruleEFRuleReference )
+            // InternalEasyWall.g:8340:1: ( ( ruleEFRuleReference ) )
+            // InternalEasyWall.g:8341:2: ( ruleEFRuleReference )
             {
-            // InternalEasyWall.g:8326:2: ( ruleEFRuleReference )
-            // InternalEasyWall.g:8327:3: ruleEFRuleReference
+            // InternalEasyWall.g:8341:2: ( ruleEFRuleReference )
+            // InternalEasyWall.g:8342:3: ruleEFRuleReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFFirewallAccess().getRuleRefsEFRuleReferenceParserRuleCall_5_0()); 
@@ -27651,17 +27702,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFDefaultPolicy__ActionAssignment_1"
-    // InternalEasyWall.g:8336:1: rule__EFDefaultPolicy__ActionAssignment_1 : ( ruleEFDefaultAction ) ;
+    // InternalEasyWall.g:8351:1: rule__EFDefaultPolicy__ActionAssignment_1 : ( ruleEFDefaultAction ) ;
     public final void rule__EFDefaultPolicy__ActionAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8340:1: ( ( ruleEFDefaultAction ) )
-            // InternalEasyWall.g:8341:2: ( ruleEFDefaultAction )
+            // InternalEasyWall.g:8355:1: ( ( ruleEFDefaultAction ) )
+            // InternalEasyWall.g:8356:2: ( ruleEFDefaultAction )
             {
-            // InternalEasyWall.g:8341:2: ( ruleEFDefaultAction )
-            // InternalEasyWall.g:8342:3: ruleEFDefaultAction
+            // InternalEasyWall.g:8356:2: ( ruleEFDefaultAction )
+            // InternalEasyWall.g:8357:3: ruleEFDefaultAction
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFDefaultPolicyAccess().getActionEFDefaultActionEnumRuleCall_1_0()); 
@@ -27696,23 +27747,23 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFRuleReference__RuleAssignment_1"
-    // InternalEasyWall.g:8351:1: rule__EFRuleReference__RuleAssignment_1 : ( ( ruleQualifiedName ) ) ;
+    // InternalEasyWall.g:8366:1: rule__EFRuleReference__RuleAssignment_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__EFRuleReference__RuleAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8355:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalEasyWall.g:8356:2: ( ( ruleQualifiedName ) )
+            // InternalEasyWall.g:8370:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalEasyWall.g:8371:2: ( ( ruleQualifiedName ) )
             {
-            // InternalEasyWall.g:8356:2: ( ( ruleQualifiedName ) )
-            // InternalEasyWall.g:8357:3: ( ruleQualifiedName )
+            // InternalEasyWall.g:8371:2: ( ( ruleQualifiedName ) )
+            // InternalEasyWall.g:8372:3: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFRuleReferenceAccess().getRuleEFRuleClassCrossReference_1_0()); 
             }
-            // InternalEasyWall.g:8358:3: ( ruleQualifiedName )
-            // InternalEasyWall.g:8359:4: ruleQualifiedName
+            // InternalEasyWall.g:8373:3: ( ruleQualifiedName )
+            // InternalEasyWall.g:8374:4: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFRuleReferenceAccess().getRuleEFRuleClassQualifiedNameParserRuleCall_1_0_1()); 
@@ -27753,17 +27804,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFField__ExpressionAssignment_2_1"
-    // InternalEasyWall.g:8370:1: rule__EFField__ExpressionAssignment_2_1 : ( ruleEFExpression ) ;
+    // InternalEasyWall.g:8385:1: rule__EFField__ExpressionAssignment_2_1 : ( ruleEFExpression ) ;
     public final void rule__EFField__ExpressionAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8374:1: ( ( ruleEFExpression ) )
-            // InternalEasyWall.g:8375:2: ( ruleEFExpression )
+            // InternalEasyWall.g:8389:1: ( ( ruleEFExpression ) )
+            // InternalEasyWall.g:8390:2: ( ruleEFExpression )
             {
-            // InternalEasyWall.g:8375:2: ( ruleEFExpression )
-            // InternalEasyWall.g:8376:3: ruleEFExpression
+            // InternalEasyWall.g:8390:2: ( ruleEFExpression )
+            // InternalEasyWall.g:8391:3: ruleEFExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFFieldAccess().getExpressionEFExpressionParserRuleCall_2_1_0()); 
@@ -27798,17 +27849,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFTypedDeclaration__NameAssignment_0"
-    // InternalEasyWall.g:8385:1: rule__EFTypedDeclaration__NameAssignment_0 : ( RULE_ID ) ;
+    // InternalEasyWall.g:8400:1: rule__EFTypedDeclaration__NameAssignment_0 : ( RULE_ID ) ;
     public final void rule__EFTypedDeclaration__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8389:1: ( ( RULE_ID ) )
-            // InternalEasyWall.g:8390:2: ( RULE_ID )
+            // InternalEasyWall.g:8404:1: ( ( RULE_ID ) )
+            // InternalEasyWall.g:8405:2: ( RULE_ID )
             {
-            // InternalEasyWall.g:8390:2: ( RULE_ID )
-            // InternalEasyWall.g:8391:3: RULE_ID
+            // InternalEasyWall.g:8405:2: ( RULE_ID )
+            // InternalEasyWall.g:8406:3: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFTypedDeclarationAccess().getNameIDTerminalRuleCall_0_0()); 
@@ -27839,23 +27890,23 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFTypedDeclaration__RuletypeAssignment_2_0"
-    // InternalEasyWall.g:8400:1: rule__EFTypedDeclaration__RuletypeAssignment_2_0 : ( ( ruleQualifiedName ) ) ;
+    // InternalEasyWall.g:8415:1: rule__EFTypedDeclaration__RuletypeAssignment_2_0 : ( ( ruleQualifiedName ) ) ;
     public final void rule__EFTypedDeclaration__RuletypeAssignment_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8404:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalEasyWall.g:8405:2: ( ( ruleQualifiedName ) )
+            // InternalEasyWall.g:8419:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalEasyWall.g:8420:2: ( ( ruleQualifiedName ) )
             {
-            // InternalEasyWall.g:8405:2: ( ( ruleQualifiedName ) )
-            // InternalEasyWall.g:8406:3: ( ruleQualifiedName )
+            // InternalEasyWall.g:8420:2: ( ( ruleQualifiedName ) )
+            // InternalEasyWall.g:8421:3: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFTypedDeclarationAccess().getRuletypeEFRuleClassCrossReference_2_0_0()); 
             }
-            // InternalEasyWall.g:8407:3: ( ruleQualifiedName )
-            // InternalEasyWall.g:8408:4: ruleQualifiedName
+            // InternalEasyWall.g:8422:3: ( ruleQualifiedName )
+            // InternalEasyWall.g:8423:4: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFTypedDeclarationAccess().getRuletypeEFRuleClassQualifiedNameParserRuleCall_2_0_0_1()); 
@@ -27896,17 +27947,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFTypedDeclaration__NativetypeAssignment_2_1"
-    // InternalEasyWall.g:8419:1: rule__EFTypedDeclaration__NativetypeAssignment_2_1 : ( ruleEFNetworkNativeType ) ;
+    // InternalEasyWall.g:8434:1: rule__EFTypedDeclaration__NativetypeAssignment_2_1 : ( ruleEFNetworkNativeType ) ;
     public final void rule__EFTypedDeclaration__NativetypeAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8423:1: ( ( ruleEFNetworkNativeType ) )
-            // InternalEasyWall.g:8424:2: ( ruleEFNetworkNativeType )
+            // InternalEasyWall.g:8438:1: ( ( ruleEFNetworkNativeType ) )
+            // InternalEasyWall.g:8439:2: ( ruleEFNetworkNativeType )
             {
-            // InternalEasyWall.g:8424:2: ( ruleEFNetworkNativeType )
-            // InternalEasyWall.g:8425:3: ruleEFNetworkNativeType
+            // InternalEasyWall.g:8439:2: ( ruleEFNetworkNativeType )
+            // InternalEasyWall.g:8440:3: ruleEFNetworkNativeType
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFTypedDeclarationAccess().getNativetypeEFNetworkNativeTypeEnumRuleCall_2_1_0()); 
@@ -27941,17 +27992,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFTypedDeclaration__PrimitivetypeAssignment_2_2"
-    // InternalEasyWall.g:8434:1: rule__EFTypedDeclaration__PrimitivetypeAssignment_2_2 : ( ruleEFPrimitiveType ) ;
+    // InternalEasyWall.g:8449:1: rule__EFTypedDeclaration__PrimitivetypeAssignment_2_2 : ( ruleEFPrimitiveType ) ;
     public final void rule__EFTypedDeclaration__PrimitivetypeAssignment_2_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8438:1: ( ( ruleEFPrimitiveType ) )
-            // InternalEasyWall.g:8439:2: ( ruleEFPrimitiveType )
+            // InternalEasyWall.g:8453:1: ( ( ruleEFPrimitiveType ) )
+            // InternalEasyWall.g:8454:2: ( ruleEFPrimitiveType )
             {
-            // InternalEasyWall.g:8439:2: ( ruleEFPrimitiveType )
-            // InternalEasyWall.g:8440:3: ruleEFPrimitiveType
+            // InternalEasyWall.g:8454:2: ( ruleEFPrimitiveType )
+            // InternalEasyWall.g:8455:3: ruleEFPrimitiveType
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFTypedDeclarationAccess().getPrimitivetypeEFPrimitiveTypeEnumRuleCall_2_2_0()); 
@@ -27986,17 +28037,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFMethod__NameAssignment_1"
-    // InternalEasyWall.g:8449:1: rule__EFMethod__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalEasyWall.g:8464:1: rule__EFMethod__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__EFMethod__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8453:1: ( ( RULE_ID ) )
-            // InternalEasyWall.g:8454:2: ( RULE_ID )
+            // InternalEasyWall.g:8468:1: ( ( RULE_ID ) )
+            // InternalEasyWall.g:8469:2: ( RULE_ID )
             {
-            // InternalEasyWall.g:8454:2: ( RULE_ID )
-            // InternalEasyWall.g:8455:3: RULE_ID
+            // InternalEasyWall.g:8469:2: ( RULE_ID )
+            // InternalEasyWall.g:8470:3: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFMethodAccess().getNameIDTerminalRuleCall_1_0()); 
@@ -28027,17 +28078,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFMethod__ParamsAssignment_3_0"
-    // InternalEasyWall.g:8464:1: rule__EFMethod__ParamsAssignment_3_0 : ( ruleEFParameter ) ;
+    // InternalEasyWall.g:8479:1: rule__EFMethod__ParamsAssignment_3_0 : ( ruleEFParameter ) ;
     public final void rule__EFMethod__ParamsAssignment_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8468:1: ( ( ruleEFParameter ) )
-            // InternalEasyWall.g:8469:2: ( ruleEFParameter )
+            // InternalEasyWall.g:8483:1: ( ( ruleEFParameter ) )
+            // InternalEasyWall.g:8484:2: ( ruleEFParameter )
             {
-            // InternalEasyWall.g:8469:2: ( ruleEFParameter )
-            // InternalEasyWall.g:8470:3: ruleEFParameter
+            // InternalEasyWall.g:8484:2: ( ruleEFParameter )
+            // InternalEasyWall.g:8485:3: ruleEFParameter
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFMethodAccess().getParamsEFParameterParserRuleCall_3_0_0()); 
@@ -28072,17 +28123,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFMethod__ParamsAssignment_3_1_1"
-    // InternalEasyWall.g:8479:1: rule__EFMethod__ParamsAssignment_3_1_1 : ( ruleEFParameter ) ;
+    // InternalEasyWall.g:8494:1: rule__EFMethod__ParamsAssignment_3_1_1 : ( ruleEFParameter ) ;
     public final void rule__EFMethod__ParamsAssignment_3_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8483:1: ( ( ruleEFParameter ) )
-            // InternalEasyWall.g:8484:2: ( ruleEFParameter )
+            // InternalEasyWall.g:8498:1: ( ( ruleEFParameter ) )
+            // InternalEasyWall.g:8499:2: ( ruleEFParameter )
             {
-            // InternalEasyWall.g:8484:2: ( ruleEFParameter )
-            // InternalEasyWall.g:8485:3: ruleEFParameter
+            // InternalEasyWall.g:8499:2: ( ruleEFParameter )
+            // InternalEasyWall.g:8500:3: ruleEFParameter
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFMethodAccess().getParamsEFParameterParserRuleCall_3_1_1_0()); 
@@ -28117,17 +28168,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFMethod__NativetypeAssignment_6_0"
-    // InternalEasyWall.g:8494:1: rule__EFMethod__NativetypeAssignment_6_0 : ( ruleEFNetworkNativeType ) ;
+    // InternalEasyWall.g:8509:1: rule__EFMethod__NativetypeAssignment_6_0 : ( ruleEFNetworkNativeType ) ;
     public final void rule__EFMethod__NativetypeAssignment_6_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8498:1: ( ( ruleEFNetworkNativeType ) )
-            // InternalEasyWall.g:8499:2: ( ruleEFNetworkNativeType )
+            // InternalEasyWall.g:8513:1: ( ( ruleEFNetworkNativeType ) )
+            // InternalEasyWall.g:8514:2: ( ruleEFNetworkNativeType )
             {
-            // InternalEasyWall.g:8499:2: ( ruleEFNetworkNativeType )
-            // InternalEasyWall.g:8500:3: ruleEFNetworkNativeType
+            // InternalEasyWall.g:8514:2: ( ruleEFNetworkNativeType )
+            // InternalEasyWall.g:8515:3: ruleEFNetworkNativeType
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFMethodAccess().getNativetypeEFNetworkNativeTypeEnumRuleCall_6_0_0()); 
@@ -28162,17 +28213,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFMethod__PrimitivetypeAssignment_6_1"
-    // InternalEasyWall.g:8509:1: rule__EFMethod__PrimitivetypeAssignment_6_1 : ( ruleEFPrimitiveType ) ;
+    // InternalEasyWall.g:8524:1: rule__EFMethod__PrimitivetypeAssignment_6_1 : ( ruleEFPrimitiveType ) ;
     public final void rule__EFMethod__PrimitivetypeAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8513:1: ( ( ruleEFPrimitiveType ) )
-            // InternalEasyWall.g:8514:2: ( ruleEFPrimitiveType )
+            // InternalEasyWall.g:8528:1: ( ( ruleEFPrimitiveType ) )
+            // InternalEasyWall.g:8529:2: ( ruleEFPrimitiveType )
             {
-            // InternalEasyWall.g:8514:2: ( ruleEFPrimitiveType )
-            // InternalEasyWall.g:8515:3: ruleEFPrimitiveType
+            // InternalEasyWall.g:8529:2: ( ruleEFPrimitiveType )
+            // InternalEasyWall.g:8530:3: ruleEFPrimitiveType
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFMethodAccess().getPrimitivetypeEFPrimitiveTypeEnumRuleCall_6_1_0()); 
@@ -28207,23 +28258,23 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFMethod__RuletypeAssignment_6_2"
-    // InternalEasyWall.g:8524:1: rule__EFMethod__RuletypeAssignment_6_2 : ( ( ruleQualifiedName ) ) ;
+    // InternalEasyWall.g:8539:1: rule__EFMethod__RuletypeAssignment_6_2 : ( ( ruleQualifiedName ) ) ;
     public final void rule__EFMethod__RuletypeAssignment_6_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8528:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalEasyWall.g:8529:2: ( ( ruleQualifiedName ) )
+            // InternalEasyWall.g:8543:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalEasyWall.g:8544:2: ( ( ruleQualifiedName ) )
             {
-            // InternalEasyWall.g:8529:2: ( ( ruleQualifiedName ) )
-            // InternalEasyWall.g:8530:3: ( ruleQualifiedName )
+            // InternalEasyWall.g:8544:2: ( ( ruleQualifiedName ) )
+            // InternalEasyWall.g:8545:3: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFMethodAccess().getRuletypeEFRuleClassCrossReference_6_2_0()); 
             }
-            // InternalEasyWall.g:8531:3: ( ruleQualifiedName )
-            // InternalEasyWall.g:8532:4: ruleQualifiedName
+            // InternalEasyWall.g:8546:3: ( ruleQualifiedName )
+            // InternalEasyWall.g:8547:4: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFMethodAccess().getRuletypeEFRuleClassQualifiedNameParserRuleCall_6_2_0_1()); 
@@ -28264,23 +28315,23 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFMethod__VoidAssignment_6_3"
-    // InternalEasyWall.g:8543:1: rule__EFMethod__VoidAssignment_6_3 : ( ( 'void' ) ) ;
+    // InternalEasyWall.g:8558:1: rule__EFMethod__VoidAssignment_6_3 : ( ( 'void' ) ) ;
     public final void rule__EFMethod__VoidAssignment_6_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8547:1: ( ( ( 'void' ) ) )
-            // InternalEasyWall.g:8548:2: ( ( 'void' ) )
+            // InternalEasyWall.g:8562:1: ( ( ( 'void' ) ) )
+            // InternalEasyWall.g:8563:2: ( ( 'void' ) )
             {
-            // InternalEasyWall.g:8548:2: ( ( 'void' ) )
-            // InternalEasyWall.g:8549:3: ( 'void' )
+            // InternalEasyWall.g:8563:2: ( ( 'void' ) )
+            // InternalEasyWall.g:8564:3: ( 'void' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFMethodAccess().getVoidVoidKeyword_6_3_0()); 
             }
-            // InternalEasyWall.g:8550:3: ( 'void' )
-            // InternalEasyWall.g:8551:4: 'void'
+            // InternalEasyWall.g:8565:3: ( 'void' )
+            // InternalEasyWall.g:8566:4: 'void'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFMethodAccess().getVoidVoidKeyword_6_3_0()); 
@@ -28317,17 +28368,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFMethod__BodyAssignment_7"
-    // InternalEasyWall.g:8562:1: rule__EFMethod__BodyAssignment_7 : ( ruleEFBlock ) ;
+    // InternalEasyWall.g:8577:1: rule__EFMethod__BodyAssignment_7 : ( ruleEFBlock ) ;
     public final void rule__EFMethod__BodyAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8566:1: ( ( ruleEFBlock ) )
-            // InternalEasyWall.g:8567:2: ( ruleEFBlock )
+            // InternalEasyWall.g:8581:1: ( ( ruleEFBlock ) )
+            // InternalEasyWall.g:8582:2: ( ruleEFBlock )
             {
-            // InternalEasyWall.g:8567:2: ( ruleEFBlock )
-            // InternalEasyWall.g:8568:3: ruleEFBlock
+            // InternalEasyWall.g:8582:2: ( ruleEFBlock )
+            // InternalEasyWall.g:8583:3: ruleEFBlock
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFMethodAccess().getBodyEFBlockParserRuleCall_7_0()); 
@@ -28362,17 +28413,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFBlock__StatementsAssignment_2"
-    // InternalEasyWall.g:8577:1: rule__EFBlock__StatementsAssignment_2 : ( ruleEFStatement ) ;
+    // InternalEasyWall.g:8592:1: rule__EFBlock__StatementsAssignment_2 : ( ruleEFStatement ) ;
     public final void rule__EFBlock__StatementsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8581:1: ( ( ruleEFStatement ) )
-            // InternalEasyWall.g:8582:2: ( ruleEFStatement )
+            // InternalEasyWall.g:8596:1: ( ( ruleEFStatement ) )
+            // InternalEasyWall.g:8597:2: ( ruleEFStatement )
             {
-            // InternalEasyWall.g:8582:2: ( ruleEFStatement )
-            // InternalEasyWall.g:8583:3: ruleEFStatement
+            // InternalEasyWall.g:8597:2: ( ruleEFStatement )
+            // InternalEasyWall.g:8598:3: ruleEFStatement
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFBlockAccess().getStatementsEFStatementParserRuleCall_2_0()); 
@@ -28407,17 +28458,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFReturn__ExpressionAssignment_1"
-    // InternalEasyWall.g:8592:1: rule__EFReturn__ExpressionAssignment_1 : ( ruleEFExpression ) ;
+    // InternalEasyWall.g:8607:1: rule__EFReturn__ExpressionAssignment_1 : ( ruleEFExpression ) ;
     public final void rule__EFReturn__ExpressionAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8596:1: ( ( ruleEFExpression ) )
-            // InternalEasyWall.g:8597:2: ( ruleEFExpression )
+            // InternalEasyWall.g:8611:1: ( ( ruleEFExpression ) )
+            // InternalEasyWall.g:8612:2: ( ruleEFExpression )
             {
-            // InternalEasyWall.g:8597:2: ( ruleEFExpression )
-            // InternalEasyWall.g:8598:3: ruleEFExpression
+            // InternalEasyWall.g:8612:2: ( ruleEFExpression )
+            // InternalEasyWall.g:8613:3: ruleEFExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFReturnAccess().getExpressionEFExpressionParserRuleCall_1_0()); 
@@ -28452,17 +28503,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFIfStatement__ExpressionAssignment_2"
-    // InternalEasyWall.g:8607:1: rule__EFIfStatement__ExpressionAssignment_2 : ( ruleEFExpression ) ;
+    // InternalEasyWall.g:8622:1: rule__EFIfStatement__ExpressionAssignment_2 : ( ruleEFExpression ) ;
     public final void rule__EFIfStatement__ExpressionAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8611:1: ( ( ruleEFExpression ) )
-            // InternalEasyWall.g:8612:2: ( ruleEFExpression )
+            // InternalEasyWall.g:8626:1: ( ( ruleEFExpression ) )
+            // InternalEasyWall.g:8627:2: ( ruleEFExpression )
             {
-            // InternalEasyWall.g:8612:2: ( ruleEFExpression )
-            // InternalEasyWall.g:8613:3: ruleEFExpression
+            // InternalEasyWall.g:8627:2: ( ruleEFExpression )
+            // InternalEasyWall.g:8628:3: ruleEFExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFIfStatementAccess().getExpressionEFExpressionParserRuleCall_2_0()); 
@@ -28497,17 +28548,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFIfStatement__ThenBlockAssignment_4"
-    // InternalEasyWall.g:8622:1: rule__EFIfStatement__ThenBlockAssignment_4 : ( ruleEFIfBlock ) ;
+    // InternalEasyWall.g:8637:1: rule__EFIfStatement__ThenBlockAssignment_4 : ( ruleEFIfBlock ) ;
     public final void rule__EFIfStatement__ThenBlockAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8626:1: ( ( ruleEFIfBlock ) )
-            // InternalEasyWall.g:8627:2: ( ruleEFIfBlock )
+            // InternalEasyWall.g:8641:1: ( ( ruleEFIfBlock ) )
+            // InternalEasyWall.g:8642:2: ( ruleEFIfBlock )
             {
-            // InternalEasyWall.g:8627:2: ( ruleEFIfBlock )
-            // InternalEasyWall.g:8628:3: ruleEFIfBlock
+            // InternalEasyWall.g:8642:2: ( ruleEFIfBlock )
+            // InternalEasyWall.g:8643:3: ruleEFIfBlock
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFIfStatementAccess().getThenBlockEFIfBlockParserRuleCall_4_0()); 
@@ -28542,17 +28593,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFIfStatement__ElseBlockAssignment_5_1"
-    // InternalEasyWall.g:8637:1: rule__EFIfStatement__ElseBlockAssignment_5_1 : ( ruleEFIfBlock ) ;
+    // InternalEasyWall.g:8652:1: rule__EFIfStatement__ElseBlockAssignment_5_1 : ( ruleEFIfBlock ) ;
     public final void rule__EFIfStatement__ElseBlockAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8641:1: ( ( ruleEFIfBlock ) )
-            // InternalEasyWall.g:8642:2: ( ruleEFIfBlock )
+            // InternalEasyWall.g:8656:1: ( ( ruleEFIfBlock ) )
+            // InternalEasyWall.g:8657:2: ( ruleEFIfBlock )
             {
-            // InternalEasyWall.g:8642:2: ( ruleEFIfBlock )
-            // InternalEasyWall.g:8643:3: ruleEFIfBlock
+            // InternalEasyWall.g:8657:2: ( ruleEFIfBlock )
+            // InternalEasyWall.g:8658:3: ruleEFIfBlock
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFIfStatementAccess().getElseBlockEFIfBlockParserRuleCall_5_1_0()); 
@@ -28587,17 +28638,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFIfBlock__StatementsAssignment_0"
-    // InternalEasyWall.g:8652:1: rule__EFIfBlock__StatementsAssignment_0 : ( ruleEFStatement ) ;
+    // InternalEasyWall.g:8667:1: rule__EFIfBlock__StatementsAssignment_0 : ( ruleEFStatement ) ;
     public final void rule__EFIfBlock__StatementsAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8656:1: ( ( ruleEFStatement ) )
-            // InternalEasyWall.g:8657:2: ( ruleEFStatement )
+            // InternalEasyWall.g:8671:1: ( ( ruleEFStatement ) )
+            // InternalEasyWall.g:8672:2: ( ruleEFStatement )
             {
-            // InternalEasyWall.g:8657:2: ( ruleEFStatement )
-            // InternalEasyWall.g:8658:3: ruleEFStatement
+            // InternalEasyWall.g:8672:2: ( ruleEFStatement )
+            // InternalEasyWall.g:8673:3: ruleEFStatement
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFIfBlockAccess().getStatementsEFStatementParserRuleCall_0_0()); 
@@ -28632,17 +28683,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFAssignment__RightAssignment_1_2"
-    // InternalEasyWall.g:8667:1: rule__EFAssignment__RightAssignment_1_2 : ( ruleEFAssignment ) ;
+    // InternalEasyWall.g:8682:1: rule__EFAssignment__RightAssignment_1_2 : ( ruleEFAssignment ) ;
     public final void rule__EFAssignment__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8671:1: ( ( ruleEFAssignment ) )
-            // InternalEasyWall.g:8672:2: ( ruleEFAssignment )
+            // InternalEasyWall.g:8686:1: ( ( ruleEFAssignment ) )
+            // InternalEasyWall.g:8687:2: ( ruleEFAssignment )
             {
-            // InternalEasyWall.g:8672:2: ( ruleEFAssignment )
-            // InternalEasyWall.g:8673:3: ruleEFAssignment
+            // InternalEasyWall.g:8687:2: ( ruleEFAssignment )
+            // InternalEasyWall.g:8688:3: ruleEFAssignment
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFAssignmentAccess().getRightEFAssignmentParserRuleCall_1_2_0()); 
@@ -28677,17 +28728,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFOrExpression__RightAssignment_1_2"
-    // InternalEasyWall.g:8682:1: rule__EFOrExpression__RightAssignment_1_2 : ( ruleEFAndExpression ) ;
+    // InternalEasyWall.g:8697:1: rule__EFOrExpression__RightAssignment_1_2 : ( ruleEFAndExpression ) ;
     public final void rule__EFOrExpression__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8686:1: ( ( ruleEFAndExpression ) )
-            // InternalEasyWall.g:8687:2: ( ruleEFAndExpression )
+            // InternalEasyWall.g:8701:1: ( ( ruleEFAndExpression ) )
+            // InternalEasyWall.g:8702:2: ( ruleEFAndExpression )
             {
-            // InternalEasyWall.g:8687:2: ( ruleEFAndExpression )
-            // InternalEasyWall.g:8688:3: ruleEFAndExpression
+            // InternalEasyWall.g:8702:2: ( ruleEFAndExpression )
+            // InternalEasyWall.g:8703:3: ruleEFAndExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFOrExpressionAccess().getRightEFAndExpressionParserRuleCall_1_2_0()); 
@@ -28722,17 +28773,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFAndExpression__RightAssignment_1_2"
-    // InternalEasyWall.g:8697:1: rule__EFAndExpression__RightAssignment_1_2 : ( ruleEFEqualExpression ) ;
+    // InternalEasyWall.g:8712:1: rule__EFAndExpression__RightAssignment_1_2 : ( ruleEFEqualExpression ) ;
     public final void rule__EFAndExpression__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8701:1: ( ( ruleEFEqualExpression ) )
-            // InternalEasyWall.g:8702:2: ( ruleEFEqualExpression )
+            // InternalEasyWall.g:8716:1: ( ( ruleEFEqualExpression ) )
+            // InternalEasyWall.g:8717:2: ( ruleEFEqualExpression )
             {
-            // InternalEasyWall.g:8702:2: ( ruleEFEqualExpression )
-            // InternalEasyWall.g:8703:3: ruleEFEqualExpression
+            // InternalEasyWall.g:8717:2: ( ruleEFEqualExpression )
+            // InternalEasyWall.g:8718:3: ruleEFEqualExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFAndExpressionAccess().getRightEFEqualExpressionParserRuleCall_1_2_0()); 
@@ -28767,17 +28818,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFEqualExpression__RightAssignment_1_2"
-    // InternalEasyWall.g:8712:1: rule__EFEqualExpression__RightAssignment_1_2 : ( ruleEFRelExpression ) ;
+    // InternalEasyWall.g:8727:1: rule__EFEqualExpression__RightAssignment_1_2 : ( ruleEFRelExpression ) ;
     public final void rule__EFEqualExpression__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8716:1: ( ( ruleEFRelExpression ) )
-            // InternalEasyWall.g:8717:2: ( ruleEFRelExpression )
+            // InternalEasyWall.g:8731:1: ( ( ruleEFRelExpression ) )
+            // InternalEasyWall.g:8732:2: ( ruleEFRelExpression )
             {
-            // InternalEasyWall.g:8717:2: ( ruleEFRelExpression )
-            // InternalEasyWall.g:8718:3: ruleEFRelExpression
+            // InternalEasyWall.g:8732:2: ( ruleEFRelExpression )
+            // InternalEasyWall.g:8733:3: ruleEFRelExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFEqualExpressionAccess().getRightEFRelExpressionParserRuleCall_1_2_0()); 
@@ -28812,17 +28863,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFRelExpression__RightAssignment_1_2"
-    // InternalEasyWall.g:8727:1: rule__EFRelExpression__RightAssignment_1_2 : ( ruleEFAddExpression ) ;
+    // InternalEasyWall.g:8742:1: rule__EFRelExpression__RightAssignment_1_2 : ( ruleEFAddExpression ) ;
     public final void rule__EFRelExpression__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8731:1: ( ( ruleEFAddExpression ) )
-            // InternalEasyWall.g:8732:2: ( ruleEFAddExpression )
+            // InternalEasyWall.g:8746:1: ( ( ruleEFAddExpression ) )
+            // InternalEasyWall.g:8747:2: ( ruleEFAddExpression )
             {
-            // InternalEasyWall.g:8732:2: ( ruleEFAddExpression )
-            // InternalEasyWall.g:8733:3: ruleEFAddExpression
+            // InternalEasyWall.g:8747:2: ( ruleEFAddExpression )
+            // InternalEasyWall.g:8748:3: ruleEFAddExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFRelExpressionAccess().getRightEFAddExpressionParserRuleCall_1_2_0()); 
@@ -28857,17 +28908,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFAddExpression__RightAssignment_1_2"
-    // InternalEasyWall.g:8742:1: rule__EFAddExpression__RightAssignment_1_2 : ( ruleEFMultExpression ) ;
+    // InternalEasyWall.g:8757:1: rule__EFAddExpression__RightAssignment_1_2 : ( ruleEFMultExpression ) ;
     public final void rule__EFAddExpression__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8746:1: ( ( ruleEFMultExpression ) )
-            // InternalEasyWall.g:8747:2: ( ruleEFMultExpression )
+            // InternalEasyWall.g:8761:1: ( ( ruleEFMultExpression ) )
+            // InternalEasyWall.g:8762:2: ( ruleEFMultExpression )
             {
-            // InternalEasyWall.g:8747:2: ( ruleEFMultExpression )
-            // InternalEasyWall.g:8748:3: ruleEFMultExpression
+            // InternalEasyWall.g:8762:2: ( ruleEFMultExpression )
+            // InternalEasyWall.g:8763:3: ruleEFMultExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFAddExpressionAccess().getRightEFMultExpressionParserRuleCall_1_2_0()); 
@@ -28902,17 +28953,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFMultExpression__RightAssignment_1_2"
-    // InternalEasyWall.g:8757:1: rule__EFMultExpression__RightAssignment_1_2 : ( ruleEFUnaryExpression ) ;
+    // InternalEasyWall.g:8772:1: rule__EFMultExpression__RightAssignment_1_2 : ( ruleEFUnaryExpression ) ;
     public final void rule__EFMultExpression__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8761:1: ( ( ruleEFUnaryExpression ) )
-            // InternalEasyWall.g:8762:2: ( ruleEFUnaryExpression )
+            // InternalEasyWall.g:8776:1: ( ( ruleEFUnaryExpression ) )
+            // InternalEasyWall.g:8777:2: ( ruleEFUnaryExpression )
             {
-            // InternalEasyWall.g:8762:2: ( ruleEFUnaryExpression )
-            // InternalEasyWall.g:8763:3: ruleEFUnaryExpression
+            // InternalEasyWall.g:8777:2: ( ruleEFUnaryExpression )
+            // InternalEasyWall.g:8778:3: ruleEFUnaryExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFMultExpressionAccess().getRightEFUnaryExpressionParserRuleCall_1_2_0()); 
@@ -28947,17 +28998,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFUnaryExpression__ExpressionAssignment_0_2"
-    // InternalEasyWall.g:8772:1: rule__EFUnaryExpression__ExpressionAssignment_0_2 : ( ruleEFUnaryExpression ) ;
+    // InternalEasyWall.g:8787:1: rule__EFUnaryExpression__ExpressionAssignment_0_2 : ( ruleEFUnaryExpression ) ;
     public final void rule__EFUnaryExpression__ExpressionAssignment_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8776:1: ( ( ruleEFUnaryExpression ) )
-            // InternalEasyWall.g:8777:2: ( ruleEFUnaryExpression )
+            // InternalEasyWall.g:8791:1: ( ( ruleEFUnaryExpression ) )
+            // InternalEasyWall.g:8792:2: ( ruleEFUnaryExpression )
             {
-            // InternalEasyWall.g:8777:2: ( ruleEFUnaryExpression )
-            // InternalEasyWall.g:8778:3: ruleEFUnaryExpression
+            // InternalEasyWall.g:8792:2: ( ruleEFUnaryExpression )
+            // InternalEasyWall.g:8793:3: ruleEFUnaryExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFUnaryExpressionAccess().getExpressionEFUnaryExpressionParserRuleCall_0_2_0()); 
@@ -28992,23 +29043,23 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFMemberSelection__MemberAssignment_1_2"
-    // InternalEasyWall.g:8787:1: rule__EFMemberSelection__MemberAssignment_1_2 : ( ( RULE_ID ) ) ;
+    // InternalEasyWall.g:8802:1: rule__EFMemberSelection__MemberAssignment_1_2 : ( ( RULE_ID ) ) ;
     public final void rule__EFMemberSelection__MemberAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8791:1: ( ( ( RULE_ID ) ) )
-            // InternalEasyWall.g:8792:2: ( ( RULE_ID ) )
+            // InternalEasyWall.g:8806:1: ( ( ( RULE_ID ) ) )
+            // InternalEasyWall.g:8807:2: ( ( RULE_ID ) )
             {
-            // InternalEasyWall.g:8792:2: ( ( RULE_ID ) )
-            // InternalEasyWall.g:8793:3: ( RULE_ID )
+            // InternalEasyWall.g:8807:2: ( ( RULE_ID ) )
+            // InternalEasyWall.g:8808:3: ( RULE_ID )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFMemberSelectionAccess().getMemberEFMemberCrossReference_1_2_0()); 
             }
-            // InternalEasyWall.g:8794:3: ( RULE_ID )
-            // InternalEasyWall.g:8795:4: RULE_ID
+            // InternalEasyWall.g:8809:3: ( RULE_ID )
+            // InternalEasyWall.g:8810:4: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFMemberSelectionAccess().getMemberEFMemberIDTerminalRuleCall_1_2_0_1()); 
@@ -29045,17 +29096,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFMemberSelection__ArgsAssignment_1_3_1_0"
-    // InternalEasyWall.g:8806:1: rule__EFMemberSelection__ArgsAssignment_1_3_1_0 : ( ruleEFExpression ) ;
+    // InternalEasyWall.g:8821:1: rule__EFMemberSelection__ArgsAssignment_1_3_1_0 : ( ruleEFExpression ) ;
     public final void rule__EFMemberSelection__ArgsAssignment_1_3_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8810:1: ( ( ruleEFExpression ) )
-            // InternalEasyWall.g:8811:2: ( ruleEFExpression )
+            // InternalEasyWall.g:8825:1: ( ( ruleEFExpression ) )
+            // InternalEasyWall.g:8826:2: ( ruleEFExpression )
             {
-            // InternalEasyWall.g:8811:2: ( ruleEFExpression )
-            // InternalEasyWall.g:8812:3: ruleEFExpression
+            // InternalEasyWall.g:8826:2: ( ruleEFExpression )
+            // InternalEasyWall.g:8827:3: ruleEFExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFMemberSelectionAccess().getArgsEFExpressionParserRuleCall_1_3_1_0_0()); 
@@ -29090,17 +29141,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFMemberSelection__ArgsAssignment_1_3_1_1_1"
-    // InternalEasyWall.g:8821:1: rule__EFMemberSelection__ArgsAssignment_1_3_1_1_1 : ( ruleEFExpression ) ;
+    // InternalEasyWall.g:8836:1: rule__EFMemberSelection__ArgsAssignment_1_3_1_1_1 : ( ruleEFExpression ) ;
     public final void rule__EFMemberSelection__ArgsAssignment_1_3_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8825:1: ( ( ruleEFExpression ) )
-            // InternalEasyWall.g:8826:2: ( ruleEFExpression )
+            // InternalEasyWall.g:8840:1: ( ( ruleEFExpression ) )
+            // InternalEasyWall.g:8841:2: ( ruleEFExpression )
             {
-            // InternalEasyWall.g:8826:2: ( ruleEFExpression )
-            // InternalEasyWall.g:8827:3: ruleEFExpression
+            // InternalEasyWall.g:8841:2: ( ruleEFExpression )
+            // InternalEasyWall.g:8842:3: ruleEFExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFMemberSelectionAccess().getArgsEFExpressionParserRuleCall_1_3_1_1_1_0()); 
@@ -29135,17 +29186,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFPrimaryExpression__ValueAssignment_0_1"
-    // InternalEasyWall.g:8836:1: rule__EFPrimaryExpression__ValueAssignment_0_1 : ( RULE_STRING ) ;
+    // InternalEasyWall.g:8851:1: rule__EFPrimaryExpression__ValueAssignment_0_1 : ( RULE_STRING ) ;
     public final void rule__EFPrimaryExpression__ValueAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8840:1: ( ( RULE_STRING ) )
-            // InternalEasyWall.g:8841:2: ( RULE_STRING )
+            // InternalEasyWall.g:8855:1: ( ( RULE_STRING ) )
+            // InternalEasyWall.g:8856:2: ( RULE_STRING )
             {
-            // InternalEasyWall.g:8841:2: ( RULE_STRING )
-            // InternalEasyWall.g:8842:3: RULE_STRING
+            // InternalEasyWall.g:8856:2: ( RULE_STRING )
+            // InternalEasyWall.g:8857:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFPrimaryExpressionAccess().getValueSTRINGTerminalRuleCall_0_1_0()); 
@@ -29176,17 +29227,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFPrimaryExpression__ValueAssignment_1_1"
-    // InternalEasyWall.g:8851:1: rule__EFPrimaryExpression__ValueAssignment_1_1 : ( RULE_INT ) ;
+    // InternalEasyWall.g:8866:1: rule__EFPrimaryExpression__ValueAssignment_1_1 : ( RULE_INT ) ;
     public final void rule__EFPrimaryExpression__ValueAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8855:1: ( ( RULE_INT ) )
-            // InternalEasyWall.g:8856:2: ( RULE_INT )
+            // InternalEasyWall.g:8870:1: ( ( RULE_INT ) )
+            // InternalEasyWall.g:8871:2: ( RULE_INT )
             {
-            // InternalEasyWall.g:8856:2: ( RULE_INT )
-            // InternalEasyWall.g:8857:3: RULE_INT
+            // InternalEasyWall.g:8871:2: ( RULE_INT )
+            // InternalEasyWall.g:8872:3: RULE_INT
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFPrimaryExpressionAccess().getValueINTTerminalRuleCall_1_1_0()); 
@@ -29217,23 +29268,23 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFPrimaryExpression__ValueAssignment_2_1"
-    // InternalEasyWall.g:8866:1: rule__EFPrimaryExpression__ValueAssignment_2_1 : ( ( rule__EFPrimaryExpression__ValueAlternatives_2_1_0 ) ) ;
+    // InternalEasyWall.g:8881:1: rule__EFPrimaryExpression__ValueAssignment_2_1 : ( ( rule__EFPrimaryExpression__ValueAlternatives_2_1_0 ) ) ;
     public final void rule__EFPrimaryExpression__ValueAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8870:1: ( ( ( rule__EFPrimaryExpression__ValueAlternatives_2_1_0 ) ) )
-            // InternalEasyWall.g:8871:2: ( ( rule__EFPrimaryExpression__ValueAlternatives_2_1_0 ) )
+            // InternalEasyWall.g:8885:1: ( ( ( rule__EFPrimaryExpression__ValueAlternatives_2_1_0 ) ) )
+            // InternalEasyWall.g:8886:2: ( ( rule__EFPrimaryExpression__ValueAlternatives_2_1_0 ) )
             {
-            // InternalEasyWall.g:8871:2: ( ( rule__EFPrimaryExpression__ValueAlternatives_2_1_0 ) )
-            // InternalEasyWall.g:8872:3: ( rule__EFPrimaryExpression__ValueAlternatives_2_1_0 )
+            // InternalEasyWall.g:8886:2: ( ( rule__EFPrimaryExpression__ValueAlternatives_2_1_0 ) )
+            // InternalEasyWall.g:8887:3: ( rule__EFPrimaryExpression__ValueAlternatives_2_1_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFPrimaryExpressionAccess().getValueAlternatives_2_1_0()); 
             }
-            // InternalEasyWall.g:8873:3: ( rule__EFPrimaryExpression__ValueAlternatives_2_1_0 )
-            // InternalEasyWall.g:8873:4: rule__EFPrimaryExpression__ValueAlternatives_2_1_0
+            // InternalEasyWall.g:8888:3: ( rule__EFPrimaryExpression__ValueAlternatives_2_1_0 )
+            // InternalEasyWall.g:8888:4: rule__EFPrimaryExpression__ValueAlternatives_2_1_0
             {
             pushFollow(FOLLOW_2);
             rule__EFPrimaryExpression__ValueAlternatives_2_1_0();
@@ -29268,17 +29319,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFPrimaryExpression__DirectionAssignment_3_1"
-    // InternalEasyWall.g:8881:1: rule__EFPrimaryExpression__DirectionAssignment_3_1 : ( ruleEFDirectionNativeType ) ;
+    // InternalEasyWall.g:8896:1: rule__EFPrimaryExpression__DirectionAssignment_3_1 : ( ruleEFDirectionNativeType ) ;
     public final void rule__EFPrimaryExpression__DirectionAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8885:1: ( ( ruleEFDirectionNativeType ) )
-            // InternalEasyWall.g:8886:2: ( ruleEFDirectionNativeType )
+            // InternalEasyWall.g:8900:1: ( ( ruleEFDirectionNativeType ) )
+            // InternalEasyWall.g:8901:2: ( ruleEFDirectionNativeType )
             {
-            // InternalEasyWall.g:8886:2: ( ruleEFDirectionNativeType )
-            // InternalEasyWall.g:8887:3: ruleEFDirectionNativeType
+            // InternalEasyWall.g:8901:2: ( ruleEFDirectionNativeType )
+            // InternalEasyWall.g:8902:3: ruleEFDirectionNativeType
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFPrimaryExpressionAccess().getDirectionEFDirectionNativeTypeEnumRuleCall_3_1_0()); 
@@ -29313,17 +29364,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFPrimaryExpression__ProtocolAssignment_4_1"
-    // InternalEasyWall.g:8896:1: rule__EFPrimaryExpression__ProtocolAssignment_4_1 : ( ruleNETWORKLAYERPROTOCOL ) ;
+    // InternalEasyWall.g:8911:1: rule__EFPrimaryExpression__ProtocolAssignment_4_1 : ( ruleNETWORKLAYERPROTOCOL ) ;
     public final void rule__EFPrimaryExpression__ProtocolAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8900:1: ( ( ruleNETWORKLAYERPROTOCOL ) )
-            // InternalEasyWall.g:8901:2: ( ruleNETWORKLAYERPROTOCOL )
+            // InternalEasyWall.g:8915:1: ( ( ruleNETWORKLAYERPROTOCOL ) )
+            // InternalEasyWall.g:8916:2: ( ruleNETWORKLAYERPROTOCOL )
             {
-            // InternalEasyWall.g:8901:2: ( ruleNETWORKLAYERPROTOCOL )
-            // InternalEasyWall.g:8902:3: ruleNETWORKLAYERPROTOCOL
+            // InternalEasyWall.g:8916:2: ( ruleNETWORKLAYERPROTOCOL )
+            // InternalEasyWall.g:8917:3: ruleNETWORKLAYERPROTOCOL
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFPrimaryExpressionAccess().getProtocolNETWORKLAYERPROTOCOLEnumRuleCall_4_1_0()); 
@@ -29358,17 +29409,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFPrimaryExpression__ProtocolAssignment_5_1"
-    // InternalEasyWall.g:8911:1: rule__EFPrimaryExpression__ProtocolAssignment_5_1 : ( ruleTRANSPORTLAYERPROTOCOL ) ;
+    // InternalEasyWall.g:8926:1: rule__EFPrimaryExpression__ProtocolAssignment_5_1 : ( ruleTRANSPORTLAYERPROTOCOL ) ;
     public final void rule__EFPrimaryExpression__ProtocolAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8915:1: ( ( ruleTRANSPORTLAYERPROTOCOL ) )
-            // InternalEasyWall.g:8916:2: ( ruleTRANSPORTLAYERPROTOCOL )
+            // InternalEasyWall.g:8930:1: ( ( ruleTRANSPORTLAYERPROTOCOL ) )
+            // InternalEasyWall.g:8931:2: ( ruleTRANSPORTLAYERPROTOCOL )
             {
-            // InternalEasyWall.g:8916:2: ( ruleTRANSPORTLAYERPROTOCOL )
-            // InternalEasyWall.g:8917:3: ruleTRANSPORTLAYERPROTOCOL
+            // InternalEasyWall.g:8931:2: ( ruleTRANSPORTLAYERPROTOCOL )
+            // InternalEasyWall.g:8932:3: ruleTRANSPORTLAYERPROTOCOL
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFPrimaryExpressionAccess().getProtocolTRANSPORTLAYERPROTOCOLEnumRuleCall_5_1_0()); 
@@ -29403,17 +29454,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFPrimaryExpression__ProtocolAssignment_6_1"
-    // InternalEasyWall.g:8926:1: rule__EFPrimaryExpression__ProtocolAssignment_6_1 : ( ruleAPPLICATIONLAYERPROTOCOL ) ;
+    // InternalEasyWall.g:8941:1: rule__EFPrimaryExpression__ProtocolAssignment_6_1 : ( ruleAPPLICATIONLAYERPROTOCOL ) ;
     public final void rule__EFPrimaryExpression__ProtocolAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8930:1: ( ( ruleAPPLICATIONLAYERPROTOCOL ) )
-            // InternalEasyWall.g:8931:2: ( ruleAPPLICATIONLAYERPROTOCOL )
+            // InternalEasyWall.g:8945:1: ( ( ruleAPPLICATIONLAYERPROTOCOL ) )
+            // InternalEasyWall.g:8946:2: ( ruleAPPLICATIONLAYERPROTOCOL )
             {
-            // InternalEasyWall.g:8931:2: ( ruleAPPLICATIONLAYERPROTOCOL )
-            // InternalEasyWall.g:8932:3: ruleAPPLICATIONLAYERPROTOCOL
+            // InternalEasyWall.g:8946:2: ( ruleAPPLICATIONLAYERPROTOCOL )
+            // InternalEasyWall.g:8947:3: ruleAPPLICATIONLAYERPROTOCOL
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFPrimaryExpressionAccess().getProtocolAPPLICATIONLAYERPROTOCOLEnumRuleCall_6_1_0()); 
@@ -29448,17 +29499,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFPrimaryExpression__Ipv6Assignment_7_1"
-    // InternalEasyWall.g:8941:1: rule__EFPrimaryExpression__Ipv6Assignment_7_1 : ( RULE_EFIPV6SYNTAX ) ;
+    // InternalEasyWall.g:8956:1: rule__EFPrimaryExpression__Ipv6Assignment_7_1 : ( RULE_EFIPV6SYNTAX ) ;
     public final void rule__EFPrimaryExpression__Ipv6Assignment_7_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8945:1: ( ( RULE_EFIPV6SYNTAX ) )
-            // InternalEasyWall.g:8946:2: ( RULE_EFIPV6SYNTAX )
+            // InternalEasyWall.g:8960:1: ( ( RULE_EFIPV6SYNTAX ) )
+            // InternalEasyWall.g:8961:2: ( RULE_EFIPV6SYNTAX )
             {
-            // InternalEasyWall.g:8946:2: ( RULE_EFIPV6SYNTAX )
-            // InternalEasyWall.g:8947:3: RULE_EFIPV6SYNTAX
+            // InternalEasyWall.g:8961:2: ( RULE_EFIPV6SYNTAX )
+            // InternalEasyWall.g:8962:3: RULE_EFIPV6SYNTAX
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFPrimaryExpressionAccess().getIpv6EFIPV6SYNTAXTerminalRuleCall_7_1_0()); 
@@ -29489,17 +29540,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFPrimaryExpression__Ipv4Assignment_8_1_0"
-    // InternalEasyWall.g:8956:1: rule__EFPrimaryExpression__Ipv4Assignment_8_1_0 : ( RULE_EFIPV4SYNTAX ) ;
+    // InternalEasyWall.g:8971:1: rule__EFPrimaryExpression__Ipv4Assignment_8_1_0 : ( RULE_EFIPV4SYNTAX ) ;
     public final void rule__EFPrimaryExpression__Ipv4Assignment_8_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8960:1: ( ( RULE_EFIPV4SYNTAX ) )
-            // InternalEasyWall.g:8961:2: ( RULE_EFIPV4SYNTAX )
+            // InternalEasyWall.g:8975:1: ( ( RULE_EFIPV4SYNTAX ) )
+            // InternalEasyWall.g:8976:2: ( RULE_EFIPV4SYNTAX )
             {
-            // InternalEasyWall.g:8961:2: ( RULE_EFIPV4SYNTAX )
-            // InternalEasyWall.g:8962:3: RULE_EFIPV4SYNTAX
+            // InternalEasyWall.g:8976:2: ( RULE_EFIPV4SYNTAX )
+            // InternalEasyWall.g:8977:3: RULE_EFIPV4SYNTAX
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFPrimaryExpressionAccess().getIpv4EFIPV4SYNTAXTerminalRuleCall_8_1_0_0()); 
@@ -29530,23 +29581,23 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFPrimaryExpression__AnyAssignment_8_1_1"
-    // InternalEasyWall.g:8971:1: rule__EFPrimaryExpression__AnyAssignment_8_1_1 : ( ( 'any' ) ) ;
+    // InternalEasyWall.g:8986:1: rule__EFPrimaryExpression__AnyAssignment_8_1_1 : ( ( 'any' ) ) ;
     public final void rule__EFPrimaryExpression__AnyAssignment_8_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8975:1: ( ( ( 'any' ) ) )
-            // InternalEasyWall.g:8976:2: ( ( 'any' ) )
+            // InternalEasyWall.g:8990:1: ( ( ( 'any' ) ) )
+            // InternalEasyWall.g:8991:2: ( ( 'any' ) )
             {
-            // InternalEasyWall.g:8976:2: ( ( 'any' ) )
-            // InternalEasyWall.g:8977:3: ( 'any' )
+            // InternalEasyWall.g:8991:2: ( ( 'any' ) )
+            // InternalEasyWall.g:8992:3: ( 'any' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFPrimaryExpressionAccess().getAnyAnyKeyword_8_1_1_0()); 
             }
-            // InternalEasyWall.g:8978:3: ( 'any' )
-            // InternalEasyWall.g:8979:4: 'any'
+            // InternalEasyWall.g:8993:3: ( 'any' )
+            // InternalEasyWall.g:8994:4: 'any'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFPrimaryExpressionAccess().getAnyAnyKeyword_8_1_1_0()); 
@@ -29583,23 +29634,23 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFPrimaryExpression__LocalhostAssignment_8_1_2"
-    // InternalEasyWall.g:8990:1: rule__EFPrimaryExpression__LocalhostAssignment_8_1_2 : ( ( 'localhost' ) ) ;
+    // InternalEasyWall.g:9005:1: rule__EFPrimaryExpression__LocalhostAssignment_8_1_2 : ( ( 'localhost' ) ) ;
     public final void rule__EFPrimaryExpression__LocalhostAssignment_8_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:8994:1: ( ( ( 'localhost' ) ) )
-            // InternalEasyWall.g:8995:2: ( ( 'localhost' ) )
+            // InternalEasyWall.g:9009:1: ( ( ( 'localhost' ) ) )
+            // InternalEasyWall.g:9010:2: ( ( 'localhost' ) )
             {
-            // InternalEasyWall.g:8995:2: ( ( 'localhost' ) )
-            // InternalEasyWall.g:8996:3: ( 'localhost' )
+            // InternalEasyWall.g:9010:2: ( ( 'localhost' ) )
+            // InternalEasyWall.g:9011:3: ( 'localhost' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFPrimaryExpressionAccess().getLocalhostLocalhostKeyword_8_1_2_0()); 
             }
-            // InternalEasyWall.g:8997:3: ( 'localhost' )
-            // InternalEasyWall.g:8998:4: 'localhost'
+            // InternalEasyWall.g:9012:3: ( 'localhost' )
+            // InternalEasyWall.g:9013:4: 'localhost'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFPrimaryExpressionAccess().getLocalhostLocalhostKeyword_8_1_2_0()); 
@@ -29636,17 +29687,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFPrimaryExpression__NetworkAssignment_9_1"
-    // InternalEasyWall.g:9009:1: rule__EFPrimaryExpression__NetworkAssignment_9_1 : ( ruleEFNetworkSYNTAX ) ;
+    // InternalEasyWall.g:9024:1: rule__EFPrimaryExpression__NetworkAssignment_9_1 : ( ruleEFNetworkSYNTAX ) ;
     public final void rule__EFPrimaryExpression__NetworkAssignment_9_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:9013:1: ( ( ruleEFNetworkSYNTAX ) )
-            // InternalEasyWall.g:9014:2: ( ruleEFNetworkSYNTAX )
+            // InternalEasyWall.g:9028:1: ( ( ruleEFNetworkSYNTAX ) )
+            // InternalEasyWall.g:9029:2: ( ruleEFNetworkSYNTAX )
             {
-            // InternalEasyWall.g:9014:2: ( ruleEFNetworkSYNTAX )
-            // InternalEasyWall.g:9015:3: ruleEFNetworkSYNTAX
+            // InternalEasyWall.g:9029:2: ( ruleEFNetworkSYNTAX )
+            // InternalEasyWall.g:9030:3: ruleEFNetworkSYNTAX
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFPrimaryExpressionAccess().getNetworkEFNetworkSYNTAXParserRuleCall_9_1_0()); 
@@ -29681,17 +29732,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFPrimaryExpression__PortAssignment_10"
-    // InternalEasyWall.g:9024:1: rule__EFPrimaryExpression__PortAssignment_10 : ( ruleEFNetportSYNTAX ) ;
+    // InternalEasyWall.g:9039:1: rule__EFPrimaryExpression__PortAssignment_10 : ( ruleEFNetportSYNTAX ) ;
     public final void rule__EFPrimaryExpression__PortAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:9028:1: ( ( ruleEFNetportSYNTAX ) )
-            // InternalEasyWall.g:9029:2: ( ruleEFNetportSYNTAX )
+            // InternalEasyWall.g:9043:1: ( ( ruleEFNetportSYNTAX ) )
+            // InternalEasyWall.g:9044:2: ( ruleEFNetportSYNTAX )
             {
-            // InternalEasyWall.g:9029:2: ( ruleEFNetportSYNTAX )
-            // InternalEasyWall.g:9030:3: ruleEFNetportSYNTAX
+            // InternalEasyWall.g:9044:2: ( ruleEFNetportSYNTAX )
+            // InternalEasyWall.g:9045:3: ruleEFNetportSYNTAX
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFPrimaryExpressionAccess().getPortEFNetportSYNTAXParserRuleCall_10_0()); 
@@ -29726,23 +29777,23 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFPrimaryExpression__TypeAssignment_13_2"
-    // InternalEasyWall.g:9039:1: rule__EFPrimaryExpression__TypeAssignment_13_2 : ( ( ruleQualifiedName ) ) ;
+    // InternalEasyWall.g:9054:1: rule__EFPrimaryExpression__TypeAssignment_13_2 : ( ( ruleQualifiedName ) ) ;
     public final void rule__EFPrimaryExpression__TypeAssignment_13_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:9043:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalEasyWall.g:9044:2: ( ( ruleQualifiedName ) )
+            // InternalEasyWall.g:9058:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalEasyWall.g:9059:2: ( ( ruleQualifiedName ) )
             {
-            // InternalEasyWall.g:9044:2: ( ( ruleQualifiedName ) )
-            // InternalEasyWall.g:9045:3: ( ruleQualifiedName )
+            // InternalEasyWall.g:9059:2: ( ( ruleQualifiedName ) )
+            // InternalEasyWall.g:9060:3: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFPrimaryExpressionAccess().getTypeEFRuleClassCrossReference_13_2_0()); 
             }
-            // InternalEasyWall.g:9046:3: ( ruleQualifiedName )
-            // InternalEasyWall.g:9047:4: ruleQualifiedName
+            // InternalEasyWall.g:9061:3: ( ruleQualifiedName )
+            // InternalEasyWall.g:9062:4: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFPrimaryExpressionAccess().getTypeEFRuleClassQualifiedNameParserRuleCall_13_2_0_1()); 
@@ -29783,17 +29834,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFPrimaryExpression__ExpressionAssignment_14_2"
-    // InternalEasyWall.g:9058:1: rule__EFPrimaryExpression__ExpressionAssignment_14_2 : ( ruleEFExpression ) ;
+    // InternalEasyWall.g:9073:1: rule__EFPrimaryExpression__ExpressionAssignment_14_2 : ( ruleEFExpression ) ;
     public final void rule__EFPrimaryExpression__ExpressionAssignment_14_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:9062:1: ( ( ruleEFExpression ) )
-            // InternalEasyWall.g:9063:2: ( ruleEFExpression )
+            // InternalEasyWall.g:9077:1: ( ( ruleEFExpression ) )
+            // InternalEasyWall.g:9078:2: ( ruleEFExpression )
             {
-            // InternalEasyWall.g:9063:2: ( ruleEFExpression )
-            // InternalEasyWall.g:9064:3: ruleEFExpression
+            // InternalEasyWall.g:9078:2: ( ruleEFExpression )
+            // InternalEasyWall.g:9079:3: ruleEFExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFPrimaryExpressionAccess().getExpressionEFExpressionParserRuleCall_14_2_0()); 
@@ -29828,17 +29879,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFPrimaryExpression__FunctionNameAssignment_16_1"
-    // InternalEasyWall.g:9073:1: rule__EFPrimaryExpression__FunctionNameAssignment_16_1 : ( ruleQualifiedName ) ;
+    // InternalEasyWall.g:9088:1: rule__EFPrimaryExpression__FunctionNameAssignment_16_1 : ( ruleQualifiedName ) ;
     public final void rule__EFPrimaryExpression__FunctionNameAssignment_16_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:9077:1: ( ( ruleQualifiedName ) )
-            // InternalEasyWall.g:9078:2: ( ruleQualifiedName )
+            // InternalEasyWall.g:9092:1: ( ( ruleQualifiedName ) )
+            // InternalEasyWall.g:9093:2: ( ruleQualifiedName )
             {
-            // InternalEasyWall.g:9078:2: ( ruleQualifiedName )
-            // InternalEasyWall.g:9079:3: ruleQualifiedName
+            // InternalEasyWall.g:9093:2: ( ruleQualifiedName )
+            // InternalEasyWall.g:9094:3: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFPrimaryExpressionAccess().getFunctionNameQualifiedNameParserRuleCall_16_1_0()); 
@@ -29873,17 +29924,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFPrimaryExpression__ArgsAssignment_16_3_0"
-    // InternalEasyWall.g:9088:1: rule__EFPrimaryExpression__ArgsAssignment_16_3_0 : ( ruleEFExpression ) ;
+    // InternalEasyWall.g:9103:1: rule__EFPrimaryExpression__ArgsAssignment_16_3_0 : ( ruleEFExpression ) ;
     public final void rule__EFPrimaryExpression__ArgsAssignment_16_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:9092:1: ( ( ruleEFExpression ) )
-            // InternalEasyWall.g:9093:2: ( ruleEFExpression )
+            // InternalEasyWall.g:9107:1: ( ( ruleEFExpression ) )
+            // InternalEasyWall.g:9108:2: ( ruleEFExpression )
             {
-            // InternalEasyWall.g:9093:2: ( ruleEFExpression )
-            // InternalEasyWall.g:9094:3: ruleEFExpression
+            // InternalEasyWall.g:9108:2: ( ruleEFExpression )
+            // InternalEasyWall.g:9109:3: ruleEFExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFPrimaryExpressionAccess().getArgsEFExpressionParserRuleCall_16_3_0_0()); 
@@ -29918,17 +29969,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFPrimaryExpression__ArgsAssignment_16_3_1_1"
-    // InternalEasyWall.g:9103:1: rule__EFPrimaryExpression__ArgsAssignment_16_3_1_1 : ( ruleEFExpression ) ;
+    // InternalEasyWall.g:9118:1: rule__EFPrimaryExpression__ArgsAssignment_16_3_1_1 : ( ruleEFExpression ) ;
     public final void rule__EFPrimaryExpression__ArgsAssignment_16_3_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:9107:1: ( ( ruleEFExpression ) )
-            // InternalEasyWall.g:9108:2: ( ruleEFExpression )
+            // InternalEasyWall.g:9122:1: ( ( ruleEFExpression ) )
+            // InternalEasyWall.g:9123:2: ( ruleEFExpression )
             {
-            // InternalEasyWall.g:9108:2: ( ruleEFExpression )
-            // InternalEasyWall.g:9109:3: ruleEFExpression
+            // InternalEasyWall.g:9123:2: ( ruleEFExpression )
+            // InternalEasyWall.g:9124:3: ruleEFExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFPrimaryExpressionAccess().getArgsEFExpressionParserRuleCall_16_3_1_1_0()); 
@@ -29963,17 +30014,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFPrimaryExpression__SymbolAssignment_17_1"
-    // InternalEasyWall.g:9118:1: rule__EFPrimaryExpression__SymbolAssignment_17_1 : ( ruleQualifiedName ) ;
+    // InternalEasyWall.g:9133:1: rule__EFPrimaryExpression__SymbolAssignment_17_1 : ( ruleQualifiedName ) ;
     public final void rule__EFPrimaryExpression__SymbolAssignment_17_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:9122:1: ( ( ruleQualifiedName ) )
-            // InternalEasyWall.g:9123:2: ( ruleQualifiedName )
+            // InternalEasyWall.g:9137:1: ( ( ruleQualifiedName ) )
+            // InternalEasyWall.g:9138:2: ( ruleQualifiedName )
             {
-            // InternalEasyWall.g:9123:2: ( ruleQualifiedName )
-            // InternalEasyWall.g:9124:3: ruleQualifiedName
+            // InternalEasyWall.g:9138:2: ( ruleQualifiedName )
+            // InternalEasyWall.g:9139:3: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFPrimaryExpressionAccess().getSymbolQualifiedNameParserRuleCall_17_1_0()); 
@@ -30008,17 +30059,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFBuiltinFunction__MessageAssignment_4_3"
-    // InternalEasyWall.g:9133:1: rule__EFBuiltinFunction__MessageAssignment_4_3 : ( ruleEFExpression ) ;
+    // InternalEasyWall.g:9148:1: rule__EFBuiltinFunction__MessageAssignment_4_3 : ( ruleEFExpression ) ;
     public final void rule__EFBuiltinFunction__MessageAssignment_4_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:9137:1: ( ( ruleEFExpression ) )
-            // InternalEasyWall.g:9138:2: ( ruleEFExpression )
+            // InternalEasyWall.g:9152:1: ( ( ruleEFExpression ) )
+            // InternalEasyWall.g:9153:2: ( ruleEFExpression )
             {
-            // InternalEasyWall.g:9138:2: ( ruleEFExpression )
-            // InternalEasyWall.g:9139:3: ruleEFExpression
+            // InternalEasyWall.g:9153:2: ( ruleEFExpression )
+            // InternalEasyWall.g:9154:3: ruleEFExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFBuiltinFunctionAccess().getMessageEFExpressionParserRuleCall_4_3_0()); 
@@ -30053,17 +30104,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFBuiltinFunction__LevelAssignment_5_3"
-    // InternalEasyWall.g:9148:1: rule__EFBuiltinFunction__LevelAssignment_5_3 : ( ruleEFLogLevel ) ;
+    // InternalEasyWall.g:9163:1: rule__EFBuiltinFunction__LevelAssignment_5_3 : ( ruleEFLogLevel ) ;
     public final void rule__EFBuiltinFunction__LevelAssignment_5_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:9152:1: ( ( ruleEFLogLevel ) )
-            // InternalEasyWall.g:9153:2: ( ruleEFLogLevel )
+            // InternalEasyWall.g:9167:1: ( ( ruleEFLogLevel ) )
+            // InternalEasyWall.g:9168:2: ( ruleEFLogLevel )
             {
-            // InternalEasyWall.g:9153:2: ( ruleEFLogLevel )
-            // InternalEasyWall.g:9154:3: ruleEFLogLevel
+            // InternalEasyWall.g:9168:2: ( ruleEFLogLevel )
+            // InternalEasyWall.g:9169:3: ruleEFLogLevel
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFBuiltinFunctionAccess().getLevelEFLogLevelEnumRuleCall_5_3_0()); 
@@ -30098,17 +30149,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFBuiltinFunction__MessageAssignment_5_5"
-    // InternalEasyWall.g:9163:1: rule__EFBuiltinFunction__MessageAssignment_5_5 : ( ruleEFExpression ) ;
+    // InternalEasyWall.g:9178:1: rule__EFBuiltinFunction__MessageAssignment_5_5 : ( ruleEFExpression ) ;
     public final void rule__EFBuiltinFunction__MessageAssignment_5_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:9167:1: ( ( ruleEFExpression ) )
-            // InternalEasyWall.g:9168:2: ( ruleEFExpression )
+            // InternalEasyWall.g:9182:1: ( ( ruleEFExpression ) )
+            // InternalEasyWall.g:9183:2: ( ruleEFExpression )
             {
-            // InternalEasyWall.g:9168:2: ( ruleEFExpression )
-            // InternalEasyWall.g:9169:3: ruleEFExpression
+            // InternalEasyWall.g:9183:2: ( ruleEFExpression )
+            // InternalEasyWall.g:9184:3: ruleEFExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFBuiltinFunctionAccess().getMessageEFExpressionParserRuleCall_5_5_0()); 
@@ -30143,17 +30194,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFBuiltinFunction__FieldAssignment_7_3"
-    // InternalEasyWall.g:9178:1: rule__EFBuiltinFunction__FieldAssignment_7_3 : ( RULE_STRING ) ;
+    // InternalEasyWall.g:9193:1: rule__EFBuiltinFunction__FieldAssignment_7_3 : ( RULE_STRING ) ;
     public final void rule__EFBuiltinFunction__FieldAssignment_7_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:9182:1: ( ( RULE_STRING ) )
-            // InternalEasyWall.g:9183:2: ( RULE_STRING )
+            // InternalEasyWall.g:9197:1: ( ( RULE_STRING ) )
+            // InternalEasyWall.g:9198:2: ( RULE_STRING )
             {
-            // InternalEasyWall.g:9183:2: ( RULE_STRING )
-            // InternalEasyWall.g:9184:3: RULE_STRING
+            // InternalEasyWall.g:9198:2: ( RULE_STRING )
+            // InternalEasyWall.g:9199:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFBuiltinFunctionAccess().getFieldSTRINGTerminalRuleCall_7_3_0()); 
@@ -30184,17 +30235,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFRule__RulesAssignment"
-    // InternalEasyWall.g:9193:1: rule__EFRule__RulesAssignment : ( ruleEFRuleClass ) ;
+    // InternalEasyWall.g:9208:1: rule__EFRule__RulesAssignment : ( ruleEFRuleClass ) ;
     public final void rule__EFRule__RulesAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:9197:1: ( ( ruleEFRuleClass ) )
-            // InternalEasyWall.g:9198:2: ( ruleEFRuleClass )
+            // InternalEasyWall.g:9212:1: ( ( ruleEFRuleClass ) )
+            // InternalEasyWall.g:9213:2: ( ruleEFRuleClass )
             {
-            // InternalEasyWall.g:9198:2: ( ruleEFRuleClass )
-            // InternalEasyWall.g:9199:3: ruleEFRuleClass
+            // InternalEasyWall.g:9213:2: ( ruleEFRuleClass )
+            // InternalEasyWall.g:9214:3: ruleEFRuleClass
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFRuleAccess().getRulesEFRuleClassParserRuleCall_0()); 
@@ -30229,17 +30280,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFRuleClass__NameAssignment_1"
-    // InternalEasyWall.g:9208:1: rule__EFRuleClass__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalEasyWall.g:9223:1: rule__EFRuleClass__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__EFRuleClass__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:9212:1: ( ( RULE_ID ) )
-            // InternalEasyWall.g:9213:2: ( RULE_ID )
+            // InternalEasyWall.g:9227:1: ( ( RULE_ID ) )
+            // InternalEasyWall.g:9228:2: ( RULE_ID )
             {
-            // InternalEasyWall.g:9213:2: ( RULE_ID )
-            // InternalEasyWall.g:9214:3: RULE_ID
+            // InternalEasyWall.g:9228:2: ( RULE_ID )
+            // InternalEasyWall.g:9229:3: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFRuleClassAccess().getNameIDTerminalRuleCall_1_0()); 
@@ -30270,17 +30321,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFRuleClass__TypeAssignment_3"
-    // InternalEasyWall.g:9223:1: rule__EFRuleClass__TypeAssignment_3 : ( ruleEFRulesTypes ) ;
+    // InternalEasyWall.g:9238:1: rule__EFRuleClass__TypeAssignment_3 : ( ruleEFRulesTypes ) ;
     public final void rule__EFRuleClass__TypeAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:9227:1: ( ( ruleEFRulesTypes ) )
-            // InternalEasyWall.g:9228:2: ( ruleEFRulesTypes )
+            // InternalEasyWall.g:9242:1: ( ( ruleEFRulesTypes ) )
+            // InternalEasyWall.g:9243:2: ( ruleEFRulesTypes )
             {
-            // InternalEasyWall.g:9228:2: ( ruleEFRulesTypes )
-            // InternalEasyWall.g:9229:3: ruleEFRulesTypes
+            // InternalEasyWall.g:9243:2: ( ruleEFRulesTypes )
+            // InternalEasyWall.g:9244:3: ruleEFRulesTypes
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFRuleClassAccess().getTypeEFRulesTypesEnumRuleCall_3_0()); 
@@ -30315,17 +30366,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFRuleClass__MembersAssignment_5"
-    // InternalEasyWall.g:9238:1: rule__EFRuleClass__MembersAssignment_5 : ( ruleEFMember ) ;
+    // InternalEasyWall.g:9253:1: rule__EFRuleClass__MembersAssignment_5 : ( ruleEFMember ) ;
     public final void rule__EFRuleClass__MembersAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:9242:1: ( ( ruleEFMember ) )
-            // InternalEasyWall.g:9243:2: ( ruleEFMember )
+            // InternalEasyWall.g:9257:1: ( ( ruleEFMember ) )
+            // InternalEasyWall.g:9258:2: ( ruleEFMember )
             {
-            // InternalEasyWall.g:9243:2: ( ruleEFMember )
-            // InternalEasyWall.g:9244:3: ruleEFMember
+            // InternalEasyWall.g:9258:2: ( ruleEFMember )
+            // InternalEasyWall.g:9259:3: ruleEFMember
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFRuleClassAccess().getMembersEFMemberParserRuleCall_5_0()); 
@@ -30360,17 +30411,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFNetworkSYNTAX__VaripAssignment_0_0"
-    // InternalEasyWall.g:9253:1: rule__EFNetworkSYNTAX__VaripAssignment_0_0 : ( RULE_ID ) ;
+    // InternalEasyWall.g:9268:1: rule__EFNetworkSYNTAX__VaripAssignment_0_0 : ( RULE_ID ) ;
     public final void rule__EFNetworkSYNTAX__VaripAssignment_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:9257:1: ( ( RULE_ID ) )
-            // InternalEasyWall.g:9258:2: ( RULE_ID )
+            // InternalEasyWall.g:9272:1: ( ( RULE_ID ) )
+            // InternalEasyWall.g:9273:2: ( RULE_ID )
             {
-            // InternalEasyWall.g:9258:2: ( RULE_ID )
-            // InternalEasyWall.g:9259:3: RULE_ID
+            // InternalEasyWall.g:9273:2: ( RULE_ID )
+            // InternalEasyWall.g:9274:3: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFNetworkSYNTAXAccess().getVaripIDTerminalRuleCall_0_0_0()); 
@@ -30401,17 +30452,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFNetworkSYNTAX__VarnetmaskAssignment_0_2"
-    // InternalEasyWall.g:9268:1: rule__EFNetworkSYNTAX__VarnetmaskAssignment_0_2 : ( RULE_ID ) ;
+    // InternalEasyWall.g:9283:1: rule__EFNetworkSYNTAX__VarnetmaskAssignment_0_2 : ( RULE_ID ) ;
     public final void rule__EFNetworkSYNTAX__VarnetmaskAssignment_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:9272:1: ( ( RULE_ID ) )
-            // InternalEasyWall.g:9273:2: ( RULE_ID )
+            // InternalEasyWall.g:9287:1: ( ( RULE_ID ) )
+            // InternalEasyWall.g:9288:2: ( RULE_ID )
             {
-            // InternalEasyWall.g:9273:2: ( RULE_ID )
-            // InternalEasyWall.g:9274:3: RULE_ID
+            // InternalEasyWall.g:9288:2: ( RULE_ID )
+            // InternalEasyWall.g:9289:3: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFNetworkSYNTAXAccess().getVarnetmaskIDTerminalRuleCall_0_2_0()); 
@@ -30442,17 +30493,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFNetworkSYNTAX__RawipAssignment_1_0"
-    // InternalEasyWall.g:9283:1: rule__EFNetworkSYNTAX__RawipAssignment_1_0 : ( RULE_EFIPV4SYNTAX ) ;
+    // InternalEasyWall.g:9298:1: rule__EFNetworkSYNTAX__RawipAssignment_1_0 : ( RULE_EFIPV4SYNTAX ) ;
     public final void rule__EFNetworkSYNTAX__RawipAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:9287:1: ( ( RULE_EFIPV4SYNTAX ) )
-            // InternalEasyWall.g:9288:2: ( RULE_EFIPV4SYNTAX )
+            // InternalEasyWall.g:9302:1: ( ( RULE_EFIPV4SYNTAX ) )
+            // InternalEasyWall.g:9303:2: ( RULE_EFIPV4SYNTAX )
             {
-            // InternalEasyWall.g:9288:2: ( RULE_EFIPV4SYNTAX )
-            // InternalEasyWall.g:9289:3: RULE_EFIPV4SYNTAX
+            // InternalEasyWall.g:9303:2: ( RULE_EFIPV4SYNTAX )
+            // InternalEasyWall.g:9304:3: RULE_EFIPV4SYNTAX
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFNetworkSYNTAXAccess().getRawipEFIPV4SYNTAXTerminalRuleCall_1_0_0()); 
@@ -30483,17 +30534,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFNetworkSYNTAX__RawnetmaskAssignment_1_2"
-    // InternalEasyWall.g:9298:1: rule__EFNetworkSYNTAX__RawnetmaskAssignment_1_2 : ( RULE_INT ) ;
+    // InternalEasyWall.g:9313:1: rule__EFNetworkSYNTAX__RawnetmaskAssignment_1_2 : ( RULE_INT ) ;
     public final void rule__EFNetworkSYNTAX__RawnetmaskAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:9302:1: ( ( RULE_INT ) )
-            // InternalEasyWall.g:9303:2: ( RULE_INT )
+            // InternalEasyWall.g:9317:1: ( ( RULE_INT ) )
+            // InternalEasyWall.g:9318:2: ( RULE_INT )
             {
-            // InternalEasyWall.g:9303:2: ( RULE_INT )
-            // InternalEasyWall.g:9304:3: RULE_INT
+            // InternalEasyWall.g:9318:2: ( RULE_INT )
+            // InternalEasyWall.g:9319:3: RULE_INT
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFNetworkSYNTAXAccess().getRawnetmaskINTTerminalRuleCall_1_2_0()); 
@@ -30524,17 +30575,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFNetworkSYNTAX__RawipAssignment_2_0"
-    // InternalEasyWall.g:9313:1: rule__EFNetworkSYNTAX__RawipAssignment_2_0 : ( RULE_EFIPV4SYNTAX ) ;
+    // InternalEasyWall.g:9328:1: rule__EFNetworkSYNTAX__RawipAssignment_2_0 : ( RULE_EFIPV4SYNTAX ) ;
     public final void rule__EFNetworkSYNTAX__RawipAssignment_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:9317:1: ( ( RULE_EFIPV4SYNTAX ) )
-            // InternalEasyWall.g:9318:2: ( RULE_EFIPV4SYNTAX )
+            // InternalEasyWall.g:9332:1: ( ( RULE_EFIPV4SYNTAX ) )
+            // InternalEasyWall.g:9333:2: ( RULE_EFIPV4SYNTAX )
             {
-            // InternalEasyWall.g:9318:2: ( RULE_EFIPV4SYNTAX )
-            // InternalEasyWall.g:9319:3: RULE_EFIPV4SYNTAX
+            // InternalEasyWall.g:9333:2: ( RULE_EFIPV4SYNTAX )
+            // InternalEasyWall.g:9334:3: RULE_EFIPV4SYNTAX
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFNetworkSYNTAXAccess().getRawipEFIPV4SYNTAXTerminalRuleCall_2_0_0()); 
@@ -30565,17 +30616,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFNetworkSYNTAX__VarnetmaskAssignment_2_2"
-    // InternalEasyWall.g:9328:1: rule__EFNetworkSYNTAX__VarnetmaskAssignment_2_2 : ( RULE_ID ) ;
+    // InternalEasyWall.g:9343:1: rule__EFNetworkSYNTAX__VarnetmaskAssignment_2_2 : ( RULE_ID ) ;
     public final void rule__EFNetworkSYNTAX__VarnetmaskAssignment_2_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:9332:1: ( ( RULE_ID ) )
-            // InternalEasyWall.g:9333:2: ( RULE_ID )
+            // InternalEasyWall.g:9347:1: ( ( RULE_ID ) )
+            // InternalEasyWall.g:9348:2: ( RULE_ID )
             {
-            // InternalEasyWall.g:9333:2: ( RULE_ID )
-            // InternalEasyWall.g:9334:3: RULE_ID
+            // InternalEasyWall.g:9348:2: ( RULE_ID )
+            // InternalEasyWall.g:9349:3: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFNetworkSYNTAXAccess().getVarnetmaskIDTerminalRuleCall_2_2_0()); 
@@ -30606,17 +30657,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFNetworkSYNTAX__VaripAssignment_3_0"
-    // InternalEasyWall.g:9343:1: rule__EFNetworkSYNTAX__VaripAssignment_3_0 : ( RULE_ID ) ;
+    // InternalEasyWall.g:9358:1: rule__EFNetworkSYNTAX__VaripAssignment_3_0 : ( RULE_ID ) ;
     public final void rule__EFNetworkSYNTAX__VaripAssignment_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:9347:1: ( ( RULE_ID ) )
-            // InternalEasyWall.g:9348:2: ( RULE_ID )
+            // InternalEasyWall.g:9362:1: ( ( RULE_ID ) )
+            // InternalEasyWall.g:9363:2: ( RULE_ID )
             {
-            // InternalEasyWall.g:9348:2: ( RULE_ID )
-            // InternalEasyWall.g:9349:3: RULE_ID
+            // InternalEasyWall.g:9363:2: ( RULE_ID )
+            // InternalEasyWall.g:9364:3: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFNetworkSYNTAXAccess().getVaripIDTerminalRuleCall_3_0_0()); 
@@ -30647,17 +30698,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFNetworkSYNTAX__RawnetmaskAssignment_3_2"
-    // InternalEasyWall.g:9358:1: rule__EFNetworkSYNTAX__RawnetmaskAssignment_3_2 : ( RULE_INT ) ;
+    // InternalEasyWall.g:9373:1: rule__EFNetworkSYNTAX__RawnetmaskAssignment_3_2 : ( RULE_INT ) ;
     public final void rule__EFNetworkSYNTAX__RawnetmaskAssignment_3_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:9362:1: ( ( RULE_INT ) )
-            // InternalEasyWall.g:9363:2: ( RULE_INT )
+            // InternalEasyWall.g:9377:1: ( ( RULE_INT ) )
+            // InternalEasyWall.g:9378:2: ( RULE_INT )
             {
-            // InternalEasyWall.g:9363:2: ( RULE_INT )
-            // InternalEasyWall.g:9364:3: RULE_INT
+            // InternalEasyWall.g:9378:2: ( RULE_INT )
+            // InternalEasyWall.g:9379:3: RULE_INT
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFNetworkSYNTAXAccess().getRawnetmaskINTTerminalRuleCall_3_2_0()); 
@@ -30688,17 +30739,17 @@ public class InternalEasyWallParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EFNetportSYNTAX__NetportAssignment_2"
-    // InternalEasyWall.g:9373:1: rule__EFNetportSYNTAX__NetportAssignment_2 : ( RULE_INT ) ;
+    // InternalEasyWall.g:9388:1: rule__EFNetportSYNTAX__NetportAssignment_2 : ( RULE_INT ) ;
     public final void rule__EFNetportSYNTAX__NetportAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEasyWall.g:9377:1: ( ( RULE_INT ) )
-            // InternalEasyWall.g:9378:2: ( RULE_INT )
+            // InternalEasyWall.g:9392:1: ( ( RULE_INT ) )
+            // InternalEasyWall.g:9393:2: ( RULE_INT )
             {
-            // InternalEasyWall.g:9378:2: ( RULE_INT )
-            // InternalEasyWall.g:9379:3: RULE_INT
+            // InternalEasyWall.g:9393:2: ( RULE_INT )
+            // InternalEasyWall.g:9394:3: RULE_INT
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEFNetportSYNTAXAccess().getNetportINTTerminalRuleCall_2_0()); 

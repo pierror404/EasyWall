@@ -48,6 +48,7 @@ import org.xtext.example.easywall.easyWall.EFNew;
 import org.xtext.example.easywall.easyWall.EFNotExpression;
 import org.xtext.example.easywall.easyWall.EFOrExpression;
 import org.xtext.example.easywall.easyWall.EFParameter;
+import org.xtext.example.easywall.easyWall.EFProgram;
 import org.xtext.example.easywall.easyWall.EFReject;
 import org.xtext.example.easywall.easyWall.EFRelExpression;
 import org.xtext.example.easywall.easyWall.EFReturn;
@@ -165,15 +166,8 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				sequence_EFBuiltinFunction(context, (EFGetTime) semanticObject); 
 				return; 
 			case EasyWallPackage.EF_HEADER:
-				if (rule == grammarAccess.getEFHeaderRule()) {
-					sequence_EFHeader(context, (EFHeader) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getEFProgramRule()) {
-					sequence_EFHeader_EFProgram(context, (EFHeader) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_EFHeader(context, (EFHeader) semanticObject); 
+				return; 
 			case EasyWallPackage.EFI_PV4_CONSTANT:
 				sequence_EFPrimaryExpression(context, (EFIPv4Constant) semanticObject); 
 				return; 
@@ -244,6 +238,9 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				return; 
 			case EasyWallPackage.EF_PARAMETER:
 				sequence_EFTypedDeclaration(context, (EFParameter) semanticObject); 
+				return; 
+			case EasyWallPackage.EF_PROGRAM:
+				sequence_EFProgram(context, (EFProgram) semanticObject); 
 				return; 
 			case EasyWallPackage.EF_REJECT:
 				sequence_EFBuiltinFunction(context, (EFReject) semanticObject); 
@@ -796,20 +793,6 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 * </pre>
 	 */
 	protected void sequence_EFHeader(ISerializationContext context, EFHeader semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     EFProgram returns EFHeader
-	 *
-	 * Constraint:
-	 *     (name=QualifiedName? imports+=EFImports* (rules+=EFRule+ | firewall=EFFirewall)?)
-	 * </pre>
-	 */
-	protected void sequence_EFHeader_EFProgram(ISerializationContext context, EFHeader semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1631,6 +1614,20 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getEFPrimaryExpressionAccess().getProtocolTRANSPORTLAYERPROTOCOLEnumRuleCall_5_1_0(), semanticObject.getProtocol());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     EFProgram returns EFProgram
+	 *
+	 * Constraint:
+	 *     (header=EFHeader (rules+=EFRule+ | firewall=EFFirewall)?)
+	 * </pre>
+	 */
+	protected void sequence_EFProgram(ISerializationContext context, EFProgram semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

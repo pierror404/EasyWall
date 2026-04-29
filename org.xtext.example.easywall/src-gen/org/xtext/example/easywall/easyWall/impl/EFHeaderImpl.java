@@ -14,14 +14,13 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.xtext.example.easywall.easyWall.EFFirewall;
 import org.xtext.example.easywall.easyWall.EFHeader;
 import org.xtext.example.easywall.easyWall.EFImports;
-import org.xtext.example.easywall.easyWall.EFRule;
 import org.xtext.example.easywall.easyWall.EasyWallPackage;
 
 /**
@@ -32,36 +31,14 @@ import org.xtext.example.easywall.easyWall.EasyWallPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.easywall.easyWall.impl.EFHeaderImpl#getRules <em>Rules</em>}</li>
- *   <li>{@link org.xtext.example.easywall.easyWall.impl.EFHeaderImpl#getFirewall <em>Firewall</em>}</li>
  *   <li>{@link org.xtext.example.easywall.easyWall.impl.EFHeaderImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.easywall.easyWall.impl.EFHeaderImpl#getImports <em>Imports</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class EFHeaderImpl extends EFProgramImpl implements EFHeader
+public class EFHeaderImpl extends MinimalEObjectImpl.Container implements EFHeader
 {
-  /**
-   * The cached value of the '{@link #getRules() <em>Rules</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRules()
-   * @generated
-   * @ordered
-   */
-  protected EList<EFRule> rules;
-
-  /**
-   * The cached value of the '{@link #getFirewall() <em>Firewall</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFirewall()
-   * @generated
-   * @ordered
-   */
-  protected EFFirewall firewall;
-
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -119,71 +96,6 @@ public class EFHeaderImpl extends EFProgramImpl implements EFHeader
    * @generated
    */
   @Override
-  public EList<EFRule> getRules()
-  {
-    if (rules == null)
-    {
-      rules = new EObjectContainmentEList<EFRule>(EFRule.class, this, EasyWallPackage.EF_HEADER__RULES);
-    }
-    return rules;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EFFirewall getFirewall()
-  {
-    return firewall;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetFirewall(EFFirewall newFirewall, NotificationChain msgs)
-  {
-    EFFirewall oldFirewall = firewall;
-    firewall = newFirewall;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EasyWallPackage.EF_HEADER__FIREWALL, oldFirewall, newFirewall);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setFirewall(EFFirewall newFirewall)
-  {
-    if (newFirewall != firewall)
-    {
-      NotificationChain msgs = null;
-      if (firewall != null)
-        msgs = ((InternalEObject)firewall).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EasyWallPackage.EF_HEADER__FIREWALL, null, msgs);
-      if (newFirewall != null)
-        msgs = ((InternalEObject)newFirewall).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EasyWallPackage.EF_HEADER__FIREWALL, null, msgs);
-      msgs = basicSetFirewall(newFirewall, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EasyWallPackage.EF_HEADER__FIREWALL, newFirewall, newFirewall));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public String getName()
   {
     return name;
@@ -228,10 +140,6 @@ public class EFHeaderImpl extends EFProgramImpl implements EFHeader
   {
     switch (featureID)
     {
-      case EasyWallPackage.EF_HEADER__RULES:
-        return ((InternalEList<?>)getRules()).basicRemove(otherEnd, msgs);
-      case EasyWallPackage.EF_HEADER__FIREWALL:
-        return basicSetFirewall(null, msgs);
       case EasyWallPackage.EF_HEADER__IMPORTS:
         return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
     }
@@ -248,10 +156,6 @@ public class EFHeaderImpl extends EFProgramImpl implements EFHeader
   {
     switch (featureID)
     {
-      case EasyWallPackage.EF_HEADER__RULES:
-        return getRules();
-      case EasyWallPackage.EF_HEADER__FIREWALL:
-        return getFirewall();
       case EasyWallPackage.EF_HEADER__NAME:
         return getName();
       case EasyWallPackage.EF_HEADER__IMPORTS:
@@ -271,13 +175,6 @@ public class EFHeaderImpl extends EFProgramImpl implements EFHeader
   {
     switch (featureID)
     {
-      case EasyWallPackage.EF_HEADER__RULES:
-        getRules().clear();
-        getRules().addAll((Collection<? extends EFRule>)newValue);
-        return;
-      case EasyWallPackage.EF_HEADER__FIREWALL:
-        setFirewall((EFFirewall)newValue);
-        return;
       case EasyWallPackage.EF_HEADER__NAME:
         setName((String)newValue);
         return;
@@ -299,12 +196,6 @@ public class EFHeaderImpl extends EFProgramImpl implements EFHeader
   {
     switch (featureID)
     {
-      case EasyWallPackage.EF_HEADER__RULES:
-        getRules().clear();
-        return;
-      case EasyWallPackage.EF_HEADER__FIREWALL:
-        setFirewall((EFFirewall)null);
-        return;
       case EasyWallPackage.EF_HEADER__NAME:
         setName(NAME_EDEFAULT);
         return;
@@ -325,10 +216,6 @@ public class EFHeaderImpl extends EFProgramImpl implements EFHeader
   {
     switch (featureID)
     {
-      case EasyWallPackage.EF_HEADER__RULES:
-        return rules != null && !rules.isEmpty();
-      case EasyWallPackage.EF_HEADER__FIREWALL:
-        return firewall != null;
       case EasyWallPackage.EF_HEADER__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case EasyWallPackage.EF_HEADER__IMPORTS:

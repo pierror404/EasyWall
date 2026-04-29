@@ -29,7 +29,8 @@ public class EasyWallGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	public class EFProgramElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.easywall.EasyWall.EFProgram");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cEFHeaderParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Assignment cHeaderAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cHeaderEFHeaderParserRuleCall_0_0 = (RuleCall)cHeaderAssignment_0.eContents().get(0);
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
 		private final Assignment cRulesAssignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
 		private final RuleCall cRulesEFRuleParserRuleCall_1_0_0 = (RuleCall)cRulesAssignment_1_0.eContents().get(0);
@@ -40,17 +41,20 @@ public class EasyWallGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//// ROOT - Ora supporta file separati
 		//// ============================================
 		//EFProgram:
-		//    EFHeader
+		//    header=EFHeader
 		//    ((rules+=EFRule)* | firewall=EFFirewall) // Supporta multipli rules E firewall in file diversi
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//EFHeader
+		//header=EFHeader
 		//((rules+=EFRule)* | firewall=EFFirewall)
 		public Group getGroup() { return cGroup; }
 		
+		//header=EFHeader
+		public Assignment getHeaderAssignment_0() { return cHeaderAssignment_0; }
+		
 		//EFHeader
-		public RuleCall getEFHeaderParserRuleCall_0() { return cEFHeaderParserRuleCall_0; }
+		public RuleCall getHeaderEFHeaderParserRuleCall_0_0() { return cHeaderEFHeaderParserRuleCall_0_0; }
 		
 		//((rules+=EFRule)* | firewall=EFFirewall)
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
@@ -2922,7 +2926,7 @@ public class EasyWallGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	//// ROOT - Ora supporta file separati
 	//// ============================================
 	//EFProgram:
-	//    EFHeader
+	//    header=EFHeader
 	//    ((rules+=EFRule)* | firewall=EFFirewall) // Supporta multipli rules E firewall in file diversi
 	//;
 	public EFProgramElements getEFProgramAccess() {

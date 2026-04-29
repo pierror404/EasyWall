@@ -135,6 +135,7 @@ public class EasyWallParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getEFNetworkSYNTAXAccess().getGroup_2(), "rule__EFNetworkSYNTAX__Group_2__0");
 			builder.put(grammarAccess.getEFNetworkSYNTAXAccess().getGroup_3(), "rule__EFNetworkSYNTAX__Group_3__0");
 			builder.put(grammarAccess.getEFNetportSYNTAXAccess().getGroup(), "rule__EFNetportSYNTAX__Group__0");
+			builder.put(grammarAccess.getEFProgramAccess().getHeaderAssignment_0(), "rule__EFProgram__HeaderAssignment_0");
 			builder.put(grammarAccess.getEFProgramAccess().getRulesAssignment_1_0(), "rule__EFProgram__RulesAssignment_1_0");
 			builder.put(grammarAccess.getEFProgramAccess().getFirewallAssignment_1_1(), "rule__EFProgram__FirewallAssignment_1_1");
 			builder.put(grammarAccess.getEFHeaderAccess().getNameAssignment_1_1(), "rule__EFHeader__NameAssignment_1_1");

@@ -2222,9 +2222,9 @@ rule__EFProgram__Group__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getEFProgramAccess().getEFHeaderParserRuleCall_0()); }
-	ruleEFHeader
-	{ after(grammarAccess.getEFProgramAccess().getEFHeaderParserRuleCall_0()); }
+	{ before(grammarAccess.getEFProgramAccess().getHeaderAssignment_0()); }
+	(rule__EFProgram__HeaderAssignment_0)
+	{ after(grammarAccess.getEFProgramAccess().getHeaderAssignment_0()); }
 )
 ;
 finally {
@@ -8197,6 +8197,21 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+
+rule__EFProgram__HeaderAssignment_0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getEFProgramAccess().getHeaderEFHeaderParserRuleCall_0_0()); }
+		ruleEFHeader
+		{ after(grammarAccess.getEFProgramAccess().getHeaderEFHeaderParserRuleCall_0_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
 
 rule__EFProgram__RulesAssignment_1_0
 	@init {

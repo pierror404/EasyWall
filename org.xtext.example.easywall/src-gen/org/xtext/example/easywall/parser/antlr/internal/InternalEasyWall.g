@@ -77,14 +77,25 @@ ruleEFProgram returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		{
-			newCompositeNode(grammarAccess.getEFProgramAccess().getEFHeaderParserRuleCall_0());
-		}
-		this_EFHeader_0=ruleEFHeader
-		{
-			$current = $this_EFHeader_0.current;
-			afterParserOrEnumRuleCall();
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getEFProgramAccess().getHeaderEFHeaderParserRuleCall_0_0());
+				}
+				lv_header_0_0=ruleEFHeader
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getEFProgramRule());
+					}
+					set(
+						$current,
+						"header",
+						lv_header_0_0,
+						"org.xtext.example.easywall.EasyWall.EFHeader");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 		(
 			(
 				(

@@ -7,6 +7,32 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import org.xtext.example.easywall.easyWall.EFProgram
+import org.xtext.example.easywall.easyWall.EFRuleClass
+import org.xtext.example.easywall.easyWall.EFField
+import org.xtext.example.easywall.easyWall.EFMethod
+import org.xtext.example.easywall.easyWall.EFOrExpression
+import org.xtext.example.easywall.easyWall.EFAndExpression
+import org.xtext.example.easywall.easyWall.EFEqualExpression
+import org.xtext.example.easywall.easyWall.EFRelExpression
+import org.xtext.example.easywall.easyWall.EFAddExpression
+import org.xtext.example.easywall.easyWall.EFNotExpression
+import org.xtext.example.easywall.easyWall.EFAssignment
+import org.xtext.example.easywall.easyWall.EFIPv4Constant
+import org.xtext.example.easywall.easyWall.EFIntConstant
+import org.xtext.example.easywall.easyWall.EFStringConstant
+import org.xtext.example.easywall.easyWall.EFBoolConstant
+import org.xtext.example.easywall.easyWall.EFAllow
+import org.xtext.example.easywall.easyWall.EFBlock
+import org.xtext.example.easywall.easyWall.EFWriteLog
+import org.xtext.example.easywall.easyWall.EFSymbolRef
+import org.xtext.example.easywall.easyWall.EFMemberSelection
+import org.xtext.example.easywall.easyWall.EFFirewall
+import org.xtext.example.easywall.easyWall.EFExpression
+import org.xtext.example.easywall.easyWall.EFIfStatement
+import org.xtext.example.easywall.easyWall.EFReturn
+import org.xtext.example.easywall.easyWall.EFStatement
+import org.xtext.example.easywall.easyWall.EFNetworkNativeType
 
 /**
  * Generates code from your model files on save.
@@ -21,5 +47,198 @@ class EasyWallGenerator extends AbstractGenerator {
 //				.filter(Greeting)
 //				.map[name]
 //				.join(', '))
+		val program = resource.allContents.filter(EFProgram).toIterable.head
+        if (program === null) return
+
+        val packageName = program.header?.name ?: "generated.firewall"
+        val packagePath = packageName.replace('.', '/')
+
+        // 1. Genera le classi per ogni regola definita
+        for (ruleWrapper : program.rules) {
+            val rule = ruleWrapper.rules
+            fsa.generateFile('''«packagePath»/«rule.name».java''', rule.compileRuleClass(packageName))
+        }
+
+        // 2. Genera il Firewall principale
+        if (program.firewall !== null) {
+            fsa.generateFile('''«packagePath»/«program.firewall.name».java''', 
+                program.firewall.compileFirewallClass(packageName))
+        }
 	}
+	// ============================================
+    // GENERAZIONE CLASSE REGOLA (Rule)
+    // ============================================
+    def CharSequence compileRuleClass(EFRuleClass rule, String packageName) '''
+        package «packageName»;
+
+        import fr.pierror.firewall.*;
+        import fr.pierror.firewall.model.*;
+        import java.util.*;
+
+        public class «rule.name» extends Rule {
+            
+            «FOR field : rule.members.filter(EFField)»
+            		«field.compileField»
+            «ENDFOR»
+
+            public «rule.name»() {
+                // Constructor
+                «val protocolField = rule.findField("rule_protocol")»
+                «val directionField = rule.findField("rule_direction")»
+                «val sourceField = rule.findField("rule_src")»
+                «val sourcePortField = rule.findField("rule_src_port")»
+                «val destinationField = rule.findField("rule_dest")»
+                «val destinationPortField = rule.findField("rule_dest_port")»
+                «IF sourceField.nativetype === EFNetworkNativeType.NETWORK»
+                	super(
+                		Layer.«rule.type.toString.replace("Layer", "").toUpperCase», // layer
+                		«rule.type.toString»Protocol.«protocolField.name», //protocol
+                		//source
+                		//destination
+                		Direction.«directionField.name.toUpperCase», //direction              		
+                		);
+                «ENDIF»
+            }
+
+            @Override
+            public boolean matches(Packet packet) {
+                
+                boolean matches = true;
+                «IF protocolField !== null»
+                if (packet.getProtocol() != this.«protocolField.name») matches = false;
+                «ENDIF»
+                «IF sourceField !== null»
+                if (!packet.getSourceIp().equals(this.«sourceField.name»)) matches = false;
+                «ENDIF»
+                return matches;
+            }
+
+            @Override
+            public void trigger(Packet packet, FirewallContext context) {
+                «FOR method : rule.members.filter(EFMethod).filter[name == "trigger"]»
+                «FOR stmt : method.body.statements»
+                «stmt.compileStatement»
+                «ENDFOR»
+                «ENDFOR»
+            }
+            
+            @Override
+            public String getName() { return "«rule.name»"; }
+        }
+    '''
+    
+    def EFField findField(EFRuleClass rule, String name) {
+        rule.members.filter(EFField).findFirst[name.equalsIgnoreCase(name)]
+    }
+    
+    // ============================================
+    // COMPILAZIONE STATEMENT E LOGICA
+    // ============================================
+    def CharSequence compileStatement(EFStatement stmt) {
+        switch stmt {
+            EFReturn: '''return «stmt.expression.compileExpr»;'''
+            EFIfStatement: '''
+                if («stmt.expression.compileExpr») {
+                    «FOR s : stmt.thenBlock.statements»«s.compileStatement»«ENDFOR»
+                } «IF stmt.elseBlock !== null»else {
+                    «FOR s : stmt.elseBlock.statements»«s.compileStatement»«ENDFOR»
+                }«ENDIF»
+            '''
+            EFField: stmt.compileField
+            EFExpression: stmt.compileExpr + ";"
+            default: ""
+        }
+    }
+
+    def String compileExpr(EFExpression expr) {
+        switch expr {
+            EFOrExpression: '''(«expr.left.compileExpr» || «expr.right.compileExpr»)'''
+            EFAndExpression: '''(«expr.left.compileExpr» && «expr.right.compileExpr»)'''
+            EFEqualExpression: '''«expr.left.compileExpr» «IF expr.op == "=="»==«ELSE»!=«ENDIF» «expr.right.compileExpr»'''
+            EFRelExpression: '''«expr.left.compileExpr» «expr.op» «expr.right.compileExpr»'''
+            EFAddExpression: '''«expr.left.compileExpr» «expr.op» «expr.right.compileExpr»'''
+            EFNotExpression: '''!(«expr.expression.compileExpr»)'''
+            EFAssignment: '''«expr.left.compileExpr» = «expr.right.compileExpr»'''
+            
+            // Costanti Native
+            EFIPv4Constant: '''"«expr.ipv4»"'''
+            EFIntConstant: expr.value.toString
+            EFStringConstant: '''"«expr.value»"'''
+            EFBoolConstant: expr.value
+            
+            // Built-in Firewall Methods
+            EFAllow: "context.allow(packet)"
+            EFBlock: "context.block(packet)"
+            EFWriteLog: '''context.log(«expr.message.compileExpr»)'''
+            
+            EFSymbolRef: expr.symbol
+            EFMemberSelection: '''«expr.receiver.compileExpr».«expr.member.name»«IF expr.args !== null»(«expr.args.map[compileExpr].join(", ")»)«ENDIF»'''
+            default: "/* unknown */"
+        }
+    }
+
+    def CharSequence compileField(EFField field) {
+        val type = field.getJavaType
+        val init = if (field.expression !== null) " = " + field.expression.compileExpr else ""
+        '''private «type» «field.name»«init»;'''
+    }
+
+    // ============================================
+    // GENERAZIONE FIREWALL CLASS (ENTRY POINT)
+    // ============================================
+    // TODO: cambia packages
+    def CharSequence compileFirewallClass(EFFirewall firewall, String packageName) '''
+        package «packageName»;
+		
+        import fr.pierror.firewall.Firewall;
+        import fr.pierror.firewall.model.Action;
+
+        public class «firewall.name» {
+            private Firewall engine;
+
+            public «firewall.name»() {
+                this.engine = new Firewall();
+                
+                // Set default policy
+                «IF firewall.defaultPolicy !== null»
+                engine.setDefaultPolicy(Action.«firewall.defaultPolicy.action.toString.toUpperCase»);
+                «ENDIF»
+
+                // Load Rules
+                «FOR ref : firewall.ruleRefs»
+                engine.addRule(new «ref.rule.name»());
+                «ENDFOR»
+            }
+
+            public void start() {
+                System.out.println("Firewall «firewall.name» running...");
+                engine.listen();
+            }
+
+            public static void main(String[] args) {
+                new «firewall.name»().start();
+            }
+        }
+    '''
+
+    // ============================================
+    // UTILS
+    // ============================================
+    // TODO: Cambia i valori
+    def String getJavaType(EFField field) {
+        if (field.nativetype !== null) {
+            return switch field.nativetype {
+                case IPV4: "String"
+                case PORT: "int"
+                case PROTOCOL: "Protocol"
+                default: "Object"
+            }
+        }
+        return switch field.primitivetype {
+            case INT: "int"
+            case STRING: "String"
+            case BOOL: "boolean"
+            default: "Object"
+        }
+    }
 }

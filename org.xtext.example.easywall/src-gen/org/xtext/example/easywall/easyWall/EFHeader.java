@@ -5,6 +5,8 @@ package org.xtext.example.easywall.easyWall;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>EF Header</b></em>'.
@@ -14,8 +16,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.easywall.easyWall.EFHeader#getRules <em>Rules</em>}</li>
- *   <li>{@link org.xtext.example.easywall.easyWall.EFHeader#getFirewall <em>Firewall</em>}</li>
  *   <li>{@link org.xtext.example.easywall.easyWall.EFHeader#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.easywall.easyWall.EFHeader#getImports <em>Imports</em>}</li>
  * </ul>
@@ -24,42 +24,8 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface EFHeader extends EFProgram
+public interface EFHeader extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Rules</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.easywall.easyWall.EFRule}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Rules</em>' containment reference list.
-   * @see org.xtext.example.easywall.easyWall.EasyWallPackage#getEFHeader_Rules()
-   * @model containment="true"
-   * @generated
-   */
-  EList<EFRule> getRules();
-
-  /**
-   * Returns the value of the '<em><b>Firewall</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Firewall</em>' containment reference.
-   * @see #setFirewall(EFFirewall)
-   * @see org.xtext.example.easywall.easyWall.EasyWallPackage#getEFHeader_Firewall()
-   * @model containment="true"
-   * @generated
-   */
-  EFFirewall getFirewall();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.easywall.easyWall.EFHeader#getFirewall <em>Firewall</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Firewall</em>' containment reference.
-   * @see #getFirewall()
-   * @generated
-   */
-  void setFirewall(EFFirewall value);
-
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->

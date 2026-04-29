@@ -2,12 +2,15 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="easyWall" nsURI="http://www.xtext.org/example/easywall/EasyWall"
     nsPrefix="easyWall">
-  <eClassifiers xsi:type="ecore:EClass" name="EFProgram"/>
-  <eClassifiers xsi:type="ecore:EClass" name="EFHeader" eSuperTypes="#//EFProgram">
+  <eClassifiers xsi:type="ecore:EClass" name="EFProgram">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="header" eType="#//EFHeader"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rules" upperBound="-1"
         eType="#//EFRule" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="firewall" eType="#//EFFirewall"
         containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EFHeader">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
         eType="#//EFImports" containment="true"/>

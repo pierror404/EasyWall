@@ -586,6 +586,39 @@ public class EasyWallPackageImpl extends EPackageImpl implements EasyWallPackage
    * @generated
    */
   @Override
+  public EReference getEFProgram_Header()
+  {
+    return (EReference)efProgramEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getEFProgram_Rules()
+  {
+    return (EReference)efProgramEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getEFProgram_Firewall()
+  {
+    return (EReference)efProgramEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getEFHeader()
   {
     return efHeaderEClass;
@@ -597,31 +630,9 @@ public class EasyWallPackageImpl extends EPackageImpl implements EasyWallPackage
    * @generated
    */
   @Override
-  public EReference getEFHeader_Rules()
-  {
-    return (EReference)efHeaderEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getEFHeader_Firewall()
-  {
-    return (EReference)efHeaderEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EAttribute getEFHeader_Name()
   {
-    return (EAttribute)efHeaderEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)efHeaderEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -632,7 +643,7 @@ public class EasyWallPackageImpl extends EPackageImpl implements EasyWallPackage
   @Override
   public EReference getEFHeader_Imports()
   {
-    return (EReference)efHeaderEClass.getEStructuralFeatures().get(3);
+    return (EReference)efHeaderEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2174,10 +2185,11 @@ public class EasyWallPackageImpl extends EPackageImpl implements EasyWallPackage
 
     // Create classes and their features
     efProgramEClass = createEClass(EF_PROGRAM);
+    createEReference(efProgramEClass, EF_PROGRAM__HEADER);
+    createEReference(efProgramEClass, EF_PROGRAM__RULES);
+    createEReference(efProgramEClass, EF_PROGRAM__FIREWALL);
 
     efHeaderEClass = createEClass(EF_HEADER);
-    createEReference(efHeaderEClass, EF_HEADER__RULES);
-    createEReference(efHeaderEClass, EF_HEADER__FIREWALL);
     createEAttribute(efHeaderEClass, EF_HEADER__NAME);
     createEReference(efHeaderEClass, EF_HEADER__IMPORTS);
 
@@ -2400,7 +2412,6 @@ public class EasyWallPackageImpl extends EPackageImpl implements EasyWallPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    efHeaderEClass.getESuperTypes().add(this.getEFProgram());
     efFieldEClass.getESuperTypes().add(this.getEFMember());
     efFieldEClass.getESuperTypes().add(this.getEFStatement());
     efMethodEClass.getESuperTypes().add(this.getEFMember());
@@ -2444,10 +2455,11 @@ public class EasyWallPackageImpl extends EPackageImpl implements EasyWallPackage
 
     // Initialize classes and features; add operations and parameters
     initEClass(efProgramEClass, EFProgram.class, "EFProgram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEFProgram_Header(), this.getEFHeader(), null, "header", null, 0, 1, EFProgram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEFProgram_Rules(), this.getEFRule(), null, "rules", null, 0, -1, EFProgram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEFProgram_Firewall(), this.getEFFirewall(), null, "firewall", null, 0, 1, EFProgram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(efHeaderEClass, EFHeader.class, "EFHeader", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getEFHeader_Rules(), this.getEFRule(), null, "rules", null, 0, -1, EFHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEFHeader_Firewall(), this.getEFFirewall(), null, "firewall", null, 0, 1, EFHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEFHeader_Name(), ecorePackage.getEString(), "name", null, 0, 1, EFHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEFHeader_Imports(), this.getEFImports(), null, "imports", null, 0, -1, EFHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
