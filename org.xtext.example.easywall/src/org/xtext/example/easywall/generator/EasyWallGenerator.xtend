@@ -390,8 +390,8 @@ class EasyWallGenerator extends AbstractGenerator {
             EFBlock: "return Action.DENY"
             EFDrop: "return Action.DROP"
             EFReject: "return Action.REJECT"
-            EFWriteLog: '''System.out.println("[FIREWALL] " + «compileExpression(expr.message)»)'''
-            EFWriteLogLevel: '''System.out.println("[«expr.level»] " + «compileExpression(expr.message)»)'''
+            EFWriteLog: '''logger.Logger.writeOnLogFile(packet, "firewall-log.txt", logger.LogLevel.INFO,«compileExpression(expr.message)»)'''
+            EFWriteLogLevel: '''logger.Logger.writeOnLogFile(packet, "firewall-log.txt", logger.LogLevel«expr.level»,«compileExpression(expr.message)»)'''
             EFGetTime: "System.currentTimeMillis() / 1000"
             EFGetPacketField: compileGetPacketField(expr)
             

@@ -1033,7 +1033,7 @@ public class EasyWallGenerator extends AbstractGenerator {
       if (expr instanceof EFWriteLog) {
         _matched=true;
         StringConcatenation _builder = new StringConcatenation();
-        _builder.append("System.out.println(\"[FIREWALL] \" + ");
+        _builder.append("logger.Logger.writeOnLogFile(packet, \"firewall-log.txt\", logger.LogLevel.INFO,");
         String _compileExpression = this.compileExpression(((EFWriteLog)expr).getMessage());
         _builder.append(_compileExpression);
         _builder.append(")");
@@ -1044,10 +1044,10 @@ public class EasyWallGenerator extends AbstractGenerator {
       if (expr instanceof EFWriteLogLevel) {
         _matched=true;
         StringConcatenation _builder = new StringConcatenation();
-        _builder.append("System.out.println(\"[");
+        _builder.append("logger.Logger.writeOnLogFile(packet, \"firewall-log.txt\", logger.LogLevel");
         EFLogLevel _level = ((EFWriteLogLevel)expr).getLevel();
         _builder.append(_level);
-        _builder.append("] \" + ");
+        _builder.append(",");
         String _compileExpression = this.compileExpression(((EFWriteLogLevel)expr).getMessage());
         _builder.append(_compileExpression);
         _builder.append(")");
