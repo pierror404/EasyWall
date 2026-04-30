@@ -254,22 +254,11 @@ public class EasyWallGenerator extends AbstractGenerator {
           for(final EFStatement stmt : _statements) {
             _builder.append("    ");
             _builder.append("    ");
-            CharSequence _compileStatement = this.compileStatement(stmt);
-            _builder.append(_compileStatement, "        ");
+            CharSequence _compileStatementInFunc = this.compileStatementInFunc(stmt);
+            _builder.append(_compileStatementInFunc, "        ");
             _builder.newLineIfNotEmpty();
           }
         }
-        _builder.append("    ");
-        _builder.append("    ");
-        _builder.newLine();
-        _builder.append("    ");
-        _builder.append("    ");
-        _builder.append("// Default fallback");
-        _builder.newLine();
-        _builder.append("    ");
-        _builder.append("    ");
-        _builder.append("return this.action;");
-        _builder.newLine();
         _builder.append("    ");
         _builder.append("}");
         _builder.newLine();
@@ -545,34 +534,48 @@ public class EasyWallGenerator extends AbstractGenerator {
     return _xblockexpression;
   }
 
+  public CharSequence compileFieldInFunc(final EFField field) {
+    CharSequence _xblockexpression = null;
+    {
+      final String type = this.getJavaType(field);
+      String _xifexpression = null;
+      EFExpression _expression = field.getExpression();
+      boolean _tripleNotEquals = (_expression != null);
+      if (_tripleNotEquals) {
+        String _compileExpression = this.compileExpression(field.getExpression());
+        _xifexpression = (" = " + _compileExpression);
+      } else {
+        _xifexpression = this.getDefaultValue(field);
+      }
+      final String init = _xifexpression;
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append(type);
+      _builder.append(" ");
+      String _name = field.getName();
+      _builder.append(_name);
+      _builder.append(init);
+      _builder.append(";");
+      _xblockexpression = _builder;
+    }
+    return _xblockexpression;
+  }
+
   public String getJavaType(final EFField field) {
-    EFNetworkNativeType _nativetype = field.getNativetype();
-    boolean _tripleNotEquals = (_nativetype != null);
+    EFPrimitiveType _primitivetype = field.getPrimitivetype();
+    boolean _tripleNotEquals = (_primitivetype != null);
     if (_tripleNotEquals) {
       String _switchResult = null;
-      EFNetworkNativeType _nativetype_1 = field.getNativetype();
-      if (_nativetype_1 != null) {
-        switch (_nativetype_1) {
-          case NETWORK:
-            _switchResult = "Network";
+      EFPrimitiveType _primitivetype_1 = field.getPrimitivetype();
+      if (_primitivetype_1 != null) {
+        switch (_primitivetype_1) {
+          case INT:
+            _switchResult = "long";
             break;
-          case IPV4:
-            _switchResult = "IPv4";
+          case STRING:
+            _switchResult = "String";
             break;
-          case IPV6:
-            _switchResult = "IPv6";
-            break;
-          case PORT:
-            _switchResult = "NetPort";
-            break;
-          case PROTOCOL:
-            _switchResult = "IProtocol";
-            break;
-          case DIRECTION:
-            _switchResult = "Direction";
-            break;
-          case NETMASK:
-            _switchResult = "int";
+          case BOOL:
+            _switchResult = "boolean";
             break;
           default:
             _switchResult = "Object";
@@ -583,21 +586,33 @@ public class EasyWallGenerator extends AbstractGenerator {
       }
       return _switchResult;
     } else {
-      EFPrimitiveType _primitivetype = field.getPrimitivetype();
-      boolean _tripleNotEquals_1 = (_primitivetype != null);
+      EFNetworkNativeType _nativetype = field.getNativetype();
+      boolean _tripleNotEquals_1 = (_nativetype != null);
       if (_tripleNotEquals_1) {
         String _switchResult_1 = null;
-        EFPrimitiveType _primitivetype_1 = field.getPrimitivetype();
-        if (_primitivetype_1 != null) {
-          switch (_primitivetype_1) {
-            case INT:
+        EFNetworkNativeType _nativetype_1 = field.getNativetype();
+        if (_nativetype_1 != null) {
+          switch (_nativetype_1) {
+            case NETWORK:
+              _switchResult_1 = "Network";
+              break;
+            case IPV4:
+              _switchResult_1 = "IPv4";
+              break;
+            case IPV6:
+              _switchResult_1 = "IPv6";
+              break;
+            case PORT:
+              _switchResult_1 = "NetPort";
+              break;
+            case PROTOCOL:
+              _switchResult_1 = "IProtocol";
+              break;
+            case DIRECTION:
+              _switchResult_1 = "Direction";
+              break;
+            case NETMASK:
               _switchResult_1 = "int";
-              break;
-            case STRING:
-              _switchResult_1 = "String";
-              break;
-            case BOOL:
-              _switchResult_1 = "boolean";
               break;
             default:
               _switchResult_1 = "Object";
@@ -723,6 +738,44 @@ public class EasyWallGenerator extends AbstractGenerator {
       _matched=true;
       CharSequence _compileField = this.compileField(((EFField)stmt));
       _switchResult = (_compileField + "\n");
+    }
+    if (!_matched) {
+      if (stmt instanceof EFReturn) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("return ");
+        String _compileExpression = this.compileExpression(((EFReturn)stmt).getExpression());
+        _builder.append(_compileExpression);
+        _builder.append(";");
+        _switchResult = _builder;
+      }
+    }
+    if (!_matched) {
+      if (stmt instanceof EFIfStatement) {
+        _matched=true;
+        _switchResult = this.compileIfStatement(((EFIfStatement)stmt));
+      }
+    }
+    if (!_matched) {
+      if (stmt instanceof EFExpression) {
+        _matched=true;
+        String _compileExpression = this.compileExpression(((EFExpression)stmt));
+        _switchResult = (_compileExpression + ";");
+      }
+    }
+    if (!_matched) {
+      _switchResult = "// Unknown statement";
+    }
+    return _switchResult;
+  }
+
+  public CharSequence compileStatementInFunc(final EFStatement stmt) {
+    CharSequence _switchResult = null;
+    boolean _matched = false;
+    if (stmt instanceof EFField) {
+      _matched=true;
+      CharSequence _compileFieldInFunc = this.compileFieldInFunc(((EFField)stmt));
+      _switchResult = (_compileFieldInFunc + "\n");
     }
     if (!_matched) {
       if (stmt instanceof EFReturn) {
@@ -1155,15 +1208,15 @@ public class EasyWallGenerator extends AbstractGenerator {
   }
 
   public CharSequence compileNetwork(final EFNetworkConstant network) {
-    String _rawip = network.getRawip();
+    String _rawip = network.getNetwork().getRawip();
     boolean _tripleNotEquals = (_rawip != null);
     if (_tripleNotEquals) {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("new Network(IPv4.of(\"");
-      String _rawip_1 = network.getRawip();
+      String _rawip_1 = network.getNetwork().getRawip();
       _builder.append(_rawip_1);
       _builder.append("\"), ");
-      int _rawnetmask = network.getRawnetmask();
+      int _rawnetmask = network.getNetwork().getRawnetmask();
       _builder.append(_rawnetmask);
       _builder.append(")");
       return _builder;

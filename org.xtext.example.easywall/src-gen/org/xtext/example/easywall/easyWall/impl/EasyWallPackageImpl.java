@@ -1125,17 +1125,6 @@ public class EasyWallPackageImpl extends EPackageImpl implements EasyWallPackage
    * @generated
    */
   @Override
-  public EReference getEFExpression_Port()
-  {
-    return (EReference)efExpressionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getEFBuiltinFunction()
   {
     return efBuiltinFunctionEClass;
@@ -2249,7 +2238,6 @@ public class EasyWallPackageImpl extends EPackageImpl implements EasyWallPackage
     createEReference(efIfStatementEClass, EF_IF_STATEMENT__ELSE_BLOCK);
 
     efExpressionEClass = createEClass(EF_EXPRESSION);
-    createEReference(efExpressionEClass, EF_EXPRESSION__PORT);
 
     efBuiltinFunctionEClass = createEClass(EF_BUILTIN_FUNCTION);
 
@@ -2421,6 +2409,7 @@ public class EasyWallPackageImpl extends EPackageImpl implements EasyWallPackage
     efExpressionEClass.getESuperTypes().add(this.getEFStatement());
     efBuiltinFunctionEClass.getESuperTypes().add(this.getEFExpression());
     efNetworkConstantEClass.getESuperTypes().add(this.getEFExpression());
+    efNetportConstantEClass.getESuperTypes().add(this.getEFExpression());
     efAssignmentEClass.getESuperTypes().add(this.getEFExpression());
     efOrExpressionEClass.getESuperTypes().add(this.getEFExpression());
     efAndExpressionEClass.getESuperTypes().add(this.getEFExpression());
@@ -2519,7 +2508,6 @@ public class EasyWallPackageImpl extends EPackageImpl implements EasyWallPackage
     initEReference(getEFIfStatement_ElseBlock(), this.getEFBlock(), null, "elseBlock", null, 0, 1, EFIfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(efExpressionEClass, EFExpression.class, "EFExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getEFExpression_Port(), this.getEFNetportConstant(), null, "port", null, 0, 1, EFExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(efBuiltinFunctionEClass, EFBuiltinFunction.class, "EFBuiltinFunction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

@@ -1273,8 +1273,11 @@ public class EasyWallGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final Action cEFNetworkConstantAction_9_0 = (Action)cGroup_9.eContents().get(0);
 		private final Assignment cNetworkAssignment_9_1 = (Assignment)cGroup_9.eContents().get(1);
 		private final RuleCall cNetworkEFNetworkSYNTAXParserRuleCall_9_1_0 = (RuleCall)cNetworkAssignment_9_1.eContents().get(0);
-		private final Assignment cPortAssignment_10 = (Assignment)cAlternatives.eContents().get(10);
-		private final RuleCall cPortEFNetportSYNTAXParserRuleCall_10_0 = (RuleCall)cPortAssignment_10.eContents().get(0);
+		private final Group cGroup_10 = (Group)cAlternatives.eContents().get(10);
+		private final Action cEFNetportConstantAction_10_0 = (Action)cGroup_10.eContents().get(0);
+		private final Keyword cColonKeyword_10_1 = (Keyword)cGroup_10.eContents().get(1);
+		private final Assignment cNetportAssignment_10_2 = (Assignment)cGroup_10.eContents().get(2);
+		private final RuleCall cNetportINTTerminalRuleCall_10_2_0 = (RuleCall)cNetportAssignment_10_2.eContents().get(0);
 		private final Group cGroup_11 = (Group)cAlternatives.eContents().get(11);
 		private final Action cEFThisAction_11_0 = (Action)cGroup_11.eContents().get(0);
 		private final Keyword cThisKeyword_11_1 = (Keyword)cGroup_11.eContents().get(1);
@@ -1325,7 +1328,7 @@ public class EasyWallGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//  | {EFIPv6Constant} ipv6=EFIPV6SYNTAX
 		//  | {EFIPv4Constant} (ipv4=EFIPV4SYNTAX | any='any' | localhost='localhost')
 		//  | {EFNetworkConstant} network=EFNetworkSYNTAX
-		//  | port=EFNetportSYNTAX
+		//  | {EFNetportConstant} ':' netport=INT
 		//  | {EFThis} 'this'
 		//  | {EFSuper} 'super'
 		//  | {EFNew} 'new' type=[EFRuleClass|QualifiedName] '(' ')'
@@ -1346,7 +1349,7 @@ public class EasyWallGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//| {EFIPv6Constant} ipv6=EFIPV6SYNTAX
 		//| {EFIPv4Constant} (ipv4=EFIPV4SYNTAX | any='any' | localhost='localhost')
 		//| {EFNetworkConstant} network=EFNetworkSYNTAX
-		//| port=EFNetportSYNTAX
+		//| {EFNetportConstant} ':' netport=INT
 		//| {EFThis} 'this'
 		//| {EFSuper} 'super'
 		//| {EFNew} 'new' type=[EFRuleClass|QualifiedName] '(' ')'
@@ -1497,11 +1500,20 @@ public class EasyWallGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//EFNetworkSYNTAX
 		public RuleCall getNetworkEFNetworkSYNTAXParserRuleCall_9_1_0() { return cNetworkEFNetworkSYNTAXParserRuleCall_9_1_0; }
 		
-		//port=EFNetportSYNTAX
-		public Assignment getPortAssignment_10() { return cPortAssignment_10; }
+		//{EFNetportConstant} ':' netport=INT
+		public Group getGroup_10() { return cGroup_10; }
 		
-		//EFNetportSYNTAX
-		public RuleCall getPortEFNetportSYNTAXParserRuleCall_10_0() { return cPortEFNetportSYNTAXParserRuleCall_10_0; }
+		//{EFNetportConstant}
+		public Action getEFNetportConstantAction_10_0() { return cEFNetportConstantAction_10_0; }
+		
+		//':'
+		public Keyword getColonKeyword_10_1() { return cColonKeyword_10_1; }
+		
+		//netport=INT
+		public Assignment getNetportAssignment_10_2() { return cNetportAssignment_10_2; }
+		
+		//INT
+		public RuleCall getNetportINTTerminalRuleCall_10_2_0() { return cNetportINTTerminalRuleCall_10_2_0; }
 		
 		//{EFThis} 'this'
 		public Group getGroup_11() { return cGroup_11; }
@@ -3346,7 +3358,7 @@ public class EasyWallGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	//  | {EFIPv6Constant} ipv6=EFIPV6SYNTAX
 	//  | {EFIPv4Constant} (ipv4=EFIPV4SYNTAX | any='any' | localhost='localhost')
 	//  | {EFNetworkConstant} network=EFNetworkSYNTAX
-	//  | port=EFNetportSYNTAX
+	//  | {EFNetportConstant} ':' netport=INT
 	//  | {EFThis} 'this'
 	//  | {EFSuper} 'super'
 	//  | {EFNew} 'new' type=[EFRuleClass|QualifiedName] '(' ')'

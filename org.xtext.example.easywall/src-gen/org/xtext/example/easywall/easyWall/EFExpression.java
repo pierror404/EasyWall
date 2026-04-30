@@ -9,12 +9,6 @@ package org.xtext.example.easywall.easyWall;
  * A representation of the model object '<em><b>EF Expression</b></em>'.
  * <!-- end-user-doc -->
  *
- * <p>
- * The following features are supported:
- * </p>
- * <ul>
- *   <li>{@link org.xtext.example.easywall.easyWall.EFExpression#getPort <em>Port</em>}</li>
- * </ul>
  *
  * @see org.xtext.example.easywall.easyWall.EasyWallPackage#getEFExpression()
  * @model
@@ -22,26 +16,4 @@ package org.xtext.example.easywall.easyWall;
  */
 public interface EFExpression extends EFStatement
 {
-  /**
-   * Returns the value of the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Port</em>' containment reference.
-   * @see #setPort(EFNetportConstant)
-   * @see org.xtext.example.easywall.easyWall.EasyWallPackage#getEFExpression_Port()
-   * @model containment="true"
-   * @generated
-   */
-  EFNetportConstant getPort();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.easywall.easyWall.EFExpression#getPort <em>Port</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Port</em>' containment reference.
-   * @see #getPort()
-   * @generated
-   */
-  void setPort(EFNetportConstant value);
-
 } // EFExpression

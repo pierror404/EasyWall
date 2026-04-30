@@ -195,7 +195,7 @@ EFPrimaryExpression returns EFExpression:
   | {EFIPv6Constant} ipv6=EFIPV6SYNTAX
   | {EFIPv4Constant} (ipv4=EFIPV4SYNTAX | any='any' | localhost='localhost')
   | {EFNetworkConstant} network=EFNetworkSYNTAX
-  | port=EFNetportSYNTAX
+  | {EFNetportConstant} ':' netport=INT
   | {EFThis} 'this'
   | {EFSuper} 'super'
   | {EFNew} 'new' type=[EFRuleClass|QualifiedName] '(' ')'
@@ -310,8 +310,4 @@ EFNetworkSYNTAX returns EFNetworkConstant:
   | rawip=EFIPV4SYNTAX '/' rawnetmask=INT
   | rawip=EFIPV4SYNTAX '/' varnetmask=ID
   | varip=ID '/' rawnetmask=INT
-;
-
-EFNetportSYNTAX returns EFNetportConstant: 
-    {EFNetportConstant} ':' netport=INT
 ;

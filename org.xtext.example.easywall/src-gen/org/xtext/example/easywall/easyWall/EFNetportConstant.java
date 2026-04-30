@@ -3,7 +3,6 @@
  */
 package org.xtext.example.easywall.easyWall;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface EFNetportConstant extends EObject
+public interface EFNetportConstant extends EFExpression
 {
   /**
    * Returns the value of the '<em><b>Netport</b></em>' attribute.

@@ -230,6 +230,8 @@ public class EasyWallSwitch<T> extends Switch<T>
       {
         EFNetportConstant efNetportConstant = (EFNetportConstant)theEObject;
         T result = caseEFNetportConstant(efNetportConstant);
+        if (result == null) result = caseEFExpression(efNetportConstant);
+        if (result == null) result = caseEFStatement(efNetportConstant);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }

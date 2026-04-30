@@ -630,22 +630,13 @@ public interface EasyWallPackage extends EPackage
   int EF_EXPRESSION = 15;
 
   /**
-   * The feature id for the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_EXPRESSION__PORT = EF_STATEMENT_FEATURE_COUNT + 0;
-
-  /**
    * The number of structural features of the '<em>EF Expression</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EF_EXPRESSION_FEATURE_COUNT = EF_STATEMENT_FEATURE_COUNT + 1;
+  int EF_EXPRESSION_FEATURE_COUNT = EF_STATEMENT_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link org.xtext.example.easywall.easyWall.impl.EFBuiltinFunctionImpl <em>EF Builtin Function</em>}' class.
@@ -656,15 +647,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   int EF_BUILTIN_FUNCTION = 16;
-
-  /**
-   * The feature id for the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_BUILTIN_FUNCTION__PORT = EF_EXPRESSION__PORT;
 
   /**
    * The number of structural features of the '<em>EF Builtin Function</em>' class.
@@ -684,15 +666,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   int EF_BLOCK = 11;
-
-  /**
-   * The feature id for the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_BLOCK__PORT = EF_BUILTIN_FUNCTION__PORT;
 
   /**
    * The feature id for the '<em><b>Statements</b></em>' containment reference list.
@@ -871,15 +844,6 @@ public interface EasyWallPackage extends EPackage
   int EF_NETWORK_CONSTANT = 19;
 
   /**
-   * The feature id for the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_NETWORK_CONSTANT__PORT = EF_EXPRESSION__PORT;
-
-  /**
    * The feature id for the '<em><b>Network</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -950,7 +914,7 @@ public interface EasyWallPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EF_NETPORT_CONSTANT__NETPORT = 0;
+  int EF_NETPORT_CONSTANT__NETPORT = EF_EXPRESSION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>EF Netport Constant</em>' class.
@@ -959,7 +923,7 @@ public interface EasyWallPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EF_NETPORT_CONSTANT_FEATURE_COUNT = 1;
+  int EF_NETPORT_CONSTANT_FEATURE_COUNT = EF_EXPRESSION_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.xtext.example.easywall.easyWall.impl.EFAssignmentImpl <em>EF Assignment</em>}' class.
@@ -970,15 +934,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   int EF_ASSIGNMENT = 21;
-
-  /**
-   * The feature id for the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_ASSIGNMENT__PORT = EF_EXPRESSION__PORT;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1018,15 +973,6 @@ public interface EasyWallPackage extends EPackage
   int EF_OR_EXPRESSION = 22;
 
   /**
-   * The feature id for the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_OR_EXPRESSION__PORT = EF_EXPRESSION__PORT;
-
-  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1062,15 +1008,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   int EF_AND_EXPRESSION = 23;
-
-  /**
-   * The feature id for the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_AND_EXPRESSION__PORT = EF_EXPRESSION__PORT;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1110,15 +1047,6 @@ public interface EasyWallPackage extends EPackage
   int EF_EQUAL_EXPRESSION = 24;
 
   /**
-   * The feature id for the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_EQUAL_EXPRESSION__PORT = EF_EXPRESSION__PORT;
-
-  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1154,15 +1082,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   int EF_REL_EXPRESSION = 25;
-
-  /**
-   * The feature id for the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_REL_EXPRESSION__PORT = EF_EXPRESSION__PORT;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1202,15 +1121,6 @@ public interface EasyWallPackage extends EPackage
   int EF_ADD_EXPRESSION = 26;
 
   /**
-   * The feature id for the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_ADD_EXPRESSION__PORT = EF_EXPRESSION__PORT;
-
-  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1246,15 +1156,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   int EF_MULT_EXPRESSION = 27;
-
-  /**
-   * The feature id for the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_MULT_EXPRESSION__PORT = EF_EXPRESSION__PORT;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1294,15 +1195,6 @@ public interface EasyWallPackage extends EPackage
   int EF_NOT_EXPRESSION = 28;
 
   /**
-   * The feature id for the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_NOT_EXPRESSION__PORT = EF_EXPRESSION__PORT;
-
-  /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1329,15 +1221,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   int EF_MEMBER_SELECTION = 29;
-
-  /**
-   * The feature id for the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_MEMBER_SELECTION__PORT = EF_EXPRESSION__PORT;
 
   /**
    * The feature id for the '<em><b>Receiver</b></em>' containment reference.
@@ -1386,15 +1269,6 @@ public interface EasyWallPackage extends EPackage
   int EF_STRING_CONSTANT = 30;
 
   /**
-   * The feature id for the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_STRING_CONSTANT__PORT = EF_EXPRESSION__PORT;
-
-  /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1421,15 +1295,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   int EF_INT_CONSTANT = 31;
-
-  /**
-   * The feature id for the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_INT_CONSTANT__PORT = EF_EXPRESSION__PORT;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1460,15 +1325,6 @@ public interface EasyWallPackage extends EPackage
   int EF_BOOL_CONSTANT = 32;
 
   /**
-   * The feature id for the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_BOOL_CONSTANT__PORT = EF_EXPRESSION__PORT;
-
-  /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1495,15 +1351,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   int EF_DIRECTION_CONSTANT = 33;
-
-  /**
-   * The feature id for the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_DIRECTION_CONSTANT__PORT = EF_EXPRESSION__PORT;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -1534,15 +1381,6 @@ public interface EasyWallPackage extends EPackage
   int EF_NETWORK_PROTOCOL_CONSTANT = 34;
 
   /**
-   * The feature id for the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_NETWORK_PROTOCOL_CONSTANT__PORT = EF_EXPRESSION__PORT;
-
-  /**
    * The feature id for the '<em><b>Protocol</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1569,15 +1407,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   int EF_TRANSPORT_PROTOCOL_CONSTANT = 35;
-
-  /**
-   * The feature id for the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_TRANSPORT_PROTOCOL_CONSTANT__PORT = EF_EXPRESSION__PORT;
 
   /**
    * The feature id for the '<em><b>Protocol</b></em>' attribute.
@@ -1608,15 +1437,6 @@ public interface EasyWallPackage extends EPackage
   int EF_APPLICATION_PROTOCOL_CONSTANT = 36;
 
   /**
-   * The feature id for the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_APPLICATION_PROTOCOL_CONSTANT__PORT = EF_EXPRESSION__PORT;
-
-  /**
    * The feature id for the '<em><b>Protocol</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1645,15 +1465,6 @@ public interface EasyWallPackage extends EPackage
   int EFI_PV6_CONSTANT = 37;
 
   /**
-   * The feature id for the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EFI_PV6_CONSTANT__PORT = EF_EXPRESSION__PORT;
-
-  /**
    * The feature id for the '<em><b>Ipv6</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1680,15 +1491,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   int EFI_PV4_CONSTANT = 38;
-
-  /**
-   * The feature id for the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EFI_PV4_CONSTANT__PORT = EF_EXPRESSION__PORT;
 
   /**
    * The feature id for the '<em><b>Ipv4</b></em>' attribute.
@@ -1737,15 +1539,6 @@ public interface EasyWallPackage extends EPackage
   int EF_THIS = 39;
 
   /**
-   * The feature id for the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_THIS__PORT = EF_EXPRESSION__PORT;
-
-  /**
    * The number of structural features of the '<em>EF This</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1765,15 +1558,6 @@ public interface EasyWallPackage extends EPackage
   int EF_SUPER = 40;
 
   /**
-   * The feature id for the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_SUPER__PORT = EF_EXPRESSION__PORT;
-
-  /**
    * The number of structural features of the '<em>EF Super</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1791,15 +1575,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   int EF_NEW = 41;
-
-  /**
-   * The feature id for the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_NEW__PORT = EF_EXPRESSION__PORT;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' reference.
@@ -1830,15 +1605,6 @@ public interface EasyWallPackage extends EPackage
   int EF_BRACKETS_EXPRESSION = 42;
 
   /**
-   * The feature id for the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_BRACKETS_EXPRESSION__PORT = EF_EXPRESSION__PORT;
-
-  /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1865,15 +1631,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   int EF_FUNCTION_CALL = 43;
-
-  /**
-   * The feature id for the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_FUNCTION_CALL__PORT = EF_EXPRESSION__PORT;
 
   /**
    * The feature id for the '<em><b>Function Name</b></em>' attribute.
@@ -1913,15 +1670,6 @@ public interface EasyWallPackage extends EPackage
   int EF_SYMBOL_REF = 44;
 
   /**
-   * The feature id for the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_SYMBOL_REF__PORT = EF_EXPRESSION__PORT;
-
-  /**
    * The feature id for the '<em><b>Symbol</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1950,15 +1698,6 @@ public interface EasyWallPackage extends EPackage
   int EF_ALLOW = 45;
 
   /**
-   * The feature id for the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_ALLOW__PORT = EF_BUILTIN_FUNCTION__PORT;
-
-  /**
    * The number of structural features of the '<em>EF Allow</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1976,15 +1715,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   int EF_DROP = 46;
-
-  /**
-   * The feature id for the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_DROP__PORT = EF_BUILTIN_FUNCTION__PORT;
 
   /**
    * The number of structural features of the '<em>EF Drop</em>' class.
@@ -2006,15 +1736,6 @@ public interface EasyWallPackage extends EPackage
   int EF_REJECT = 47;
 
   /**
-   * The feature id for the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_REJECT__PORT = EF_BUILTIN_FUNCTION__PORT;
-
-  /**
    * The number of structural features of the '<em>EF Reject</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2032,15 +1753,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   int EF_WRITE_LOG = 48;
-
-  /**
-   * The feature id for the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_WRITE_LOG__PORT = EF_BUILTIN_FUNCTION__PORT;
 
   /**
    * The feature id for the '<em><b>Message</b></em>' containment reference.
@@ -2069,15 +1781,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   int EF_WRITE_LOG_LEVEL = 49;
-
-  /**
-   * The feature id for the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_WRITE_LOG_LEVEL__PORT = EF_BUILTIN_FUNCTION__PORT;
 
   /**
    * The feature id for the '<em><b>Level</b></em>' attribute.
@@ -2117,15 +1820,6 @@ public interface EasyWallPackage extends EPackage
   int EF_GET_TIME = 50;
 
   /**
-   * The feature id for the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_GET_TIME__PORT = EF_BUILTIN_FUNCTION__PORT;
-
-  /**
    * The number of structural features of the '<em>EF Get Time</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2143,15 +1837,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   int EF_GET_PACKET_FIELD = 51;
-
-  /**
-   * The feature id for the '<em><b>Port</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_GET_PACKET_FIELD__PORT = EF_BUILTIN_FUNCTION__PORT;
 
   /**
    * The feature id for the '<em><b>Field</b></em>' attribute.
@@ -2795,17 +2480,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   EClass getEFExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.easywall.easyWall.EFExpression#getPort <em>Port</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Port</em>'.
-   * @see org.xtext.example.easywall.easyWall.EFExpression#getPort()
-   * @see #getEFExpression()
-   * @generated
-   */
-  EReference getEFExpression_Port();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.easywall.easyWall.EFBuiltinFunction <em>EF Builtin Function</em>}'.
@@ -4239,14 +3913,6 @@ public interface EasyWallPackage extends EPackage
      * @generated
      */
     EClass EF_EXPRESSION = eINSTANCE.getEFExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Port</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EF_EXPRESSION__PORT = eINSTANCE.getEFExpression_Port();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.easywall.easyWall.impl.EFBuiltinFunctionImpl <em>EF Builtin Function</em>}' class.

@@ -135,9 +135,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EasyWall.ecore#//EFIfStatement/thenBlock"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EasyWall.ecore#//EFIfStatement/elseBlock"/>
     </genClasses>
-    <genClasses ecoreClass="EasyWall.ecore#//EFExpression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EasyWall.ecore#//EFExpression/port"/>
-    </genClasses>
+    <genClasses ecoreClass="EasyWall.ecore#//EFExpression"/>
     <genClasses ecoreClass="EasyWall.ecore#//EFBuiltinFunction"/>
     <genClasses ecoreClass="EasyWall.ecore#//EFRule">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EasyWall.ecore#//EFRule/rules"/>

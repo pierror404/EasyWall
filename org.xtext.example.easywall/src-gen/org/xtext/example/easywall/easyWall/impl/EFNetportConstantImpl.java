@@ -8,7 +8,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.easywall.easyWall.EFNetportConstant;
 import org.xtext.example.easywall.easyWall.EasyWallPackage;
@@ -26,7 +25,7 @@ import org.xtext.example.easywall.easyWall.EasyWallPackage;
  *
  * @generated
  */
-public class EFNetportConstantImpl extends MinimalEObjectImpl.Container implements EFNetportConstant
+public class EFNetportConstantImpl extends EFExpressionImpl implements EFNetportConstant
 {
   /**
    * The default value of the '{@link #getNetport() <em>Netport</em>}' attribute.

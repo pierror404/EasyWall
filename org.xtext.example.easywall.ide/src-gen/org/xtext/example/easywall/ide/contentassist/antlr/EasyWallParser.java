@@ -113,6 +113,7 @@ public class EasyWallParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getEFPrimaryExpressionAccess().getGroup_7(), "rule__EFPrimaryExpression__Group_7__0");
 			builder.put(grammarAccess.getEFPrimaryExpressionAccess().getGroup_8(), "rule__EFPrimaryExpression__Group_8__0");
 			builder.put(grammarAccess.getEFPrimaryExpressionAccess().getGroup_9(), "rule__EFPrimaryExpression__Group_9__0");
+			builder.put(grammarAccess.getEFPrimaryExpressionAccess().getGroup_10(), "rule__EFPrimaryExpression__Group_10__0");
 			builder.put(grammarAccess.getEFPrimaryExpressionAccess().getGroup_11(), "rule__EFPrimaryExpression__Group_11__0");
 			builder.put(grammarAccess.getEFPrimaryExpressionAccess().getGroup_12(), "rule__EFPrimaryExpression__Group_12__0");
 			builder.put(grammarAccess.getEFPrimaryExpressionAccess().getGroup_13(), "rule__EFPrimaryExpression__Group_13__0");
@@ -190,7 +191,7 @@ public class EasyWallParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getEFPrimaryExpressionAccess().getAnyAssignment_8_1_1(), "rule__EFPrimaryExpression__AnyAssignment_8_1_1");
 			builder.put(grammarAccess.getEFPrimaryExpressionAccess().getLocalhostAssignment_8_1_2(), "rule__EFPrimaryExpression__LocalhostAssignment_8_1_2");
 			builder.put(grammarAccess.getEFPrimaryExpressionAccess().getNetworkAssignment_9_1(), "rule__EFPrimaryExpression__NetworkAssignment_9_1");
-			builder.put(grammarAccess.getEFPrimaryExpressionAccess().getPortAssignment_10(), "rule__EFPrimaryExpression__PortAssignment_10");
+			builder.put(grammarAccess.getEFPrimaryExpressionAccess().getNetportAssignment_10_2(), "rule__EFPrimaryExpression__NetportAssignment_10_2");
 			builder.put(grammarAccess.getEFPrimaryExpressionAccess().getTypeAssignment_13_2(), "rule__EFPrimaryExpression__TypeAssignment_13_2");
 			builder.put(grammarAccess.getEFPrimaryExpressionAccess().getExpressionAssignment_14_2(), "rule__EFPrimaryExpression__ExpressionAssignment_14_2");
 			builder.put(grammarAccess.getEFPrimaryExpressionAccess().getFunctionNameAssignment_16_1(), "rule__EFPrimaryExpression__FunctionNameAssignment_16_1");

@@ -3,43 +3,20 @@
  */
 package org.xtext.example.easywall.easyWall.impl;
 
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.xtext.example.easywall.easyWall.EFExpression;
-import org.xtext.example.easywall.easyWall.EFNetportConstant;
 import org.xtext.example.easywall.easyWall.EasyWallPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>EF Expression</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * The following features are implemented:
- * </p>
- * <ul>
- *   <li>{@link org.xtext.example.easywall.easyWall.impl.EFExpressionImpl#getPort <em>Port</em>}</li>
- * </ul>
  *
  * @generated
  */
 public class EFExpressionImpl extends EFStatementImpl implements EFExpression
 {
-  /**
-   * The cached value of the '{@link #getPort() <em>Port</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPort()
-   * @generated
-   * @ordered
-   */
-  protected EFNetportConstant port;
-
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -59,138 +36,6 @@ public class EFExpressionImpl extends EFStatementImpl implements EFExpression
   protected EClass eStaticClass()
   {
     return EasyWallPackage.Literals.EF_EXPRESSION;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EFNetportConstant getPort()
-  {
-    return port;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetPort(EFNetportConstant newPort, NotificationChain msgs)
-  {
-    EFNetportConstant oldPort = port;
-    port = newPort;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EasyWallPackage.EF_EXPRESSION__PORT, oldPort, newPort);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setPort(EFNetportConstant newPort)
-  {
-    if (newPort != port)
-    {
-      NotificationChain msgs = null;
-      if (port != null)
-        msgs = ((InternalEObject)port).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EasyWallPackage.EF_EXPRESSION__PORT, null, msgs);
-      if (newPort != null)
-        msgs = ((InternalEObject)newPort).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EasyWallPackage.EF_EXPRESSION__PORT, null, msgs);
-      msgs = basicSetPort(newPort, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EasyWallPackage.EF_EXPRESSION__PORT, newPort, newPort));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case EasyWallPackage.EF_EXPRESSION__PORT:
-        return basicSetPort(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
-    switch (featureID)
-    {
-      case EasyWallPackage.EF_EXPRESSION__PORT:
-        return getPort();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
-    switch (featureID)
-    {
-      case EasyWallPackage.EF_EXPRESSION__PORT:
-        setPort((EFNetportConstant)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void eUnset(int featureID)
-  {
-    switch (featureID)
-    {
-      case EasyWallPackage.EF_EXPRESSION__PORT:
-        setPort((EFNetportConstant)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
-    switch (featureID)
-    {
-      case EasyWallPackage.EF_EXPRESSION__PORT:
-        return port != null;
-    }
-    return super.eIsSet(featureID);
   }
 
 } //EFExpressionImpl

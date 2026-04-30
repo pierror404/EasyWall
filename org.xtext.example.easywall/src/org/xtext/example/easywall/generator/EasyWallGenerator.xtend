@@ -127,11 +127,8 @@ class EasyWallGenerator extends AbstractGenerator {
             @Override
             public Action trigger(MyPacket packet) {
                 «FOR stmt : triggerMethod.body.statements»
-                «compileStatement(stmt)»
+                «compileStatementInFunc(stmt)»
                 «ENDFOR»
-                
-                // Default fallback
-                return this.action;
             }
             «ENDIF»
             
@@ -246,8 +243,26 @@ class EasyWallGenerator extends AbstractGenerator {
         '''«modifier» «type» «field.name»«init»;'''
     }
     
+    def CharSequence compileFieldInFunc(EFField field) {
+        val type = getJavaType(field)
+        val init = if (field.expression !== null) {
+            " = " + compileExpression(field.expression)
+        } else {
+            getDefaultValue(field)
+        }
+        
+        '''«type» «field.name»«init»;'''
+    }
+    
     def String getJavaType(EFField field) {
-        if (field.nativetype !== null) {
+    		if (field.primitivetype !== null) {
+            return switch field.primitivetype {
+                case INT: "long"
+                case STRING: "String"
+                case BOOL: "boolean"
+                default: "Object"
+            }
+        } else if (field.nativetype !== null) {
             return switch field.nativetype {
                 case NETWORK: "Network"
                 case IPV4: "IPv4"
@@ -258,14 +273,7 @@ class EasyWallGenerator extends AbstractGenerator {
                 case NETMASK: "int"
                 default: "Object"
             }
-        } else if (field.primitivetype !== null) {
-            return switch field.primitivetype {
-                case INT: "int"
-                case STRING: "String"
-                case BOOL: "boolean"
-                default: "Object"
-            }
-        }
+        } 
         return "Object"
     }
     
@@ -320,6 +328,16 @@ class EasyWallGenerator extends AbstractGenerator {
     def CharSequence compileStatement(EFStatement stmt) {
         switch stmt {
             EFField: compileField(stmt) + "\n"
+            EFReturn: '''return «compileExpression(stmt.expression)»;'''
+            EFIfStatement: compileIfStatement(stmt)
+            EFExpression: compileExpression(stmt) + ";"
+            default: "// Unknown statement"
+        }
+    }
+    
+    def CharSequence compileStatementInFunc(EFStatement stmt) {
+        switch stmt {
+            EFField: compileFieldInFunc(stmt) + "\n"
             EFReturn: '''return «compileExpression(stmt.expression)»;'''
             EFIfStatement: compileIfStatement(stmt)
             EFExpression: compileExpression(stmt) + ";"
@@ -444,8 +462,8 @@ class EasyWallGenerator extends AbstractGenerator {
     }
     
     def CharSequence compileNetwork(EFNetworkConstant network) {
-        if (network.rawip !== null) {
-            return '''new Network(IPv4.of("«network.rawip»"), «network.rawnetmask»)'''
+        if (network.network.rawip !== null) {
+            return '''new Network(IPv4.of("«network.network.rawip»"), «network.network.rawnetmask»)'''
         }
         return "null"
     }

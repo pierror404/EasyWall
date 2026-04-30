@@ -104,10 +104,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="elseBlock" eType="#//EFBlock"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EFExpression" eSuperTypes="#//EFStatement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="#//EFNetportConstant"
-        containment="true"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EFExpression" eSuperTypes="#//EFStatement"/>
   <eClassifiers xsi:type="ecore:EClass" name="EFBuiltinFunction" eSuperTypes="#//EFExpression"/>
   <eClassifiers xsi:type="ecore:EEnum" name="EFLogLevel">
     <eLiterals name="DEBUG" literal="debug"/>
@@ -170,7 +167,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rawip" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rawnetmask" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EFNetportConstant">
+  <eClassifiers xsi:type="ecore:EClass" name="EFNetportConstant" eSuperTypes="#//EFExpression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="netport" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EFAssignment" eSuperTypes="#//EFExpression">

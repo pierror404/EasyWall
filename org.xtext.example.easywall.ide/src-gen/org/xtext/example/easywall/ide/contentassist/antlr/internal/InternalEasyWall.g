@@ -1042,31 +1042,6 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-// Entry rule entryRuleEFNetportSYNTAX
-entryRuleEFNetportSYNTAX
-:
-{ before(grammarAccess.getEFNetportSYNTAXRule()); }
-	 ruleEFNetportSYNTAX
-{ after(grammarAccess.getEFNetportSYNTAXRule()); } 
-	 EOF 
-;
-
-// Rule EFNetportSYNTAX
-ruleEFNetportSYNTAX 
-	@init {
-		int stackSize = keepStackSize();
-	}
-	:
-	(
-		{ before(grammarAccess.getEFNetportSYNTAXAccess().getGroup()); }
-		(rule__EFNetportSYNTAX__Group__0)
-		{ after(grammarAccess.getEFNetportSYNTAXAccess().getGroup()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
 // Rule EFDefaultAction
 ruleEFDefaultAction
 	@init {
@@ -1475,9 +1450,9 @@ rule__EFPrimaryExpression__Alternatives
 	)
 	|
 	(
-		{ before(grammarAccess.getEFPrimaryExpressionAccess().getPortAssignment_10()); }
-		(rule__EFPrimaryExpression__PortAssignment_10)
-		{ after(grammarAccess.getEFPrimaryExpressionAccess().getPortAssignment_10()); }
+		{ before(grammarAccess.getEFPrimaryExpressionAccess().getGroup_10()); }
+		(rule__EFPrimaryExpression__Group_10__0)
+		{ after(grammarAccess.getEFPrimaryExpressionAccess().getGroup_10()); }
 	)
 	|
 	(
@@ -5957,6 +5932,87 @@ finally {
 }
 
 
+rule__EFPrimaryExpression__Group_10__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__EFPrimaryExpression__Group_10__0__Impl
+	rule__EFPrimaryExpression__Group_10__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__EFPrimaryExpression__Group_10__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getEFPrimaryExpressionAccess().getEFNetportConstantAction_10_0()); }
+	()
+	{ after(grammarAccess.getEFPrimaryExpressionAccess().getEFNetportConstantAction_10_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__EFPrimaryExpression__Group_10__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__EFPrimaryExpression__Group_10__1__Impl
+	rule__EFPrimaryExpression__Group_10__2
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__EFPrimaryExpression__Group_10__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getEFPrimaryExpressionAccess().getColonKeyword_10_1()); }
+	':'
+	{ after(grammarAccess.getEFPrimaryExpressionAccess().getColonKeyword_10_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__EFPrimaryExpression__Group_10__2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__EFPrimaryExpression__Group_10__2__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__EFPrimaryExpression__Group_10__2__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getEFPrimaryExpressionAccess().getNetportAssignment_10_2()); }
+	(rule__EFPrimaryExpression__NetportAssignment_10_2)
+	{ after(grammarAccess.getEFPrimaryExpressionAccess().getNetportAssignment_10_2()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
 rule__EFPrimaryExpression__Group_11__0
 	@init {
 		int stackSize = keepStackSize();
@@ -8117,87 +8173,6 @@ finally {
 }
 
 
-rule__EFNetportSYNTAX__Group__0
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__EFNetportSYNTAX__Group__0__Impl
-	rule__EFNetportSYNTAX__Group__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__EFNetportSYNTAX__Group__0__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getEFNetportSYNTAXAccess().getEFNetportConstantAction_0()); }
-	()
-	{ after(grammarAccess.getEFNetportSYNTAXAccess().getEFNetportConstantAction_0()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__EFNetportSYNTAX__Group__1
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__EFNetportSYNTAX__Group__1__Impl
-	rule__EFNetportSYNTAX__Group__2
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__EFNetportSYNTAX__Group__1__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getEFNetportSYNTAXAccess().getColonKeyword_1()); }
-	':'
-	{ after(grammarAccess.getEFNetportSYNTAXAccess().getColonKeyword_1()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__EFNetportSYNTAX__Group__2
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__EFNetportSYNTAX__Group__2__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__EFNetportSYNTAX__Group__2__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getEFNetportSYNTAXAccess().getNetportAssignment_2()); }
-	(rule__EFNetportSYNTAX__NetportAssignment_2)
-	{ after(grammarAccess.getEFNetportSYNTAXAccess().getNetportAssignment_2()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
 rule__EFProgram__HeaderAssignment_0
 	@init {
 		int stackSize = keepStackSize();
@@ -9036,15 +9011,15 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__EFPrimaryExpression__PortAssignment_10
+rule__EFPrimaryExpression__NetportAssignment_10_2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getEFPrimaryExpressionAccess().getPortEFNetportSYNTAXParserRuleCall_10_0()); }
-		ruleEFNetportSYNTAX
-		{ after(grammarAccess.getEFPrimaryExpressionAccess().getPortEFNetportSYNTAXParserRuleCall_10_0()); }
+		{ before(grammarAccess.getEFPrimaryExpressionAccess().getNetportINTTerminalRuleCall_10_2_0()); }
+		RULE_INT
+		{ after(grammarAccess.getEFPrimaryExpressionAccess().getNetportINTTerminalRuleCall_10_2_0()); }
 	)
 ;
 finally {
@@ -9379,21 +9354,6 @@ rule__EFNetworkSYNTAX__RawnetmaskAssignment_3_2
 		{ before(grammarAccess.getEFNetworkSYNTAXAccess().getRawnetmaskINTTerminalRuleCall_3_2_0()); }
 		RULE_INT
 		{ after(grammarAccess.getEFNetworkSYNTAXAccess().getRawnetmaskINTTerminalRuleCall_3_2_0()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__EFNetportSYNTAX__NetportAssignment_2
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getEFNetportSYNTAXAccess().getNetportINTTerminalRuleCall_2_0()); }
-		RULE_INT
-		{ after(grammarAccess.getEFNetportSYNTAXAccess().getNetportINTTerminalRuleCall_2_0()); }
 	)
 ;
 finally {

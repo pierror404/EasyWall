@@ -26,7 +26,6 @@ import org.xtext.example.easywall.easyWall.EFDefaultPolicy;
 import org.xtext.example.easywall.easyWall.EFDirectionConstant;
 import org.xtext.example.easywall.easyWall.EFDrop;
 import org.xtext.example.easywall.easyWall.EFEqualExpression;
-import org.xtext.example.easywall.easyWall.EFExpression;
 import org.xtext.example.easywall.easyWall.EFField;
 import org.xtext.example.easywall.easyWall.EFFirewall;
 import org.xtext.example.easywall.easyWall.EFFunctionCall;
@@ -147,9 +146,6 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case EasyWallPackage.EF_EQUAL_EXPRESSION:
 				sequence_EFEqualExpression(context, (EFEqualExpression) semanticObject); 
 				return; 
-			case EasyWallPackage.EF_EXPRESSION:
-				sequence_EFPrimaryExpression(context, (EFExpression) semanticObject); 
-				return; 
 			case EasyWallPackage.EF_FIELD:
 				sequence_EFField_EFTypedDeclaration(context, (EFField) semanticObject); 
 				return; 
@@ -193,8 +189,34 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				sequence_EFMultExpression(context, (EFMultExpression) semanticObject); 
 				return; 
 			case EasyWallPackage.EF_NETPORT_CONSTANT:
-				sequence_EFNetportSYNTAX(context, (EFNetportConstant) semanticObject); 
-				return; 
+				if (rule == grammarAccess.getEFNetportSYNTAXRule()) {
+					sequence_EFNetportSYNTAX(context, (EFNetportConstant) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getEFStatementRule()
+						|| rule == grammarAccess.getEFExpressionRule()
+						|| rule == grammarAccess.getEFAssignmentRule()
+						|| action == grammarAccess.getEFAssignmentAccess().getEFAssignmentLeftAction_1_0()
+						|| rule == grammarAccess.getEFOrExpressionRule()
+						|| action == grammarAccess.getEFOrExpressionAccess().getEFOrExpressionLeftAction_1_0()
+						|| rule == grammarAccess.getEFAndExpressionRule()
+						|| action == grammarAccess.getEFAndExpressionAccess().getEFAndExpressionLeftAction_1_0()
+						|| rule == grammarAccess.getEFEqualExpressionRule()
+						|| action == grammarAccess.getEFEqualExpressionAccess().getEFEqualExpressionLeftAction_1_0()
+						|| rule == grammarAccess.getEFRelExpressionRule()
+						|| action == grammarAccess.getEFRelExpressionAccess().getEFRelExpressionLeftAction_1_0()
+						|| rule == grammarAccess.getEFAddExpressionRule()
+						|| action == grammarAccess.getEFAddExpressionAccess().getEFAddExpressionLeftAction_1_0()
+						|| rule == grammarAccess.getEFMultExpressionRule()
+						|| action == grammarAccess.getEFMultExpressionAccess().getEFMultExpressionLeftAction_1_0()
+						|| rule == grammarAccess.getEFUnaryExpressionRule()
+						|| rule == grammarAccess.getEFMemberSelectionRule()
+						|| action == grammarAccess.getEFMemberSelectionAccess().getEFMemberSelectionReceiverAction_1_0()
+						|| rule == grammarAccess.getEFPrimaryExpressionRule()) {
+					sequence_EFPrimaryExpression(context, (EFNetportConstant) semanticObject); 
+					return; 
+				}
+				else break;
 			case EasyWallPackage.EF_NETWORK_CONSTANT:
 				if (rule == grammarAccess.getEFNetworkSYNTAXRule()) {
 					sequence_EFNetworkSYNTAX(context, (EFNetworkConstant) semanticObject); 
@@ -1137,45 +1159,6 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     EFStatement returns EFExpression
-	 *     EFExpression returns EFExpression
-	 *     EFAssignment returns EFExpression
-	 *     EFAssignment.EFAssignment_1_0 returns EFExpression
-	 *     EFOrExpression returns EFExpression
-	 *     EFOrExpression.EFOrExpression_1_0 returns EFExpression
-	 *     EFAndExpression returns EFExpression
-	 *     EFAndExpression.EFAndExpression_1_0 returns EFExpression
-	 *     EFEqualExpression returns EFExpression
-	 *     EFEqualExpression.EFEqualExpression_1_0 returns EFExpression
-	 *     EFRelExpression returns EFExpression
-	 *     EFRelExpression.EFRelExpression_1_0 returns EFExpression
-	 *     EFAddExpression returns EFExpression
-	 *     EFAddExpression.EFAddExpression_1_0 returns EFExpression
-	 *     EFMultExpression returns EFExpression
-	 *     EFMultExpression.EFMultExpression_1_0 returns EFExpression
-	 *     EFUnaryExpression returns EFExpression
-	 *     EFMemberSelection returns EFExpression
-	 *     EFMemberSelection.EFMemberSelection_1_0 returns EFExpression
-	 *     EFPrimaryExpression returns EFExpression
-	 *
-	 * Constraint:
-	 *     port=EFNetportSYNTAX
-	 * </pre>
-	 */
-	protected void sequence_EFPrimaryExpression(ISerializationContext context, EFExpression semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, EasyWallPackage.Literals.EF_EXPRESSION__PORT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EasyWallPackage.Literals.EF_EXPRESSION__PORT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEFPrimaryExpressionAccess().getPortEFNetportSYNTAXParserRuleCall_10_0(), semanticObject.getPort());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
 	 *     EFStatement returns EFFunctionCall
 	 *     EFExpression returns EFFunctionCall
 	 *     EFAssignment returns EFFunctionCall
@@ -1313,6 +1296,45 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getEFPrimaryExpressionAccess().getValueINTTerminalRuleCall_1_1_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     EFStatement returns EFNetportConstant
+	 *     EFExpression returns EFNetportConstant
+	 *     EFAssignment returns EFNetportConstant
+	 *     EFAssignment.EFAssignment_1_0 returns EFNetportConstant
+	 *     EFOrExpression returns EFNetportConstant
+	 *     EFOrExpression.EFOrExpression_1_0 returns EFNetportConstant
+	 *     EFAndExpression returns EFNetportConstant
+	 *     EFAndExpression.EFAndExpression_1_0 returns EFNetportConstant
+	 *     EFEqualExpression returns EFNetportConstant
+	 *     EFEqualExpression.EFEqualExpression_1_0 returns EFNetportConstant
+	 *     EFRelExpression returns EFNetportConstant
+	 *     EFRelExpression.EFRelExpression_1_0 returns EFNetportConstant
+	 *     EFAddExpression returns EFNetportConstant
+	 *     EFAddExpression.EFAddExpression_1_0 returns EFNetportConstant
+	 *     EFMultExpression returns EFNetportConstant
+	 *     EFMultExpression.EFMultExpression_1_0 returns EFNetportConstant
+	 *     EFUnaryExpression returns EFNetportConstant
+	 *     EFMemberSelection returns EFNetportConstant
+	 *     EFMemberSelection.EFMemberSelection_1_0 returns EFNetportConstant
+	 *     EFPrimaryExpression returns EFNetportConstant
+	 *
+	 * Constraint:
+	 *     netport=INT
+	 * </pre>
+	 */
+	protected void sequence_EFPrimaryExpression(ISerializationContext context, EFNetportConstant semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, EasyWallPackage.Literals.EF_NETPORT_CONSTANT__NETPORT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EasyWallPackage.Literals.EF_NETPORT_CONSTANT__NETPORT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getEFPrimaryExpressionAccess().getNetportINTTerminalRuleCall_10_2_0(), semanticObject.getNetport());
 		feeder.finish();
 	}
 	
