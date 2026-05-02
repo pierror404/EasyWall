@@ -157,9 +157,6 @@ public class EasyWallSwitch<T> extends Switch<T>
       {
         EFBlock efBlock = (EFBlock)theEObject;
         T result = caseEFBlock(efBlock);
-        if (result == null) result = caseEFBuiltinFunction(efBlock);
-        if (result == null) result = caseEFExpression(efBlock);
-        if (result == null) result = caseEFStatement(efBlock);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -223,15 +220,6 @@ public class EasyWallSwitch<T> extends Switch<T>
         T result = caseEFNetworkConstant(efNetworkConstant);
         if (result == null) result = caseEFExpression(efNetworkConstant);
         if (result == null) result = caseEFStatement(efNetworkConstant);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EasyWallPackage.EF_NETPORT_CONSTANT:
-      {
-        EFNetportConstant efNetportConstant = (EFNetportConstant)theEObject;
-        T result = caseEFNetportConstant(efNetportConstant);
-        if (result == null) result = caseEFExpression(efNetportConstant);
-        if (result == null) result = caseEFStatement(efNetportConstant);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -397,6 +385,15 @@ public class EasyWallSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case EasyWallPackage.EF_NETPORT_CONSTANT:
+      {
+        EFNetportConstant efNetportConstant = (EFNetportConstant)theEObject;
+        T result = caseEFNetportConstant(efNetportConstant);
+        if (result == null) result = caseEFExpression(efNetportConstant);
+        if (result == null) result = caseEFStatement(efNetportConstant);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case EasyWallPackage.EF_THIS:
       {
         EFThis efThis = (EFThis)theEObject;
@@ -461,23 +458,13 @@ public class EasyWallSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EasyWallPackage.EF_DROP:
+      case EasyWallPackage.EF_DENY:
       {
-        EFDrop efDrop = (EFDrop)theEObject;
-        T result = caseEFDrop(efDrop);
-        if (result == null) result = caseEFBuiltinFunction(efDrop);
-        if (result == null) result = caseEFExpression(efDrop);
-        if (result == null) result = caseEFStatement(efDrop);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EasyWallPackage.EF_REJECT:
-      {
-        EFReject efReject = (EFReject)theEObject;
-        T result = caseEFReject(efReject);
-        if (result == null) result = caseEFBuiltinFunction(efReject);
-        if (result == null) result = caseEFExpression(efReject);
-        if (result == null) result = caseEFStatement(efReject);
+        EFDeny efDeny = (EFDeny)theEObject;
+        T result = caseEFDeny(efDeny);
+        if (result == null) result = caseEFBuiltinFunction(efDeny);
+        if (result == null) result = caseEFExpression(efDeny);
+        if (result == null) result = caseEFStatement(efDeny);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -846,22 +833,6 @@ public class EasyWallSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>EF Netport Constant</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>EF Netport Constant</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseEFNetportConstant(EFNetportConstant object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>EF Assignment</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1150,6 +1121,22 @@ public class EasyWallSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>EF Netport Constant</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>EF Netport Constant</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEFNetportConstant(EFNetportConstant object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>EF This</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1262,33 +1249,17 @@ public class EasyWallSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>EF Drop</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>EF Deny</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>EF Drop</em>'.
+   * @return the result of interpreting the object as an instance of '<em>EF Deny</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseEFDrop(EFDrop object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>EF Reject</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>EF Reject</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseEFReject(EFReject object)
+  public T caseEFDeny(EFDeny object)
   {
     return null;
   }

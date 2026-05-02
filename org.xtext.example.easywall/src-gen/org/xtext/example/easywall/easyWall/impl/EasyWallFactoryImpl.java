@@ -86,7 +86,6 @@ public class EasyWallFactoryImpl extends EFactoryImpl implements EasyWallFactory
       case EasyWallPackage.EF_RULE: return createEFRule();
       case EasyWallPackage.EF_RULE_CLASS: return createEFRuleClass();
       case EasyWallPackage.EF_NETWORK_CONSTANT: return createEFNetworkConstant();
-      case EasyWallPackage.EF_NETPORT_CONSTANT: return createEFNetportConstant();
       case EasyWallPackage.EF_ASSIGNMENT: return createEFAssignment();
       case EasyWallPackage.EF_OR_EXPRESSION: return createEFOrExpression();
       case EasyWallPackage.EF_AND_EXPRESSION: return createEFAndExpression();
@@ -105,6 +104,7 @@ public class EasyWallFactoryImpl extends EFactoryImpl implements EasyWallFactory
       case EasyWallPackage.EF_APPLICATION_PROTOCOL_CONSTANT: return createEFApplicationProtocolConstant();
       case EasyWallPackage.EFI_PV6_CONSTANT: return createEFIPv6Constant();
       case EasyWallPackage.EFI_PV4_CONSTANT: return createEFIPv4Constant();
+      case EasyWallPackage.EF_NETPORT_CONSTANT: return createEFNetportConstant();
       case EasyWallPackage.EF_THIS: return createEFThis();
       case EasyWallPackage.EF_SUPER: return createEFSuper();
       case EasyWallPackage.EF_NEW: return createEFNew();
@@ -112,8 +112,7 @@ public class EasyWallFactoryImpl extends EFactoryImpl implements EasyWallFactory
       case EasyWallPackage.EF_FUNCTION_CALL: return createEFFunctionCall();
       case EasyWallPackage.EF_SYMBOL_REF: return createEFSymbolRef();
       case EasyWallPackage.EF_ALLOW: return createEFAllow();
-      case EasyWallPackage.EF_DROP: return createEFDrop();
-      case EasyWallPackage.EF_REJECT: return createEFReject();
+      case EasyWallPackage.EF_DENY: return createEFDeny();
       case EasyWallPackage.EF_WRITE_LOG: return createEFWriteLog();
       case EasyWallPackage.EF_WRITE_LOG_LEVEL: return createEFWriteLogLevel();
       case EasyWallPackage.EF_GET_TIME: return createEFGetTime();
@@ -435,18 +434,6 @@ public class EasyWallFactoryImpl extends EFactoryImpl implements EasyWallFactory
    * @generated
    */
   @Override
-  public EFNetportConstant createEFNetportConstant()
-  {
-    EFNetportConstantImpl efNetportConstant = new EFNetportConstantImpl();
-    return efNetportConstant;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EFAssignment createEFAssignment()
   {
     EFAssignmentImpl efAssignment = new EFAssignmentImpl();
@@ -663,6 +650,18 @@ public class EasyWallFactoryImpl extends EFactoryImpl implements EasyWallFactory
    * @generated
    */
   @Override
+  public EFNetportConstant createEFNetportConstant()
+  {
+    EFNetportConstantImpl efNetportConstant = new EFNetportConstantImpl();
+    return efNetportConstant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EFThis createEFThis()
   {
     EFThisImpl efThis = new EFThisImpl();
@@ -747,22 +746,10 @@ public class EasyWallFactoryImpl extends EFactoryImpl implements EasyWallFactory
    * @generated
    */
   @Override
-  public EFDrop createEFDrop()
+  public EFDeny createEFDeny()
   {
-    EFDropImpl efDrop = new EFDropImpl();
-    return efDrop;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EFReject createEFReject()
-  {
-    EFRejectImpl efReject = new EFRejectImpl();
-    return efReject;
+    EFDenyImpl efDeny = new EFDenyImpl();
+    return efDeny;
   }
 
   /**

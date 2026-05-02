@@ -176,11 +176,6 @@ public class EasyWallAdapterFactory extends AdapterFactoryImpl
         return createEFNetworkConstantAdapter();
       }
       @Override
-      public Adapter caseEFNetportConstant(EFNetportConstant object)
-      {
-        return createEFNetportConstantAdapter();
-      }
-      @Override
       public Adapter caseEFAssignment(EFAssignment object)
       {
         return createEFAssignmentAdapter();
@@ -271,6 +266,11 @@ public class EasyWallAdapterFactory extends AdapterFactoryImpl
         return createEFIPv4ConstantAdapter();
       }
       @Override
+      public Adapter caseEFNetportConstant(EFNetportConstant object)
+      {
+        return createEFNetportConstantAdapter();
+      }
+      @Override
       public Adapter caseEFThis(EFThis object)
       {
         return createEFThisAdapter();
@@ -306,14 +306,9 @@ public class EasyWallAdapterFactory extends AdapterFactoryImpl
         return createEFAllowAdapter();
       }
       @Override
-      public Adapter caseEFDrop(EFDrop object)
+      public Adapter caseEFDeny(EFDeny object)
       {
-        return createEFDropAdapter();
-      }
-      @Override
-      public Adapter caseEFReject(EFReject object)
-      {
-        return createEFRejectAdapter();
+        return createEFDenyAdapter();
       }
       @Override
       public Adapter caseEFWriteLog(EFWriteLog object)
@@ -658,21 +653,6 @@ public class EasyWallAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.easywall.easyWall.EFNetportConstant <em>EF Netport Constant</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.easywall.easyWall.EFNetportConstant
-   * @generated
-   */
-  public Adapter createEFNetportConstantAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.xtext.example.easywall.easyWall.EFAssignment <em>EF Assignment</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -943,6 +923,21 @@ public class EasyWallAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.easywall.easyWall.EFNetportConstant <em>EF Netport Constant</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.easywall.easyWall.EFNetportConstant
+   * @generated
+   */
+  public Adapter createEFNetportConstantAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.xtext.example.easywall.easyWall.EFThis <em>EF This</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1048,31 +1043,16 @@ public class EasyWallAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.easywall.easyWall.EFDrop <em>EF Drop</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.easywall.easyWall.EFDeny <em>EF Deny</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.easywall.easyWall.EFDrop
+   * @see org.xtext.example.easywall.easyWall.EFDeny
    * @generated
    */
-  public Adapter createEFDropAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.easywall.easyWall.EFReject <em>EF Reject</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.easywall.easyWall.EFReject
-   * @generated
-   */
-  public Adapter createEFRejectAdapter()
+  public Adapter createEFDenyAdapter()
   {
     return null;
   }

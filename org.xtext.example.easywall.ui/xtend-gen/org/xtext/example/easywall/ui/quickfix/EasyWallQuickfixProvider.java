@@ -3,7 +3,14 @@
  */
 package org.xtext.example.easywall.ui.quickfix;
 
+import org.eclipse.xtext.ui.editor.model.IXtextDocument;
+import org.eclipse.xtext.ui.editor.model.edit.IModification;
+import org.eclipse.xtext.ui.editor.model.edit.IModificationContext;
 import org.eclipse.xtext.ui.editor.quickfix.DefaultQuickfixProvider;
+import org.eclipse.xtext.ui.editor.quickfix.Fix;
+import org.eclipse.xtext.ui.editor.quickfix.IssueResolutionAcceptor;
+import org.eclipse.xtext.validation.Issue;
+import org.xtext.example.easywall.validation.EasyWallValidator;
 
 /**
  * Custom quickfixes.
@@ -12,4 +19,77 @@ import org.eclipse.xtext.ui.editor.quickfix.DefaultQuickfixProvider;
  */
 @SuppressWarnings("all")
 public class EasyWallQuickfixProvider extends DefaultQuickfixProvider {
+  @Fix(EasyWallValidator.MISSING_MANDATORY_FIELD_PROTOCOL)
+  public void addProtocolField(final Issue issue, final IssueResolutionAcceptor acceptor) {
+    acceptor.accept(issue, 
+      "Add rule_protocol field", 
+      "Add \'set rule_protocol : protocol = ...\'", 
+      null, 
+      new IModification() {
+        @Override
+        public void apply(final IModificationContext context) throws Exception {
+          final IXtextDocument xtextDocument = context.getXtextDocument();
+          final Integer line = issue.getLineNumber();
+          final int insertPos = xtextDocument.getLineOffset((line).intValue());
+          xtextDocument.replace(insertPos, 
+            0, 
+            "    set rule_protocol : protocol = IPv4;\n");
+        }
+      });
+  }
+
+  @Fix(EasyWallValidator.MISSING_MANDATORY_FIELD_DIRECTION)
+  public void addDirectionField(final Issue issue, final IssueResolutionAcceptor acceptor) {
+    acceptor.accept(issue, 
+      "Add rule_direction field", 
+      "Add \'set rule_direction : direction = ...\'", 
+      null, 
+      new IModification() {
+        @Override
+        public void apply(final IModificationContext context) throws Exception {
+          final IXtextDocument xtextDocument = context.getXtextDocument();
+          final Integer line = issue.getLineNumber();
+          final int insertPos = xtextDocument.getLineOffset((line).intValue());
+          xtextDocument.replace(insertPos, 
+            0, 
+            "\n    set rule_direction : direction = in;");
+        }
+      });
+  }
+
+  @Fix(EasyWallValidator.DESTINATION_FIELD)
+  public void modifyDestField(final Issue issue, final IssueResolutionAcceptor acceptor) {
+    acceptor.accept(issue, 
+      "Change into rule_dest", 
+      "Change into \'set rule_dest ...\'", 
+      null, 
+      new IModification() {
+        @Override
+        public void apply(final IModificationContext context) throws Exception {
+          final IXtextDocument xtextDocument = context.getXtextDocument();
+          xtextDocument.replace(
+            (issue.getOffset()).intValue(), 
+            (issue.getLength()).intValue(), 
+            "rule_dest");
+        }
+      });
+  }
+
+  @Fix(EasyWallValidator.SOURCE_FIELD)
+  public void modifySrcField(final Issue issue, final IssueResolutionAcceptor acceptor) {
+    acceptor.accept(issue, 
+      "Change into rule_src", 
+      "Change into \'set rule_src ...\'", 
+      null, 
+      new IModification() {
+        @Override
+        public void apply(final IModificationContext context) throws Exception {
+          final IXtextDocument xtextDocument = context.getXtextDocument();
+          xtextDocument.replace(
+            (issue.getOffset()).intValue(), 
+            (issue.getLength()).intValue(), 
+            "rule_src");
+        }
+      });
+  }
 }

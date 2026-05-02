@@ -3,9 +3,7 @@ package org.xtext.example.easywall.validation;
 import org.eclipse.xtext.validation.Check
 import org.xtext.example.easywall.easyWall.EFAllow
 import org.xtext.example.easywall.easyWall.EFApplicationProtocolConstant
-import org.xtext.example.easywall.easyWall.EFBlock
 import org.xtext.example.easywall.easyWall.EFBuiltinFunction
-import org.xtext.example.easywall.easyWall.EFDrop
 import org.xtext.example.easywall.easyWall.EFField
 import org.xtext.example.easywall.easyWall.EFIPv4Constant
 import org.xtext.example.easywall.easyWall.EFMember
@@ -13,12 +11,18 @@ import org.xtext.example.easywall.easyWall.EFMethod
 import org.xtext.example.easywall.easyWall.EFNetportConstant
 import org.xtext.example.easywall.easyWall.EFNetworkConstant
 import org.xtext.example.easywall.easyWall.EFNetworkProtocolConstant
-import org.xtext.example.easywall.easyWall.EFReject
 import org.xtext.example.easywall.easyWall.EFRuleClass
 import org.xtext.example.easywall.easyWall.EFRulesTypes
 import org.xtext.example.easywall.easyWall.EFTransportProtocolConstant
 import org.xtext.example.easywall.easyWall.EFWriteLog
 import org.xtext.example.easywall.easyWall.EasyWallPackage
+import org.xtext.example.easywall.easyWall.EFDeny
+import org.xtext.example.easywall.easyWall.EFBlock
+import org.xtext.example.easywall.easyWall.EFStatement
+import org.xtext.example.easywall.easyWall.EFExpression
+import org.eclipse.emf.ecore.EObject
+import org.xtext.example.easywall.easyWall.EFIfStatement
+import org.xtext.example.easywall.easyWall.EFReturn
 
 class EasyWallValidator extends AbstractEasyWallValidator {
     
@@ -26,9 +30,15 @@ class EasyWallValidator extends AbstractEasyWallValidator {
     public static final String INVALID_IPV4_OCTET = "invalidIPv4Octet";
     public static final String INVALID_CIDR_PREFIX = "invalidCIDRPrefix";
     public static final String INVALID_PORT = "invalidPort";
-    public static final String MISSING_MANDATORY_FIELD = "missingMandatoryField";
+    public static final String MISSING_MANDATORY_FIELD_DIRECTION = "missingMandatoryFieldDirection";
+	public static final String MISSING_MANDATORY_FIELD_PROTOCOL = "missingMandatoryFieldProtocol";
     public static final String MISSING_TRIGGER_METHOD = "missingTriggerMethod";
     public static final String BUILTIN_OUTSIDE_TRIGGER = "builtinOutsideTrigger";
+    public static final String UNREACHABLE_CODE = "unreachableCode";
+    
+    // Warning codes
+    public static final String DESTINATION_FIELD = "destinationField";
+    public static final String SOURCE_FIELD = "sourceField";
     
     // ============================================
     // IPv4 Validation
@@ -119,7 +129,7 @@ class EasyWallValidator extends AbstractEasyWallValidator {
                 "Rule must define a 'rule_protocol' field",
                 rule,
                 EasyWallPackage.Literals.EF_RULE_CLASS__NAME,
-                MISSING_MANDATORY_FIELD
+                MISSING_MANDATORY_FIELD_PROTOCOL
             );
         }
         
@@ -128,7 +138,7 @@ class EasyWallValidator extends AbstractEasyWallValidator {
                 "Rule must define a 'rule_direction' field",
                 rule,
                 EasyWallPackage.Literals.EF_RULE_CLASS__NAME,
-                MISSING_MANDATORY_FIELD
+                MISSING_MANDATORY_FIELD_DIRECTION
             );
         }
     }
@@ -204,9 +214,7 @@ class EasyWallValidator extends AbstractEasyWallValidator {
     
     def String getBuiltinName(EFBuiltinFunction builtin) {
         if (builtin instanceof EFAllow) return "allow()";
-        if (builtin instanceof EFBlock) return "block()";
-        if (builtin instanceof EFDrop) return "drop()";
-        if (builtin instanceof EFReject) return "reject()";
+        if (builtin instanceof EFDeny) return "drop()";
         if (builtin instanceof EFWriteLog) return "writelog()";
         return "unknown";
     }
@@ -250,6 +258,60 @@ class EasyWallValidator extends AbstractEasyWallValidator {
         }
     }
     
+    @Check
+	def void checkUnreachableCode(EFBlock block) {
+	    var boolean foundTerminal = false
+	    
+	    for (EFStatement stmt : block.getStatements()) {
+	        
+	        if (foundTerminal) {
+	            error(
+	                "Unreachable code after allow()/deny()",
+	                stmt,
+	                null,
+	                UNREACHABLE_CODE
+	            )
+	            return
+	        }
+	        
+	        if (isTerminalStatement(stmt)) {
+	            foundTerminal = true
+	        }
+	    }
+	}
+	
+	
+	@Check
+    def void checkWarningFields(EFRuleClass rule) {
+    	
+    		var possibleDestinationNames = newHashSet("d", "dest", "ruleDestination", "dst", "destination");
+    		var possibleSourceNames = newHashSet("src", "source", "ruleSource", "s", "sour")
+    		for (EFMember member : rule.getMembers()) {
+            if (member instanceof EFField) {
+                var field = member as EFField;
+                var String fieldName = field.getName().toLowerCase();
+                
+                if (possibleDestinationNames.contains(fieldName)) {
+                    warning(
+	                		"To be compiled, destination field must be: rule_dest (if you want to specify the port you must also write rule_dest_port)",
+	                		field,
+	                		EasyWallPackage.Literals.EF_MEMBER__NAME,
+	                		DESTINATION_FIELD
+	            		)
+                }
+                if (possibleSourceNames.contains(fieldName)) {
+                    warning(
+	                		"To be compiled source field must be: rule_src (if you want to specify the port you must also write rule_src_port)",
+	                		field,
+	                		EasyWallPackage.Literals.EF_MEMBER__NAME,
+	                		SOURCE_FIELD
+	            		)
+                }
+            }
+        }
+        
+    }
+    
     // ============================================
     // Helper Methods
     // ============================================
@@ -264,4 +326,56 @@ class EasyWallValidator extends AbstractEasyWallValidator {
         }
         return null;
     }
+    
+    	def boolean isTerminalStatement(EFStatement stmt) {
+    
+	    // Caso: expression;
+	    if (stmt instanceof org.xtext.example.easywall.easyWall.EFExpression) {
+	        val expr = stmt as org.xtext.example.easywall.easyWall.EFExpression
+	        return containsTerminal(expr)
+	    }
+	    
+	    // Caso: return ... (opzionale, ma utile)
+	    if (stmt instanceof EFReturn) {
+	        return true
+	    }
+	    
+	    // Caso: if (...) { ... }
+	    if (stmt instanceof EFIfStatement) {
+	        val ifStmt = stmt as EFIfStatement
+	        
+	        // Se entrambi i rami sono terminali → anche questo è terminale
+	        return isBlockTerminal(ifStmt.thenBlock) &&
+	               (ifStmt.elseBlock !== null && isBlockTerminal(ifStmt.elseBlock))
+	    }
+	    
+	    return false
+	}
+	
+	def boolean containsTerminal(EFExpression expr) {
+    
+	    if (expr instanceof EFAllow || expr instanceof EFDeny) {
+	        return true
+	    }
+	    
+	    // Naviga figli (AST generico EMF)
+	    for (EObject child : expr.eContents()) {
+	        if (child instanceof EFExpression) {
+	            if (containsTerminal(child as EFExpression)) {
+	                return true
+	            }
+	        }
+	    }
+	    
+	    return false
+	}
+	
+	def boolean isBlockTerminal(EFBlock block) {
+	    for (stmt : block.getStatements()) {
+	        if (isTerminalStatement(stmt)) {
+	            return true
+	        }
+	    }
+	    return false
+	}
 }

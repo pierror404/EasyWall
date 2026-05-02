@@ -4,6 +4,12 @@
 package org.xtext.example.easywall.ui.quickfix
 
 import org.eclipse.xtext.ui.editor.quickfix.DefaultQuickfixProvider
+import org.xtext.example.easywall.validation.EasyWallValidator
+import org.eclipse.xtext.ui.editor.quickfix.Fix
+import org.eclipse.xtext.validation.Issue
+import org.eclipse.xtext.ui.editor.quickfix.IssueResolutionAcceptor
+import org.eclipse.xtext.ui.editor.model.edit.IModification
+import org.eclipse.xtext.ui.editor.model.edit.IModificationContext
 
 /**
  * Custom quickfixes.
@@ -21,4 +27,92 @@ class EasyWallQuickfixProvider extends DefaultQuickfixProvider {
 //			xtextDocument.replace(issue.offset, 1, firstLetter.toUpperCase)
 //		]
 //	}
+
+	@Fix(EasyWallValidator.MISSING_MANDATORY_FIELD_PROTOCOL)
+    def addProtocolField(Issue issue, IssueResolutionAcceptor acceptor) {
+        acceptor.accept(
+            issue,
+            "Add rule_protocol field",
+            "Add 'set rule_protocol : protocol = ...'",
+            null,
+            new IModification() {
+                override apply(IModificationContext context) throws Exception {
+                    val xtextDocument = context.xtextDocument
+                    // Trova la posizione dopo '{'
+                    val line = issue.lineNumber
+                    val insertPos = xtextDocument.getLineOffset(line)
+                    
+                    xtextDocument.replace(
+                        insertPos, 
+                        0, 
+                        "    set rule_protocol : protocol = IPv4;\n"
+                    )
+                }
+            }
+        )
+    }
+    
+    @Fix(EasyWallValidator.MISSING_MANDATORY_FIELD_DIRECTION)
+    def addDirectionField(Issue issue, IssueResolutionAcceptor acceptor) {
+        acceptor.accept(
+            issue,
+            "Add rule_direction field",
+            "Add 'set rule_direction : direction = ...'",
+            null,
+            new IModification() {
+                override apply(IModificationContext context) throws Exception {
+                    val xtextDocument = context.xtextDocument
+                    // Trova la posizione dopo '{'
+                    val line = issue.lineNumber
+                    val insertPos = xtextDocument.getLineOffset(line)
+                    
+                    xtextDocument.replace(
+                        insertPos, 
+                        0, 
+                        "\n    set rule_direction : direction = in;"
+                    )
+                }
+            }
+        )
+    }
+    
+    @Fix(EasyWallValidator.DESTINATION_FIELD)
+    def modifyDestField(Issue issue, IssueResolutionAcceptor acceptor) {
+        acceptor.accept(
+            issue,
+            "Change into rule_dest",
+            "Change into 'set rule_dest ...'",
+            null,
+            new IModification() {
+                override apply(IModificationContext context) throws Exception {
+                    val xtextDocument = context.xtextDocument
+                    xtextDocument.replace(
+                        issue.offset, 
+                        issue.length,
+                        "rule_dest"
+                    )
+                }
+            }
+        )
+    }
+    
+        @Fix(EasyWallValidator.SOURCE_FIELD)
+    def modifySrcField(Issue issue, IssueResolutionAcceptor acceptor) {
+        acceptor.accept(
+            issue,
+            "Change into rule_src",
+            "Change into 'set rule_src ...'",
+            null,
+            new IModification() {
+                override apply(IModificationContext context) throws Exception {
+                    val xtextDocument = context.xtextDocument                    
+                    xtextDocument.replace(
+                        issue.offset, 
+                        issue.length,
+                        "rule_src"
+                    )
+                }
+            }
+        )
+    }
 }

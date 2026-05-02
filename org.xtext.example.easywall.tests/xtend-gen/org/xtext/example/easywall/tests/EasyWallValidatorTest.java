@@ -186,28 +186,8 @@ public class EasyWallValidatorTest {
 
   @Test
   public void testMissingMandatoryFields() {
-    try {
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("rule R1 at NetworkLayer {");
-      _builder.newLine();
-      _builder.append("    ");
-      _builder.append("var something: int = 1;");
-      _builder.newLine();
-      _builder.append("}");
-      _builder.newLine();
-      final String input = _builder.toString();
-      final EFProgram model = this.parser.parse(input);
-      final List<Issue> issues = this.validator.validate(model);
-      final Function1<Issue, Boolean> _function = (Issue it) -> {
-        String _code = it.getCode();
-        return Boolean.valueOf(Objects.equals(_code, EasyWallValidator.MISSING_MANDATORY_FIELD));
-      };
-      Assertions.assertTrue(
-        IterableExtensions.<Issue>exists(issues, _function), 
-        "Expected missing mandatory field errors");
-    } catch (Throwable _e) {
-      throw Exceptions.sneakyThrow(_e);
-    }
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method or field MISSING_MANDATORY_FIELD is undefined for the type Class<EasyWallValidator>");
   }
 
   @Test

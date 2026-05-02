@@ -13,7 +13,6 @@ import org.xtext.example.easywall.easyWall.EFBlock
 import org.xtext.example.easywall.easyWall.EFBoolConstant
 import org.xtext.example.easywall.easyWall.EFBracketsExpression
 import org.xtext.example.easywall.easyWall.EFDirectionConstant
-import org.xtext.example.easywall.easyWall.EFDrop
 import org.xtext.example.easywall.easyWall.EFEqualExpression
 import org.xtext.example.easywall.easyWall.EFExpression
 import org.xtext.example.easywall.easyWall.EFField
@@ -34,7 +33,6 @@ import org.xtext.example.easywall.easyWall.EFNotExpression
 import org.xtext.example.easywall.easyWall.EFOrExpression
 import org.xtext.example.easywall.easyWall.EFParameter
 import org.xtext.example.easywall.easyWall.EFProgram
-import org.xtext.example.easywall.easyWall.EFReject
 import org.xtext.example.easywall.easyWall.EFRelExpression
 import org.xtext.example.easywall.easyWall.EFReturn
 import org.xtext.example.easywall.easyWall.EFRule
@@ -197,36 +195,66 @@ class EasyWallGenerator extends AbstractGenerator {
         }
     }
     
-    def CharSequence compileSourceEndpoint(EFRuleClass rule) {
-        val sourceField = findFieldByName(rule, "source")
-        if (sourceField?.expression !== null) {
-            return compileEndpoint(sourceField.expression)
-        }
-        // Default: any source
-        return '''new Endpoint(Optional.empty(), Optional.empty(), Optional.empty())'''
-    }
-    
-    def CharSequence compileDestinationEndpoint(EFRuleClass rule) {
-        val destField = findFieldByName(rule, "destination")
-        if (destField?.expression !== null) {
-            return compileEndpoint(destField.expression)
-        }
-        // Default: any destination
-        return '''new Endpoint(Optional.empty(), Optional.empty(), Optional.empty())'''
-    }
-    
-    def CharSequence compileEndpoint(EFExpression expr) {
-        switch expr {
-            EFIPv4Constant: '''new Endpoint(Optional.of(«compileIPv4(expr)»), Optional.empty(), Optional.empty())'''
-            EFNetworkConstant: '''new Endpoint(Optional.empty(), Optional.of(«compileNetwork(expr)»), Optional.empty())'''
-            EFNetportConstant: '''new Endpoint(Optional.empty(), Optional.empty(), Optional.of(«compilePort(expr)»))'''
-            EFSymbolRef: {
-                // Reference to a variable
-                '''new Endpoint(Optional.ofNullable(«expr.symbol»), Optional.empty(), Optional.empty())'''
-            }
-            default: '''new Endpoint(Optional.empty(), Optional.empty(), Optional.empty())'''
-        }
-    }
+	def CharSequence compileSourceEndpoint(EFRuleClass rule) {
+	    val srcField = findFieldByName(rule, "rule_src")
+	    val srcPortField = findFieldByName(rule, "rule_src_port")
+	    
+	    return compileEndpointCombined(srcField, srcPortField)
+	}
+	
+	def CharSequence compileDestinationEndpoint(EFRuleClass rule) {
+	    val destField = findFieldByName(rule, "rule_dest")
+	    val destPortField = findFieldByName(rule, "rule_dest_port")
+	    
+	    return compileEndpointCombined(destField, destPortField)
+	}
+	
+	/**
+	 * Combina IP/Network e Porta in un singolo Endpoint
+	 */
+	def CharSequence compileEndpointCombined(EFField ipField, EFField portField) {
+	    val hasIp = ipField?.expression !== null
+	    val hasPort = portField?.expression !== null
+	    
+	    // Compila i componenti
+	    val ipPart = if (hasIp) compileEndpointIP(ipField.expression) else "Optional.empty()"
+	    val networkPart = if (hasIp) compileEndpointNetwork(ipField.expression) else "Optional.empty()"
+	    val portPart = if (hasPort) compileEndpointPort(portField.expression) else "Optional.empty()"
+	    
+	    return '''new Endpoint(«ipPart», «networkPart», «portPart»)'''
+	}
+	
+	/**
+	 * Compila solo la parte IP dell'endpoint
+	 */
+	def String compileEndpointIP(EFExpression expr) {
+	    switch expr {
+	        EFIPv4Constant: '''Optional.of(«compileIPv4(expr)»)'''
+	        EFSymbolRef: '''Optional.ofNullable(«expr.symbol»)'''
+	        default: "Optional.empty()"
+	    }
+	}
+	
+	/**
+	 * Compila solo la parte Network dell'endpoint
+	 */
+	def String compileEndpointNetwork(EFExpression expr) {
+	    switch expr {
+	        EFNetworkConstant: '''Optional.of(«compileNetwork(expr)»)'''
+	        default: "Optional.empty()"
+	    }
+	}
+	
+	/**
+	 * Compila solo la parte Porta dell'endpoint
+	 */
+	def String compileEndpointPort(EFExpression expr) {
+	    switch expr {
+	        EFNetportConstant: '''Optional.of(«compilePort(expr)»)'''
+	        EFSymbolRef: '''Optional.ofNullable(«expr.symbol»)'''
+	        default: "Optional.empty()"
+	    }
+	}
     
     // ============================================
     // Compila Field
@@ -388,8 +416,6 @@ class EasyWallGenerator extends AbstractGenerator {
             // Built-in functions
             EFAllow: "return Action.ALLOW"
             EFBlock: "return Action.DENY"
-            EFDrop: "return Action.DROP"
-            EFReject: "return Action.REJECT"
             EFWriteLog: '''logger.Logger.writeOnLogFile(packet, "firewall-log.txt", logger.LogLevel.INFO,«compileExpression(expr.message)»)'''
             EFWriteLogLevel: '''logger.Logger.writeOnLogFile(packet, "firewall-log.txt", logger.LogLevel«expr.level»,«compileExpression(expr.message)»)'''
             EFGetTime: "System.currentTimeMillis() / 1000"

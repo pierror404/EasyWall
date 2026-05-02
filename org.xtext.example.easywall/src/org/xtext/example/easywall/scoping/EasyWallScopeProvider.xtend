@@ -3,6 +3,12 @@
  */
 package org.xtext.example.easywall.scoping
 
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.xtext.scoping.IScope
+import org.eclipse.xtext.scoping.Scopes
+import org.xtext.example.easywall.easyWall.EFProgram
+import org.xtext.example.easywall.easyWall.EFRuleClass
+import org.xtext.example.easywall.easyWall.EFRuleReference
 
 /**
  * This class contains custom scoping description.
@@ -11,5 +17,52 @@ package org.xtext.example.easywall.scoping
  * on how and when to use it.
  */
 class EasyWallScopeProvider extends AbstractEasyWallScopeProvider {
+	def IScope scope_EFRuleReference_rule(EFRuleReference ref) {
+        return scopeForRules(ref)
+    }
+    
+        private def IScope scopeForRules(EObject ctx) {
 
+        val resource = ctx.eResource
+        val root = resource.contents.head as EFProgram
+        val header = root.header
+
+        // 1. Tutte le regole del workspace
+        val allRules = resource.resourceSet.resources
+            .map[it.contents.head]
+            .filter(EFProgram)
+            .map[it.rules.map[r | r.rules]]
+            .flatten
+
+        // 2. Package corrente
+        val currentPackage = header?.name?.toString ?: ""
+
+        val localRules = allRules.filter[
+            eContainer instanceof EFProgram &&
+            (eContainer as EFProgram).header?.name?.toString == currentPackage
+        ]
+
+        // 3. Import
+        val importedRules = <EFRuleClass> newArrayList
+
+        for (imp : header.imports) {
+            val ns = imp.importedNamespace.toString
+
+            if (ns.endsWith(".*")) {
+                val pkg = ns.substring(0, ns.length - 2)
+                importedRules += allRules.filter[
+                    (eContainer as EFProgram).header?.name?.toString == pkg
+                ]
+            } else {
+                importedRules += allRules.filter[
+                    (eContainer as EFProgram).header?.name?.toString + "." + name == ns
+                ]
+            }
+        }
+
+        // 4. Scope finale: local → import → global
+        return Scopes.scopeFor(
+            localRules + importedRules + allRules
+        )
+    }
 }

@@ -204,15 +204,6 @@ public interface EasyWallFactory extends EFactory
   EFNetworkConstant createEFNetworkConstant();
 
   /**
-   * Returns a new object of class '<em>EF Netport Constant</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>EF Netport Constant</em>'.
-   * @generated
-   */
-  EFNetportConstant createEFNetportConstant();
-
-  /**
    * Returns a new object of class '<em>EF Assignment</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -375,6 +366,15 @@ public interface EasyWallFactory extends EFactory
   EFIPv4Constant createEFIPv4Constant();
 
   /**
+   * Returns a new object of class '<em>EF Netport Constant</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>EF Netport Constant</em>'.
+   * @generated
+   */
+  EFNetportConstant createEFNetportConstant();
+
+  /**
    * Returns a new object of class '<em>EF This</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -438,22 +438,13 @@ public interface EasyWallFactory extends EFactory
   EFAllow createEFAllow();
 
   /**
-   * Returns a new object of class '<em>EF Drop</em>'.
+   * Returns a new object of class '<em>EF Deny</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>EF Drop</em>'.
+   * @return a new object of class '<em>EF Deny</em>'.
    * @generated
    */
-  EFDrop createEFDrop();
-
-  /**
-   * Returns a new object of class '<em>EF Reject</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>EF Reject</em>'.
-   * @generated
-   */
-  EFReject createEFReject();
+  EFDeny createEFDeny();
 
   /**
    * Returns a new object of class '<em>EF Write Log</em>'.

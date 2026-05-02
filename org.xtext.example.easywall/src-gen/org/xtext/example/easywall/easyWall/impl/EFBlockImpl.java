@@ -12,6 +12,8 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -32,7 +34,7 @@ import org.xtext.example.easywall.easyWall.EasyWallPackage;
  *
  * @generated
  */
-public class EFBlockImpl extends EFBuiltinFunctionImpl implements EFBlock
+public class EFBlockImpl extends MinimalEObjectImpl.Container implements EFBlock
 {
   /**
    * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.

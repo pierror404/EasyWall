@@ -5,24 +5,24 @@ package org.xtext.example.easywall.easyWall.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.xtext.example.easywall.easyWall.EFDrop;
+import org.xtext.example.easywall.easyWall.EFDeny;
 import org.xtext.example.easywall.easyWall.EasyWallPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>EF Drop</b></em>'.
+ * An implementation of the model object '<em><b>EF Deny</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class EFDropImpl extends EFBuiltinFunctionImpl implements EFDrop
+public class EFDenyImpl extends EFBuiltinFunctionImpl implements EFDeny
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected EFDropImpl()
+  protected EFDenyImpl()
   {
     super();
   }
@@ -35,7 +35,7 @@ public class EFDropImpl extends EFBuiltinFunctionImpl implements EFDrop
   @Override
   protected EClass eStaticClass()
   {
-    return EasyWallPackage.Literals.EF_DROP;
+    return EasyWallPackage.Literals.EF_DENY;
   }
 
-} //EFDropImpl
+} //EFDenyImpl

@@ -26,7 +26,6 @@ import org.xtext.example.easywall.easyWall.EFDefaultAction;
 import org.xtext.example.easywall.easyWall.EFDefaultPolicy;
 import org.xtext.example.easywall.easyWall.EFDirectionConstant;
 import org.xtext.example.easywall.easyWall.EFDirectionNativeType;
-import org.xtext.example.easywall.easyWall.EFDrop;
 import org.xtext.example.easywall.easyWall.EFEqualExpression;
 import org.xtext.example.easywall.easyWall.EFExpression;
 import org.xtext.example.easywall.easyWall.EFField;
@@ -52,7 +51,6 @@ import org.xtext.example.easywall.easyWall.EFOrExpression;
 import org.xtext.example.easywall.easyWall.EFParameter;
 import org.xtext.example.easywall.easyWall.EFPrimitiveType;
 import org.xtext.example.easywall.easyWall.EFProgram;
-import org.xtext.example.easywall.easyWall.EFReject;
 import org.xtext.example.easywall.easyWall.EFRelExpression;
 import org.xtext.example.easywall.easyWall.EFReturn;
 import org.xtext.example.easywall.easyWall.EFRule;
@@ -416,84 +414,144 @@ public class EasyWallGenerator extends AbstractGenerator {
   }
 
   public CharSequence compileSourceEndpoint(final EFRuleClass rule) {
-    final EFField sourceField = this.findFieldByName(rule, "source");
-    EFExpression _expression = null;
-    if (sourceField!=null) {
-      _expression=sourceField.getExpression();
-    }
-    boolean _tripleNotEquals = (_expression != null);
-    if (_tripleNotEquals) {
-      return this.compileEndpoint(sourceField.getExpression());
-    }
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("new Endpoint(Optional.empty(), Optional.empty(), Optional.empty())");
-    return _builder;
+    final EFField srcField = this.findFieldByName(rule, "rule_src");
+    final EFField srcPortField = this.findFieldByName(rule, "rule_src_port");
+    return this.compileEndpointCombined(srcField, srcPortField);
   }
 
   public CharSequence compileDestinationEndpoint(final EFRuleClass rule) {
-    final EFField destField = this.findFieldByName(rule, "destination");
+    final EFField destField = this.findFieldByName(rule, "rule_dest");
+    final EFField destPortField = this.findFieldByName(rule, "rule_dest_port");
+    return this.compileEndpointCombined(destField, destPortField);
+  }
+
+  /**
+   * Combina IP/Network e Porta in un singolo Endpoint
+   */
+  public CharSequence compileEndpointCombined(final EFField ipField, final EFField portField) {
     EFExpression _expression = null;
-    if (destField!=null) {
-      _expression=destField.getExpression();
+    if (ipField!=null) {
+      _expression=ipField.getExpression();
     }
-    boolean _tripleNotEquals = (_expression != null);
-    if (_tripleNotEquals) {
-      return this.compileEndpoint(destField.getExpression());
+    final boolean hasIp = (_expression != null);
+    EFExpression _expression_1 = null;
+    if (portField!=null) {
+      _expression_1=portField.getExpression();
     }
+    final boolean hasPort = (_expression_1 != null);
+    String _xifexpression = null;
+    if (hasIp) {
+      _xifexpression = this.compileEndpointIP(ipField.getExpression());
+    } else {
+      _xifexpression = "Optional.empty()";
+    }
+    final String ipPart = _xifexpression;
+    String _xifexpression_1 = null;
+    if (hasIp) {
+      _xifexpression_1 = this.compileEndpointNetwork(ipField.getExpression());
+    } else {
+      _xifexpression_1 = "Optional.empty()";
+    }
+    final String networkPart = _xifexpression_1;
+    String _xifexpression_2 = null;
+    if (hasPort) {
+      _xifexpression_2 = this.compileEndpointPort(portField.getExpression());
+    } else {
+      _xifexpression_2 = "Optional.empty()";
+    }
+    final String portPart = _xifexpression_2;
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("new Endpoint(Optional.empty(), Optional.empty(), Optional.empty())");
+    _builder.append("new Endpoint(");
+    _builder.append(ipPart);
+    _builder.append(", ");
+    _builder.append(networkPart);
+    _builder.append(", ");
+    _builder.append(portPart);
+    _builder.append(")");
     return _builder;
   }
 
-  public CharSequence compileEndpoint(final EFExpression expr) {
-    CharSequence _switchResult = null;
+  /**
+   * Compila solo la parte IP dell'endpoint
+   */
+  public String compileEndpointIP(final EFExpression expr) {
+    String _switchResult = null;
     boolean _matched = false;
     if (expr instanceof EFIPv4Constant) {
       _matched=true;
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("new Endpoint(Optional.of(");
+      _builder.append("Optional.of(");
       CharSequence _compileIPv4 = this.compileIPv4(((EFIPv4Constant)expr));
       _builder.append(_compileIPv4);
-      _builder.append("), Optional.empty(), Optional.empty())");
-      _switchResult = _builder;
-    }
-    if (!_matched) {
-      if (expr instanceof EFNetworkConstant) {
-        _matched=true;
-        StringConcatenation _builder = new StringConcatenation();
-        _builder.append("new Endpoint(Optional.empty(), Optional.of(");
-        CharSequence _compileNetwork = this.compileNetwork(((EFNetworkConstant)expr));
-        _builder.append(_compileNetwork);
-        _builder.append("), Optional.empty())");
-        _switchResult = _builder;
-      }
-    }
-    if (!_matched) {
-      if (expr instanceof EFNetportConstant) {
-        _matched=true;
-        StringConcatenation _builder = new StringConcatenation();
-        _builder.append("new Endpoint(Optional.empty(), Optional.empty(), Optional.of(");
-        CharSequence _compilePort = this.compilePort(((EFNetportConstant)expr));
-        _builder.append(_compilePort);
-        _builder.append("))");
-        _switchResult = _builder;
-      }
+      _builder.append(")");
+      _switchResult = _builder.toString();
     }
     if (!_matched) {
       if (expr instanceof EFSymbolRef) {
         _matched=true;
         StringConcatenation _builder = new StringConcatenation();
-        _builder.append("new Endpoint(Optional.ofNullable(");
+        _builder.append("Optional.ofNullable(");
         String _symbol = ((EFSymbolRef)expr).getSymbol();
         _builder.append(_symbol);
-        _builder.append("), Optional.empty(), Optional.empty())");
-        _switchResult = _builder;
+        _builder.append(")");
+        _switchResult = _builder.toString();
       }
     }
     if (!_matched) {
+      _switchResult = "Optional.empty()";
+    }
+    return _switchResult;
+  }
+
+  /**
+   * Compila solo la parte Network dell'endpoint
+   */
+  public String compileEndpointNetwork(final EFExpression expr) {
+    String _switchResult = null;
+    boolean _matched = false;
+    if (expr instanceof EFNetworkConstant) {
+      _matched=true;
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("new Endpoint(Optional.empty(), Optional.empty(), Optional.empty())");
-      _switchResult = _builder;
+      _builder.append("Optional.of(");
+      CharSequence _compileNetwork = this.compileNetwork(((EFNetworkConstant)expr));
+      _builder.append(_compileNetwork);
+      _builder.append(")");
+      _switchResult = _builder.toString();
+    }
+    if (!_matched) {
+      _switchResult = "Optional.empty()";
+    }
+    return _switchResult;
+  }
+
+  /**
+   * Compila solo la parte Porta dell'endpoint
+   */
+  public String compileEndpointPort(final EFExpression expr) {
+    String _switchResult = null;
+    boolean _matched = false;
+    if (expr instanceof EFNetportConstant) {
+      _matched=true;
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("Optional.of(");
+      CharSequence _compilePort = this.compilePort(((EFNetportConstant)expr));
+      _builder.append(_compilePort);
+      _builder.append(")");
+      _switchResult = _builder.toString();
+    }
+    if (!_matched) {
+      if (expr instanceof EFSymbolRef) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("Optional.ofNullable(");
+        String _symbol = ((EFSymbolRef)expr).getSymbol();
+        _builder.append(_symbol);
+        _builder.append(")");
+        _switchResult = _builder.toString();
+      }
+    }
+    if (!_matched) {
+      _switchResult = "Optional.empty()";
     }
     return _switchResult;
   }
@@ -1015,18 +1073,6 @@ public class EasyWallGenerator extends AbstractGenerator {
       if (expr instanceof EFBlock) {
         _matched=true;
         _switchResult = "return Action.DENY";
-      }
-    }
-    if (!_matched) {
-      if (expr instanceof EFDrop) {
-        _matched=true;
-        _switchResult = "return Action.DROP";
-      }
-    }
-    if (!_matched) {
-      if (expr instanceof EFReject) {
-        _matched=true;
-        _switchResult = "return Action.REJECT";
       }
     }
     if (!_matched) {

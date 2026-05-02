@@ -152,9 +152,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EasyWall.ecore#//EFNetworkConstant/rawip"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EasyWall.ecore#//EFNetworkConstant/rawnetmask"/>
     </genClasses>
-    <genClasses ecoreClass="EasyWall.ecore#//EFNetportConstant">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EasyWall.ecore#//EFNetportConstant/netport"/>
-    </genClasses>
     <genClasses ecoreClass="EasyWall.ecore#//EFAssignment">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EasyWall.ecore#//EFAssignment/left"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EasyWall.ecore#//EFAssignment/right"/>
@@ -220,6 +217,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EasyWall.ecore#//EFIPv4Constant/any"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EasyWall.ecore#//EFIPv4Constant/localhost"/>
     </genClasses>
+    <genClasses ecoreClass="EasyWall.ecore#//EFNetportConstant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EasyWall.ecore#//EFNetportConstant/netport"/>
+    </genClasses>
     <genClasses ecoreClass="EasyWall.ecore#//EFThis"/>
     <genClasses ecoreClass="EasyWall.ecore#//EFSuper"/>
     <genClasses ecoreClass="EasyWall.ecore#//EFNew">
@@ -236,8 +236,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EasyWall.ecore#//EFSymbolRef/symbol"/>
     </genClasses>
     <genClasses ecoreClass="EasyWall.ecore#//EFAllow"/>
-    <genClasses ecoreClass="EasyWall.ecore#//EFDrop"/>
-    <genClasses ecoreClass="EasyWall.ecore#//EFReject"/>
+    <genClasses ecoreClass="EasyWall.ecore#//EFDeny"/>
     <genClasses ecoreClass="EasyWall.ecore#//EFWriteLog">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EasyWall.ecore#//EFWriteLog/message"/>
     </genClasses>

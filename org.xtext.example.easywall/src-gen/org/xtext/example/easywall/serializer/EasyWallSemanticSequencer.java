@@ -23,8 +23,8 @@ import org.xtext.example.easywall.easyWall.EFBlock;
 import org.xtext.example.easywall.easyWall.EFBoolConstant;
 import org.xtext.example.easywall.easyWall.EFBracketsExpression;
 import org.xtext.example.easywall.easyWall.EFDefaultPolicy;
+import org.xtext.example.easywall.easyWall.EFDeny;
 import org.xtext.example.easywall.easyWall.EFDirectionConstant;
-import org.xtext.example.easywall.easyWall.EFDrop;
 import org.xtext.example.easywall.easyWall.EFEqualExpression;
 import org.xtext.example.easywall.easyWall.EFField;
 import org.xtext.example.easywall.easyWall.EFFirewall;
@@ -48,7 +48,6 @@ import org.xtext.example.easywall.easyWall.EFNotExpression;
 import org.xtext.example.easywall.easyWall.EFOrExpression;
 import org.xtext.example.easywall.easyWall.EFParameter;
 import org.xtext.example.easywall.easyWall.EFProgram;
-import org.xtext.example.easywall.easyWall.EFReject;
 import org.xtext.example.easywall.easyWall.EFRelExpression;
 import org.xtext.example.easywall.easyWall.EFReturn;
 import org.xtext.example.easywall.easyWall.EFRule;
@@ -103,30 +102,6 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 					sequence_EFBlock_EFIfBlock(context, (EFBlock) semanticObject); 
 					return; 
 				}
-				else if (rule == grammarAccess.getEFStatementRule()
-						|| rule == grammarAccess.getEFExpressionRule()
-						|| rule == grammarAccess.getEFAssignmentRule()
-						|| action == grammarAccess.getEFAssignmentAccess().getEFAssignmentLeftAction_1_0()
-						|| rule == grammarAccess.getEFOrExpressionRule()
-						|| action == grammarAccess.getEFOrExpressionAccess().getEFOrExpressionLeftAction_1_0()
-						|| rule == grammarAccess.getEFAndExpressionRule()
-						|| action == grammarAccess.getEFAndExpressionAccess().getEFAndExpressionLeftAction_1_0()
-						|| rule == grammarAccess.getEFEqualExpressionRule()
-						|| action == grammarAccess.getEFEqualExpressionAccess().getEFEqualExpressionLeftAction_1_0()
-						|| rule == grammarAccess.getEFRelExpressionRule()
-						|| action == grammarAccess.getEFRelExpressionAccess().getEFRelExpressionLeftAction_1_0()
-						|| rule == grammarAccess.getEFAddExpressionRule()
-						|| action == grammarAccess.getEFAddExpressionAccess().getEFAddExpressionLeftAction_1_0()
-						|| rule == grammarAccess.getEFMultExpressionRule()
-						|| action == grammarAccess.getEFMultExpressionAccess().getEFMultExpressionLeftAction_1_0()
-						|| rule == grammarAccess.getEFUnaryExpressionRule()
-						|| rule == grammarAccess.getEFMemberSelectionRule()
-						|| action == grammarAccess.getEFMemberSelectionAccess().getEFMemberSelectionReceiverAction_1_0()
-						|| rule == grammarAccess.getEFPrimaryExpressionRule()
-						|| rule == grammarAccess.getEFBuiltinFunctionRule()) {
-					sequence_EFBuiltinFunction(context, (EFBlock) semanticObject); 
-					return; 
-				}
 				else break;
 			case EasyWallPackage.EF_BOOL_CONSTANT:
 				sequence_EFPrimaryExpression(context, (EFBoolConstant) semanticObject); 
@@ -137,11 +112,11 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case EasyWallPackage.EF_DEFAULT_POLICY:
 				sequence_EFDefaultPolicy(context, (EFDefaultPolicy) semanticObject); 
 				return; 
+			case EasyWallPackage.EF_DENY:
+				sequence_EFBuiltinFunction(context, (EFDeny) semanticObject); 
+				return; 
 			case EasyWallPackage.EF_DIRECTION_CONSTANT:
 				sequence_EFPrimaryExpression(context, (EFDirectionConstant) semanticObject); 
-				return; 
-			case EasyWallPackage.EF_DROP:
-				sequence_EFBuiltinFunction(context, (EFDrop) semanticObject); 
 				return; 
 			case EasyWallPackage.EF_EQUAL_EXPRESSION:
 				sequence_EFEqualExpression(context, (EFEqualExpression) semanticObject); 
@@ -189,34 +164,8 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				sequence_EFMultExpression(context, (EFMultExpression) semanticObject); 
 				return; 
 			case EasyWallPackage.EF_NETPORT_CONSTANT:
-				if (rule == grammarAccess.getEFNetportSYNTAXRule()) {
-					sequence_EFNetportSYNTAX(context, (EFNetportConstant) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getEFStatementRule()
-						|| rule == grammarAccess.getEFExpressionRule()
-						|| rule == grammarAccess.getEFAssignmentRule()
-						|| action == grammarAccess.getEFAssignmentAccess().getEFAssignmentLeftAction_1_0()
-						|| rule == grammarAccess.getEFOrExpressionRule()
-						|| action == grammarAccess.getEFOrExpressionAccess().getEFOrExpressionLeftAction_1_0()
-						|| rule == grammarAccess.getEFAndExpressionRule()
-						|| action == grammarAccess.getEFAndExpressionAccess().getEFAndExpressionLeftAction_1_0()
-						|| rule == grammarAccess.getEFEqualExpressionRule()
-						|| action == grammarAccess.getEFEqualExpressionAccess().getEFEqualExpressionLeftAction_1_0()
-						|| rule == grammarAccess.getEFRelExpressionRule()
-						|| action == grammarAccess.getEFRelExpressionAccess().getEFRelExpressionLeftAction_1_0()
-						|| rule == grammarAccess.getEFAddExpressionRule()
-						|| action == grammarAccess.getEFAddExpressionAccess().getEFAddExpressionLeftAction_1_0()
-						|| rule == grammarAccess.getEFMultExpressionRule()
-						|| action == grammarAccess.getEFMultExpressionAccess().getEFMultExpressionLeftAction_1_0()
-						|| rule == grammarAccess.getEFUnaryExpressionRule()
-						|| rule == grammarAccess.getEFMemberSelectionRule()
-						|| action == grammarAccess.getEFMemberSelectionAccess().getEFMemberSelectionReceiverAction_1_0()
-						|| rule == grammarAccess.getEFPrimaryExpressionRule()) {
-					sequence_EFPrimaryExpression(context, (EFNetportConstant) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_EFPrimaryExpression(context, (EFNetportConstant) semanticObject); 
+				return; 
 			case EasyWallPackage.EF_NETWORK_CONSTANT:
 				if (rule == grammarAccess.getEFNetworkSYNTAXRule()) {
 					sequence_EFNetworkSYNTAX(context, (EFNetworkConstant) semanticObject); 
@@ -263,9 +212,6 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				return; 
 			case EasyWallPackage.EF_PROGRAM:
 				sequence_EFProgram(context, (EFProgram) semanticObject); 
-				return; 
-			case EasyWallPackage.EF_REJECT:
-				sequence_EFBuiltinFunction(context, (EFReject) semanticObject); 
 				return; 
 			case EasyWallPackage.EF_REL_EXPRESSION:
 				sequence_EFRelExpression(context, (EFRelExpression) semanticObject); 
@@ -467,67 +413,33 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     EFStatement returns EFBlock
-	 *     EFExpression returns EFBlock
-	 *     EFAssignment returns EFBlock
-	 *     EFAssignment.EFAssignment_1_0 returns EFBlock
-	 *     EFOrExpression returns EFBlock
-	 *     EFOrExpression.EFOrExpression_1_0 returns EFBlock
-	 *     EFAndExpression returns EFBlock
-	 *     EFAndExpression.EFAndExpression_1_0 returns EFBlock
-	 *     EFEqualExpression returns EFBlock
-	 *     EFEqualExpression.EFEqualExpression_1_0 returns EFBlock
-	 *     EFRelExpression returns EFBlock
-	 *     EFRelExpression.EFRelExpression_1_0 returns EFBlock
-	 *     EFAddExpression returns EFBlock
-	 *     EFAddExpression.EFAddExpression_1_0 returns EFBlock
-	 *     EFMultExpression returns EFBlock
-	 *     EFMultExpression.EFMultExpression_1_0 returns EFBlock
-	 *     EFUnaryExpression returns EFBlock
-	 *     EFMemberSelection returns EFBlock
-	 *     EFMemberSelection.EFMemberSelection_1_0 returns EFBlock
-	 *     EFPrimaryExpression returns EFBlock
-	 *     EFBuiltinFunction returns EFBlock
+	 *     EFStatement returns EFDeny
+	 *     EFExpression returns EFDeny
+	 *     EFAssignment returns EFDeny
+	 *     EFAssignment.EFAssignment_1_0 returns EFDeny
+	 *     EFOrExpression returns EFDeny
+	 *     EFOrExpression.EFOrExpression_1_0 returns EFDeny
+	 *     EFAndExpression returns EFDeny
+	 *     EFAndExpression.EFAndExpression_1_0 returns EFDeny
+	 *     EFEqualExpression returns EFDeny
+	 *     EFEqualExpression.EFEqualExpression_1_0 returns EFDeny
+	 *     EFRelExpression returns EFDeny
+	 *     EFRelExpression.EFRelExpression_1_0 returns EFDeny
+	 *     EFAddExpression returns EFDeny
+	 *     EFAddExpression.EFAddExpression_1_0 returns EFDeny
+	 *     EFMultExpression returns EFDeny
+	 *     EFMultExpression.EFMultExpression_1_0 returns EFDeny
+	 *     EFUnaryExpression returns EFDeny
+	 *     EFMemberSelection returns EFDeny
+	 *     EFMemberSelection.EFMemberSelection_1_0 returns EFDeny
+	 *     EFPrimaryExpression returns EFDeny
+	 *     EFBuiltinFunction returns EFDeny
 	 *
 	 * Constraint:
-	 *     {EFBlock}
+	 *     {EFDeny}
 	 * </pre>
 	 */
-	protected void sequence_EFBuiltinFunction(ISerializationContext context, EFBlock semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     EFStatement returns EFDrop
-	 *     EFExpression returns EFDrop
-	 *     EFAssignment returns EFDrop
-	 *     EFAssignment.EFAssignment_1_0 returns EFDrop
-	 *     EFOrExpression returns EFDrop
-	 *     EFOrExpression.EFOrExpression_1_0 returns EFDrop
-	 *     EFAndExpression returns EFDrop
-	 *     EFAndExpression.EFAndExpression_1_0 returns EFDrop
-	 *     EFEqualExpression returns EFDrop
-	 *     EFEqualExpression.EFEqualExpression_1_0 returns EFDrop
-	 *     EFRelExpression returns EFDrop
-	 *     EFRelExpression.EFRelExpression_1_0 returns EFDrop
-	 *     EFAddExpression returns EFDrop
-	 *     EFAddExpression.EFAddExpression_1_0 returns EFDrop
-	 *     EFMultExpression returns EFDrop
-	 *     EFMultExpression.EFMultExpression_1_0 returns EFDrop
-	 *     EFUnaryExpression returns EFDrop
-	 *     EFMemberSelection returns EFDrop
-	 *     EFMemberSelection.EFMemberSelection_1_0 returns EFDrop
-	 *     EFPrimaryExpression returns EFDrop
-	 *     EFBuiltinFunction returns EFDrop
-	 *
-	 * Constraint:
-	 *     {EFDrop}
-	 * </pre>
-	 */
-	protected void sequence_EFBuiltinFunction(ISerializationContext context, EFDrop semanticObject) {
+	protected void sequence_EFBuiltinFunction(ISerializationContext context, EFDeny semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -567,7 +479,7 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EasyWallPackage.Literals.EF_GET_PACKET_FIELD__FIELD));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEFBuiltinFunctionAccess().getFieldSTRINGTerminalRuleCall_7_3_0(), semanticObject.getField());
+		feeder.accept(grammarAccess.getEFBuiltinFunctionAccess().getFieldSTRINGTerminalRuleCall_5_3_0(), semanticObject.getField());
 		feeder.finish();
 	}
 	
@@ -609,40 +521,6 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     EFStatement returns EFReject
-	 *     EFExpression returns EFReject
-	 *     EFAssignment returns EFReject
-	 *     EFAssignment.EFAssignment_1_0 returns EFReject
-	 *     EFOrExpression returns EFReject
-	 *     EFOrExpression.EFOrExpression_1_0 returns EFReject
-	 *     EFAndExpression returns EFReject
-	 *     EFAndExpression.EFAndExpression_1_0 returns EFReject
-	 *     EFEqualExpression returns EFReject
-	 *     EFEqualExpression.EFEqualExpression_1_0 returns EFReject
-	 *     EFRelExpression returns EFReject
-	 *     EFRelExpression.EFRelExpression_1_0 returns EFReject
-	 *     EFAddExpression returns EFReject
-	 *     EFAddExpression.EFAddExpression_1_0 returns EFReject
-	 *     EFMultExpression returns EFReject
-	 *     EFMultExpression.EFMultExpression_1_0 returns EFReject
-	 *     EFUnaryExpression returns EFReject
-	 *     EFMemberSelection returns EFReject
-	 *     EFMemberSelection.EFMemberSelection_1_0 returns EFReject
-	 *     EFPrimaryExpression returns EFReject
-	 *     EFBuiltinFunction returns EFReject
-	 *
-	 * Constraint:
-	 *     {EFReject}
-	 * </pre>
-	 */
-	protected void sequence_EFBuiltinFunction(ISerializationContext context, EFReject semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
 	 *     EFStatement returns EFWriteLog
 	 *     EFExpression returns EFWriteLog
 	 *     EFAssignment returns EFWriteLog
@@ -675,7 +553,7 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EasyWallPackage.Literals.EF_WRITE_LOG__MESSAGE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEFBuiltinFunctionAccess().getMessageEFExpressionParserRuleCall_4_3_0(), semanticObject.getMessage());
+		feeder.accept(grammarAccess.getEFBuiltinFunctionAccess().getMessageEFExpressionParserRuleCall_2_3_0(), semanticObject.getMessage());
 		feeder.finish();
 	}
 	
@@ -717,8 +595,8 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EasyWallPackage.Literals.EF_WRITE_LOG_LEVEL__MESSAGE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEFBuiltinFunctionAccess().getLevelEFLogLevelEnumRuleCall_5_3_0(), semanticObject.getLevel());
-		feeder.accept(grammarAccess.getEFBuiltinFunctionAccess().getMessageEFExpressionParserRuleCall_5_5_0(), semanticObject.getMessage());
+		feeder.accept(grammarAccess.getEFBuiltinFunctionAccess().getLevelEFLogLevelEnumRuleCall_3_3_0(), semanticObject.getLevel());
+		feeder.accept(grammarAccess.getEFBuiltinFunctionAccess().getMessageEFExpressionParserRuleCall_3_5_0(), semanticObject.getMessage());
 		feeder.finish();
 	}
 	
@@ -940,26 +818,6 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getEFMultExpressionAccess().getEFMultExpressionLeftAction_1_0(), semanticObject.getLeft());
 		feeder.accept(grammarAccess.getEFMultExpressionAccess().getRightEFUnaryExpressionParserRuleCall_1_2_0(), semanticObject.getRight());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     EFNetportSYNTAX returns EFNetportConstant
-	 *
-	 * Constraint:
-	 *     netport=INT
-	 * </pre>
-	 */
-	protected void sequence_EFNetportSYNTAX(ISerializationContext context, EFNetportConstant semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, EasyWallPackage.Literals.EF_NETPORT_CONSTANT__NETPORT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EasyWallPackage.Literals.EF_NETPORT_CONSTANT__NETPORT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEFNetportSYNTAXAccess().getNetportINTTerminalRuleCall_2_0(), semanticObject.getNetport());
 		feeder.finish();
 	}
 	

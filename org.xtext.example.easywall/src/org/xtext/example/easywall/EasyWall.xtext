@@ -210,9 +210,7 @@ EFPrimaryExpression returns EFExpression:
 // ============================================
 EFBuiltinFunction:
     {EFAllow} 'allow' '(' ')'
-  | {EFBlock} 'block' '(' ')'
-  | {EFDrop} 'drop' '(' ')'
-  | {EFReject} 'reject' '(' ')'
+  | {EFDeny} 'deny' '(' ')'
   | {EFWriteLog} 'writelog' '(' message=EFExpression ')'
   | {EFWriteLogLevel} 'writelog' '(' level=EFLogLevel ',' message=EFExpression ')'
   | {EFGetTime} 'getTime' '(' ')'

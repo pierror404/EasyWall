@@ -87,7 +87,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nativetype" eType="#//EFNetworkNativeType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="primitivetype" eType="#//EFPrimitiveType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EFBlock" eSuperTypes="#//EFBuiltinFunction">
+  <eClassifiers xsi:type="ecore:EClass" name="EFBlock">
     <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
         eType="#//EFStatement" containment="true"/>
   </eClassifiers>
@@ -166,9 +166,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="varnetmask" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rawip" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rawnetmask" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EFNetportConstant" eSuperTypes="#//EFExpression">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="netport" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EFAssignment" eSuperTypes="#//EFExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//EFExpression"
@@ -252,6 +249,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="any" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="localhost" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EFNetportConstant" eSuperTypes="#//EFExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="netport" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EFThis" eSuperTypes="#//EFExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="EFSuper" eSuperTypes="#//EFExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="EFNew" eSuperTypes="#//EFExpression">
@@ -270,8 +270,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EFAllow" eSuperTypes="#//EFBuiltinFunction"/>
-  <eClassifiers xsi:type="ecore:EClass" name="EFDrop" eSuperTypes="#//EFBuiltinFunction"/>
-  <eClassifiers xsi:type="ecore:EClass" name="EFReject" eSuperTypes="#//EFBuiltinFunction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EFDeny" eSuperTypes="#//EFBuiltinFunction"/>
   <eClassifiers xsi:type="ecore:EClass" name="EFWriteLog" eSuperTypes="#//EFBuiltinFunction">
     <eStructuralFeatures xsi:type="ecore:EReference" name="message" eType="#//EFExpression"
         containment="true"/>

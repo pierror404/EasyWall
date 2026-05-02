@@ -3,6 +3,26 @@
  */
 package org.xtext.example.easywall.scoping;
 
+import com.google.common.collect.Iterables;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtext.scoping.IScope;
+import org.eclipse.xtext.scoping.Scopes;
+import org.eclipse.xtext.xbase.lib.CollectionLiterals;
+import org.eclipse.xtext.xbase.lib.Functions.Function1;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.ListExtensions;
+import org.xtext.example.easywall.easyWall.EFHeader;
+import org.xtext.example.easywall.easyWall.EFImports;
+import org.xtext.example.easywall.easyWall.EFProgram;
+import org.xtext.example.easywall.easyWall.EFRule;
+import org.xtext.example.easywall.easyWall.EFRuleClass;
+import org.xtext.example.easywall.easyWall.EFRuleReference;
+
 /**
  * This class contains custom scoping description.
  * 
@@ -11,4 +31,111 @@ package org.xtext.example.easywall.scoping;
  */
 @SuppressWarnings("all")
 public class EasyWallScopeProvider extends AbstractEasyWallScopeProvider {
+  public IScope scope_EFRuleReference_rule(final EFRuleReference ref) {
+    return this.scopeForRules(ref);
+  }
+
+  private IScope scopeForRules(final EObject ctx) {
+    final Resource resource = ctx.eResource();
+    EObject _head = IterableExtensions.<EObject>head(resource.getContents());
+    final EFProgram root = ((EFProgram) _head);
+    final EFHeader header = root.getHeader();
+    final Function1<Resource, EObject> _function = (Resource it) -> {
+      return IterableExtensions.<EObject>head(it.getContents());
+    };
+    final Function1<EFProgram, List<EFRuleClass>> _function_1 = (EFProgram it) -> {
+      final Function1<EFRule, EFRuleClass> _function_2 = (EFRule r) -> {
+        return r.getRules();
+      };
+      return ListExtensions.<EFRule, EFRuleClass>map(it.getRules(), _function_2);
+    };
+    final Iterable<EFRuleClass> allRules = Iterables.<EFRuleClass>concat(IterableExtensions.<EFProgram, List<EFRuleClass>>map(Iterables.<EFProgram>filter(ListExtensions.<Resource, EObject>map(resource.getResourceSet().getResources(), _function), EFProgram.class), _function_1));
+    String _elvis = null;
+    String _name = null;
+    if (header!=null) {
+      _name=header.getName();
+    }
+    String _string = null;
+    if (_name!=null) {
+      _string=_name.toString();
+    }
+    if (_string != null) {
+      _elvis = _string;
+    } else {
+      _elvis = "";
+    }
+    final String currentPackage = _elvis;
+    final Function1<EFRuleClass, Boolean> _function_2 = (EFRuleClass it) -> {
+      boolean _and = false;
+      EObject _eContainer = it.eContainer();
+      if (!(_eContainer instanceof EFProgram)) {
+        _and = false;
+      } else {
+        EObject _eContainer_1 = it.eContainer();
+        EFHeader _header = ((EFProgram) _eContainer_1).getHeader();
+        String _name_1 = null;
+        if (_header!=null) {
+          _name_1=_header.getName();
+        }
+        String _string_1 = null;
+        if (_name_1!=null) {
+          _string_1=_name_1.toString();
+        }
+        boolean _equals = Objects.equals(_string_1, currentPackage);
+        _and = _equals;
+      }
+      return Boolean.valueOf(_and);
+    };
+    final Iterable<EFRuleClass> localRules = IterableExtensions.<EFRuleClass>filter(allRules, _function_2);
+    final ArrayList<EFRuleClass> importedRules = CollectionLiterals.<EFRuleClass>newArrayList();
+    EList<EFImports> _imports = header.getImports();
+    for (final EFImports imp : _imports) {
+      {
+        final String ns = imp.getImportedNamespace().toString();
+        boolean _endsWith = ns.endsWith(".*");
+        if (_endsWith) {
+          int _length = ns.length();
+          int _minus = (_length - 2);
+          final String pkg = ns.substring(0, _minus);
+          final Function1<EFRuleClass, Boolean> _function_3 = (EFRuleClass it) -> {
+            EObject _eContainer = it.eContainer();
+            EFHeader _header = ((EFProgram) _eContainer).getHeader();
+            String _name_1 = null;
+            if (_header!=null) {
+              _name_1=_header.getName();
+            }
+            String _string_1 = null;
+            if (_name_1!=null) {
+              _string_1=_name_1.toString();
+            }
+            return Boolean.valueOf(Objects.equals(_string_1, pkg));
+          };
+          Iterable<EFRuleClass> _filter = IterableExtensions.<EFRuleClass>filter(allRules, _function_3);
+          Iterables.<EFRuleClass>addAll(importedRules, _filter);
+        } else {
+          final Function1<EFRuleClass, Boolean> _function_4 = (EFRuleClass it) -> {
+            EObject _eContainer = it.eContainer();
+            EFHeader _header = ((EFProgram) _eContainer).getHeader();
+            String _name_1 = null;
+            if (_header!=null) {
+              _name_1=_header.getName();
+            }
+            String _string_1 = null;
+            if (_name_1!=null) {
+              _string_1=_name_1.toString();
+            }
+            String _plus = (_string_1 + ".");
+            String _name_2 = it.getName();
+            String _plus_1 = (_plus + _name_2);
+            return Boolean.valueOf(Objects.equals(_plus_1, ns));
+          };
+          Iterable<EFRuleClass> _filter_1 = IterableExtensions.<EFRuleClass>filter(allRules, _function_4);
+          Iterables.<EFRuleClass>addAll(importedRules, _filter_1);
+        }
+      }
+    }
+    Iterable<EFRuleClass> _plus = Iterables.<EFRuleClass>concat(localRules, importedRules);
+    Iterable<EFRuleClass> _plus_1 = Iterables.<EFRuleClass>concat(_plus, allRules);
+    return Scopes.scopeFor(_plus_1);
+  }
 }

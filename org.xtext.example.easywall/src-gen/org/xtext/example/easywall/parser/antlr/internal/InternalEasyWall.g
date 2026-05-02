@@ -2522,13 +2522,13 @@ ruleEFBuiltinFunction returns [EObject current=null]
 			(
 				{
 					$current = forceCreateModelElement(
-						grammarAccess.getEFBuiltinFunctionAccess().getEFBlockAction_1_0(),
+						grammarAccess.getEFBuiltinFunctionAccess().getEFDenyAction_1_0(),
 						$current);
 				}
 			)
-			otherlv_5='block'
+			otherlv_5='deny'
 			{
-				newLeafNode(otherlv_5, grammarAccess.getEFBuiltinFunctionAccess().getBlockKeyword_1_1());
+				newLeafNode(otherlv_5, grammarAccess.getEFBuiltinFunctionAccess().getDenyKeyword_1_1());
 			}
 			otherlv_6='('
 			{
@@ -2544,68 +2544,24 @@ ruleEFBuiltinFunction returns [EObject current=null]
 			(
 				{
 					$current = forceCreateModelElement(
-						grammarAccess.getEFBuiltinFunctionAccess().getEFDropAction_2_0(),
+						grammarAccess.getEFBuiltinFunctionAccess().getEFWriteLogAction_2_0(),
 						$current);
 				}
 			)
-			otherlv_9='drop'
+			otherlv_9='writelog'
 			{
-				newLeafNode(otherlv_9, grammarAccess.getEFBuiltinFunctionAccess().getDropKeyword_2_1());
+				newLeafNode(otherlv_9, grammarAccess.getEFBuiltinFunctionAccess().getWritelogKeyword_2_1());
 			}
 			otherlv_10='('
 			{
 				newLeafNode(otherlv_10, grammarAccess.getEFBuiltinFunctionAccess().getLeftParenthesisKeyword_2_2());
 			}
-			otherlv_11=')'
-			{
-				newLeafNode(otherlv_11, grammarAccess.getEFBuiltinFunctionAccess().getRightParenthesisKeyword_2_3());
-			}
-		)
-		    |
-		(
-			(
-				{
-					$current = forceCreateModelElement(
-						grammarAccess.getEFBuiltinFunctionAccess().getEFRejectAction_3_0(),
-						$current);
-				}
-			)
-			otherlv_13='reject'
-			{
-				newLeafNode(otherlv_13, grammarAccess.getEFBuiltinFunctionAccess().getRejectKeyword_3_1());
-			}
-			otherlv_14='('
-			{
-				newLeafNode(otherlv_14, grammarAccess.getEFBuiltinFunctionAccess().getLeftParenthesisKeyword_3_2());
-			}
-			otherlv_15=')'
-			{
-				newLeafNode(otherlv_15, grammarAccess.getEFBuiltinFunctionAccess().getRightParenthesisKeyword_3_3());
-			}
-		)
-		    |
-		(
-			(
-				{
-					$current = forceCreateModelElement(
-						grammarAccess.getEFBuiltinFunctionAccess().getEFWriteLogAction_4_0(),
-						$current);
-				}
-			)
-			otherlv_17='writelog'
-			{
-				newLeafNode(otherlv_17, grammarAccess.getEFBuiltinFunctionAccess().getWritelogKeyword_4_1());
-			}
-			otherlv_18='('
-			{
-				newLeafNode(otherlv_18, grammarAccess.getEFBuiltinFunctionAccess().getLeftParenthesisKeyword_4_2());
-			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEFBuiltinFunctionAccess().getMessageEFExpressionParserRuleCall_4_3_0());
+						newCompositeNode(grammarAccess.getEFBuiltinFunctionAccess().getMessageEFExpressionParserRuleCall_2_3_0());
 					}
-					lv_message_19_0=ruleEFExpression
+					lv_message_11_0=ruleEFExpression
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEFBuiltinFunctionRule());
@@ -2613,15 +2569,15 @@ ruleEFBuiltinFunction returns [EObject current=null]
 						set(
 							$current,
 							"message",
-							lv_message_19_0,
+							lv_message_11_0,
 							"org.xtext.example.easywall.EasyWall.EFExpression");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-			otherlv_20=')'
+			otherlv_12=')'
 			{
-				newLeafNode(otherlv_20, grammarAccess.getEFBuiltinFunctionAccess().getRightParenthesisKeyword_4_4());
+				newLeafNode(otherlv_12, grammarAccess.getEFBuiltinFunctionAccess().getRightParenthesisKeyword_2_4());
 			}
 		)
 		    |
@@ -2629,24 +2585,24 @@ ruleEFBuiltinFunction returns [EObject current=null]
 			(
 				{
 					$current = forceCreateModelElement(
-						grammarAccess.getEFBuiltinFunctionAccess().getEFWriteLogLevelAction_5_0(),
+						grammarAccess.getEFBuiltinFunctionAccess().getEFWriteLogLevelAction_3_0(),
 						$current);
 				}
 			)
-			otherlv_22='writelog'
+			otherlv_14='writelog'
 			{
-				newLeafNode(otherlv_22, grammarAccess.getEFBuiltinFunctionAccess().getWritelogKeyword_5_1());
+				newLeafNode(otherlv_14, grammarAccess.getEFBuiltinFunctionAccess().getWritelogKeyword_3_1());
 			}
-			otherlv_23='('
+			otherlv_15='('
 			{
-				newLeafNode(otherlv_23, grammarAccess.getEFBuiltinFunctionAccess().getLeftParenthesisKeyword_5_2());
+				newLeafNode(otherlv_15, grammarAccess.getEFBuiltinFunctionAccess().getLeftParenthesisKeyword_3_2());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEFBuiltinFunctionAccess().getLevelEFLogLevelEnumRuleCall_5_3_0());
+						newCompositeNode(grammarAccess.getEFBuiltinFunctionAccess().getLevelEFLogLevelEnumRuleCall_3_3_0());
 					}
-					lv_level_24_0=ruleEFLogLevel
+					lv_level_16_0=ruleEFLogLevel
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEFBuiltinFunctionRule());
@@ -2654,22 +2610,22 @@ ruleEFBuiltinFunction returns [EObject current=null]
 						set(
 							$current,
 							"level",
-							lv_level_24_0,
+							lv_level_16_0,
 							"org.xtext.example.easywall.EasyWall.EFLogLevel");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-			otherlv_25=','
+			otherlv_17=','
 			{
-				newLeafNode(otherlv_25, grammarAccess.getEFBuiltinFunctionAccess().getCommaKeyword_5_4());
+				newLeafNode(otherlv_17, grammarAccess.getEFBuiltinFunctionAccess().getCommaKeyword_3_4());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEFBuiltinFunctionAccess().getMessageEFExpressionParserRuleCall_5_5_0());
+						newCompositeNode(grammarAccess.getEFBuiltinFunctionAccess().getMessageEFExpressionParserRuleCall_3_5_0());
 					}
-					lv_message_26_0=ruleEFExpression
+					lv_message_18_0=ruleEFExpression
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEFBuiltinFunctionRule());
@@ -2677,15 +2633,15 @@ ruleEFBuiltinFunction returns [EObject current=null]
 						set(
 							$current,
 							"message",
-							lv_message_26_0,
+							lv_message_18_0,
 							"org.xtext.example.easywall.EasyWall.EFExpression");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-			otherlv_27=')'
+			otherlv_19=')'
 			{
-				newLeafNode(otherlv_27, grammarAccess.getEFBuiltinFunctionAccess().getRightParenthesisKeyword_5_6());
+				newLeafNode(otherlv_19, grammarAccess.getEFBuiltinFunctionAccess().getRightParenthesisKeyword_3_6());
 			}
 		)
 		    |
@@ -2693,21 +2649,21 @@ ruleEFBuiltinFunction returns [EObject current=null]
 			(
 				{
 					$current = forceCreateModelElement(
-						grammarAccess.getEFBuiltinFunctionAccess().getEFGetTimeAction_6_0(),
+						grammarAccess.getEFBuiltinFunctionAccess().getEFGetTimeAction_4_0(),
 						$current);
 				}
 			)
-			otherlv_29='getTime'
+			otherlv_21='getTime'
 			{
-				newLeafNode(otherlv_29, grammarAccess.getEFBuiltinFunctionAccess().getGetTimeKeyword_6_1());
+				newLeafNode(otherlv_21, grammarAccess.getEFBuiltinFunctionAccess().getGetTimeKeyword_4_1());
 			}
-			otherlv_30='('
+			otherlv_22='('
 			{
-				newLeafNode(otherlv_30, grammarAccess.getEFBuiltinFunctionAccess().getLeftParenthesisKeyword_6_2());
+				newLeafNode(otherlv_22, grammarAccess.getEFBuiltinFunctionAccess().getLeftParenthesisKeyword_4_2());
 			}
-			otherlv_31=')'
+			otherlv_23=')'
 			{
-				newLeafNode(otherlv_31, grammarAccess.getEFBuiltinFunctionAccess().getRightParenthesisKeyword_6_3());
+				newLeafNode(otherlv_23, grammarAccess.getEFBuiltinFunctionAccess().getRightParenthesisKeyword_4_3());
 			}
 		)
 		    |
@@ -2715,23 +2671,23 @@ ruleEFBuiltinFunction returns [EObject current=null]
 			(
 				{
 					$current = forceCreateModelElement(
-						grammarAccess.getEFBuiltinFunctionAccess().getEFGetPacketFieldAction_7_0(),
+						grammarAccess.getEFBuiltinFunctionAccess().getEFGetPacketFieldAction_5_0(),
 						$current);
 				}
 			)
-			otherlv_33='getPacketField'
+			otherlv_25='getPacketField'
 			{
-				newLeafNode(otherlv_33, grammarAccess.getEFBuiltinFunctionAccess().getGetPacketFieldKeyword_7_1());
+				newLeafNode(otherlv_25, grammarAccess.getEFBuiltinFunctionAccess().getGetPacketFieldKeyword_5_1());
 			}
-			otherlv_34='('
+			otherlv_26='('
 			{
-				newLeafNode(otherlv_34, grammarAccess.getEFBuiltinFunctionAccess().getLeftParenthesisKeyword_7_2());
+				newLeafNode(otherlv_26, grammarAccess.getEFBuiltinFunctionAccess().getLeftParenthesisKeyword_5_2());
 			}
 			(
 				(
-					lv_field_35_0=RULE_STRING
+					lv_field_27_0=RULE_STRING
 					{
-						newLeafNode(lv_field_35_0, grammarAccess.getEFBuiltinFunctionAccess().getFieldSTRINGTerminalRuleCall_7_3_0());
+						newLeafNode(lv_field_27_0, grammarAccess.getEFBuiltinFunctionAccess().getFieldSTRINGTerminalRuleCall_5_3_0());
 					}
 					{
 						if ($current==null) {
@@ -2740,14 +2696,14 @@ ruleEFBuiltinFunction returns [EObject current=null]
 						setWithLastConsumed(
 							$current,
 							"field",
-							lv_field_35_0,
+							lv_field_27_0,
 							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 				)
 			)
-			otherlv_36=')'
+			otherlv_28=')'
 			{
-				newLeafNode(otherlv_36, grammarAccess.getEFBuiltinFunctionAccess().getRightParenthesisKeyword_7_4());
+				newLeafNode(otherlv_28, grammarAccess.getEFBuiltinFunctionAccess().getRightParenthesisKeyword_5_4());
 			}
 		)
 	)
