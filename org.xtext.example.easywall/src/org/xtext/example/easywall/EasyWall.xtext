@@ -64,28 +64,20 @@ EFField:
 ;
 
 fragment EFTypedDeclaration *:
-    name=ID ':' (
-        ruletype=[EFRuleClass|QualifiedName] | 
-        nativetype=EFNetworkNativeType |
-        primitivetype=EFPrimitiveType
-    )
+    name=ID ':' type=EFType
 ;
-
-enum EFNetworkNativeType:
-    NETWORK='network' | 
+enum EFType:
+	NETWORK='network' | 
     IPv4='netip' | 
     IPv6='netipv6' | 
     PORT='netport' | 
     PROTOCOL='protocol' | 
     DIRECTION='direction' | 
-    NETMASK='netmask'
-;
-
-enum EFPrimitiveType:
     INT='int' | 
     STRING='string' | 
     BOOL='bool'
 ;
+EFRuleType: rule=[EFRuleClass|QualifiedName];
 
 enum EFDirectionNativeType:
     IN='in' | 
@@ -100,7 +92,7 @@ EFVariableDeclaration:
 EFMethod:
     'fun' name=ID
     '(' (params+=EFParameter (',' params+=EFParameter)*)? ')'
-    ':' (nativetype=EFNetworkNativeType | primitivetype=EFPrimitiveType | ruletype=[EFRuleClass|QualifiedName] | void='void')
+    ':' (nativetype=EFType | void='void')
     body=EFBlock
 ;
 
@@ -202,7 +194,7 @@ EFPrimaryExpression returns EFExpression:
   | {EFBracketsExpression} '(' expression=EFExpression ')'
   | EFBuiltinFunction                                               // NUOVO: built-in functions
   | {EFFunctionCall} functionName=QualifiedName '(' (args+=EFExpression (',' args+=EFExpression)*)? ')'
-  | {EFSymbolRef} symbol=QualifiedName
+  | {EFSymbolRef} symbol=[EFField|QualifiedName]
 ;
 
 // ============================================
@@ -304,8 +296,5 @@ terminal EFIPV6SYNTAX:
 ;
 
 EFNetworkSYNTAX returns EFNetworkConstant: 
-    varip=ID '/' varnetmask=ID
-  | rawip=EFIPV4SYNTAX '/' rawnetmask=INT
-  | rawip=EFIPV4SYNTAX '/' varnetmask=ID
-  | varip=ID '/' rawnetmask=INT
+  rawip=EFIPV4SYNTAX '/' rawnetmask=INT
 ;

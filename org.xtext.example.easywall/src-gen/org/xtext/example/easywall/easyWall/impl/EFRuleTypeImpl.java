@@ -6,54 +6,46 @@ package org.xtext.example.easywall.easyWall.impl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.xtext.example.easywall.easyWall.EFMember;
+import org.xtext.example.easywall.easyWall.EFRuleClass;
+import org.xtext.example.easywall.easyWall.EFRuleType;
 import org.xtext.example.easywall.easyWall.EasyWallPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>EF Member</b></em>'.
+ * An implementation of the model object '<em><b>EF Rule Type</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.easywall.easyWall.impl.EFMemberImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.example.easywall.easyWall.impl.EFRuleTypeImpl#getRule <em>Rule</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class EFMemberImpl extends MinimalEObjectImpl.Container implements EFMember
+public class EFRuleTypeImpl extends MinimalEObjectImpl.Container implements EFRuleType
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getRule() <em>Rule</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getRule()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
+  protected EFRuleClass rule;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected EFMemberImpl()
+  protected EFRuleTypeImpl()
   {
     super();
   }
@@ -66,7 +58,7 @@ public class EFMemberImpl extends MinimalEObjectImpl.Container implements EFMemb
   @Override
   protected EClass eStaticClass()
   {
-    return EasyWallPackage.Literals.EF_MEMBER;
+    return EasyWallPackage.Literals.EF_RULE_TYPE;
   }
 
   /**
@@ -75,9 +67,29 @@ public class EFMemberImpl extends MinimalEObjectImpl.Container implements EFMemb
    * @generated
    */
   @Override
-  public String getName()
+  public EFRuleClass getRule()
   {
-    return name;
+    if (rule != null && rule.eIsProxy())
+    {
+      InternalEObject oldRule = (InternalEObject)rule;
+      rule = (EFRuleClass)eResolveProxy(oldRule);
+      if (rule != oldRule)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, EasyWallPackage.EF_RULE_TYPE__RULE, oldRule, rule));
+      }
+    }
+    return rule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EFRuleClass basicGetRule()
+  {
+    return rule;
   }
 
   /**
@@ -86,12 +98,12 @@ public class EFMemberImpl extends MinimalEObjectImpl.Container implements EFMemb
    * @generated
    */
   @Override
-  public void setName(String newName)
+  public void setRule(EFRuleClass newRule)
   {
-    String oldName = name;
-    name = newName;
+    EFRuleClass oldRule = rule;
+    rule = newRule;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EasyWallPackage.EF_MEMBER__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, EasyWallPackage.EF_RULE_TYPE__RULE, oldRule, rule));
   }
 
   /**
@@ -104,8 +116,9 @@ public class EFMemberImpl extends MinimalEObjectImpl.Container implements EFMemb
   {
     switch (featureID)
     {
-      case EasyWallPackage.EF_MEMBER__NAME:
-        return getName();
+      case EasyWallPackage.EF_RULE_TYPE__RULE:
+        if (resolve) return getRule();
+        return basicGetRule();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,8 +133,8 @@ public class EFMemberImpl extends MinimalEObjectImpl.Container implements EFMemb
   {
     switch (featureID)
     {
-      case EasyWallPackage.EF_MEMBER__NAME:
-        setName((String)newValue);
+      case EasyWallPackage.EF_RULE_TYPE__RULE:
+        setRule((EFRuleClass)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +150,8 @@ public class EFMemberImpl extends MinimalEObjectImpl.Container implements EFMemb
   {
     switch (featureID)
     {
-      case EasyWallPackage.EF_MEMBER__NAME:
-        setName(NAME_EDEFAULT);
+      case EasyWallPackage.EF_RULE_TYPE__RULE:
+        setRule((EFRuleClass)null);
         return;
     }
     super.eUnset(featureID);
@@ -154,27 +167,10 @@ public class EFMemberImpl extends MinimalEObjectImpl.Container implements EFMemb
   {
     switch (featureID)
     {
-      case EasyWallPackage.EF_MEMBER__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case EasyWallPackage.EF_RULE_TYPE__RULE:
+        return rule != null;
     }
     return super.eIsSet(featureID);
   }
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
-  }
-
-} //EFMemberImpl
+} //EFRuleTypeImpl

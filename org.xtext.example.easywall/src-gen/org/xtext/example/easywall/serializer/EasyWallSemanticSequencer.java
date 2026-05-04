@@ -53,6 +53,7 @@ import org.xtext.example.easywall.easyWall.EFReturn;
 import org.xtext.example.easywall.easyWall.EFRule;
 import org.xtext.example.easywall.easyWall.EFRuleClass;
 import org.xtext.example.easywall.easyWall.EFRuleReference;
+import org.xtext.example.easywall.easyWall.EFRuleType;
 import org.xtext.example.easywall.easyWall.EFStringConstant;
 import org.xtext.example.easywall.easyWall.EFSuper;
 import org.xtext.example.easywall.easyWall.EFSymbolRef;
@@ -227,6 +228,9 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				return; 
 			case EasyWallPackage.EF_RULE_REFERENCE:
 				sequence_EFRuleReference(context, (EFRuleReference) semanticObject); 
+				return; 
+			case EasyWallPackage.EF_RULE_TYPE:
+				sequence_EFRuleType(context, (EFRuleType) semanticObject); 
 				return; 
 			case EasyWallPackage.EF_STRING_CONSTANT:
 				sequence_EFPrimaryExpression(context, (EFStringConstant) semanticObject); 
@@ -661,7 +665,7 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     EFStatement returns EFField
 	 *
 	 * Constraint:
-	 *     (name=ID (ruletype=[EFRuleClass|QualifiedName] | nativetype=EFNetworkNativeType | primitivetype=EFPrimitiveType) expression=EFExpression?)
+	 *     (name=ID type=EFType expression=EFExpression?)
 	 * </pre>
 	 */
 	protected void sequence_EFField_EFTypedDeclaration(ISerializationContext context, EFField semanticObject) {
@@ -771,12 +775,7 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     EFMethod returns EFMethod
 	 *
 	 * Constraint:
-	 *     (
-	 *         name=ID 
-	 *         (params+=EFParameter params+=EFParameter*)? 
-	 *         (nativetype=EFNetworkNativeType | primitivetype=EFPrimitiveType | ruletype=[EFRuleClass|QualifiedName] | void='void') 
-	 *         body=EFBlock
-	 *     )
+	 *     (name=ID (params+=EFParameter params+=EFParameter*)? (nativetype=EFType | void='void') body=EFBlock)
 	 * </pre>
 	 */
 	protected void sequence_EFMethod(ISerializationContext context, EFMethod semanticObject) {
@@ -828,11 +827,20 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     EFNetworkSYNTAX returns EFNetworkConstant
 	 *
 	 * Constraint:
-	 *     ((varip=ID varnetmask=ID) | (rawip=EFIPV4SYNTAX rawnetmask=INT) | (rawip=EFIPV4SYNTAX varnetmask=ID) | (varip=ID rawnetmask=INT))
+	 *     (rawip=EFIPV4SYNTAX rawnetmask=INT)
 	 * </pre>
 	 */
 	protected void sequence_EFNetworkSYNTAX(ISerializationContext context, EFNetworkConstant semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, EasyWallPackage.Literals.EF_NETWORK_CONSTANT__RAWIP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EasyWallPackage.Literals.EF_NETWORK_CONSTANT__RAWIP));
+			if (transientValues.isValueTransient(semanticObject, EasyWallPackage.Literals.EF_NETWORK_CONSTANT__RAWNETMASK) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EasyWallPackage.Literals.EF_NETWORK_CONSTANT__RAWNETMASK));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getEFNetworkSYNTAXAccess().getRawipEFIPV4SYNTAXTerminalRuleCall_0_0(), semanticObject.getRawip());
+		feeder.accept(grammarAccess.getEFNetworkSYNTAXAccess().getRawnetmaskINTTerminalRuleCall_2_0(), semanticObject.getRawnetmask());
+		feeder.finish();
 	}
 	
 	
@@ -1411,7 +1419,7 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     EFPrimaryExpression returns EFSymbolRef
 	 *
 	 * Constraint:
-	 *     symbol=QualifiedName
+	 *     symbol=[EFField|QualifiedName]
 	 * </pre>
 	 */
 	protected void sequence_EFPrimaryExpression(ISerializationContext context, EFSymbolRef semanticObject) {
@@ -1420,7 +1428,7 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EasyWallPackage.Literals.EF_SYMBOL_REF__SYMBOL));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEFPrimaryExpressionAccess().getSymbolQualifiedNameParserRuleCall_17_1_0(), semanticObject.getSymbol());
+		feeder.accept(grammarAccess.getEFPrimaryExpressionAccess().getSymbolEFFieldQualifiedNameParserRuleCall_17_1_0_1(), semanticObject.eGet(EasyWallPackage.Literals.EF_SYMBOL_REF__SYMBOL, false));
 		feeder.finish();
 	}
 	
@@ -1603,6 +1611,26 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     EFRuleType returns EFRuleType
+	 *
+	 * Constraint:
+	 *     rule=[EFRuleClass|QualifiedName]
+	 * </pre>
+	 */
+	protected void sequence_EFRuleType(ISerializationContext context, EFRuleType semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, EasyWallPackage.Literals.EF_RULE_TYPE__RULE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EasyWallPackage.Literals.EF_RULE_TYPE__RULE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getEFRuleTypeAccess().getRuleEFRuleClassQualifiedNameParserRuleCall_0_1(), semanticObject.eGet(EasyWallPackage.Literals.EF_RULE_TYPE__RULE, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     EFRule returns EFRule
 	 *
 	 * Constraint:
@@ -1626,11 +1654,20 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     EFParameter returns EFParameter
 	 *
 	 * Constraint:
-	 *     (name=ID (ruletype=[EFRuleClass|QualifiedName] | nativetype=EFNetworkNativeType | primitivetype=EFPrimitiveType))
+	 *     (name=ID type=EFType)
 	 * </pre>
 	 */
 	protected void sequence_EFTypedDeclaration(ISerializationContext context, EFParameter semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, EasyWallPackage.Literals.EF_PARAMETER__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EasyWallPackage.Literals.EF_PARAMETER__NAME));
+			if (transientValues.isValueTransient(semanticObject, EasyWallPackage.Literals.EF_PARAMETER__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EasyWallPackage.Literals.EF_PARAMETER__TYPE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getEFTypedDeclarationAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getEFTypedDeclarationAccess().getTypeEFTypeEnumRuleCall_2_0(), semanticObject.getType());
+		feeder.finish();
 	}
 	
 	
@@ -1640,11 +1677,23 @@ public class EasyWallSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     EFVariableDeclaration returns EFVariableDeclaration
 	 *
 	 * Constraint:
-	 *     (name=ID (ruletype=[EFRuleClass|QualifiedName] | nativetype=EFNetworkNativeType | primitivetype=EFPrimitiveType) expression=EFExpression)
+	 *     (name=ID type=EFType expression=EFExpression)
 	 * </pre>
 	 */
 	protected void sequence_EFTypedDeclaration_EFVariableDeclaration(ISerializationContext context, EFVariableDeclaration semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, EasyWallPackage.Literals.EF_VARIABLE_DECLARATION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EasyWallPackage.Literals.EF_VARIABLE_DECLARATION__NAME));
+			if (transientValues.isValueTransient(semanticObject, EasyWallPackage.Literals.EF_VARIABLE_DECLARATION__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EasyWallPackage.Literals.EF_VARIABLE_DECLARATION__TYPE));
+			if (transientValues.isValueTransient(semanticObject, EasyWallPackage.Literals.EF_VARIABLE_DECLARATION__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EasyWallPackage.Literals.EF_VARIABLE_DECLARATION__EXPRESSION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getEFTypedDeclarationAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getEFTypedDeclarationAccess().getTypeEFTypeEnumRuleCall_2_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getEFVariableDeclarationAccess().getExpressionEFExpressionParserRuleCall_3_0(), semanticObject.getExpression());
+		feeder.finish();
 	}
 	
 	

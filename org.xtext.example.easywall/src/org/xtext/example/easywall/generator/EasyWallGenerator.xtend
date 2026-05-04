@@ -44,6 +44,7 @@ import org.xtext.example.easywall.easyWall.EFSymbolRef
 import org.xtext.example.easywall.easyWall.EFTransportProtocolConstant
 import org.xtext.example.easywall.easyWall.EFWriteLog
 import org.xtext.example.easywall.easyWall.EFWriteLogLevel
+import org.xtext.example.easywall.EasyWallTypes
 
 /**
  * Code Generator per EasyWall DSL
@@ -145,7 +146,7 @@ class EasyWallGenerator extends AbstractGenerator {
     def boolean isConfigField(EFField field) {
         val name = field.name.toLowerCase
         return name == "rule_protocol" || name == "rule_direction" || 
-               name == "source" || name == "destination"
+           name == "rule_src" || name == "rule_dest" || name == "rule_src_port" || name=="rule_dest_port"
     }
     
     def CharSequence compileLayer(EFRulesTypes type) {
@@ -283,31 +284,16 @@ class EasyWallGenerator extends AbstractGenerator {
     }
     
     def String getJavaType(EFField field) {
-    		if (field.primitivetype !== null) {
-            return switch field.primitivetype {
-                case INT: "long"
-                case STRING: "String"
-                case BOOL: "boolean"
-                default: "Object"
-            }
-        } else if (field.nativetype !== null) {
-            return switch field.nativetype {
-                case NETWORK: "Network"
-                case IPV4: "IPv4"
-                case IPV6: "IPv6"
-                case PORT: "NetPort"
-                case PROTOCOL: "IProtocol"
-                case DIRECTION: "Direction"
-                case NETMASK: "int"
-                default: "Object"
-            }
-        } 
-        return "Object"
+    	
+    		if(EasyWallTypes.MAP.get(field.type) !== null)
+    			return EasyWallTypes.MAP.get(field.type)
+    		else 
+    			return "Object"
     }
     
     def String getDefaultValue(EFField field) {
-        if (field.primitivetype !== null) {
-            return switch field.primitivetype {
+        if (field.type !== null) {
+            return switch field.type {
                 case INT: " = 0"
                 case STRING: " = \"\""
                 case BOOL: " = false"
@@ -335,8 +321,8 @@ class EasyWallGenerator extends AbstractGenerator {
     
     def String getMethodReturnType(EFMethod method) {
         if (method.void !== null) return "void"
-        if (method.primitivetype !== null) {
-            return switch method.primitivetype {
+        if (method.nativetype !== null) {
+            return switch method.nativetype {
                 case INT: "int"
                 case STRING: "String"
                 case BOOL: "boolean"
@@ -401,7 +387,7 @@ class EasyWallGenerator extends AbstractGenerator {
             EFAddExpression: compileAddExpression(expr)
             EFMultExpression: compileMultExpression(expr)
             EFNotExpression: "!" + compileExpression(expr.expression)
-            EFSymbolRef: expr.symbol
+            EFSymbolRef: expr.symbol?.name ?: expr.symbol.toString
             EFFunctionCall: compileFunctionCall(expr)
             EFMemberSelection: compileMemberSelection(expr)
             EFIPv4Constant: compileIPv4(expr).toString
@@ -520,8 +506,11 @@ class EasyWallGenerator extends AbstractGenerator {
          * Generated Firewall Main: «firewall.name»
          * Default Policy: «firewall.defaultPolicy?.action ?: "DENY"»
          */
-        public class «firewall.name» {
-            
+        public class «firewall.name.toFirstUpper» {
+        	
+        		«FOR field : firewall.members.filter(EFField)»
+        		«compileFirewallField(field)»
+            «ENDFOR»
             public static void main(String[] args) {
                 System.out.println("=================================");
                 System.out.println("  «firewall.name» Starting");
@@ -544,6 +533,18 @@ class EasyWallGenerator extends AbstractGenerator {
             }
         }
     '''
+    
+    def CharSequence compileFirewallField(EFField field) {
+	    val modifier = "public static final"  // sempre final e public
+	    val type = getJavaType(field)
+	    val init = if (field.expression !== null) {
+	        " = " + compileExpression(field.expression)
+	    } else {
+	        getDefaultValue(field)
+	    }
+	    
+	    '''«modifier» «type» «field.name»«init»;'''
+	}
     
     // ============================================
     // Helper Methods

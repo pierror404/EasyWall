@@ -96,6 +96,15 @@ public interface EasyWallFactory extends EFactory
   EFField createEFField();
 
   /**
+   * Returns a new object of class '<em>EF Rule Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>EF Rule Type</em>'.
+   * @generated
+   */
+  EFRuleType createEFRuleType();
+
+  /**
    * Returns a new object of class '<em>EF Variable Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

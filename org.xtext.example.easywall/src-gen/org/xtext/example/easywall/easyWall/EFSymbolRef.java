@@ -23,25 +23,25 @@ package org.xtext.example.easywall.easyWall;
 public interface EFSymbolRef extends EFExpression
 {
   /**
-   * Returns the value of the '<em><b>Symbol</b></em>' attribute.
+   * Returns the value of the '<em><b>Symbol</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Symbol</em>' attribute.
-   * @see #setSymbol(String)
+   * @return the value of the '<em>Symbol</em>' reference.
+   * @see #setSymbol(EFField)
    * @see org.xtext.example.easywall.easyWall.EasyWallPackage#getEFSymbolRef_Symbol()
    * @model
    * @generated
    */
-  String getSymbol();
+  EFField getSymbol();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.easywall.easyWall.EFSymbolRef#getSymbol <em>Symbol</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.easywall.easyWall.EFSymbolRef#getSymbol <em>Symbol</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Symbol</em>' attribute.
+   * @param value the new value of the '<em>Symbol</em>' reference.
    * @see #getSymbol()
    * @generated
    */
-  void setSymbol(String value);
+  void setSymbol(EFField value);
 
 } // EFSymbolRef

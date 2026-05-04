@@ -6,9 +6,11 @@ package org.xtext.example.easywall.easyWall.impl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.xtext.example.easywall.easyWall.EFField;
 import org.xtext.example.easywall.easyWall.EFSymbolRef;
 import org.xtext.example.easywall.easyWall.EasyWallPackage;
 
@@ -28,24 +30,14 @@ import org.xtext.example.easywall.easyWall.EasyWallPackage;
 public class EFSymbolRefImpl extends EFExpressionImpl implements EFSymbolRef
 {
   /**
-   * The default value of the '{@link #getSymbol() <em>Symbol</em>}' attribute.
+   * The cached value of the '{@link #getSymbol() <em>Symbol</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getSymbol()
    * @generated
    * @ordered
    */
-  protected static final String SYMBOL_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getSymbol() <em>Symbol</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSymbol()
-   * @generated
-   * @ordered
-   */
-  protected String symbol = SYMBOL_EDEFAULT;
+  protected EFField symbol;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,7 +66,27 @@ public class EFSymbolRefImpl extends EFExpressionImpl implements EFSymbolRef
    * @generated
    */
   @Override
-  public String getSymbol()
+  public EFField getSymbol()
+  {
+    if (symbol != null && symbol.eIsProxy())
+    {
+      InternalEObject oldSymbol = (InternalEObject)symbol;
+      symbol = (EFField)eResolveProxy(oldSymbol);
+      if (symbol != oldSymbol)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, EasyWallPackage.EF_SYMBOL_REF__SYMBOL, oldSymbol, symbol));
+      }
+    }
+    return symbol;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EFField basicGetSymbol()
   {
     return symbol;
   }
@@ -85,9 +97,9 @@ public class EFSymbolRefImpl extends EFExpressionImpl implements EFSymbolRef
    * @generated
    */
   @Override
-  public void setSymbol(String newSymbol)
+  public void setSymbol(EFField newSymbol)
   {
-    String oldSymbol = symbol;
+    EFField oldSymbol = symbol;
     symbol = newSymbol;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, EasyWallPackage.EF_SYMBOL_REF__SYMBOL, oldSymbol, symbol));
@@ -104,7 +116,8 @@ public class EFSymbolRefImpl extends EFExpressionImpl implements EFSymbolRef
     switch (featureID)
     {
       case EasyWallPackage.EF_SYMBOL_REF__SYMBOL:
-        return getSymbol();
+        if (resolve) return getSymbol();
+        return basicGetSymbol();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,7 +133,7 @@ public class EFSymbolRefImpl extends EFExpressionImpl implements EFSymbolRef
     switch (featureID)
     {
       case EasyWallPackage.EF_SYMBOL_REF__SYMBOL:
-        setSymbol((String)newValue);
+        setSymbol((EFField)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,7 +150,7 @@ public class EFSymbolRefImpl extends EFExpressionImpl implements EFSymbolRef
     switch (featureID)
     {
       case EasyWallPackage.EF_SYMBOL_REF__SYMBOL:
-        setSymbol(SYMBOL_EDEFAULT);
+        setSymbol((EFField)null);
         return;
     }
     super.eUnset(featureID);
@@ -154,26 +167,9 @@ public class EFSymbolRefImpl extends EFExpressionImpl implements EFSymbolRef
     switch (featureID)
     {
       case EasyWallPackage.EF_SYMBOL_REF__SYMBOL:
-        return SYMBOL_EDEFAULT == null ? symbol != null : !SYMBOL_EDEFAULT.equals(symbol);
+        return symbol != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (symbol: ");
-    result.append(symbol);
-    result.append(')');
-    return result.toString();
   }
 
 } //EFSymbolRefImpl

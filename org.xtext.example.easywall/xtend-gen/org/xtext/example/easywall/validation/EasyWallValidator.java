@@ -1,30 +1,44 @@
 package org.xtext.example.easywall.validation;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
+import org.eclipse.xtext.xbase.lib.XbaseGenerated;
+import org.xtext.example.easywall.easyWall.EFAddExpression;
 import org.xtext.example.easywall.easyWall.EFAllow;
+import org.xtext.example.easywall.easyWall.EFAndExpression;
 import org.xtext.example.easywall.easyWall.EFApplicationProtocolConstant;
+import org.xtext.example.easywall.easyWall.EFAssignment;
 import org.xtext.example.easywall.easyWall.EFBlock;
+import org.xtext.example.easywall.easyWall.EFBoolConstant;
 import org.xtext.example.easywall.easyWall.EFBuiltinFunction;
 import org.xtext.example.easywall.easyWall.EFDeny;
+import org.xtext.example.easywall.easyWall.EFDirectionConstant;
+import org.xtext.example.easywall.easyWall.EFEqualExpression;
 import org.xtext.example.easywall.easyWall.EFExpression;
 import org.xtext.example.easywall.easyWall.EFField;
 import org.xtext.example.easywall.easyWall.EFIPv4Constant;
 import org.xtext.example.easywall.easyWall.EFIfStatement;
+import org.xtext.example.easywall.easyWall.EFIntConstant;
 import org.xtext.example.easywall.easyWall.EFMember;
 import org.xtext.example.easywall.easyWall.EFMethod;
 import org.xtext.example.easywall.easyWall.EFNetportConstant;
 import org.xtext.example.easywall.easyWall.EFNetworkConstant;
 import org.xtext.example.easywall.easyWall.EFNetworkProtocolConstant;
+import org.xtext.example.easywall.easyWall.EFOrExpression;
+import org.xtext.example.easywall.easyWall.EFRelExpression;
 import org.xtext.example.easywall.easyWall.EFReturn;
 import org.xtext.example.easywall.easyWall.EFRuleClass;
 import org.xtext.example.easywall.easyWall.EFRulesTypes;
 import org.xtext.example.easywall.easyWall.EFStatement;
+import org.xtext.example.easywall.easyWall.EFStringConstant;
+import org.xtext.example.easywall.easyWall.EFSymbolRef;
 import org.xtext.example.easywall.easyWall.EFTransportProtocolConstant;
+import org.xtext.example.easywall.easyWall.EFType;
 import org.xtext.example.easywall.easyWall.EFWriteLog;
 import org.xtext.example.easywall.easyWall.EasyWallPackage;
 
@@ -341,5 +355,248 @@ public class EasyWallValidator extends AbstractEasyWallValidator {
       }
     }
     return false;
+  }
+
+  /**
+   * ==================
+   * TYPE CHECKER
+   * ==================
+   */
+  protected String _typeOf(final EFExpression e) {
+    return "Object";
+  }
+
+  protected String _typeOf(final EFIntConstant e) {
+    return "long";
+  }
+
+  protected String _typeOf(final EFStringConstant e) {
+    return "String";
+  }
+
+  protected String _typeOf(final EFBoolConstant e) {
+    return "boolean";
+  }
+
+  protected String _typeOf(final EFNetworkConstant e) {
+    return "Network";
+  }
+
+  protected String _typeOf(final EFNetworkProtocolConstant e) {
+    return "IProtocol";
+  }
+
+  protected String _typeOf(final EFTransportProtocolConstant e) {
+    return "IProtocol";
+  }
+
+  protected String _typeOf(final EFApplicationProtocolConstant e) {
+    return "IProtocol";
+  }
+
+  protected String _typeOf(final EFDirectionConstant e) {
+    return "Direction";
+  }
+
+  protected String _typeOf(final EFIPv4Constant e) {
+    return "IPv4";
+  }
+
+  protected String _typeOf(final EFNetportConstant e) {
+    return "NetPort";
+  }
+
+  protected String _typeOf(final EFSymbolRef e) {
+    final EFField obj = e.getSymbol();
+    if ((obj instanceof EFField)) {
+      return this.declaredType(obj);
+    }
+    return "Object";
+  }
+
+  protected String _typeOf(final EFAddExpression e) {
+    final String l = this.typeOf(e.getLeft());
+    final String r = this.typeOf(e.getRight());
+    if ((Objects.equals(l, "long") && Objects.equals(r, "long"))) {
+      return "long";
+    }
+    return "Object";
+  }
+
+  protected String _typeOf(final EFEqualExpression e) {
+    return "boolean";
+  }
+
+  protected String _typeOf(final EFRelExpression e) {
+    return "boolean";
+  }
+
+  protected String _typeOf(final EFAndExpression e) {
+    return "boolean";
+  }
+
+  protected String _typeOf(final EFOrExpression e) {
+    return "boolean";
+  }
+
+  public String declaredType(final EFField f) {
+    String _switchResult = null;
+    EFType _type = f.getType();
+    if (_type != null) {
+      switch (_type) {
+        case INT:
+          _switchResult = "long";
+          break;
+        case STRING:
+          _switchResult = "String";
+          break;
+        case BOOL:
+          _switchResult = "boolean";
+          break;
+        case NETWORK:
+          _switchResult = "Network";
+          break;
+        case IPV4:
+          _switchResult = "IPv4";
+          break;
+        case IPV6:
+          _switchResult = "IPv6";
+          break;
+        case PORT:
+          _switchResult = "NetPort";
+          break;
+        case PROTOCOL:
+          _switchResult = "IProtocol";
+          break;
+        case DIRECTION:
+          _switchResult = "Direction";
+          break;
+        default:
+          _switchResult = "Object";
+          break;
+      }
+    } else {
+      _switchResult = "Object";
+    }
+    return _switchResult;
+  }
+
+  @Check
+  public void checkAssignment(final EFAssignment e) {
+    final String leftType = this.typeOf(e.getLeft());
+    final String rightType = this.typeOf(e.getRight());
+    if (((!Objects.equals(leftType, rightType)) && (!Objects.equals(rightType, "Object")))) {
+      this.error(
+        ((("Type mismatch: cannot assign " + rightType) + " to ") + leftType), e, 
+        null);
+    }
+  }
+
+  @Check
+  public void checkFieldInit(final EFField f) {
+    EFExpression _expression = f.getExpression();
+    boolean _tripleNotEquals = (_expression != null);
+    if (_tripleNotEquals) {
+      final String declared = this.declaredType(f);
+      final String actual = this.typeOf(f.getExpression());
+      if (((!Objects.equals(declared, actual)) && (!Objects.equals(actual, "Object")))) {
+        this.error(
+          ((("Invalid initialization: expected " + declared) + " but got ") + actual), f, 
+          null);
+      }
+    }
+  }
+
+  @Check
+  public void checkReturn(final EFReturn r) {
+    EObject _eContainer = r.eContainer();
+    final EFMethod method = ((EFMethod) _eContainer);
+    String _elvis = null;
+    EFType _nativetype = method.getNativetype();
+    String _string = null;
+    if (_nativetype!=null) {
+      _string=_nativetype.toString();
+    }
+    if (_string != null) {
+      _elvis = _string;
+    } else {
+      _elvis = "void";
+    }
+    final String expected = _elvis;
+    final String actual = this.typeOf(r.getExpression());
+    if (((!Objects.equals(expected, actual)) && (!Objects.equals(expected, "void")))) {
+      this.error(
+        ((("Return type mismatch: expected " + expected) + " but got ") + actual), r, 
+        null);
+    }
+  }
+
+  @Check
+  public void checkIfCondition(final EFIfStatement i) {
+    final String condType = this.typeOf(i.getExpression());
+    boolean _notEquals = (!Objects.equals(condType, "boolean"));
+    if (_notEquals) {
+      this.error(
+        ("If condition must be boolean but was " + condType), i, 
+        null);
+    }
+  }
+
+  @Check
+  public void checkField(final EFField f) {
+    EFExpression _expression = f.getExpression();
+    boolean _tripleNotEquals = (_expression != null);
+    if (_tripleNotEquals) {
+      final String declared = this.declaredType(f);
+      final String actual = this.typeOf(f.getExpression());
+      boolean _notEquals = (!Objects.equals(declared, actual));
+      if (_notEquals) {
+        this.error(
+          ((("Type mismatch: cannot assign " + actual) + " to ") + declared), f, 
+          null);
+      }
+    }
+  }
+
+  @XbaseGenerated
+  public String typeOf(final EFExpression e) {
+    if (e instanceof EFAddExpression) {
+      return _typeOf((EFAddExpression)e);
+    } else if (e instanceof EFAndExpression) {
+      return _typeOf((EFAndExpression)e);
+    } else if (e instanceof EFApplicationProtocolConstant) {
+      return _typeOf((EFApplicationProtocolConstant)e);
+    } else if (e instanceof EFBoolConstant) {
+      return _typeOf((EFBoolConstant)e);
+    } else if (e instanceof EFDirectionConstant) {
+      return _typeOf((EFDirectionConstant)e);
+    } else if (e instanceof EFEqualExpression) {
+      return _typeOf((EFEqualExpression)e);
+    } else if (e instanceof EFIPv4Constant) {
+      return _typeOf((EFIPv4Constant)e);
+    } else if (e instanceof EFIntConstant) {
+      return _typeOf((EFIntConstant)e);
+    } else if (e instanceof EFNetportConstant) {
+      return _typeOf((EFNetportConstant)e);
+    } else if (e instanceof EFNetworkConstant) {
+      return _typeOf((EFNetworkConstant)e);
+    } else if (e instanceof EFNetworkProtocolConstant) {
+      return _typeOf((EFNetworkProtocolConstant)e);
+    } else if (e instanceof EFOrExpression) {
+      return _typeOf((EFOrExpression)e);
+    } else if (e instanceof EFRelExpression) {
+      return _typeOf((EFRelExpression)e);
+    } else if (e instanceof EFStringConstant) {
+      return _typeOf((EFStringConstant)e);
+    } else if (e instanceof EFSymbolRef) {
+      return _typeOf((EFSymbolRef)e);
+    } else if (e instanceof EFTransportProtocolConstant) {
+      return _typeOf((EFTransportProtocolConstant)e);
+    } else if (e != null) {
+      return _typeOf(e);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(e).toString());
+    }
   }
 }

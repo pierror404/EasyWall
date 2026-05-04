@@ -131,6 +131,13 @@ public class EasyWallSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case EasyWallPackage.EF_RULE_TYPE:
+      {
+        EFRuleType efRuleType = (EFRuleType)theEObject;
+        T result = caseEFRuleType(efRuleType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case EasyWallPackage.EF_VARIABLE_DECLARATION:
       {
         EFVariableDeclaration efVariableDeclaration = (EFVariableDeclaration)theEObject;
@@ -636,6 +643,22 @@ public class EasyWallSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseEFField(EFField object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>EF Rule Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>EF Rule Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEFRuleType(EFRuleType object)
   {
     return null;
   }

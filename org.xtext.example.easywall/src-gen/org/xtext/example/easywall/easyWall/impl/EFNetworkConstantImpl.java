@@ -23,8 +23,6 @@ import org.xtext.example.easywall.easyWall.EasyWallPackage;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.example.easywall.easyWall.impl.EFNetworkConstantImpl#getNetwork <em>Network</em>}</li>
- *   <li>{@link org.xtext.example.easywall.easyWall.impl.EFNetworkConstantImpl#getVarip <em>Varip</em>}</li>
- *   <li>{@link org.xtext.example.easywall.easyWall.impl.EFNetworkConstantImpl#getVarnetmask <em>Varnetmask</em>}</li>
  *   <li>{@link org.xtext.example.easywall.easyWall.impl.EFNetworkConstantImpl#getRawip <em>Rawip</em>}</li>
  *   <li>{@link org.xtext.example.easywall.easyWall.impl.EFNetworkConstantImpl#getRawnetmask <em>Rawnetmask</em>}</li>
  * </ul>
@@ -42,46 +40,6 @@ public class EFNetworkConstantImpl extends EFExpressionImpl implements EFNetwork
    * @ordered
    */
   protected EFNetworkConstant network;
-
-  /**
-   * The default value of the '{@link #getVarip() <em>Varip</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getVarip()
-   * @generated
-   * @ordered
-   */
-  protected static final String VARIP_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getVarip() <em>Varip</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getVarip()
-   * @generated
-   * @ordered
-   */
-  protected String varip = VARIP_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getVarnetmask() <em>Varnetmask</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getVarnetmask()
-   * @generated
-   * @ordered
-   */
-  protected static final String VARNETMASK_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getVarnetmask() <em>Varnetmask</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getVarnetmask()
-   * @generated
-   * @ordered
-   */
-  protected String varnetmask = VARNETMASK_EDEFAULT;
 
   /**
    * The default value of the '{@link #getRawip() <em>Rawip</em>}' attribute.
@@ -200,56 +158,6 @@ public class EFNetworkConstantImpl extends EFExpressionImpl implements EFNetwork
    * @generated
    */
   @Override
-  public String getVarip()
-  {
-    return varip;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setVarip(String newVarip)
-  {
-    String oldVarip = varip;
-    varip = newVarip;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EasyWallPackage.EF_NETWORK_CONSTANT__VARIP, oldVarip, varip));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getVarnetmask()
-  {
-    return varnetmask;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setVarnetmask(String newVarnetmask)
-  {
-    String oldVarnetmask = varnetmask;
-    varnetmask = newVarnetmask;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EasyWallPackage.EF_NETWORK_CONSTANT__VARNETMASK, oldVarnetmask, varnetmask));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public String getRawip()
   {
     return rawip;
@@ -322,10 +230,6 @@ public class EFNetworkConstantImpl extends EFExpressionImpl implements EFNetwork
     {
       case EasyWallPackage.EF_NETWORK_CONSTANT__NETWORK:
         return getNetwork();
-      case EasyWallPackage.EF_NETWORK_CONSTANT__VARIP:
-        return getVarip();
-      case EasyWallPackage.EF_NETWORK_CONSTANT__VARNETMASK:
-        return getVarnetmask();
       case EasyWallPackage.EF_NETWORK_CONSTANT__RAWIP:
         return getRawip();
       case EasyWallPackage.EF_NETWORK_CONSTANT__RAWNETMASK:
@@ -346,12 +250,6 @@ public class EFNetworkConstantImpl extends EFExpressionImpl implements EFNetwork
     {
       case EasyWallPackage.EF_NETWORK_CONSTANT__NETWORK:
         setNetwork((EFNetworkConstant)newValue);
-        return;
-      case EasyWallPackage.EF_NETWORK_CONSTANT__VARIP:
-        setVarip((String)newValue);
-        return;
-      case EasyWallPackage.EF_NETWORK_CONSTANT__VARNETMASK:
-        setVarnetmask((String)newValue);
         return;
       case EasyWallPackage.EF_NETWORK_CONSTANT__RAWIP:
         setRawip((String)newValue);
@@ -376,12 +274,6 @@ public class EFNetworkConstantImpl extends EFExpressionImpl implements EFNetwork
       case EasyWallPackage.EF_NETWORK_CONSTANT__NETWORK:
         setNetwork((EFNetworkConstant)null);
         return;
-      case EasyWallPackage.EF_NETWORK_CONSTANT__VARIP:
-        setVarip(VARIP_EDEFAULT);
-        return;
-      case EasyWallPackage.EF_NETWORK_CONSTANT__VARNETMASK:
-        setVarnetmask(VARNETMASK_EDEFAULT);
-        return;
       case EasyWallPackage.EF_NETWORK_CONSTANT__RAWIP:
         setRawip(RAWIP_EDEFAULT);
         return;
@@ -404,10 +296,6 @@ public class EFNetworkConstantImpl extends EFExpressionImpl implements EFNetwork
     {
       case EasyWallPackage.EF_NETWORK_CONSTANT__NETWORK:
         return network != null;
-      case EasyWallPackage.EF_NETWORK_CONSTANT__VARIP:
-        return VARIP_EDEFAULT == null ? varip != null : !VARIP_EDEFAULT.equals(varip);
-      case EasyWallPackage.EF_NETWORK_CONSTANT__VARNETMASK:
-        return VARNETMASK_EDEFAULT == null ? varnetmask != null : !VARNETMASK_EDEFAULT.equals(varnetmask);
       case EasyWallPackage.EF_NETWORK_CONSTANT__RAWIP:
         return RAWIP_EDEFAULT == null ? rawip != null : !RAWIP_EDEFAULT.equals(rawip);
       case EasyWallPackage.EF_NETWORK_CONSTANT__RAWNETMASK:
@@ -427,11 +315,7 @@ public class EFNetworkConstantImpl extends EFExpressionImpl implements EFNetwork
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (varip: ");
-    result.append(varip);
-    result.append(", varnetmask: ");
-    result.append(varnetmask);
-    result.append(", rawip: ");
+    result.append(" (rawip: ");
     result.append(rawip);
     result.append(", rawnetmask: ");
     result.append(rawnetmask);

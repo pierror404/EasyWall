@@ -34,7 +34,6 @@ public class EasyWallParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getEFProgramAccess().getAlternatives_1(), "rule__EFProgram__Alternatives_1");
 			builder.put(grammarAccess.getEFMemberAccess().getAlternatives(), "rule__EFMember__Alternatives");
 			builder.put(grammarAccess.getEFFieldAccess().getAlternatives_0(), "rule__EFField__Alternatives_0");
-			builder.put(grammarAccess.getEFTypedDeclarationAccess().getAlternatives_2(), "rule__EFTypedDeclaration__Alternatives_2");
 			builder.put(grammarAccess.getEFVariableDeclarationAccess().getAlternatives_0(), "rule__EFVariableDeclaration__Alternatives_0");
 			builder.put(grammarAccess.getEFMethodAccess().getAlternatives_6(), "rule__EFMethod__Alternatives_6");
 			builder.put(grammarAccess.getEFStatementAccess().getAlternatives(), "rule__EFStatement__Alternatives");
@@ -51,10 +50,8 @@ public class EasyWallParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getEFRelOperatorsAccess().getAlternatives(), "rule__EFRelOperators__Alternatives");
 			builder.put(grammarAccess.getEFAddOperatorsAccess().getAlternatives(), "rule__EFAddOperators__Alternatives");
 			builder.put(grammarAccess.getEFMultOperatorsAccess().getAlternatives(), "rule__EFMultOperators__Alternatives");
-			builder.put(grammarAccess.getEFNetworkSYNTAXAccess().getAlternatives(), "rule__EFNetworkSYNTAX__Alternatives");
 			builder.put(grammarAccess.getEFDefaultActionAccess().getAlternatives(), "rule__EFDefaultAction__Alternatives");
-			builder.put(grammarAccess.getEFNetworkNativeTypeAccess().getAlternatives(), "rule__EFNetworkNativeType__Alternatives");
-			builder.put(grammarAccess.getEFPrimitiveTypeAccess().getAlternatives(), "rule__EFPrimitiveType__Alternatives");
+			builder.put(grammarAccess.getEFTypeAccess().getAlternatives(), "rule__EFType__Alternatives");
 			builder.put(grammarAccess.getEFDirectionNativeTypeAccess().getAlternatives(), "rule__EFDirectionNativeType__Alternatives");
 			builder.put(grammarAccess.getEFLogLevelAccess().getAlternatives(), "rule__EFLogLevel__Alternatives");
 			builder.put(grammarAccess.getEFRulesTypesAccess().getAlternatives(), "rule__EFRulesTypes__Alternatives");
@@ -129,10 +126,7 @@ public class EasyWallParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getEFBuiltinFunctionAccess().getGroup_4(), "rule__EFBuiltinFunction__Group_4__0");
 			builder.put(grammarAccess.getEFBuiltinFunctionAccess().getGroup_5(), "rule__EFBuiltinFunction__Group_5__0");
 			builder.put(grammarAccess.getEFRuleClassAccess().getGroup(), "rule__EFRuleClass__Group__0");
-			builder.put(grammarAccess.getEFNetworkSYNTAXAccess().getGroup_0(), "rule__EFNetworkSYNTAX__Group_0__0");
-			builder.put(grammarAccess.getEFNetworkSYNTAXAccess().getGroup_1(), "rule__EFNetworkSYNTAX__Group_1__0");
-			builder.put(grammarAccess.getEFNetworkSYNTAXAccess().getGroup_2(), "rule__EFNetworkSYNTAX__Group_2__0");
-			builder.put(grammarAccess.getEFNetworkSYNTAXAccess().getGroup_3(), "rule__EFNetworkSYNTAX__Group_3__0");
+			builder.put(grammarAccess.getEFNetworkSYNTAXAccess().getGroup(), "rule__EFNetworkSYNTAX__Group__0");
 			builder.put(grammarAccess.getEFProgramAccess().getHeaderAssignment_0(), "rule__EFProgram__HeaderAssignment_0");
 			builder.put(grammarAccess.getEFProgramAccess().getRulesAssignment_1_0(), "rule__EFProgram__RulesAssignment_1_0");
 			builder.put(grammarAccess.getEFProgramAccess().getFirewallAssignment_1_1(), "rule__EFProgram__FirewallAssignment_1_1");
@@ -147,17 +141,14 @@ public class EasyWallParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getEFRuleReferenceAccess().getRuleAssignment_1(), "rule__EFRuleReference__RuleAssignment_1");
 			builder.put(grammarAccess.getEFFieldAccess().getExpressionAssignment_2_1(), "rule__EFField__ExpressionAssignment_2_1");
 			builder.put(grammarAccess.getEFTypedDeclarationAccess().getNameAssignment_0(), "rule__EFTypedDeclaration__NameAssignment_0");
-			builder.put(grammarAccess.getEFTypedDeclarationAccess().getRuletypeAssignment_2_0(), "rule__EFTypedDeclaration__RuletypeAssignment_2_0");
-			builder.put(grammarAccess.getEFTypedDeclarationAccess().getNativetypeAssignment_2_1(), "rule__EFTypedDeclaration__NativetypeAssignment_2_1");
-			builder.put(grammarAccess.getEFTypedDeclarationAccess().getPrimitivetypeAssignment_2_2(), "rule__EFTypedDeclaration__PrimitivetypeAssignment_2_2");
+			builder.put(grammarAccess.getEFTypedDeclarationAccess().getTypeAssignment_2(), "rule__EFTypedDeclaration__TypeAssignment_2");
+			builder.put(grammarAccess.getEFRuleTypeAccess().getRuleAssignment(), "rule__EFRuleType__RuleAssignment");
 			builder.put(grammarAccess.getEFVariableDeclarationAccess().getExpressionAssignment_3(), "rule__EFVariableDeclaration__ExpressionAssignment_3");
 			builder.put(grammarAccess.getEFMethodAccess().getNameAssignment_1(), "rule__EFMethod__NameAssignment_1");
 			builder.put(grammarAccess.getEFMethodAccess().getParamsAssignment_3_0(), "rule__EFMethod__ParamsAssignment_3_0");
 			builder.put(grammarAccess.getEFMethodAccess().getParamsAssignment_3_1_1(), "rule__EFMethod__ParamsAssignment_3_1_1");
 			builder.put(grammarAccess.getEFMethodAccess().getNativetypeAssignment_6_0(), "rule__EFMethod__NativetypeAssignment_6_0");
-			builder.put(grammarAccess.getEFMethodAccess().getPrimitivetypeAssignment_6_1(), "rule__EFMethod__PrimitivetypeAssignment_6_1");
-			builder.put(grammarAccess.getEFMethodAccess().getRuletypeAssignment_6_2(), "rule__EFMethod__RuletypeAssignment_6_2");
-			builder.put(grammarAccess.getEFMethodAccess().getVoidAssignment_6_3(), "rule__EFMethod__VoidAssignment_6_3");
+			builder.put(grammarAccess.getEFMethodAccess().getVoidAssignment_6_1(), "rule__EFMethod__VoidAssignment_6_1");
 			builder.put(grammarAccess.getEFMethodAccess().getBodyAssignment_7(), "rule__EFMethod__BodyAssignment_7");
 			builder.put(grammarAccess.getEFBlockAccess().getStatementsAssignment_2(), "rule__EFBlock__StatementsAssignment_2");
 			builder.put(grammarAccess.getEFReturnAccess().getExpressionAssignment_1(), "rule__EFReturn__ExpressionAssignment_1");
@@ -203,14 +194,8 @@ public class EasyWallParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getEFRuleClassAccess().getNameAssignment_1(), "rule__EFRuleClass__NameAssignment_1");
 			builder.put(grammarAccess.getEFRuleClassAccess().getTypeAssignment_3(), "rule__EFRuleClass__TypeAssignment_3");
 			builder.put(grammarAccess.getEFRuleClassAccess().getMembersAssignment_5(), "rule__EFRuleClass__MembersAssignment_5");
-			builder.put(grammarAccess.getEFNetworkSYNTAXAccess().getVaripAssignment_0_0(), "rule__EFNetworkSYNTAX__VaripAssignment_0_0");
-			builder.put(grammarAccess.getEFNetworkSYNTAXAccess().getVarnetmaskAssignment_0_2(), "rule__EFNetworkSYNTAX__VarnetmaskAssignment_0_2");
-			builder.put(grammarAccess.getEFNetworkSYNTAXAccess().getRawipAssignment_1_0(), "rule__EFNetworkSYNTAX__RawipAssignment_1_0");
-			builder.put(grammarAccess.getEFNetworkSYNTAXAccess().getRawnetmaskAssignment_1_2(), "rule__EFNetworkSYNTAX__RawnetmaskAssignment_1_2");
-			builder.put(grammarAccess.getEFNetworkSYNTAXAccess().getRawipAssignment_2_0(), "rule__EFNetworkSYNTAX__RawipAssignment_2_0");
-			builder.put(grammarAccess.getEFNetworkSYNTAXAccess().getVarnetmaskAssignment_2_2(), "rule__EFNetworkSYNTAX__VarnetmaskAssignment_2_2");
-			builder.put(grammarAccess.getEFNetworkSYNTAXAccess().getVaripAssignment_3_0(), "rule__EFNetworkSYNTAX__VaripAssignment_3_0");
-			builder.put(grammarAccess.getEFNetworkSYNTAXAccess().getRawnetmaskAssignment_3_2(), "rule__EFNetworkSYNTAX__RawnetmaskAssignment_3_2");
+			builder.put(grammarAccess.getEFNetworkSYNTAXAccess().getRawipAssignment_0(), "rule__EFNetworkSYNTAX__RawipAssignment_0");
+			builder.put(grammarAccess.getEFNetworkSYNTAXAccess().getRawnetmaskAssignment_2(), "rule__EFNetworkSYNTAX__RawnetmaskAssignment_2");
 		}
 	}
 	

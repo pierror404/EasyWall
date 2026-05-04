@@ -11,14 +11,14 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>EF Network Native Type</b></em>',
+ * A representation of the literals of the enumeration '<em><b>EF Type</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see org.xtext.example.easywall.easyWall.EasyWallPackage#getEFNetworkNativeType()
+ * @see org.xtext.example.easywall.easyWall.EasyWallPackage#getEFType()
  * @model
  * @generated
  */
-public enum EFNetworkNativeType implements Enumerator
+public enum EFType implements Enumerator
 {
   /**
    * The '<em><b>NETWORK</b></em>' literal object.
@@ -81,14 +81,34 @@ public enum EFNetworkNativeType implements Enumerator
   DIRECTION(5, "DIRECTION", "direction"),
 
   /**
-   * The '<em><b>NETMASK</b></em>' literal object.
+   * The '<em><b>INT</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #NETMASK_VALUE
+   * @see #INT_VALUE
    * @generated
    * @ordered
    */
-  NETMASK(6, "NETMASK", "netmask");
+  INT(6, "INT", "int"),
+
+  /**
+   * The '<em><b>STRING</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #STRING_VALUE
+   * @generated
+   * @ordered
+   */
+  STRING(7, "STRING", "string"),
+
+  /**
+   * The '<em><b>BOOL</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #BOOL_VALUE
+   * @generated
+   * @ordered
+   */
+  BOOL(8, "BOOL", "bool");
 
   /**
    * The '<em><b>NETWORK</b></em>' literal value.
@@ -157,24 +177,46 @@ public enum EFNetworkNativeType implements Enumerator
   public static final int DIRECTION_VALUE = 5;
 
   /**
-   * The '<em><b>NETMASK</b></em>' literal value.
+   * The '<em><b>INT</b></em>' literal value.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #NETMASK
-   * @model literal="netmask"
+   * @see #INT
+   * @model literal="int"
    * @generated
    * @ordered
    */
-  public static final int NETMASK_VALUE = 6;
+  public static final int INT_VALUE = 6;
 
   /**
-   * An array of all the '<em><b>EF Network Native Type</b></em>' enumerators.
+   * The '<em><b>STRING</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #STRING
+   * @model literal="string"
+   * @generated
+   * @ordered
+   */
+  public static final int STRING_VALUE = 7;
+
+  /**
+   * The '<em><b>BOOL</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #BOOL
+   * @model literal="bool"
+   * @generated
+   * @ordered
+   */
+  public static final int BOOL_VALUE = 8;
+
+  /**
+   * An array of all the '<em><b>EF Type</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private static final EFNetworkNativeType[] VALUES_ARRAY =
-    new EFNetworkNativeType[]
+  private static final EFType[] VALUES_ARRAY =
+    new EFType[]
     {
       NETWORK,
       IPV4,
@@ -182,30 +224,32 @@ public enum EFNetworkNativeType implements Enumerator
       PORT,
       PROTOCOL,
       DIRECTION,
-      NETMASK,
+      INT,
+      STRING,
+      BOOL,
     };
 
   /**
-   * A public read-only list of all the '<em><b>EF Network Native Type</b></em>' enumerators.
+   * A public read-only list of all the '<em><b>EF Type</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  public static final List<EFNetworkNativeType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+  public static final List<EFType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
   /**
-   * Returns the '<em><b>EF Network Native Type</b></em>' literal with the specified literal value.
+   * Returns the '<em><b>EF Type</b></em>' literal with the specified literal value.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param literal the literal.
    * @return the matching enumerator or <code>null</code>.
    * @generated
    */
-  public static EFNetworkNativeType get(String literal)
+  public static EFType get(String literal)
   {
     for (int i = 0; i < VALUES_ARRAY.length; ++i)
     {
-      EFNetworkNativeType result = VALUES_ARRAY[i];
+      EFType result = VALUES_ARRAY[i];
       if (result.toString().equals(literal))
       {
         return result;
@@ -215,18 +259,18 @@ public enum EFNetworkNativeType implements Enumerator
   }
 
   /**
-   * Returns the '<em><b>EF Network Native Type</b></em>' literal with the specified name.
+   * Returns the '<em><b>EF Type</b></em>' literal with the specified name.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param name the name.
    * @return the matching enumerator or <code>null</code>.
    * @generated
    */
-  public static EFNetworkNativeType getByName(String name)
+  public static EFType getByName(String name)
   {
     for (int i = 0; i < VALUES_ARRAY.length; ++i)
     {
-      EFNetworkNativeType result = VALUES_ARRAY[i];
+      EFType result = VALUES_ARRAY[i];
       if (result.getName().equals(name))
       {
         return result;
@@ -236,14 +280,14 @@ public enum EFNetworkNativeType implements Enumerator
   }
 
   /**
-   * Returns the '<em><b>EF Network Native Type</b></em>' literal with the specified integer value.
+   * Returns the '<em><b>EF Type</b></em>' literal with the specified integer value.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the integer value.
    * @return the matching enumerator or <code>null</code>.
    * @generated
    */
-  public static EFNetworkNativeType get(int value)
+  public static EFType get(int value)
   {
     switch (value)
     {
@@ -253,7 +297,9 @@ public enum EFNetworkNativeType implements Enumerator
       case PORT_VALUE: return PORT;
       case PROTOCOL_VALUE: return PROTOCOL;
       case DIRECTION_VALUE: return DIRECTION;
-      case NETMASK_VALUE: return NETMASK;
+      case INT_VALUE: return INT;
+      case STRING_VALUE: return STRING;
+      case BOOL_VALUE: return BOOL;
     }
     return null;
   }
@@ -285,7 +331,7 @@ public enum EFNetworkNativeType implements Enumerator
    * <!-- end-user-doc -->
    * @generated
    */
-  private EFNetworkNativeType(int value, String name, String literal)
+  private EFType(int value, String name, String literal)
   {
     this.value = value;
     this.name = name;
@@ -337,4 +383,4 @@ public enum EFNetworkNativeType implements Enumerator
     return literal;
   }
   
-} //EFNetworkNativeType
+} //EFType

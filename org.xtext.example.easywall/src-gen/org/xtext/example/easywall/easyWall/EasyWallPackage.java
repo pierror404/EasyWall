@@ -300,40 +300,13 @@ public interface EasyWallPackage extends EPackage
   int EF_MEMBER__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Ruletype</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_MEMBER__RULETYPE = 1;
-
-  /**
-   * The feature id for the '<em><b>Nativetype</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_MEMBER__NATIVETYPE = 2;
-
-  /**
-   * The feature id for the '<em><b>Primitivetype</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_MEMBER__PRIMITIVETYPE = 3;
-
-  /**
    * The number of structural features of the '<em>EF Member</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EF_MEMBER_FEATURE_COUNT = 4;
+  int EF_MEMBER_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.example.easywall.easyWall.impl.EFFieldImpl <em>EF Field</em>}' class.
@@ -355,31 +328,13 @@ public interface EasyWallPackage extends EPackage
   int EF_FIELD__NAME = EF_MEMBER__NAME;
 
   /**
-   * The feature id for the '<em><b>Ruletype</b></em>' reference.
+   * The feature id for the '<em><b>Type</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EF_FIELD__RULETYPE = EF_MEMBER__RULETYPE;
-
-  /**
-   * The feature id for the '<em><b>Nativetype</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_FIELD__NATIVETYPE = EF_MEMBER__NATIVETYPE;
-
-  /**
-   * The feature id for the '<em><b>Primitivetype</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_FIELD__PRIMITIVETYPE = EF_MEMBER__PRIMITIVETYPE;
+  int EF_FIELD__TYPE = EF_MEMBER_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -388,7 +343,7 @@ public interface EasyWallPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EF_FIELD__EXPRESSION = EF_MEMBER_FEATURE_COUNT + 0;
+  int EF_FIELD__EXPRESSION = EF_MEMBER_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>EF Field</em>' class.
@@ -397,7 +352,35 @@ public interface EasyWallPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EF_FIELD_FEATURE_COUNT = EF_MEMBER_FEATURE_COUNT + 1;
+  int EF_FIELD_FEATURE_COUNT = EF_MEMBER_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.easywall.easyWall.impl.EFRuleTypeImpl <em>EF Rule Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.easywall.easyWall.impl.EFRuleTypeImpl
+   * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFRuleType()
+   * @generated
+   */
+  int EF_RULE_TYPE = 8;
+
+  /**
+   * The feature id for the '<em><b>Rule</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EF_RULE_TYPE__RULE = 0;
+
+  /**
+   * The number of structural features of the '<em>EF Rule Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EF_RULE_TYPE_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.example.easywall.easyWall.impl.EFVariableDeclarationImpl <em>EF Variable Declaration</em>}' class.
@@ -407,7 +390,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFVariableDeclaration()
    * @generated
    */
-  int EF_VARIABLE_DECLARATION = 8;
+  int EF_VARIABLE_DECLARATION = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -419,31 +402,13 @@ public interface EasyWallPackage extends EPackage
   int EF_VARIABLE_DECLARATION__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Ruletype</b></em>' reference.
+   * The feature id for the '<em><b>Type</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EF_VARIABLE_DECLARATION__RULETYPE = 1;
-
-  /**
-   * The feature id for the '<em><b>Nativetype</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_VARIABLE_DECLARATION__NATIVETYPE = 2;
-
-  /**
-   * The feature id for the '<em><b>Primitivetype</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_VARIABLE_DECLARATION__PRIMITIVETYPE = 3;
+  int EF_VARIABLE_DECLARATION__TYPE = 1;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -452,7 +417,7 @@ public interface EasyWallPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EF_VARIABLE_DECLARATION__EXPRESSION = 4;
+  int EF_VARIABLE_DECLARATION__EXPRESSION = 2;
 
   /**
    * The number of structural features of the '<em>EF Variable Declaration</em>' class.
@@ -461,7 +426,7 @@ public interface EasyWallPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EF_VARIABLE_DECLARATION_FEATURE_COUNT = 5;
+  int EF_VARIABLE_DECLARATION_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.xtext.example.easywall.easyWall.impl.EFMethodImpl <em>EF Method</em>}' class.
@@ -471,7 +436,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFMethod()
    * @generated
    */
-  int EF_METHOD = 9;
+  int EF_METHOD = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -483,33 +448,6 @@ public interface EasyWallPackage extends EPackage
   int EF_METHOD__NAME = EF_MEMBER__NAME;
 
   /**
-   * The feature id for the '<em><b>Ruletype</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_METHOD__RULETYPE = EF_MEMBER__RULETYPE;
-
-  /**
-   * The feature id for the '<em><b>Nativetype</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_METHOD__NATIVETYPE = EF_MEMBER__NATIVETYPE;
-
-  /**
-   * The feature id for the '<em><b>Primitivetype</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_METHOD__PRIMITIVETYPE = EF_MEMBER__PRIMITIVETYPE;
-
-  /**
    * The feature id for the '<em><b>Params</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -519,13 +457,22 @@ public interface EasyWallPackage extends EPackage
   int EF_METHOD__PARAMS = EF_MEMBER_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Nativetype</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EF_METHOD__NATIVETYPE = EF_MEMBER_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Void</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EF_METHOD__VOID = EF_MEMBER_FEATURE_COUNT + 1;
+  int EF_METHOD__VOID = EF_MEMBER_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Body</b></em>' containment reference.
@@ -534,7 +481,7 @@ public interface EasyWallPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EF_METHOD__BODY = EF_MEMBER_FEATURE_COUNT + 2;
+  int EF_METHOD__BODY = EF_MEMBER_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>EF Method</em>' class.
@@ -543,7 +490,7 @@ public interface EasyWallPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EF_METHOD_FEATURE_COUNT = EF_MEMBER_FEATURE_COUNT + 3;
+  int EF_METHOD_FEATURE_COUNT = EF_MEMBER_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link org.xtext.example.easywall.easyWall.impl.EFParameterImpl <em>EF Parameter</em>}' class.
@@ -553,7 +500,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFParameter()
    * @generated
    */
-  int EF_PARAMETER = 10;
+  int EF_PARAMETER = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -565,31 +512,13 @@ public interface EasyWallPackage extends EPackage
   int EF_PARAMETER__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Ruletype</b></em>' reference.
+   * The feature id for the '<em><b>Type</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EF_PARAMETER__RULETYPE = 1;
-
-  /**
-   * The feature id for the '<em><b>Nativetype</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_PARAMETER__NATIVETYPE = 2;
-
-  /**
-   * The feature id for the '<em><b>Primitivetype</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_PARAMETER__PRIMITIVETYPE = 3;
+  int EF_PARAMETER__TYPE = 1;
 
   /**
    * The number of structural features of the '<em>EF Parameter</em>' class.
@@ -598,7 +527,7 @@ public interface EasyWallPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EF_PARAMETER_FEATURE_COUNT = 4;
+  int EF_PARAMETER_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.example.easywall.easyWall.impl.EFBlockImpl <em>EF Block</em>}' class.
@@ -608,7 +537,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFBlock()
    * @generated
    */
-  int EF_BLOCK = 11;
+  int EF_BLOCK = 12;
 
   /**
    * The feature id for the '<em><b>Statements</b></em>' containment reference list.
@@ -636,7 +565,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFStatement()
    * @generated
    */
-  int EF_STATEMENT = 12;
+  int EF_STATEMENT = 13;
 
   /**
    * The number of structural features of the '<em>EF Statement</em>' class.
@@ -655,7 +584,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFReturn()
    * @generated
    */
-  int EF_RETURN = 13;
+  int EF_RETURN = 14;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -683,7 +612,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFIfStatement()
    * @generated
    */
-  int EF_IF_STATEMENT = 14;
+  int EF_IF_STATEMENT = 15;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -729,7 +658,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFExpression()
    * @generated
    */
-  int EF_EXPRESSION = 15;
+  int EF_EXPRESSION = 16;
 
   /**
    * The number of structural features of the '<em>EF Expression</em>' class.
@@ -748,7 +677,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFBuiltinFunction()
    * @generated
    */
-  int EF_BUILTIN_FUNCTION = 16;
+  int EF_BUILTIN_FUNCTION = 17;
 
   /**
    * The number of structural features of the '<em>EF Builtin Function</em>' class.
@@ -767,7 +696,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFRule()
    * @generated
    */
-  int EF_RULE = 17;
+  int EF_RULE = 18;
 
   /**
    * The feature id for the '<em><b>Rules</b></em>' containment reference.
@@ -795,7 +724,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFRuleClass()
    * @generated
    */
-  int EF_RULE_CLASS = 18;
+  int EF_RULE_CLASS = 19;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -841,7 +770,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFNetworkConstant()
    * @generated
    */
-  int EF_NETWORK_CONSTANT = 19;
+  int EF_NETWORK_CONSTANT = 20;
 
   /**
    * The feature id for the '<em><b>Network</b></em>' containment reference.
@@ -853,31 +782,13 @@ public interface EasyWallPackage extends EPackage
   int EF_NETWORK_CONSTANT__NETWORK = EF_EXPRESSION_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Varip</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_NETWORK_CONSTANT__VARIP = EF_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Varnetmask</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EF_NETWORK_CONSTANT__VARNETMASK = EF_EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
    * The feature id for the '<em><b>Rawip</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EF_NETWORK_CONSTANT__RAWIP = EF_EXPRESSION_FEATURE_COUNT + 3;
+  int EF_NETWORK_CONSTANT__RAWIP = EF_EXPRESSION_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Rawnetmask</b></em>' attribute.
@@ -886,7 +797,7 @@ public interface EasyWallPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EF_NETWORK_CONSTANT__RAWNETMASK = EF_EXPRESSION_FEATURE_COUNT + 4;
+  int EF_NETWORK_CONSTANT__RAWNETMASK = EF_EXPRESSION_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>EF Network Constant</em>' class.
@@ -895,7 +806,7 @@ public interface EasyWallPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EF_NETWORK_CONSTANT_FEATURE_COUNT = EF_EXPRESSION_FEATURE_COUNT + 5;
+  int EF_NETWORK_CONSTANT_FEATURE_COUNT = EF_EXPRESSION_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link org.xtext.example.easywall.easyWall.impl.EFAssignmentImpl <em>EF Assignment</em>}' class.
@@ -905,7 +816,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFAssignment()
    * @generated
    */
-  int EF_ASSIGNMENT = 20;
+  int EF_ASSIGNMENT = 21;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -942,7 +853,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFOrExpression()
    * @generated
    */
-  int EF_OR_EXPRESSION = 21;
+  int EF_OR_EXPRESSION = 22;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -979,7 +890,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFAndExpression()
    * @generated
    */
-  int EF_AND_EXPRESSION = 22;
+  int EF_AND_EXPRESSION = 23;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1016,7 +927,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFEqualExpression()
    * @generated
    */
-  int EF_EQUAL_EXPRESSION = 23;
+  int EF_EQUAL_EXPRESSION = 24;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1053,7 +964,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFRelExpression()
    * @generated
    */
-  int EF_REL_EXPRESSION = 24;
+  int EF_REL_EXPRESSION = 25;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1090,7 +1001,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFAddExpression()
    * @generated
    */
-  int EF_ADD_EXPRESSION = 25;
+  int EF_ADD_EXPRESSION = 26;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1127,7 +1038,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFMultExpression()
    * @generated
    */
-  int EF_MULT_EXPRESSION = 26;
+  int EF_MULT_EXPRESSION = 27;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1164,7 +1075,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFNotExpression()
    * @generated
    */
-  int EF_NOT_EXPRESSION = 27;
+  int EF_NOT_EXPRESSION = 28;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -1192,7 +1103,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFMemberSelection()
    * @generated
    */
-  int EF_MEMBER_SELECTION = 28;
+  int EF_MEMBER_SELECTION = 29;
 
   /**
    * The feature id for the '<em><b>Receiver</b></em>' containment reference.
@@ -1238,7 +1149,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFStringConstant()
    * @generated
    */
-  int EF_STRING_CONSTANT = 29;
+  int EF_STRING_CONSTANT = 30;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1266,7 +1177,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFIntConstant()
    * @generated
    */
-  int EF_INT_CONSTANT = 30;
+  int EF_INT_CONSTANT = 31;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1294,7 +1205,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFBoolConstant()
    * @generated
    */
-  int EF_BOOL_CONSTANT = 31;
+  int EF_BOOL_CONSTANT = 32;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1322,7 +1233,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFDirectionConstant()
    * @generated
    */
-  int EF_DIRECTION_CONSTANT = 32;
+  int EF_DIRECTION_CONSTANT = 33;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -1350,7 +1261,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFNetworkProtocolConstant()
    * @generated
    */
-  int EF_NETWORK_PROTOCOL_CONSTANT = 33;
+  int EF_NETWORK_PROTOCOL_CONSTANT = 34;
 
   /**
    * The feature id for the '<em><b>Protocol</b></em>' attribute.
@@ -1378,7 +1289,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFTransportProtocolConstant()
    * @generated
    */
-  int EF_TRANSPORT_PROTOCOL_CONSTANT = 34;
+  int EF_TRANSPORT_PROTOCOL_CONSTANT = 35;
 
   /**
    * The feature id for the '<em><b>Protocol</b></em>' attribute.
@@ -1406,7 +1317,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFApplicationProtocolConstant()
    * @generated
    */
-  int EF_APPLICATION_PROTOCOL_CONSTANT = 35;
+  int EF_APPLICATION_PROTOCOL_CONSTANT = 36;
 
   /**
    * The feature id for the '<em><b>Protocol</b></em>' attribute.
@@ -1434,7 +1345,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFIPv6Constant()
    * @generated
    */
-  int EFI_PV6_CONSTANT = 36;
+  int EFI_PV6_CONSTANT = 37;
 
   /**
    * The feature id for the '<em><b>Ipv6</b></em>' attribute.
@@ -1462,7 +1373,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFIPv4Constant()
    * @generated
    */
-  int EFI_PV4_CONSTANT = 37;
+  int EFI_PV4_CONSTANT = 38;
 
   /**
    * The feature id for the '<em><b>Ipv4</b></em>' attribute.
@@ -1508,7 +1419,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFNetportConstant()
    * @generated
    */
-  int EF_NETPORT_CONSTANT = 38;
+  int EF_NETPORT_CONSTANT = 39;
 
   /**
    * The feature id for the '<em><b>Netport</b></em>' attribute.
@@ -1536,7 +1447,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFThis()
    * @generated
    */
-  int EF_THIS = 39;
+  int EF_THIS = 40;
 
   /**
    * The number of structural features of the '<em>EF This</em>' class.
@@ -1555,7 +1466,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFSuper()
    * @generated
    */
-  int EF_SUPER = 40;
+  int EF_SUPER = 41;
 
   /**
    * The number of structural features of the '<em>EF Super</em>' class.
@@ -1574,7 +1485,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFNew()
    * @generated
    */
-  int EF_NEW = 41;
+  int EF_NEW = 42;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' reference.
@@ -1602,7 +1513,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFBracketsExpression()
    * @generated
    */
-  int EF_BRACKETS_EXPRESSION = 42;
+  int EF_BRACKETS_EXPRESSION = 43;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -1630,7 +1541,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFFunctionCall()
    * @generated
    */
-  int EF_FUNCTION_CALL = 43;
+  int EF_FUNCTION_CALL = 44;
 
   /**
    * The feature id for the '<em><b>Function Name</b></em>' attribute.
@@ -1667,10 +1578,10 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFSymbolRef()
    * @generated
    */
-  int EF_SYMBOL_REF = 44;
+  int EF_SYMBOL_REF = 45;
 
   /**
-   * The feature id for the '<em><b>Symbol</b></em>' attribute.
+   * The feature id for the '<em><b>Symbol</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1695,7 +1606,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFAllow()
    * @generated
    */
-  int EF_ALLOW = 45;
+  int EF_ALLOW = 46;
 
   /**
    * The number of structural features of the '<em>EF Allow</em>' class.
@@ -1714,7 +1625,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFDeny()
    * @generated
    */
-  int EF_DENY = 46;
+  int EF_DENY = 47;
 
   /**
    * The number of structural features of the '<em>EF Deny</em>' class.
@@ -1733,7 +1644,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFWriteLog()
    * @generated
    */
-  int EF_WRITE_LOG = 47;
+  int EF_WRITE_LOG = 48;
 
   /**
    * The feature id for the '<em><b>Message</b></em>' containment reference.
@@ -1761,7 +1672,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFWriteLogLevel()
    * @generated
    */
-  int EF_WRITE_LOG_LEVEL = 48;
+  int EF_WRITE_LOG_LEVEL = 49;
 
   /**
    * The feature id for the '<em><b>Level</b></em>' attribute.
@@ -1798,7 +1709,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFGetTime()
    * @generated
    */
-  int EF_GET_TIME = 49;
+  int EF_GET_TIME = 50;
 
   /**
    * The number of structural features of the '<em>EF Get Time</em>' class.
@@ -1817,7 +1728,7 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFGetPacketField()
    * @generated
    */
-  int EF_GET_PACKET_FIELD = 50;
+  int EF_GET_PACKET_FIELD = 51;
 
   /**
    * The feature id for the '<em><b>Field</b></em>' attribute.
@@ -1845,27 +1756,17 @@ public interface EasyWallPackage extends EPackage
    * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFDefaultAction()
    * @generated
    */
-  int EF_DEFAULT_ACTION = 51;
+  int EF_DEFAULT_ACTION = 52;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.easywall.easyWall.EFNetworkNativeType <em>EF Network Native Type</em>}' enum.
+   * The meta object id for the '{@link org.xtext.example.easywall.easyWall.EFType <em>EF Type</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.example.easywall.easyWall.EFNetworkNativeType
-   * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFNetworkNativeType()
+   * @see org.xtext.example.easywall.easyWall.EFType
+   * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFType()
    * @generated
    */
-  int EF_NETWORK_NATIVE_TYPE = 52;
-
-  /**
-   * The meta object id for the '{@link org.xtext.example.easywall.easyWall.EFPrimitiveType <em>EF Primitive Type</em>}' enum.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.easywall.easyWall.EFPrimitiveType
-   * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFPrimitiveType()
-   * @generated
-   */
-  int EF_PRIMITIVE_TYPE = 53;
+  int EF_TYPE = 53;
 
   /**
    * The meta object id for the '{@link org.xtext.example.easywall.easyWall.EFDirectionNativeType <em>EF Direction Native Type</em>}' enum.
@@ -2142,39 +2043,6 @@ public interface EasyWallPackage extends EPackage
   EAttribute getEFMember_Name();
 
   /**
-   * Returns the meta object for the reference '{@link org.xtext.example.easywall.easyWall.EFMember#getRuletype <em>Ruletype</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Ruletype</em>'.
-   * @see org.xtext.example.easywall.easyWall.EFMember#getRuletype()
-   * @see #getEFMember()
-   * @generated
-   */
-  EReference getEFMember_Ruletype();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.easywall.easyWall.EFMember#getNativetype <em>Nativetype</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Nativetype</em>'.
-   * @see org.xtext.example.easywall.easyWall.EFMember#getNativetype()
-   * @see #getEFMember()
-   * @generated
-   */
-  EAttribute getEFMember_Nativetype();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.easywall.easyWall.EFMember#getPrimitivetype <em>Primitivetype</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Primitivetype</em>'.
-   * @see org.xtext.example.easywall.easyWall.EFMember#getPrimitivetype()
-   * @see #getEFMember()
-   * @generated
-   */
-  EAttribute getEFMember_Primitivetype();
-
-  /**
    * Returns the meta object for class '{@link org.xtext.example.easywall.easyWall.EFField <em>EF Field</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2183,6 +2051,17 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   EClass getEFField();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.easywall.easyWall.EFField#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see org.xtext.example.easywall.easyWall.EFField#getType()
+   * @see #getEFField()
+   * @generated
+   */
+  EAttribute getEFField_Type();
 
   /**
    * Returns the meta object for the containment reference '{@link org.xtext.example.easywall.easyWall.EFField#getExpression <em>Expression</em>}'.
@@ -2194,6 +2073,27 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   EReference getEFField_Expression();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.easywall.easyWall.EFRuleType <em>EF Rule Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>EF Rule Type</em>'.
+   * @see org.xtext.example.easywall.easyWall.EFRuleType
+   * @generated
+   */
+  EClass getEFRuleType();
+
+  /**
+   * Returns the meta object for the reference '{@link org.xtext.example.easywall.easyWall.EFRuleType#getRule <em>Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Rule</em>'.
+   * @see org.xtext.example.easywall.easyWall.EFRuleType#getRule()
+   * @see #getEFRuleType()
+   * @generated
+   */
+  EReference getEFRuleType_Rule();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.easywall.easyWall.EFVariableDeclaration <em>EF Variable Declaration</em>}'.
@@ -2217,37 +2117,15 @@ public interface EasyWallPackage extends EPackage
   EAttribute getEFVariableDeclaration_Name();
 
   /**
-   * Returns the meta object for the reference '{@link org.xtext.example.easywall.easyWall.EFVariableDeclaration#getRuletype <em>Ruletype</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.easywall.easyWall.EFVariableDeclaration#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Ruletype</em>'.
-   * @see org.xtext.example.easywall.easyWall.EFVariableDeclaration#getRuletype()
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see org.xtext.example.easywall.easyWall.EFVariableDeclaration#getType()
    * @see #getEFVariableDeclaration()
    * @generated
    */
-  EReference getEFVariableDeclaration_Ruletype();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.easywall.easyWall.EFVariableDeclaration#getNativetype <em>Nativetype</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Nativetype</em>'.
-   * @see org.xtext.example.easywall.easyWall.EFVariableDeclaration#getNativetype()
-   * @see #getEFVariableDeclaration()
-   * @generated
-   */
-  EAttribute getEFVariableDeclaration_Nativetype();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.easywall.easyWall.EFVariableDeclaration#getPrimitivetype <em>Primitivetype</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Primitivetype</em>'.
-   * @see org.xtext.example.easywall.easyWall.EFVariableDeclaration#getPrimitivetype()
-   * @see #getEFVariableDeclaration()
-   * @generated
-   */
-  EAttribute getEFVariableDeclaration_Primitivetype();
+  EAttribute getEFVariableDeclaration_Type();
 
   /**
    * Returns the meta object for the containment reference '{@link org.xtext.example.easywall.easyWall.EFVariableDeclaration#getExpression <em>Expression</em>}'.
@@ -2280,6 +2158,17 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   EReference getEFMethod_Params();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.easywall.easyWall.EFMethod#getNativetype <em>Nativetype</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Nativetype</em>'.
+   * @see org.xtext.example.easywall.easyWall.EFMethod#getNativetype()
+   * @see #getEFMethod()
+   * @generated
+   */
+  EAttribute getEFMethod_Nativetype();
 
   /**
    * Returns the meta object for the attribute '{@link org.xtext.example.easywall.easyWall.EFMethod#getVoid <em>Void</em>}'.
@@ -2325,37 +2214,15 @@ public interface EasyWallPackage extends EPackage
   EAttribute getEFParameter_Name();
 
   /**
-   * Returns the meta object for the reference '{@link org.xtext.example.easywall.easyWall.EFParameter#getRuletype <em>Ruletype</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.easywall.easyWall.EFParameter#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Ruletype</em>'.
-   * @see org.xtext.example.easywall.easyWall.EFParameter#getRuletype()
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see org.xtext.example.easywall.easyWall.EFParameter#getType()
    * @see #getEFParameter()
    * @generated
    */
-  EReference getEFParameter_Ruletype();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.easywall.easyWall.EFParameter#getNativetype <em>Nativetype</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Nativetype</em>'.
-   * @see org.xtext.example.easywall.easyWall.EFParameter#getNativetype()
-   * @see #getEFParameter()
-   * @generated
-   */
-  EAttribute getEFParameter_Nativetype();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.easywall.easyWall.EFParameter#getPrimitivetype <em>Primitivetype</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Primitivetype</em>'.
-   * @see org.xtext.example.easywall.easyWall.EFParameter#getPrimitivetype()
-   * @see #getEFParameter()
-   * @generated
-   */
-  EAttribute getEFParameter_Primitivetype();
+  EAttribute getEFParameter_Type();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.easywall.easyWall.EFBlock <em>EF Block</em>}'.
@@ -2556,28 +2423,6 @@ public interface EasyWallPackage extends EPackage
    * @generated
    */
   EReference getEFNetworkConstant_Network();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.easywall.easyWall.EFNetworkConstant#getVarip <em>Varip</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Varip</em>'.
-   * @see org.xtext.example.easywall.easyWall.EFNetworkConstant#getVarip()
-   * @see #getEFNetworkConstant()
-   * @generated
-   */
-  EAttribute getEFNetworkConstant_Varip();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.easywall.easyWall.EFNetworkConstant#getVarnetmask <em>Varnetmask</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Varnetmask</em>'.
-   * @see org.xtext.example.easywall.easyWall.EFNetworkConstant#getVarnetmask()
-   * @see #getEFNetworkConstant()
-   * @generated
-   */
-  EAttribute getEFNetworkConstant_Varnetmask();
 
   /**
    * Returns the meta object for the attribute '{@link org.xtext.example.easywall.easyWall.EFNetworkConstant#getRawip <em>Rawip</em>}'.
@@ -3226,15 +3071,15 @@ public interface EasyWallPackage extends EPackage
   EClass getEFSymbolRef();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.easywall.easyWall.EFSymbolRef#getSymbol <em>Symbol</em>}'.
+   * Returns the meta object for the reference '{@link org.xtext.example.easywall.easyWall.EFSymbolRef#getSymbol <em>Symbol</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Symbol</em>'.
+   * @return the meta object for the reference '<em>Symbol</em>'.
    * @see org.xtext.example.easywall.easyWall.EFSymbolRef#getSymbol()
    * @see #getEFSymbolRef()
    * @generated
    */
-  EAttribute getEFSymbolRef_Symbol();
+  EReference getEFSymbolRef_Symbol();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.easywall.easyWall.EFAllow <em>EF Allow</em>}'.
@@ -3351,24 +3196,14 @@ public interface EasyWallPackage extends EPackage
   EEnum getEFDefaultAction();
 
   /**
-   * Returns the meta object for enum '{@link org.xtext.example.easywall.easyWall.EFNetworkNativeType <em>EF Network Native Type</em>}'.
+   * Returns the meta object for enum '{@link org.xtext.example.easywall.easyWall.EFType <em>EF Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>EF Network Native Type</em>'.
-   * @see org.xtext.example.easywall.easyWall.EFNetworkNativeType
+   * @return the meta object for enum '<em>EF Type</em>'.
+   * @see org.xtext.example.easywall.easyWall.EFType
    * @generated
    */
-  EEnum getEFNetworkNativeType();
-
-  /**
-   * Returns the meta object for enum '{@link org.xtext.example.easywall.easyWall.EFPrimitiveType <em>EF Primitive Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>EF Primitive Type</em>'.
-   * @see org.xtext.example.easywall.easyWall.EFPrimitiveType
-   * @generated
-   */
-  EEnum getEFPrimitiveType();
+  EEnum getEFType();
 
   /**
    * Returns the meta object for enum '{@link org.xtext.example.easywall.easyWall.EFDirectionNativeType <em>EF Direction Native Type</em>}'.
@@ -3628,30 +3463,6 @@ public interface EasyWallPackage extends EPackage
     EAttribute EF_MEMBER__NAME = eINSTANCE.getEFMember_Name();
 
     /**
-     * The meta object literal for the '<em><b>Ruletype</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EF_MEMBER__RULETYPE = eINSTANCE.getEFMember_Ruletype();
-
-    /**
-     * The meta object literal for the '<em><b>Nativetype</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EF_MEMBER__NATIVETYPE = eINSTANCE.getEFMember_Nativetype();
-
-    /**
-     * The meta object literal for the '<em><b>Primitivetype</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EF_MEMBER__PRIMITIVETYPE = eINSTANCE.getEFMember_Primitivetype();
-
-    /**
      * The meta object literal for the '{@link org.xtext.example.easywall.easyWall.impl.EFFieldImpl <em>EF Field</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3662,12 +3473,38 @@ public interface EasyWallPackage extends EPackage
     EClass EF_FIELD = eINSTANCE.getEFField();
 
     /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EF_FIELD__TYPE = eINSTANCE.getEFField_Type();
+
+    /**
      * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference EF_FIELD__EXPRESSION = eINSTANCE.getEFField_Expression();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.easywall.easyWall.impl.EFRuleTypeImpl <em>EF Rule Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.easywall.easyWall.impl.EFRuleTypeImpl
+     * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFRuleType()
+     * @generated
+     */
+    EClass EF_RULE_TYPE = eINSTANCE.getEFRuleType();
+
+    /**
+     * The meta object literal for the '<em><b>Rule</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EF_RULE_TYPE__RULE = eINSTANCE.getEFRuleType_Rule();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.easywall.easyWall.impl.EFVariableDeclarationImpl <em>EF Variable Declaration</em>}' class.
@@ -3688,28 +3525,12 @@ public interface EasyWallPackage extends EPackage
     EAttribute EF_VARIABLE_DECLARATION__NAME = eINSTANCE.getEFVariableDeclaration_Name();
 
     /**
-     * The meta object literal for the '<em><b>Ruletype</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EF_VARIABLE_DECLARATION__RULETYPE = eINSTANCE.getEFVariableDeclaration_Ruletype();
-
-    /**
-     * The meta object literal for the '<em><b>Nativetype</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EF_VARIABLE_DECLARATION__NATIVETYPE = eINSTANCE.getEFVariableDeclaration_Nativetype();
-
-    /**
-     * The meta object literal for the '<em><b>Primitivetype</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EF_VARIABLE_DECLARATION__PRIMITIVETYPE = eINSTANCE.getEFVariableDeclaration_Primitivetype();
+    EAttribute EF_VARIABLE_DECLARATION__TYPE = eINSTANCE.getEFVariableDeclaration_Type();
 
     /**
      * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
@@ -3736,6 +3557,14 @@ public interface EasyWallPackage extends EPackage
      * @generated
      */
     EReference EF_METHOD__PARAMS = eINSTANCE.getEFMethod_Params();
+
+    /**
+     * The meta object literal for the '<em><b>Nativetype</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EF_METHOD__NATIVETYPE = eINSTANCE.getEFMethod_Nativetype();
 
     /**
      * The meta object literal for the '<em><b>Void</b></em>' attribute feature.
@@ -3772,28 +3601,12 @@ public interface EasyWallPackage extends EPackage
     EAttribute EF_PARAMETER__NAME = eINSTANCE.getEFParameter_Name();
 
     /**
-     * The meta object literal for the '<em><b>Ruletype</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EF_PARAMETER__RULETYPE = eINSTANCE.getEFParameter_Ruletype();
-
-    /**
-     * The meta object literal for the '<em><b>Nativetype</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EF_PARAMETER__NATIVETYPE = eINSTANCE.getEFParameter_Nativetype();
-
-    /**
-     * The meta object literal for the '<em><b>Primitivetype</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EF_PARAMETER__PRIMITIVETYPE = eINSTANCE.getEFParameter_Primitivetype();
+    EAttribute EF_PARAMETER__TYPE = eINSTANCE.getEFParameter_Type();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.easywall.easyWall.impl.EFBlockImpl <em>EF Block</em>}' class.
@@ -3964,22 +3777,6 @@ public interface EasyWallPackage extends EPackage
      * @generated
      */
     EReference EF_NETWORK_CONSTANT__NETWORK = eINSTANCE.getEFNetworkConstant_Network();
-
-    /**
-     * The meta object literal for the '<em><b>Varip</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EF_NETWORK_CONSTANT__VARIP = eINSTANCE.getEFNetworkConstant_Varip();
-
-    /**
-     * The meta object literal for the '<em><b>Varnetmask</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EF_NETWORK_CONSTANT__VARNETMASK = eINSTANCE.getEFNetworkConstant_Varnetmask();
 
     /**
      * The meta object literal for the '<em><b>Rawip</b></em>' attribute feature.
@@ -4520,12 +4317,12 @@ public interface EasyWallPackage extends EPackage
     EClass EF_SYMBOL_REF = eINSTANCE.getEFSymbolRef();
 
     /**
-     * The meta object literal for the '<em><b>Symbol</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Symbol</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EF_SYMBOL_REF__SYMBOL = eINSTANCE.getEFSymbolRef_Symbol();
+    EReference EF_SYMBOL_REF__SYMBOL = eINSTANCE.getEFSymbolRef_Symbol();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.easywall.easyWall.impl.EFAllowImpl <em>EF Allow</em>}' class.
@@ -4630,24 +4427,14 @@ public interface EasyWallPackage extends EPackage
     EEnum EF_DEFAULT_ACTION = eINSTANCE.getEFDefaultAction();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.easywall.easyWall.EFNetworkNativeType <em>EF Network Native Type</em>}' enum.
+     * The meta object literal for the '{@link org.xtext.example.easywall.easyWall.EFType <em>EF Type</em>}' enum.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.example.easywall.easyWall.EFNetworkNativeType
-     * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFNetworkNativeType()
+     * @see org.xtext.example.easywall.easyWall.EFType
+     * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFType()
      * @generated
      */
-    EEnum EF_NETWORK_NATIVE_TYPE = eINSTANCE.getEFNetworkNativeType();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.easywall.easyWall.EFPrimitiveType <em>EF Primitive Type</em>}' enum.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.easywall.easyWall.EFPrimitiveType
-     * @see org.xtext.example.easywall.easyWall.impl.EasyWallPackageImpl#getEFPrimitiveType()
-     * @generated
-     */
-    EEnum EF_PRIMITIVE_TYPE = eINSTANCE.getEFPrimitiveType();
+    EEnum EF_TYPE = eINSTANCE.getEFType();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.easywall.easyWall.EFDirectionNativeType <em>EF Direction Native Type</em>}' enum.

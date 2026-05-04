@@ -14,8 +14,6 @@ package org.xtext.example.easywall.easyWall;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.example.easywall.easyWall.EFNetworkConstant#getNetwork <em>Network</em>}</li>
- *   <li>{@link org.xtext.example.easywall.easyWall.EFNetworkConstant#getVarip <em>Varip</em>}</li>
- *   <li>{@link org.xtext.example.easywall.easyWall.EFNetworkConstant#getVarnetmask <em>Varnetmask</em>}</li>
  *   <li>{@link org.xtext.example.easywall.easyWall.EFNetworkConstant#getRawip <em>Rawip</em>}</li>
  *   <li>{@link org.xtext.example.easywall.easyWall.EFNetworkConstant#getRawnetmask <em>Rawnetmask</em>}</li>
  * </ul>
@@ -47,50 +45,6 @@ public interface EFNetworkConstant extends EFExpression
    * @generated
    */
   void setNetwork(EFNetworkConstant value);
-
-  /**
-   * Returns the value of the '<em><b>Varip</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Varip</em>' attribute.
-   * @see #setVarip(String)
-   * @see org.xtext.example.easywall.easyWall.EasyWallPackage#getEFNetworkConstant_Varip()
-   * @model
-   * @generated
-   */
-  String getVarip();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.easywall.easyWall.EFNetworkConstant#getVarip <em>Varip</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Varip</em>' attribute.
-   * @see #getVarip()
-   * @generated
-   */
-  void setVarip(String value);
-
-  /**
-   * Returns the value of the '<em><b>Varnetmask</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Varnetmask</em>' attribute.
-   * @see #setVarnetmask(String)
-   * @see org.xtext.example.easywall.easyWall.EasyWallPackage#getEFNetworkConstant_Varnetmask()
-   * @model
-   * @generated
-   */
-  String getVarnetmask();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.easywall.easyWall.EFNetworkConstant#getVarnetmask <em>Varnetmask</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Varnetmask</em>' attribute.
-   * @see #getVarnetmask()
-   * @generated
-   */
-  void setVarnetmask(String value);
 
   /**
    * Returns the value of the '<em><b>Rawip</b></em>' attribute.

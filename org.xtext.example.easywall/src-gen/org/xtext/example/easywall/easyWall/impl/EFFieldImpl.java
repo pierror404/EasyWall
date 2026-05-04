@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.xtext.example.easywall.easyWall.EFExpression;
 import org.xtext.example.easywall.easyWall.EFField;
+import org.xtext.example.easywall.easyWall.EFType;
 import org.xtext.example.easywall.easyWall.EasyWallPackage;
 
 /**
@@ -23,6 +24,7 @@ import org.xtext.example.easywall.easyWall.EasyWallPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.example.easywall.easyWall.impl.EFFieldImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.xtext.example.easywall.easyWall.impl.EFFieldImpl#getExpression <em>Expression</em>}</li>
  * </ul>
  *
@@ -30,6 +32,26 @@ import org.xtext.example.easywall.easyWall.EasyWallPackage;
  */
 public class EFFieldImpl extends EFMemberImpl implements EFField
 {
+  /**
+   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getType()
+   * @generated
+   * @ordered
+   */
+  protected static final EFType TYPE_EDEFAULT = EFType.NETWORK;
+
+  /**
+   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getType()
+   * @generated
+   * @ordered
+   */
+  protected EFType type = TYPE_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -59,6 +81,31 @@ public class EFFieldImpl extends EFMemberImpl implements EFField
   protected EClass eStaticClass()
   {
     return EasyWallPackage.Literals.EF_FIELD;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EFType getType()
+  {
+    return type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setType(EFType newType)
+  {
+    EFType oldType = type;
+    type = newType == null ? TYPE_EDEFAULT : newType;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EasyWallPackage.EF_FIELD__TYPE, oldType, type));
   }
 
   /**
@@ -137,6 +184,8 @@ public class EFFieldImpl extends EFMemberImpl implements EFField
   {
     switch (featureID)
     {
+      case EasyWallPackage.EF_FIELD__TYPE:
+        return getType();
       case EasyWallPackage.EF_FIELD__EXPRESSION:
         return getExpression();
     }
@@ -153,6 +202,9 @@ public class EFFieldImpl extends EFMemberImpl implements EFField
   {
     switch (featureID)
     {
+      case EasyWallPackage.EF_FIELD__TYPE:
+        setType((EFType)newValue);
+        return;
       case EasyWallPackage.EF_FIELD__EXPRESSION:
         setExpression((EFExpression)newValue);
         return;
@@ -170,6 +222,9 @@ public class EFFieldImpl extends EFMemberImpl implements EFField
   {
     switch (featureID)
     {
+      case EasyWallPackage.EF_FIELD__TYPE:
+        setType(TYPE_EDEFAULT);
+        return;
       case EasyWallPackage.EF_FIELD__EXPRESSION:
         setExpression((EFExpression)null);
         return;
@@ -187,10 +242,29 @@ public class EFFieldImpl extends EFMemberImpl implements EFField
   {
     switch (featureID)
     {
+      case EasyWallPackage.EF_FIELD__TYPE:
+        return type != TYPE_EDEFAULT;
       case EasyWallPackage.EF_FIELD__EXPRESSION:
         return expression != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (type: ");
+    result.append(type);
+    result.append(')');
+    return result.toString();
   }
 
 } //EFFieldImpl

@@ -74,6 +74,7 @@ public class EasyWallFactoryImpl extends EFactoryImpl implements EasyWallFactory
       case EasyWallPackage.EF_RULE_REFERENCE: return createEFRuleReference();
       case EasyWallPackage.EF_MEMBER: return createEFMember();
       case EasyWallPackage.EF_FIELD: return createEFField();
+      case EasyWallPackage.EF_RULE_TYPE: return createEFRuleType();
       case EasyWallPackage.EF_VARIABLE_DECLARATION: return createEFVariableDeclaration();
       case EasyWallPackage.EF_METHOD: return createEFMethod();
       case EasyWallPackage.EF_PARAMETER: return createEFParameter();
@@ -134,10 +135,8 @@ public class EasyWallFactoryImpl extends EFactoryImpl implements EasyWallFactory
     {
       case EasyWallPackage.EF_DEFAULT_ACTION:
         return createEFDefaultActionFromString(eDataType, initialValue);
-      case EasyWallPackage.EF_NETWORK_NATIVE_TYPE:
-        return createEFNetworkNativeTypeFromString(eDataType, initialValue);
-      case EasyWallPackage.EF_PRIMITIVE_TYPE:
-        return createEFPrimitiveTypeFromString(eDataType, initialValue);
+      case EasyWallPackage.EF_TYPE:
+        return createEFTypeFromString(eDataType, initialValue);
       case EasyWallPackage.EF_DIRECTION_NATIVE_TYPE:
         return createEFDirectionNativeTypeFromString(eDataType, initialValue);
       case EasyWallPackage.EF_LOG_LEVEL:
@@ -167,10 +166,8 @@ public class EasyWallFactoryImpl extends EFactoryImpl implements EasyWallFactory
     {
       case EasyWallPackage.EF_DEFAULT_ACTION:
         return convertEFDefaultActionToString(eDataType, instanceValue);
-      case EasyWallPackage.EF_NETWORK_NATIVE_TYPE:
-        return convertEFNetworkNativeTypeToString(eDataType, instanceValue);
-      case EasyWallPackage.EF_PRIMITIVE_TYPE:
-        return convertEFPrimitiveTypeToString(eDataType, instanceValue);
+      case EasyWallPackage.EF_TYPE:
+        return convertEFTypeToString(eDataType, instanceValue);
       case EasyWallPackage.EF_DIRECTION_NATIVE_TYPE:
         return convertEFDirectionNativeTypeToString(eDataType, instanceValue);
       case EasyWallPackage.EF_LOG_LEVEL:
@@ -282,6 +279,18 @@ public class EasyWallFactoryImpl extends EFactoryImpl implements EasyWallFactory
   {
     EFFieldImpl efField = new EFFieldImpl();
     return efField;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EFRuleType createEFRuleType()
+  {
+    EFRuleTypeImpl efRuleType = new EFRuleTypeImpl();
+    return efRuleType;
   }
 
   /**
@@ -827,9 +836,9 @@ public class EasyWallFactoryImpl extends EFactoryImpl implements EasyWallFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public EFNetworkNativeType createEFNetworkNativeTypeFromString(EDataType eDataType, String initialValue)
+  public EFType createEFTypeFromString(EDataType eDataType, String initialValue)
   {
-    EFNetworkNativeType result = EFNetworkNativeType.get(initialValue);
+    EFType result = EFType.get(initialValue);
     if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
     return result;
   }
@@ -839,29 +848,7 @@ public class EasyWallFactoryImpl extends EFactoryImpl implements EasyWallFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertEFNetworkNativeTypeToString(EDataType eDataType, Object instanceValue)
-  {
-    return instanceValue == null ? null : instanceValue.toString();
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EFPrimitiveType createEFPrimitiveTypeFromString(EDataType eDataType, String initialValue)
-  {
-    EFPrimitiveType result = EFPrimitiveType.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-    return result;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String convertEFPrimitiveTypeToString(EDataType eDataType, Object instanceValue)
+  public String convertEFTypeToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

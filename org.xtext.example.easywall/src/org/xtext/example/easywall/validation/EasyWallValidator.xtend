@@ -23,6 +23,17 @@ import org.xtext.example.easywall.easyWall.EFExpression
 import org.eclipse.emf.ecore.EObject
 import org.xtext.example.easywall.easyWall.EFIfStatement
 import org.xtext.example.easywall.easyWall.EFReturn
+import org.xtext.example.easywall.easyWall.EFIntConstant
+import org.xtext.example.easywall.easyWall.EFStringConstant
+import org.xtext.example.easywall.easyWall.EFBoolConstant
+import org.xtext.example.easywall.easyWall.EFSymbolRef
+import org.xtext.example.easywall.easyWall.EFAddExpression
+import org.xtext.example.easywall.easyWall.EFEqualExpression
+import org.xtext.example.easywall.easyWall.EFRelExpression
+import org.xtext.example.easywall.easyWall.EFAndExpression
+import org.xtext.example.easywall.easyWall.EFOrExpression
+import org.xtext.example.easywall.easyWall.EFAssignment
+import org.xtext.example.easywall.easyWall.EFDirectionConstant
 
 class EasyWallValidator extends AbstractEasyWallValidator {
     
@@ -377,5 +388,175 @@ class EasyWallValidator extends AbstractEasyWallValidator {
 	        }
 	    }
 	    return false
+	}
+	
+	
+	/*
+	 * ==================
+	 * TYPE CHECKER
+	 * ==================
+	 */
+	def dispatch String typeOf(EFExpression e) {
+    		"Object"
+	} 
+	def dispatch String typeOf(EFIntConstant e) {
+	    "long"
+	}
+	
+	def dispatch String typeOf(EFStringConstant e) {
+	    "String"
+	}
+	
+	def dispatch String typeOf(EFBoolConstant e) {
+	    "boolean"
+	}
+	def dispatch String typeOf(EFNetworkConstant e) {
+	    "Network"
+	}
+	def dispatch String typeOf(EFNetworkProtocolConstant e){
+		"IProtocol"
+	}
+	def dispatch String typeOf(EFTransportProtocolConstant e){
+		"IProtocol"
+	}
+	def dispatch String typeOf(EFApplicationProtocolConstant e){
+		"IProtocol"
+	}
+	def dispatch String typeOf(EFDirectionConstant e) {
+		"Direction"
+	}
+	def dispatch String typeOf(EFIPv4Constant e) {
+	    "IPv4"
+	}
+	
+	def dispatch String typeOf(EFNetportConstant e) {
+	    "NetPort"
+	}
+	def dispatch String typeOf(EFSymbolRef e) {
+	    
+	    val obj = e.symbol   // <-- QUESTO deve essere risolto dallo scope
+	
+	    if (obj instanceof EFField) {
+	        return declaredType(obj)
+	    }
+	
+	    return "Object"
+		}
+	
+	def dispatch String typeOf(EFAddExpression e) {
+	    val l = typeOf(e.left)
+	    val r = typeOf(e.right)
+	
+	    if (l == "long" && r == "long")
+	        return "long"
+	
+	    return "Object"
+	}
+	def dispatch String typeOf(EFEqualExpression e) {
+	    "boolean"
+	}
+	
+	def dispatch String typeOf(EFRelExpression e) {
+	    "boolean"
+	}
+	
+	def dispatch String typeOf(EFAndExpression e) {
+	    "boolean"
+	}
+	
+	def dispatch String typeOf(EFOrExpression e) {
+	    "boolean"
+	}
+	def String declaredType(EFField f) {
+	    switch f.type {
+	        case INT: "long"
+	        case STRING: "String"
+	        case BOOL: "boolean"
+	
+	        case NETWORK: "Network"
+	        case IPV4: "IPv4"
+	        case IPV6: "IPv6"
+	        case PORT: "NetPort"
+	        case PROTOCOL: "IProtocol"
+	        case DIRECTION: "Direction"
+	
+	        default: "Object"
+	    }
+	}
+	@Check
+	def checkAssignment(EFAssignment e) {
+	
+	    val leftType = typeOf(e.left)
+	    val rightType = typeOf(e.right)
+	
+	    if (leftType != rightType && rightType != "Object") {
+	        error(
+	            "Type mismatch: cannot assign " + rightType + " to " + leftType,
+	            e,
+	            null
+	        )
+	    }
+	}
+	@Check
+	def checkFieldInit(EFField f) {
+	    if (f.expression !== null) {
+	        val declared = declaredType(f)
+	        val actual = typeOf(f.expression)
+	
+	        if (declared != actual && actual != "Object") {
+	            error(
+	                "Invalid initialization: expected " + declared + " but got " + actual,
+	                f,
+	                null
+	            )
+	        }
+	    }
+	}
+	@Check
+	def checkReturn(EFReturn r) {
+	    val method = r.eContainer as EFMethod
+	
+	    val expected = method.nativetype?.toString
+	        ?: "void"
+	
+	    val actual = typeOf(r.expression)
+	
+	    if (expected != actual && expected != "void") {
+	        error(
+	            "Return type mismatch: expected " + expected + " but got " + actual,
+	            r,
+	            null
+	        )
+	    }
+	}
+	@Check
+	def checkIfCondition(EFIfStatement i) {
+	    val condType = typeOf(i.expression)
+	
+	    if (condType != "boolean") {
+	        error(
+	            "If condition must be boolean but was " + condType,
+	            i,
+	            null
+	        )
+	    }
+	}
+	
+	@Check
+	def checkField(EFField f) {
+	
+	    if (f.expression !== null) {
+	
+	        val declared = declaredType(f)
+	        val actual = typeOf(f.expression)
+	
+	        if (declared != actual) {
+	            error(
+	                "Type mismatch: cannot assign " + actual + " to " + declared,
+	                f,
+	                null
+	            )
+	        }
+	    }
 	}
 }

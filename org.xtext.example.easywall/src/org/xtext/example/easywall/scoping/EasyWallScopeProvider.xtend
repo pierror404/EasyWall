@@ -9,6 +9,14 @@ import org.eclipse.xtext.scoping.Scopes
 import org.xtext.example.easywall.easyWall.EFProgram
 import org.xtext.example.easywall.easyWall.EFRuleClass
 import org.xtext.example.easywall.easyWall.EFRuleReference
+import org.xtext.example.easywall.easyWall.EFSymbolRef
+import org.eclipse.emf.ecore.EReference
+import org.eclipse.xtext.EcoreUtil2
+import org.xtext.example.easywall.easyWall.EFBlock
+import org.xtext.example.easywall.easyWall.EFField
+import org.xtext.example.easywall.easyWall.EFMethod
+import org.eclipse.xtext.naming.QualifiedName
+import org.xtext.example.easywall.easyWall.EFParameter
 
 /**
  * This class contains custom scoping description.
@@ -62,7 +70,82 @@ class EasyWallScopeProvider extends AbstractEasyWallScopeProvider {
 
         // 4. Scope finale: local → import → global
         return Scopes.scopeFor(
-            localRules + importedRules + allRules
+            localRules + importedRules + allRules, [r | QualifiedName.create(r.name)], IScope.NULLSCOPE
         )
     }
+    
+    def IScope scope_EFSymbolRef_symbol(EFSymbolRef ctx, EReference ref) {
+
+	    var scope = IScope.NULLSCOPE
+	
+	    scope = scopeBlock(ctx, scope)
+	    scope = scopeMethod(ctx, scope)
+	    scope = scopeRule(ctx, scope)
+	    scope = scopeFirewall(ctx, scope)
+	
+	    return scope
+	}
+	
+	def IScope scopeBlock(EObject ctx, IScope parent) {
+	
+	    val block = EcoreUtil2.getContainerOfType(ctx, EFBlock)
+	    if (block === null)
+	        return parent
+	
+	    return Scopes.scopeFor(
+	        block.statements.filter(EFField),
+	        [QualifiedName.create(name)],
+	        parent
+	    )
+	}
+	
+	def IScope scopeMethod(EObject ctx, IScope parent) {
+	
+	    val method = EcoreUtil2.getContainerOfType(ctx, EFMethod)
+	    if (method === null)
+	        return parent
+	
+	    val params = method.params
+	    val locals = method.body?.statements?.filter(EFField) ?: emptyList
+	
+	    return Scopes.scopeFor(
+		    params + locals,
+		    [it | getQName(it)],
+		    parent
+		)
+	}
+	
+	def QualifiedName getQName(EObject obj) {
+	    switch obj {
+	        EFField: QualifiedName.create(obj.name)
+	        EFParameter: QualifiedName.create(obj.name)
+	        default: QualifiedName.create("unknown")
+	    }
+	}
+	
+	def IScope scopeRule(EObject ctx, IScope parent) {
+	
+	    val rule = EcoreUtil2.getContainerOfType(ctx, EFRuleClass)
+	    if (rule === null)
+	        return parent
+	
+	    return Scopes.scopeFor(
+	        rule.members.filter(EFField),
+	        [QualifiedName.create(name)],
+	        parent
+	    )
+	}
+	
+	def IScope scopeFirewall(EObject ctx, IScope parent) {
+	
+	    val program = EcoreUtil2.getContainerOfType(ctx, EFProgram)
+	    if (program === null || program.firewall === null)
+	        return parent
+	
+	    return Scopes.scopeFor(
+	        program.firewall.members.filter(EFField),
+	        [QualifiedName.create(name)],
+	        parent
+	    )
+	}
 }

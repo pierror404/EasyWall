@@ -14,6 +14,7 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
+import org.xtext.example.easywall.EasyWallTypes;
 import org.xtext.example.easywall.easyWall.APPLICATIONLAYERPROTOCOL;
 import org.xtext.example.easywall.easyWall.EFAddExpression;
 import org.xtext.example.easywall.easyWall.EFAllow;
@@ -45,12 +46,10 @@ import org.xtext.example.easywall.easyWall.EFMethod;
 import org.xtext.example.easywall.easyWall.EFMultExpression;
 import org.xtext.example.easywall.easyWall.EFNetportConstant;
 import org.xtext.example.easywall.easyWall.EFNetworkConstant;
-import org.xtext.example.easywall.easyWall.EFNetworkNativeType;
 import org.xtext.example.easywall.easyWall.EFNetworkProtocolConstant;
 import org.xtext.example.easywall.easyWall.EFNotExpression;
 import org.xtext.example.easywall.easyWall.EFOrExpression;
 import org.xtext.example.easywall.easyWall.EFParameter;
-import org.xtext.example.easywall.easyWall.EFPrimitiveType;
 import org.xtext.example.easywall.easyWall.EFProgram;
 import org.xtext.example.easywall.easyWall.EFRelExpression;
 import org.xtext.example.easywall.easyWall.EFReturn;
@@ -62,6 +61,7 @@ import org.xtext.example.easywall.easyWall.EFStatement;
 import org.xtext.example.easywall.easyWall.EFStringConstant;
 import org.xtext.example.easywall.easyWall.EFSymbolRef;
 import org.xtext.example.easywall.easyWall.EFTransportProtocolConstant;
+import org.xtext.example.easywall.easyWall.EFType;
 import org.xtext.example.easywall.easyWall.EFWriteLog;
 import org.xtext.example.easywall.easyWall.EFWriteLogLevel;
 import org.xtext.example.easywall.easyWall.NETWORKLAYERPROTOCOL;
@@ -294,8 +294,8 @@ public class EasyWallGenerator extends AbstractGenerator {
 
   public boolean isConfigField(final EFField field) {
     final String name = field.getName().toLowerCase();
-    return (((Objects.equals(name, "rule_protocol") || Objects.equals(name, "rule_direction")) || 
-      Objects.equals(name, "source")) || Objects.equals(name, "destination"));
+    return (((((Objects.equals(name, "rule_protocol") || Objects.equals(name, "rule_direction")) || 
+      Objects.equals(name, "rule_src")) || Objects.equals(name, "rule_dest")) || Objects.equals(name, "rule_src_port")) || Objects.equals(name, "rule_dest_port"));
   }
 
   public CharSequence compileLayer(final EFRulesTypes type) {
@@ -492,7 +492,7 @@ public class EasyWallGenerator extends AbstractGenerator {
         _matched=true;
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("Optional.ofNullable(");
-        String _symbol = ((EFSymbolRef)expr).getSymbol();
+        EFField _symbol = ((EFSymbolRef)expr).getSymbol();
         _builder.append(_symbol);
         _builder.append(")");
         _switchResult = _builder.toString();
@@ -545,7 +545,7 @@ public class EasyWallGenerator extends AbstractGenerator {
         _matched=true;
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("Optional.ofNullable(");
-        String _symbol = ((EFSymbolRef)expr).getSymbol();
+        EFField _symbol = ((EFSymbolRef)expr).getSymbol();
         _builder.append(_symbol);
         _builder.append(")");
         _switchResult = _builder.toString();
@@ -620,80 +620,23 @@ public class EasyWallGenerator extends AbstractGenerator {
   }
 
   public String getJavaType(final EFField field) {
-    EFPrimitiveType _primitivetype = field.getPrimitivetype();
-    boolean _tripleNotEquals = (_primitivetype != null);
+    String _get = EasyWallTypes.MAP.get(field.getType());
+    boolean _tripleNotEquals = (_get != null);
     if (_tripleNotEquals) {
-      String _switchResult = null;
-      EFPrimitiveType _primitivetype_1 = field.getPrimitivetype();
-      if (_primitivetype_1 != null) {
-        switch (_primitivetype_1) {
-          case INT:
-            _switchResult = "long";
-            break;
-          case STRING:
-            _switchResult = "String";
-            break;
-          case BOOL:
-            _switchResult = "boolean";
-            break;
-          default:
-            _switchResult = "Object";
-            break;
-        }
-      } else {
-        _switchResult = "Object";
-      }
-      return _switchResult;
+      return EasyWallTypes.MAP.get(field.getType());
     } else {
-      EFNetworkNativeType _nativetype = field.getNativetype();
-      boolean _tripleNotEquals_1 = (_nativetype != null);
-      if (_tripleNotEquals_1) {
-        String _switchResult_1 = null;
-        EFNetworkNativeType _nativetype_1 = field.getNativetype();
-        if (_nativetype_1 != null) {
-          switch (_nativetype_1) {
-            case NETWORK:
-              _switchResult_1 = "Network";
-              break;
-            case IPV4:
-              _switchResult_1 = "IPv4";
-              break;
-            case IPV6:
-              _switchResult_1 = "IPv6";
-              break;
-            case PORT:
-              _switchResult_1 = "NetPort";
-              break;
-            case PROTOCOL:
-              _switchResult_1 = "IProtocol";
-              break;
-            case DIRECTION:
-              _switchResult_1 = "Direction";
-              break;
-            case NETMASK:
-              _switchResult_1 = "int";
-              break;
-            default:
-              _switchResult_1 = "Object";
-              break;
-          }
-        } else {
-          _switchResult_1 = "Object";
-        }
-        return _switchResult_1;
-      }
+      return "Object";
     }
-    return "Object";
   }
 
   public String getDefaultValue(final EFField field) {
-    EFPrimitiveType _primitivetype = field.getPrimitivetype();
-    boolean _tripleNotEquals = (_primitivetype != null);
+    EFType _type = field.getType();
+    boolean _tripleNotEquals = (_type != null);
     if (_tripleNotEquals) {
       String _switchResult = null;
-      EFPrimitiveType _primitivetype_1 = field.getPrimitivetype();
-      if (_primitivetype_1 != null) {
-        switch (_primitivetype_1) {
+      EFType _type_1 = field.getType();
+      if (_type_1 != null) {
+        switch (_type_1) {
           case INT:
             _switchResult = " = 0";
             break;
@@ -752,13 +695,13 @@ public class EasyWallGenerator extends AbstractGenerator {
     if (_tripleNotEquals) {
       return "void";
     }
-    EFPrimitiveType _primitivetype = method.getPrimitivetype();
-    boolean _tripleNotEquals_1 = (_primitivetype != null);
+    EFType _nativetype = method.getNativetype();
+    boolean _tripleNotEquals_1 = (_nativetype != null);
     if (_tripleNotEquals_1) {
       String _switchResult = null;
-      EFPrimitiveType _primitivetype_1 = method.getPrimitivetype();
-      if (_primitivetype_1 != null) {
-        switch (_primitivetype_1) {
+      EFType _nativetype_1 = method.getNativetype();
+      if (_nativetype_1 != null) {
+        switch (_nativetype_1) {
           case INT:
             _switchResult = "int";
             break;
@@ -999,7 +942,19 @@ public class EasyWallGenerator extends AbstractGenerator {
     if (!_matched) {
       if (expr instanceof EFSymbolRef) {
         _matched=true;
-        _switchResult = ((EFSymbolRef)expr).getSymbol();
+        String _elvis = null;
+        EFField _symbol = ((EFSymbolRef)expr).getSymbol();
+        String _name = null;
+        if (_symbol!=null) {
+          _name=_symbol.getName();
+        }
+        if (_name != null) {
+          _elvis = _name;
+        } else {
+          String _string = ((EFSymbolRef)expr).getSymbol().toString();
+          _elvis = _string;
+        }
+        _switchResult = _elvis;
       }
     }
     if (!_matched) {
@@ -1331,12 +1286,21 @@ public class EasyWallGenerator extends AbstractGenerator {
     _builder.append("*/");
     _builder.newLine();
     _builder.append("public class ");
-    String _name_1 = firewall.getName();
-    _builder.append(_name_1);
+    String _firstUpper = StringExtensions.toFirstUpper(firewall.getName());
+    _builder.append(_firstUpper);
     _builder.append(" {");
     _builder.newLineIfNotEmpty();
-    _builder.append("    ");
+    _builder.append("\t");
     _builder.newLine();
+    {
+      Iterable<EFField> _filter = Iterables.<EFField>filter(firewall.getMembers(), EFField.class);
+      for(final EFField field : _filter) {
+        _builder.append("\t\t");
+        CharSequence _compileFirewallField = this.compileFirewallField(field);
+        _builder.append(_compileFirewallField, "\t\t");
+        _builder.newLineIfNotEmpty();
+      }
+    }
     _builder.append("    ");
     _builder.append("public static void main(String[] args) {");
     _builder.newLine();
@@ -1345,8 +1309,8 @@ public class EasyWallGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("        ");
     _builder.append("System.out.println(\"  ");
-    String _name_2 = firewall.getName();
-    _builder.append(_name_2, "        ");
+    String _name_1 = firewall.getName();
+    _builder.append(_name_1, "        ");
     _builder.append(" Starting\");");
     _builder.newLineIfNotEmpty();
     _builder.append("        ");
@@ -1383,14 +1347,14 @@ public class EasyWallGenerator extends AbstractGenerator {
       for(final EFRuleReference ruleRef : _ruleRefs) {
         _builder.append("        ");
         _builder.append("rules.add(new ");
-        String _name_3 = ruleRef.getRule().getName();
-        _builder.append(_name_3, "        ");
+        String _name_2 = ruleRef.getRule().getName();
+        _builder.append(_name_2, "        ");
         _builder.append("());");
         _builder.newLineIfNotEmpty();
         _builder.append("        ");
         _builder.append("System.out.println(\"Loaded rule: ");
-        String _name_4 = ruleRef.getRule().getName();
-        _builder.append(_name_4, "        ");
+        String _name_3 = ruleRef.getRule().getName();
+        _builder.append(_name_3, "        ");
         _builder.append("\");");
         _builder.newLineIfNotEmpty();
       }
@@ -1431,6 +1395,35 @@ public class EasyWallGenerator extends AbstractGenerator {
     _builder.append("}");
     _builder.newLine();
     return _builder;
+  }
+
+  public CharSequence compileFirewallField(final EFField field) {
+    CharSequence _xblockexpression = null;
+    {
+      final String modifier = "public static final";
+      final String type = this.getJavaType(field);
+      String _xifexpression = null;
+      EFExpression _expression = field.getExpression();
+      boolean _tripleNotEquals = (_expression != null);
+      if (_tripleNotEquals) {
+        String _compileExpression = this.compileExpression(field.getExpression());
+        _xifexpression = (" = " + _compileExpression);
+      } else {
+        _xifexpression = this.getDefaultValue(field);
+      }
+      final String init = _xifexpression;
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append(modifier);
+      _builder.append(" ");
+      _builder.append(type);
+      _builder.append(" ");
+      String _name = field.getName();
+      _builder.append(_name);
+      _builder.append(init);
+      _builder.append(";");
+      _xblockexpression = _builder;
+    }
+    return _xblockexpression;
   }
 
   public EFField findFieldByName(final EFRuleClass rule, final String name) {

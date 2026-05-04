@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.xtext.example.easywall.easyWall.EFBlock;
 import org.xtext.example.easywall.easyWall.EFMethod;
 import org.xtext.example.easywall.easyWall.EFParameter;
+import org.xtext.example.easywall.easyWall.EFType;
 import org.xtext.example.easywall.easyWall.EasyWallPackage;
 
 /**
@@ -32,6 +33,7 @@ import org.xtext.example.easywall.easyWall.EasyWallPackage;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.example.easywall.easyWall.impl.EFMethodImpl#getParams <em>Params</em>}</li>
+ *   <li>{@link org.xtext.example.easywall.easyWall.impl.EFMethodImpl#getNativetype <em>Nativetype</em>}</li>
  *   <li>{@link org.xtext.example.easywall.easyWall.impl.EFMethodImpl#getVoid <em>Void</em>}</li>
  *   <li>{@link org.xtext.example.easywall.easyWall.impl.EFMethodImpl#getBody <em>Body</em>}</li>
  * </ul>
@@ -49,6 +51,26 @@ public class EFMethodImpl extends EFMemberImpl implements EFMethod
    * @ordered
    */
   protected EList<EFParameter> params;
+
+  /**
+   * The default value of the '{@link #getNativetype() <em>Nativetype</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNativetype()
+   * @generated
+   * @ordered
+   */
+  protected static final EFType NATIVETYPE_EDEFAULT = EFType.NETWORK;
+
+  /**
+   * The cached value of the '{@link #getNativetype() <em>Nativetype</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNativetype()
+   * @generated
+   * @ordered
+   */
+  protected EFType nativetype = NATIVETYPE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getVoid() <em>Void</em>}' attribute.
@@ -114,6 +136,31 @@ public class EFMethodImpl extends EFMemberImpl implements EFMethod
       params = new EObjectContainmentEList<EFParameter>(EFParameter.class, this, EasyWallPackage.EF_METHOD__PARAMS);
     }
     return params;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EFType getNativetype()
+  {
+    return nativetype;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setNativetype(EFType newNativetype)
+  {
+    EFType oldNativetype = nativetype;
+    nativetype = newNativetype == null ? NATIVETYPE_EDEFAULT : newNativetype;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EasyWallPackage.EF_METHOD__NATIVETYPE, oldNativetype, nativetype));
   }
 
   /**
@@ -221,6 +268,8 @@ public class EFMethodImpl extends EFMemberImpl implements EFMethod
     {
       case EasyWallPackage.EF_METHOD__PARAMS:
         return getParams();
+      case EasyWallPackage.EF_METHOD__NATIVETYPE:
+        return getNativetype();
       case EasyWallPackage.EF_METHOD__VOID:
         return getVoid();
       case EasyWallPackage.EF_METHOD__BODY:
@@ -243,6 +292,9 @@ public class EFMethodImpl extends EFMemberImpl implements EFMethod
       case EasyWallPackage.EF_METHOD__PARAMS:
         getParams().clear();
         getParams().addAll((Collection<? extends EFParameter>)newValue);
+        return;
+      case EasyWallPackage.EF_METHOD__NATIVETYPE:
+        setNativetype((EFType)newValue);
         return;
       case EasyWallPackage.EF_METHOD__VOID:
         setVoid((String)newValue);
@@ -267,6 +319,9 @@ public class EFMethodImpl extends EFMemberImpl implements EFMethod
       case EasyWallPackage.EF_METHOD__PARAMS:
         getParams().clear();
         return;
+      case EasyWallPackage.EF_METHOD__NATIVETYPE:
+        setNativetype(NATIVETYPE_EDEFAULT);
+        return;
       case EasyWallPackage.EF_METHOD__VOID:
         setVoid(VOID_EDEFAULT);
         return;
@@ -289,6 +344,8 @@ public class EFMethodImpl extends EFMemberImpl implements EFMethod
     {
       case EasyWallPackage.EF_METHOD__PARAMS:
         return params != null && !params.isEmpty();
+      case EasyWallPackage.EF_METHOD__NATIVETYPE:
+        return nativetype != NATIVETYPE_EDEFAULT;
       case EasyWallPackage.EF_METHOD__VOID:
         return VOID_EDEFAULT == null ? void_ != null : !VOID_EDEFAULT.equals(void_);
       case EasyWallPackage.EF_METHOD__BODY:
@@ -308,7 +365,9 @@ public class EFMethodImpl extends EFMemberImpl implements EFMethod
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (void: ");
+    result.append(" (nativetype: ");
+    result.append(nativetype);
+    result.append(", void: ");
     result.append(void_);
     result.append(')');
     return result.toString();

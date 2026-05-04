@@ -15,9 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.example.easywall.easyWall.EFVariableDeclaration#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.example.easywall.easyWall.EFVariableDeclaration#getRuletype <em>Ruletype</em>}</li>
- *   <li>{@link org.xtext.example.easywall.easyWall.EFVariableDeclaration#getNativetype <em>Nativetype</em>}</li>
- *   <li>{@link org.xtext.example.easywall.easyWall.EFVariableDeclaration#getPrimitivetype <em>Primitivetype</em>}</li>
+ *   <li>{@link org.xtext.example.easywall.easyWall.EFVariableDeclaration#getType <em>Type</em>}</li>
  *   <li>{@link org.xtext.example.easywall.easyWall.EFVariableDeclaration#getExpression <em>Expression</em>}</li>
  * </ul>
  *
@@ -50,76 +48,29 @@ public interface EFVariableDeclaration extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Ruletype</b></em>' reference.
+   * Returns the value of the '<em><b>Type</b></em>' attribute.
+   * The literals are from the enumeration {@link org.xtext.example.easywall.easyWall.EFType}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Ruletype</em>' reference.
-   * @see #setRuletype(EFRuleClass)
-   * @see org.xtext.example.easywall.easyWall.EasyWallPackage#getEFVariableDeclaration_Ruletype()
+   * @return the value of the '<em>Type</em>' attribute.
+   * @see org.xtext.example.easywall.easyWall.EFType
+   * @see #setType(EFType)
+   * @see org.xtext.example.easywall.easyWall.EasyWallPackage#getEFVariableDeclaration_Type()
    * @model
    * @generated
    */
-  EFRuleClass getRuletype();
+  EFType getType();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.easywall.easyWall.EFVariableDeclaration#getRuletype <em>Ruletype</em>}' reference.
+   * Sets the value of the '{@link org.xtext.example.easywall.easyWall.EFVariableDeclaration#getType <em>Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Ruletype</em>' reference.
-   * @see #getRuletype()
+   * @param value the new value of the '<em>Type</em>' attribute.
+   * @see org.xtext.example.easywall.easyWall.EFType
+   * @see #getType()
    * @generated
    */
-  void setRuletype(EFRuleClass value);
-
-  /**
-   * Returns the value of the '<em><b>Nativetype</b></em>' attribute.
-   * The literals are from the enumeration {@link org.xtext.example.easywall.easyWall.EFNetworkNativeType}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Nativetype</em>' attribute.
-   * @see org.xtext.example.easywall.easyWall.EFNetworkNativeType
-   * @see #setNativetype(EFNetworkNativeType)
-   * @see org.xtext.example.easywall.easyWall.EasyWallPackage#getEFVariableDeclaration_Nativetype()
-   * @model
-   * @generated
-   */
-  EFNetworkNativeType getNativetype();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.easywall.easyWall.EFVariableDeclaration#getNativetype <em>Nativetype</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Nativetype</em>' attribute.
-   * @see org.xtext.example.easywall.easyWall.EFNetworkNativeType
-   * @see #getNativetype()
-   * @generated
-   */
-  void setNativetype(EFNetworkNativeType value);
-
-  /**
-   * Returns the value of the '<em><b>Primitivetype</b></em>' attribute.
-   * The literals are from the enumeration {@link org.xtext.example.easywall.easyWall.EFPrimitiveType}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Primitivetype</em>' attribute.
-   * @see org.xtext.example.easywall.easyWall.EFPrimitiveType
-   * @see #setPrimitivetype(EFPrimitiveType)
-   * @see org.xtext.example.easywall.easyWall.EasyWallPackage#getEFVariableDeclaration_Primitivetype()
-   * @model
-   * @generated
-   */
-  EFPrimitiveType getPrimitivetype();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.easywall.easyWall.EFVariableDeclaration#getPrimitivetype <em>Primitivetype</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Primitivetype</em>' attribute.
-   * @see org.xtext.example.easywall.easyWall.EFPrimitiveType
-   * @see #getPrimitivetype()
-   * @generated
-   */
-  void setPrimitivetype(EFPrimitiveType value);
+  void setType(EFType value);
 
   /**
    * Returns the value of the '<em><b>Expression</b></em>' containment reference.

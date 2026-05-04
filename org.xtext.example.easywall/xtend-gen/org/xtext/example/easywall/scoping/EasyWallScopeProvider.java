@@ -3,25 +3,35 @@
  */
 package org.xtext.example.easywall.scoping;
 
+import com.google.common.base.Function;
 import com.google.common.collect.Iterables;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtext.EcoreUtil2;
+import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
+import org.xtext.example.easywall.easyWall.EFBlock;
+import org.xtext.example.easywall.easyWall.EFField;
 import org.xtext.example.easywall.easyWall.EFHeader;
 import org.xtext.example.easywall.easyWall.EFImports;
+import org.xtext.example.easywall.easyWall.EFMethod;
+import org.xtext.example.easywall.easyWall.EFParameter;
 import org.xtext.example.easywall.easyWall.EFProgram;
 import org.xtext.example.easywall.easyWall.EFRule;
 import org.xtext.example.easywall.easyWall.EFRuleClass;
 import org.xtext.example.easywall.easyWall.EFRuleReference;
+import org.xtext.example.easywall.easyWall.EFStatement;
+import org.xtext.example.easywall.easyWall.EFSymbolRef;
 
 /**
  * This class contains custom scoping description.
@@ -136,6 +146,103 @@ public class EasyWallScopeProvider extends AbstractEasyWallScopeProvider {
     }
     Iterable<EFRuleClass> _plus = Iterables.<EFRuleClass>concat(localRules, importedRules);
     Iterable<EFRuleClass> _plus_1 = Iterables.<EFRuleClass>concat(_plus, allRules);
-    return Scopes.scopeFor(_plus_1);
+    final Function<EFRuleClass, QualifiedName> _function_3 = (EFRuleClass r) -> {
+      return QualifiedName.create(r.getName());
+    };
+    return Scopes.<EFRuleClass>scopeFor(_plus_1, _function_3, IScope.NULLSCOPE);
+  }
+
+  public IScope scope_EFSymbolRef_symbol(final EFSymbolRef ctx, final EReference ref) {
+    IScope scope = IScope.NULLSCOPE;
+    scope = this.scopeBlock(ctx, scope);
+    scope = this.scopeMethod(ctx, scope);
+    scope = this.scopeRule(ctx, scope);
+    scope = this.scopeFirewall(ctx, scope);
+    return scope;
+  }
+
+  public IScope scopeBlock(final EObject ctx, final IScope parent) {
+    final EFBlock block = EcoreUtil2.<EFBlock>getContainerOfType(ctx, EFBlock.class);
+    if ((block == null)) {
+      return parent;
+    }
+    final Function<EFField, QualifiedName> _function = (EFField it) -> {
+      return QualifiedName.create(it.getName());
+    };
+    return Scopes.<EFField>scopeFor(
+      Iterables.<EFField>filter(block.getStatements(), EFField.class), _function, parent);
+  }
+
+  public IScope scopeMethod(final EObject ctx, final IScope parent) {
+    final EFMethod method = EcoreUtil2.<EFMethod>getContainerOfType(ctx, EFMethod.class);
+    if ((method == null)) {
+      return parent;
+    }
+    final EList<EFParameter> params = method.getParams();
+    Iterable<EFField> _elvis = null;
+    EFBlock _body = method.getBody();
+    EList<EFStatement> _statements = null;
+    if (_body!=null) {
+      _statements=_body.getStatements();
+    }
+    Iterable<EFField> _filter = null;
+    if (_statements!=null) {
+      _filter=Iterables.<EFField>filter(_statements, EFField.class);
+    }
+    if (_filter != null) {
+      _elvis = _filter;
+    } else {
+      List<EFField> _emptyList = CollectionLiterals.<EFField>emptyList();
+      _elvis = _emptyList;
+    }
+    final Iterable<EFField> locals = _elvis;
+    Iterable<EObject> _plus = Iterables.<EObject>concat(params, locals);
+    final Function<EObject, QualifiedName> _function = (EObject it) -> {
+      return this.getQName(it);
+    };
+    return Scopes.<EObject>scopeFor(_plus, _function, parent);
+  }
+
+  public QualifiedName getQName(final EObject obj) {
+    QualifiedName _switchResult = null;
+    boolean _matched = false;
+    if (obj instanceof EFField) {
+      _matched=true;
+      _switchResult = QualifiedName.create(((EFField)obj).getName());
+    }
+    if (!_matched) {
+      if (obj instanceof EFParameter) {
+        _matched=true;
+        _switchResult = QualifiedName.create(((EFParameter)obj).getName());
+      }
+    }
+    if (!_matched) {
+      _switchResult = QualifiedName.create("unknown");
+    }
+    return _switchResult;
+  }
+
+  public IScope scopeRule(final EObject ctx, final IScope parent) {
+    final EFRuleClass rule = EcoreUtil2.<EFRuleClass>getContainerOfType(ctx, EFRuleClass.class);
+    if ((rule == null)) {
+      return parent;
+    }
+    final Function<EFField, QualifiedName> _function = (EFField it) -> {
+      return QualifiedName.create(it.getName());
+    };
+    return Scopes.<EFField>scopeFor(
+      Iterables.<EFField>filter(rule.getMembers(), EFField.class), _function, parent);
+  }
+
+  public IScope scopeFirewall(final EObject ctx, final IScope parent) {
+    final EFProgram program = EcoreUtil2.<EFProgram>getContainerOfType(ctx, EFProgram.class);
+    if (((program == null) || (program.getFirewall() == null))) {
+      return parent;
+    }
+    final Function<EFField, QualifiedName> _function = (EFField it) -> {
+      return QualifiedName.create(it.getName());
+    };
+    return Scopes.<EFField>scopeFor(
+      Iterables.<EFField>filter(program.getFirewall().getMembers(), EFField.class), _function, parent);
   }
 }

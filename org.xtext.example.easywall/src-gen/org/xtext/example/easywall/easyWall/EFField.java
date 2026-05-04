@@ -13,6 +13,7 @@ package org.xtext.example.easywall.easyWall;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.example.easywall.easyWall.EFField#getType <em>Type</em>}</li>
  *   <li>{@link org.xtext.example.easywall.easyWall.EFField#getExpression <em>Expression</em>}</li>
  * </ul>
  *
@@ -22,6 +23,31 @@ package org.xtext.example.easywall.easyWall;
  */
 public interface EFField extends EFMember, EFStatement
 {
+  /**
+   * Returns the value of the '<em><b>Type</b></em>' attribute.
+   * The literals are from the enumeration {@link org.xtext.example.easywall.easyWall.EFType}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Type</em>' attribute.
+   * @see org.xtext.example.easywall.easyWall.EFType
+   * @see #setType(EFType)
+   * @see org.xtext.example.easywall.easyWall.EasyWallPackage#getEFField_Type()
+   * @model
+   * @generated
+   */
+  EFType getType();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.easywall.easyWall.EFField#getType <em>Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Type</em>' attribute.
+   * @see org.xtext.example.easywall.easyWall.EFType
+   * @see #getType()
+   * @generated
+   */
+  void setType(EFType value);
+
   /**
    * Returns the value of the '<em><b>Expression</b></em>' containment reference.
    * <!-- begin-user-doc -->

@@ -15,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.example.easywall.easyWall.EFMethod#getParams <em>Params</em>}</li>
+ *   <li>{@link org.xtext.example.easywall.easyWall.EFMethod#getNativetype <em>Nativetype</em>}</li>
  *   <li>{@link org.xtext.example.easywall.easyWall.EFMethod#getVoid <em>Void</em>}</li>
  *   <li>{@link org.xtext.example.easywall.easyWall.EFMethod#getBody <em>Body</em>}</li>
  * </ul>
@@ -36,6 +37,31 @@ public interface EFMethod extends EFMember
    * @generated
    */
   EList<EFParameter> getParams();
+
+  /**
+   * Returns the value of the '<em><b>Nativetype</b></em>' attribute.
+   * The literals are from the enumeration {@link org.xtext.example.easywall.easyWall.EFType}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Nativetype</em>' attribute.
+   * @see org.xtext.example.easywall.easyWall.EFType
+   * @see #setNativetype(EFType)
+   * @see org.xtext.example.easywall.easyWall.EasyWallPackage#getEFMethod_Nativetype()
+   * @model
+   * @generated
+   */
+  EFType getNativetype();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.easywall.easyWall.EFMethod#getNativetype <em>Nativetype</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Nativetype</em>' attribute.
+   * @see org.xtext.example.easywall.easyWall.EFType
+   * @see #getNativetype()
+   * @generated
+   */
+  void setNativetype(EFType value);
 
   /**
    * Returns the value of the '<em><b>Void</b></em>' attribute.
