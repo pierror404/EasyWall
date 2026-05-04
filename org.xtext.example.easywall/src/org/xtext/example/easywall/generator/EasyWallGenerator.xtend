@@ -77,7 +77,7 @@ class EasyWallGenerator extends AbstractGenerator {
     // Genera Classe Rule
     // ============================================
     def void generateRuleClass(EFRuleClass rule, String packageName, IFileSystemAccess2 fsa) {
-        val className = rule.name
+        val className = rule.name.toFirstUpper
         val filePath = packageName.replace('.', '/') + '/' + className + '.java'
         
         fsa.generateFile(filePath, rule.compileRuleClass(packageName))
@@ -502,7 +502,7 @@ class EasyWallGenerator extends AbstractGenerator {
     // Genera Main Class con Firewall
     // ============================================
     def void generateMainClass(EFFirewall firewall, String packageName, Iterable<EFRule> rules, IFileSystemAccess2 fsa) {
-        val className = firewall.name
+        val className = firewall.name.toFirstUpper
         val filePath = packageName.replace('.', '/') + '/' + className + '.java'
         
         fsa.generateFile(filePath, firewall.compileMainClass(packageName, rules))
@@ -540,7 +540,7 @@ class EasyWallGenerator extends AbstractGenerator {
                 System.out.println("=================================");
                 
                 // Start firewall with native bridge
-                new NativeBridge(rules).startFirewall();
+                new NativeBridge(rules, Action.«firewall.defaultPolicy?.action.toString.toUpperCase ?: "DENY"»).startFirewall();
             }
         }
     '''

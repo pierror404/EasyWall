@@ -131,7 +131,7 @@ class EasyWallValidatorTest {
         val issues = validator.validate(model)
 
         Assertions.assertTrue(
-            issues.exists[it.code == EasyWallValidator.MISSING_MANDATORY_FIELD],
+            issues.exists[it.code == EasyWallValidator.MISSING_MANDATORY_FIELD_DIRECTION],
             "Expected missing mandatory field errors"
         )
     }

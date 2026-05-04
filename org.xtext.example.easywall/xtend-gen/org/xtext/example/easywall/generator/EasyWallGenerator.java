@@ -13,6 +13,7 @@ import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
+import org.eclipse.xtext.xbase.lib.StringExtensions;
 import org.xtext.example.easywall.easyWall.APPLICATIONLAYERPROTOCOL;
 import org.xtext.example.easywall.easyWall.EFAddExpression;
 import org.xtext.example.easywall.easyWall.EFAllow;
@@ -101,7 +102,7 @@ public class EasyWallGenerator extends AbstractGenerator {
   }
 
   public void generateRuleClass(final EFRuleClass rule, final String packageName, final IFileSystemAccess2 fsa) {
-    final String className = rule.getName();
+    final String className = StringExtensions.toFirstUpper(rule.getName());
     String _replace = packageName.replace(".", "/");
     String _plus = (_replace + "/");
     String _plus_1 = (_plus + className);
@@ -1280,7 +1281,7 @@ public class EasyWallGenerator extends AbstractGenerator {
   }
 
   public void generateMainClass(final EFFirewall firewall, final String packageName, final Iterable<EFRule> rules, final IFileSystemAccess2 fsa) {
-    final String className = firewall.getName();
+    final String className = StringExtensions.toFirstUpper(firewall.getName());
     String _replace = packageName.replace(".", "/");
     String _plus = (_replace + "/");
     String _plus_1 = (_plus + className);
@@ -1408,8 +1409,22 @@ public class EasyWallGenerator extends AbstractGenerator {
     _builder.append("// Start firewall with native bridge");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("new NativeBridge(rules).startFirewall();");
-    _builder.newLine();
+    _builder.append("new NativeBridge(rules, Action.");
+    String _elvis_2 = null;
+    EFDefaultPolicy _defaultPolicy_2 = firewall.getDefaultPolicy();
+    EFDefaultAction _action_2 = null;
+    if (_defaultPolicy_2!=null) {
+      _action_2=_defaultPolicy_2.getAction();
+    }
+    String _upperCase = _action_2.toString().toUpperCase();
+    if (_upperCase != null) {
+      _elvis_2 = _upperCase;
+    } else {
+      _elvis_2 = "DENY";
+    }
+    _builder.append(_elvis_2, "        ");
+    _builder.append(").startFirewall();");
+    _builder.newLineIfNotEmpty();
     _builder.append("    ");
     _builder.append("}");
     _builder.newLine();
